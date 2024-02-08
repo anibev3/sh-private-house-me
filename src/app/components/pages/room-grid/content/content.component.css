@@ -1,0 +1,102 @@
+body {
+  background-color: mintcream;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.card {
+  /* max-width: 30em; */
+  flex-direction: row;
+  /* background-color: #696969; */
+  /* border: 0; */
+  /* box-shadow: 0 7px 7px rgba(0, 0, 0, 0.18); */
+  margin-top: 100px auto;
+}
+.card.dark {
+  color: #fff;
+}
+.card.card.bg-light-subtle .card-title {
+  color: dimgrey;
+}
+
+.card img {
+  max-width: 29%;
+  margin: auto;
+  padding: 0.5em;
+  border-radius: 0.7em;
+}
+.card-body {
+  display: flex;
+  justify-content: space-between;
+}
+.text-section {
+  max-width: 60%;
+}
+.cta-section {
+  max-width: 40%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: space-between;
+}
+.cta-section .btn {
+  padding: 0.3em 0.5em;
+  /* color: #696969; */
+}
+.card.bg-light-subtle .cta-section .btn {
+  background-color: #000000;
+  border-color: #898989;
+}
+@media screen and (max-width: 475px) {
+  .card {
+    font-size: 0.9em;
+  }
+}
+
+titre-de:hover {
+  color: #000000;
+}
+.badge-offer {
+  background-color: green;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 15px 15px 15px 0px;
+  position: absolute;
+  top: 17px;
+  left: 0px;
+  z-index: 10;
+}
+
+/* Style pour le badge avec icône de cœur sur l'image */
+.badge-heart-on-image {
+  position: absolute;
+  top: 17px;
+  left: 233px;
+  z-index: 10;
+}
+
+@media (max-width: 576px) {
+  /* Colonne sur les écrans de 576px de largeur ou moins */
+  .row {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+
+  .col-sm-6 {
+    padding-right: 2px !important;
+    padding-left: 2px !important;
+  }
+}
+
+.shadodow {
+  background-color: #f0f0f0;
+  transition: box-shadow 0.3s; /* Ajoute une transition pour une animation fluide */
+
+  /* Ajoutez de l'ombre uniquement lorsque survolé */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0); /* Commencez avec une ombre transparente */
+}
+
+.shadodow:hover {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Ajoutez une ombre lorsque survolé */
+}

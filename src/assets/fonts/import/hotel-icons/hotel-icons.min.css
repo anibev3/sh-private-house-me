@@ -1,0 +1,5247 @@
+.hicon {
+    --hicon-size: 90%;
+    font-family: icons;
+    display: inline-flex;
+    align-items: center;
+    line-height: 1;
+    font-weight: normal;
+    font-style: normal;
+    speak: none;
+    text-decoration: inherit;
+    text-transform: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-size: var(--hicon-size);
+}
+
+    .hicon.hicon-bold,
+    .fw-bold > .hicon,
+    .fw-bolder > .hicon,
+    .fw-medium > .hicon,
+    .fw-semibold > .hicon {
+        font-weight: bold;
+    }
+
+    .hicon.hicon-60 {
+        font-size: calc(0.6 * var(--hicon-size));
+    }
+
+    .hicon.hicon-70 {
+        font-size: calc(0.7 * var(--hicon-size));
+    }
+
+    .hicon.hicon-80,
+    .hicon.hicon-sm {
+        font-size: calc(0.8 * var(--hicon-size));
+    }
+
+    .hicon.hicon-90 {
+        font-size: calc(0.8 * var(--hicon-size));
+    }
+
+    .hicon.hicon-100,
+    .hicon.hicon-md {
+        font-size: calc(1 * var(--hicon-size));
+    }
+
+    .hicon.hicon-110 {
+        font-size: calc(1.1 * var(--hicon-size));
+    }
+
+    .hicon.hicon-120,
+    .hicon.hicon-lg {
+        font-size: calc(1.2 * var(--hicon-size));
+    }
+
+@font-face {
+    font-family: icons;
+    src: url(hotel-icons.eot);
+    src: url(hotel-icons.eot#iefix) format("embedded-opentype"),url(hotel-icons.woff) format("woff"),url(hotel-icons.ttf) format("truetype"),url(hotel-icons.svg#icons) format("svg");
+    font-weight: 400;
+    font-style: normal
+}
+
+.hicon-1ah:before {
+    content: "\F101"
+}
+
+.hicon-24-hour-finess-center:before {
+    content: "\F102"
+}
+
+.hicon-24hour-check-in:before {
+    content: "\F103"
+}
+
+.hicon-24hour-frontdesk:before {
+    content: "\F104"
+}
+
+.hicon-24hour-room-service:before {
+    content: "\F105"
+}
+
+.hicon-24hour-security:before {
+    content: "\F106"
+}
+
+.hicon-5-star-deal:before {
+    content: "\F107"
+}
+
+.hicon-desktop-ic-black-down:before {
+    content: "\F108"
+}
+
+.hicon-desktop-ic-black-down-arrow:before {
+    content: "\F109"
+}
+
+.hicon-desktop-ic-profile:before {
+    content: "\F10A"
+}
+
+.hicon-installment-payment:before {
+    content: "\F10B"
+}
+
+.hicon-internet:before {
+    content: "\F10C"
+}
+
+.hicon-iron:before {
+    content: "\F10D"
+}
+
+.hicon-add-a-website:before {
+    content: "\F10E"
+}
+
+.hicon-additional-bathroom:before {
+    content: "\F10F"
+}
+
+.hicon-additional-fee-for-pets:before {
+    content: "\F110"
+}
+
+.hicon-additional-information:before {
+    content: "\F111"
+}
+
+.hicon-additional-toilet:before {
+    content: "\F112"
+}
+
+.hicon-address:before {
+    content: "\F113"
+}
+
+.hicon-adults-line:before {
+    content: "\F114"
+}
+
+.hicon-adults-one:before {
+    content: "\F115"
+}
+
+.hicon-after-hours:before {
+    content: "\F116"
+}
+
+.hicon-afternoon-tea:before {
+    content: "\F117"
+}
+
+.hicon-agoda-cash:before {
+    content: "\F118"
+}
+
+.hicon-agoda-homes:before {
+    content: "\F119"
+}
+
+.hicon-agoda-price-guarante-filled:before {
+    content: "\F11A"
+}
+
+.hicon-agoda-price-guarante:before {
+    content: "\F11B"
+}
+
+.hicon-air-bath-access:before {
+    content: "\F11C"
+}
+
+.hicon-air-conditioning:before {
+    content: "\F11D"
+}
+
+.hicon-air-purifier:before {
+    content: "\F11E"
+}
+
+.hicon-airport-transfer-big:before {
+    content: "\F11F"
+}
+
+.hicon-airport-transfer-oneway:before {
+    content: "\F120"
+}
+
+.hicon-airport-transfer-roundtrip:before {
+    content: "\F121"
+}
+
+.hicon-airport-transfer-small:before {
+    content: "\F122"
+}
+
+.hicon-airport-transfer-solid:before {
+    content: "\F123"
+}
+
+.hicon-airport-transfer:before {
+    content: "\F124"
+}
+
+.hicon-airports-plane:before {
+    content: "\F125"
+}
+
+.hicon-airports:before {
+    content: "\F126"
+}
+
+.hicon-alarm-clock:before {
+    content: "\F127"
+}
+
+.hicon-already-booking:before {
+    content: "\F128"
+}
+
+.hicon-american-express:before {
+    content: "\F129"
+}
+
+.hicon-apartment:before {
+    content: "\F12A"
+}
+
+.hicon-app-android:before {
+    content: "\F12B"
+}
+
+.hicon-app-apple:before {
+    content: "\F12C"
+}
+
+.hicon-app-windos:before {
+    content: "\F12D"
+}
+
+.hicon-aps-lock:before {
+    content: "\F12E"
+}
+
+.hicon-area:before {
+    content: "\F12F"
+}
+
+.hicon-arrow-big-down:before {
+    content: "\F130"
+}
+
+.hicon-arrow-big-right:before {
+    content: "\F131"
+}
+
+.hicon-arrow-big-up:before {
+    content: "\F132"
+}
+
+.hicon-arrow-right-box:before {
+    content: "\F133"
+}
+
+.hicon-arrow-right:before {
+    content: "\F134"
+}
+
+.hicon-assembly-pin-border:before {
+    content: "\F135"
+}
+
+.hicon-assembly-restaurant-line:before {
+    content: "\F136"
+}
+
+.hicon-assembly-restaurant:before {
+    content: "\F137"
+}
+
+.hicon-atm-cash-machine-on-site:before {
+    content: "\F138"
+}
+
+.hicon-attractions:before {
+    content: "\F139"
+}
+
+.hicon-avatar-hotel:before {
+    content: "\F13A"
+}
+
+.hicon-avatar-property:before {
+    content: "\F13B"
+}
+
+.hicon-baby-cot:before {
+    content: "\F13C"
+}
+
+.hicon-babysitting:before {
+    content: "\F13D"
+}
+
+.hicon-back-to-top:before {
+    content: "\F13E"
+}
+
+.hicon-badge-insider:before {
+    content: "\F13F"
+}
+
+.hicon-badminton-court:before {
+    content: "\F140"
+}
+
+.hicon-balcony-terrace:before {
+    content: "\F141"
+}
+
+.hicon-balloon-minus:before {
+    content: "\F142"
+}
+
+.hicon-balloon-plus:before {
+    content: "\F143"
+}
+
+.hicon-balloon:before {
+    content: "\F144"
+}
+
+.hicon-bathrobes:before {
+    content: "\F145"
+}
+
+.hicon-bathroom-basics:before {
+    content: "\F146"
+}
+
+.hicon-bathroom-phone:before {
+    content: "\F147"
+}
+
+.hicon-bathrooms:before {
+    content: "\F148"
+}
+
+.hicon-bathtub:before {
+    content: "\F149"
+}
+
+.hicon-bbq-facilities:before {
+    content: "\F14A"
+}
+
+.hicon-bc-global-card:before {
+    content: "\F14B"
+}
+
+.hicon-beach:before {
+    content: "\F14C"
+}
+
+.hicon-bed-property:before {
+    content: "\F14D"
+}
+
+.hicon-bed:before {
+    content: "\F14E"
+}
+
+.hicon-bedroom-door:before {
+    content: "\F14F"
+}
+
+.hicon-bedroom:before {
+    content: "\F150"
+}
+
+.hicon-bell-alerts:before {
+    content: "\F151"
+}
+
+.hicon-best-value:before {
+    content: "\F152"
+}
+
+.hicon-bicycle-rental:before {
+    content: "\F153"
+}
+
+.hicon-billiards:before {
+    content: "\F154"
+}
+
+.hicon-blackout-curtains:before {
+    content: "\F155"
+}
+
+.hicon-blizzard:before {
+    content: "\F156"
+}
+
+.hicon-blowing-drifting-snow:before {
+    content: "\F157"
+}
+
+.hicon-blowing-dust-sandstorm:before {
+    content: "\F158"
+}
+
+.hicon-blowing-spray-windy:before {
+    content: "\F159"
+}
+
+.hicon-boat:before {
+    content: "\F15A"
+}
+
+.hicon-bold-baby-diaper:before {
+    content: "\F15B"
+}
+
+.hicon-bold-baby:before {
+    content: "\F15C"
+}
+
+.hicon-bold-bath-materials:before {
+    content: "\F15D"
+}
+
+.hicon-bold-bath-temperature:before {
+    content: "\F15E"
+}
+
+.hicon-bold-bath-water:before {
+    content: "\F15F"
+}
+
+.hicon-bold-capacity:before {
+    content: "\F160"
+}
+
+.hicon-bold-change-flight:before {
+    content: "\F161"
+}
+
+.hicon-bold-child-meal-a:before {
+    content: "\F162"
+}
+
+.hicon-bold-child-meal-b:before {
+    content: "\F163"
+}
+
+.hicon-bold-children-yukata:before {
+    content: "\F164"
+}
+
+.hicon-bold-family-with-teens-new:before {
+    content: "\F165"
+}
+
+.hicon-bold-female-only:before {
+    content: "\F166"
+}
+
+.hicon-bold-first-aid:before {
+    content: "\F167"
+}
+
+.hicon-bold-floor-plan:before {
+    content: "\F168"
+}
+
+.hicon-bold-gender:before {
+    content: "\F169"
+}
+
+.hicon-bold-group-travelers:before {
+    content: "\F16A"
+}
+
+.hicon-bold-hot-spring-access:before {
+    content: "\F16B"
+}
+
+.hicon-bold-hot-spring-bath:before {
+    content: "\F16C"
+}
+
+.hicon-bold-infant:before {
+    content: "\F16D"
+}
+
+.hicon-bold-itinerary:before {
+    content: "\F16E"
+}
+
+.hicon-bold-male-only:before {
+    content: "\F16F"
+}
+
+.hicon-bold-meal:before {
+    content: "\F170"
+}
+
+.hicon-bold-modify-search:before {
+    content: "\F171"
+}
+
+.hicon-bold-mountain-view:before {
+    content: "\F172"
+}
+
+.hicon-bold-package-savings:before {
+    content: "\F173"
+}
+
+.hicon-bold-package:before {
+    content: "\F174"
+}
+
+.hicon-bold-preselected-flight:before {
+    content: "\F175"
+}
+
+.hicon-bold-price-fluctuates:before {
+    content: "\F176"
+}
+
+.hicon-bold-salt:before {
+    content: "\F177"
+}
+
+.hicon-bold-spa-sauna:before {
+    content: "\F178"
+}
+
+.hicon-bold-tap-water:before {
+    content: "\F179"
+}
+
+.hicon-bold-time-icon:before {
+    content: "\F17A"
+}
+
+.hicon-bold-travel-protection:before {
+    content: "\F17B"
+}
+
+.hicon-bold-walkability:before {
+    content: "\F17C"
+}
+
+.hicon-book-now-pay-later:before {
+    content: "\F17D"
+}
+
+.hicon-book-without-a-creditcard:before {
+    content: "\F17E"
+}
+
+.hicon-bottle-of-sparkling-wine:before {
+    content: "\F17F"
+}
+
+.hicon-bottle-of-wine:before {
+    content: "\F180"
+}
+
+.hicon-bowling-alley:before {
+    content: "\F181"
+}
+
+.hicon-bracket-left:before {
+    content: "\F182"
+}
+
+.hicon-bracket-right:before {
+    content: "\F183"
+}
+
+.hicon-breakfast-buffet:before {
+    content: "\F184"
+}
+
+.hicon-breakfast-one-person:before {
+    content: "\F185"
+}
+
+.hicon-breakfast:before {
+    content: "\F186"
+}
+
+.hicon-breezy:before {
+    content: "\F187"
+}
+
+.hicon-broken-clouds:before {
+    content: "\F188"
+}
+
+.hicon-budget:before {
+    content: "\F189"
+}
+
+.hicon-bullet:before {
+    content: "\F18A"
+}
+
+.hicon-bungalow:before {
+    content: "\F18B"
+}
+
+.hicon-bunk-bed:before {
+    content: "\F18C"
+}
+
+.hicon-bus-and-rail-stations:before {
+    content: "\F18D"
+}
+
+.hicon-bus-station:before {
+    content: "\F18E"
+}
+
+.hicon-business-center:before {
+    content: "\F18F"
+}
+
+.hicon-business-facilities:before {
+    content: "\F190"
+}
+
+.hicon-business-hover:before {
+    content: "\F191"
+}
+
+.hicon-business:before {
+    content: "\F192"
+}
+
+.hicon-buzzer-wireless-intercom:before {
+    content: "\F193"
+}
+
+.hicon-c-coupon:before {
+    content: "\F194"
+}
+
+.hicon-cable-car-station:before {
+    content: "\F195"
+}
+
+.hicon-calendar-onmap:before {
+    content: "\F196"
+}
+
+.hicon-callcenter-24hour:before {
+    content: "\F197"
+}
+
+.hicon-callcenter-line:before {
+    content: "\F198"
+}
+
+.hicon-callcenter:before {
+    content: "\F199"
+}
+
+.hicon-camera-hover:before {
+    content: "\F19A"
+}
+
+.hicon-cancel-anytime:before {
+    content: "\F19B"
+}
+
+.hicon-cancel-booking:before {
+    content: "\F19C"
+}
+
+.hicon-cancellation-policy-non-refund-special-condition:before {
+    content: "\F19D"
+}
+
+.hicon-canoe:before {
+    content: "\F19E"
+}
+
+.hicon-capsule:before {
+    content: "\F19F"
+}
+
+.hicon-car-hire:before {
+    content: "\F1A0"
+}
+
+.hicon-car-park-charges:before {
+    content: "\F1A1"
+}
+
+.hicon-car-park-free-charge:before {
+    content: "\F1A2"
+}
+
+.hicon-car-park-nearby:before {
+    content: "\F1A3"
+}
+
+.hicon-car-park-onsite:before {
+    content: "\F1A4"
+}
+
+.hicon-car-park:before {
+    content: "\F1A5"
+}
+
+.hicon-car-power-charging-station:before {
+    content: "\F1A6"
+}
+
+.hicon-carbon-monoxide-detector:before {
+    content: "\F1A7"
+}
+
+.hicon-carpeting:before {
+    content: "\F1A8"
+}
+
+.hicon-carrouselarrow-left:before {
+    content: "\F1A9"
+}
+
+.hicon-carrouselarrow-right:before {
+    content: "\F1AA"
+}
+
+.hicon-cash-a-line-new:before {
+    content: "\F1AB"
+}
+
+.hicon-cash-a-solid-new:before {
+    content: "\F1AC"
+}
+
+.hicon-cash-circle-h:before {
+    content: "\F1AD"
+}
+
+.hicon-cash-circle-s:before {
+    content: "\F1AE"
+}
+
+.hicon-cash-h:before {
+    content: "\F1AF"
+}
+
+.hicon-cash-line-circle-h:before {
+    content: "\F1B0"
+}
+
+.hicon-cash-line-circle-s:before {
+    content: "\F1B1"
+}
+
+.hicon-cash-line-h:before {
+    content: "\F1B2"
+}
+
+.hicon-cash-line-new:before {
+    content: "\F1B3"
+}
+
+.hicon-cash-line-s:before {
+    content: "\F1B4"
+}
+
+.hicon-cash-s:before {
+    content: "\F1B5"
+}
+
+.hicon-cash-solid-new:before {
+    content: "\F1B6"
+}
+
+.hicon-cash:before {
+    content: "\F1B7"
+}
+
+.hicon-casino:before {
+    content: "\F1B8"
+}
+
+.hicon-cats-allowed:before {
+    content: "\F1B9"
+}
+
+.hicon-chapel:before {
+    content: "\F1BA"
+}
+
+.hicon-chat:before {
+    content: "\F1BB"
+}
+
+.hicon-check-box:before {
+    content: "\F1BC"
+}
+
+.hicon-check-circle-o:before {
+    content: "\F1BD"
+}
+
+.hicon-check-circle:before {
+    content: "\F1BE"
+}
+
+.hicon-check-in:before {
+    content: "\F1BF"
+}
+
+.hicon-check-out:before {
+    content: "\F1C0"
+}
+
+.hicon-check-valid-state:before {
+    content: "\F1C1"
+}
+
+.hicon-check:before {
+    content: "\F1C2"
+}
+
+.hicon-checkbox-icon:before {
+    content: "\F1C3"
+}
+
+.hicon-checkin-date:before {
+    content: "\F1C4"
+}
+
+.hicon-checkin-hover-date:before {
+    content: "\F1C5"
+}
+
+.hicon-checkout-date:before {
+    content: "\F1C6"
+}
+
+.hicon-checkout-hover-date:before {
+    content: "\F1C7"
+}
+
+.hicon-child-icon:before {
+    content: "\F1C8"
+}
+
+.hicon-child-line:before {
+    content: "\F1C9"
+}
+
+.hicon-child:before {
+    content: "\F1CA"
+}
+
+.hicon-children-high-chair:before {
+    content: "\F1CB"
+}
+
+.hicon-children-one:before {
+    content: "\F1CC"
+}
+
+.hicon-children-playground:before {
+    content: "\F1CD"
+}
+
+.hicon-china-event:before {
+    content: "\F1CE"
+}
+
+.hicon-china-only:before {
+    content: "\F1CF"
+}
+
+.hicon-chinese-friendly:before {
+    content: "\F1D0"
+}
+
+.hicon-circle-05:before {
+    content: "\F1D1"
+}
+
+.hicon-circle-1:before {
+    content: "\F1D2"
+}
+
+.hicon-circle-15:before {
+    content: "\F1D3"
+}
+
+.hicon-circle-2:before {
+    content: "\F1D4"
+}
+
+.hicon-circle-25:before {
+    content: "\F1D5"
+}
+
+.hicon-circle-3:before {
+    content: "\F1D6"
+}
+
+.hicon-circle-35:before {
+    content: "\F1D7"
+}
+
+.hicon-circle-4:before {
+    content: "\F1D8"
+}
+
+.hicon-circle-45:before {
+    content: "\F1D9"
+}
+
+.hicon-circle-5:before {
+    content: "\F1DA"
+}
+
+.hicon-circle-arrow-left:before {
+    content: "\F1DB"
+}
+
+.hicon-circle-arrow-right:before {
+    content: "\F1DC"
+}
+
+.hicon-circle-bus:before {
+    content: "\F1DD"
+}
+
+.hicon-circle-home:before {
+    content: "\F1DE"
+}
+
+.hicon-circle-pin:before {
+    content: "\F1DF"
+}
+
+.hicon-circle-plane:before {
+    content: "\F1E0"
+}
+
+.hicon-circle-star:before {
+    content: "\F1E1"
+}
+
+.hicon-cities:before {
+    content: "\F1E2"
+}
+
+.hicon-city-buses:before {
+    content: "\F1E3"
+}
+
+.hicon-city-view:before {
+    content: "\F1E4"
+}
+
+.hicon-cleaning-products:before {
+    content: "\F1E5"
+}
+
+.hicon-clear-mark:before {
+    content: "\F1E6"
+}
+
+.hicon-clear-sky-b:before {
+    content: "\F1E7"
+}
+
+.hicon-clear-sky:before {
+    content: "\F1E8"
+}
+
+.hicon-clear:before {
+    content: "\F1E9"
+}
+
+.hicon-close-popup-solid:before {
+    content: "\F1EA"
+}
+
+.hicon-close-popup:before {
+    content: "\F1EB"
+}
+
+.hicon-closest-bar:before {
+    content: "\F1EC"
+}
+
+.hicon-closest-market:before {
+    content: "\F1ED"
+}
+
+.hicon-closet:before {
+    content: "\F1EE"
+}
+
+.hicon-clothes-dryer-pay:before {
+    content: "\F1EF"
+}
+
+.hicon-clothes-rack:before {
+    content: "\F1F0"
+}
+
+.hicon-clothes-washer-free:before {
+    content: "\F1F1"
+}
+
+.hicon-cloudy:before {
+    content: "\F1F2"
+}
+
+.hicon-club-lounge-access:before {
+    content: "\F1F3"
+}
+
+.hicon-coffee-shop:before {
+    content: "\F1F4"
+}
+
+.hicon-coffee-tea-maker:before {
+    content: "\F1F5"
+}
+
+.hicon-complimentary-bottled-water:before {
+    content: "\F1F6"
+}
+
+.hicon-complimentary-instant-coffee:before {
+    content: "\F1F7"
+}
+
+.hicon-complimentary-tea:before {
+    content: "\F1F8"
+}
+
+.hicon-compset-comparison:before {
+    content: "\F1F9"
+}
+
+.hicon-concierge:before {
+    content: "\F1FA"
+}
+
+.hicon-confirmation-instant:before {
+    content: "\F1FB"
+}
+
+.hicon-confirmation-later:before {
+    content: "\F1FC"
+}
+
+.hicon-confirmation-solid:before {
+    content: "\F1FD"
+}
+
+.hicon-confirmation:before {
+    content: "\F1FE"
+}
+
+.hicon-congratulations:before {
+    content: "\F1FF"
+}
+
+.hicon-continental-breakfast:before {
+    content: "\F200"
+}
+
+.hicon-control-close-circle:before {
+    content: "\F201"
+}
+
+.hicon-control-collapse:before {
+    content: "\F202"
+}
+
+.hicon-control-expand:before {
+    content: "\F203"
+}
+
+.hicon-cookie:before {
+    content: "\F204"
+}
+
+.hicon-couple-hover:before {
+    content: "\F205"
+}
+
+.hicon-couple:before {
+    content: "\F206"
+}
+
+.hicon-coupon-card-no-circle:before {
+    content: "\F207"
+}
+
+.hicon-coupon-card-solid:before {
+    content: "\F208"
+}
+
+.hicon-coupon-card:before {
+    content: "\F209"
+}
+
+.hicon-coupon-promo:before {
+    content: "\F20A"
+}
+
+.hicon-coupon:before {
+    content: "\F20B"
+}
+
+.hicon-credit-card-bf:before {
+    content: "\F20C"
+}
+
+.hicon-credit-card-required:before {
+    content: "\F20D"
+}
+
+.hicon-credit-card:before {
+    content: "\F20E"
+}
+
+.hicon-culture:before {
+    content: "\F20F"
+}
+
+.hicon-currency-exchange:before {
+    content: "\F210"
+}
+
+.hicon-daily-housekeeping:before {
+    content: "\F211"
+}
+
+.hicon-daily-newspaper:before {
+    content: "\F212"
+}
+
+.hicon-dart-board:before {
+    content: "\F213"
+}
+
+.hicon-dashboard:before {
+    content: "\F214"
+}
+
+.hicon-data-at-your-fingertips:before {
+    content: "\F215"
+}
+
+.hicon-deal-gift-card:before {
+    content: "\F216"
+}
+
+.hicon-deal-insider:before {
+    content: "\F217"
+}
+
+.hicon-default-feedback:before {
+    content: "\F218"
+}
+
+.hicon-desk:before {
+    content: "\F219"
+}
+
+.hicon-diners-clubs-card:before {
+    content: "\F21A"
+}
+
+.hicon-dinner:before {
+    content: "\F21B"
+}
+
+.hicon-discount:before {
+    content: "\F21C"
+}
+
+.hicon-discover-card:before {
+    content: "\F21D"
+}
+
+.hicon-dishwasher:before {
+    content: "\F21E"
+}
+
+.hicon-distance-from-city-center:before {
+    content: "\F21F"
+}
+
+.hicon-distance-to-airport:before {
+    content: "\F220"
+}
+
+.hicon-diving:before {
+    content: "\F221"
+}
+
+.hicon-document:before {
+    content: "\F222"
+}
+
+.hicon-dog-allowed:before {
+    content: "\F223"
+}
+
+.hicon-domestic-rates:before {
+    content: "\F224"
+}
+
+.hicon-dot-seperater:before {
+    content: "\F225"
+}
+
+.hicon-double-bed:before {
+    content: "\F226"
+}
+
+.hicon-double-super-king-queen:before {
+    content: "\F227"
+}
+
+.hicon-download-apps:before {
+    content: "\F228"
+}
+
+.hicon-download:before {
+    content: "\F229"
+}
+
+.hicon-dressing-room:before {
+    content: "\F22A"
+}
+
+.hicon-drinks:before {
+    content: "\F22B"
+}
+
+.hicon-drizzle:before {
+    content: "\F22C"
+}
+
+.hicon-drug-stores:before {
+    content: "\F22D"
+}
+
+.hicon-dryer:before {
+    content: "\F22E"
+}
+
+.hicon-dvd-cd-player:before {
+    content: "\F22F"
+}
+
+.hicon-dynamic-banner:before {
+    content: "\F230"
+}
+
+.hicon-early-bird-deal-solid:before {
+    content: "\F231"
+}
+
+.hicon-early-bird-deal:before {
+    content: "\F232"
+}
+
+.hicon-early-check-in:before {
+    content: "\F233"
+}
+
+.hicon-easy-integration:before {
+    content: "\F234"
+}
+
+.hicon-edge-arrow-left:before {
+    content: "\F235"
+}
+
+.hicon-edge-arrow-right:before {
+    content: "\F236"
+}
+
+.hicon-edit-filled:before {
+    content: "\F237"
+}
+
+.hicon-edit:before {
+    content: "\F238"
+}
+
+.hicon-electric-blanket:before {
+    content: "\F239"
+}
+
+.hicon-elevator:before {
+    content: "\F23A"
+}
+
+.hicon-email-envelope:before {
+    content: "\F23B"
+}
+
+.hicon-emo-dislike-ani1:before {
+    content: "\F23C"
+}
+
+.hicon-emo-dislike-ani2:before {
+    content: "\F23D"
+}
+
+.hicon-emo-dislike-ani3:before {
+    content: "\F23E"
+}
+
+.hicon-emo-dislike-click:before {
+    content: "\F23F"
+}
+
+.hicon-emo-dont-care-ani1:before {
+    content: "\F240"
+}
+
+.hicon-emo-dont-care-ani2:before {
+    content: "\F241"
+}
+
+.hicon-emo-dont-care-ani3:before {
+    content: "\F242"
+}
+
+.hicon-emo-dont-care-click:before {
+    content: "\F243"
+}
+
+.hicon-emo-great-ani1:before {
+    content: "\F244"
+}
+
+.hicon-emo-great-ani2:before {
+    content: "\F245"
+}
+
+.hicon-emo-great-ani3:before {
+    content: "\F246"
+}
+
+.hicon-emo-great-click:before {
+    content: "\F247"
+}
+
+.hicon-emo-nice-ani1:before {
+    content: "\F248"
+}
+
+.hicon-emo-nice-ani2:before {
+    content: "\F249"
+}
+
+.hicon-emo-nice-ani3:before {
+    content: "\F24A"
+}
+
+.hicon-emo-nice-click:before {
+    content: "\F24B"
+}
+
+.hicon-emo-sad-ani1:before {
+    content: "\F24C"
+}
+
+.hicon-emo-sad-ani2:before {
+    content: "\F24D"
+}
+
+.hicon-emo-sad-ani3:before {
+    content: "\F24E"
+}
+
+.hicon-emo-sad-click:before {
+    content: "\F24F"
+}
+
+.hicon-entire-place:before {
+    content: "\F250"
+}
+
+.hicon-essentials:before {
+    content: "\F251"
+}
+
+.hicon-everybody-fits:before {
+    content: "\F252"
+}
+
+.hicon-exclusive-sale:before {
+    content: "\F253"
+}
+
+.hicon-executive-floor:before {
+    content: "\F254"
+}
+
+.hicon-executive-lounge-access:before {
+    content: "\F255"
+}
+
+.hicon-export-calendar:before {
+    content: "\F256"
+}
+
+.hicon-express-check-in-check-out:before {
+    content: "\F257"
+}
+
+.hicon-exterior:before {
+    content: "\F258"
+}
+
+.hicon-extra-bed:before {
+    content: "\F259"
+}
+
+.hicon-extra-long-beds:before {
+    content: "\F25A"
+}
+
+.hicon-facebook-logo:before {
+    content: "\F25B"
+}
+
+.hicon-facilities-for-disabled-guests:before {
+    content: "\F25C"
+}
+
+.hicon-facilities-rich:before {
+    content: "\F25D"
+}
+
+.hicon-failed-o:before {
+    content: "\F25E"
+}
+
+.hicon-failed:before {
+    content: "\F25F"
+}
+
+.hicon-fair-mostly-clear:before {
+    content: "\F260"
+}
+
+.hicon-fair-mostly-sunny:before {
+    content: "\F261"
+}
+
+.hicon-family-friendly:before {
+    content: "\F262"
+}
+
+.hicon-family-fun:before {
+    content: "\F263"
+}
+
+.hicon-family-line:before {
+    content: "\F264"
+}
+
+.hicon-family-room:before {
+    content: "\F265"
+}
+
+.hicon-family-special-deal:before {
+    content: "\F266"
+}
+
+.hicon-family-with-small-kids-hover:before {
+    content: "\F267"
+}
+
+.hicon-family-with-teens-hover:before {
+    content: "\F268"
+}
+
+.hicon-family-with-teens:before {
+    content: "\F269"
+}
+
+.hicon-fan:before {
+    content: "\F26A"
+}
+
+.hicon-faq:before {
+    content: "\F26B"
+}
+
+.hicon-favorite-filled:before {
+    content: "\F26C"
+}
+
+.hicon-favorite:before {
+    content: "\F26D"
+}
+
+.hicon-fax-machine:before {
+    content: "\F26E"
+}
+
+.hicon-fax-or-photo:before {
+    content: "\F26F"
+}
+
+.hicon-feedback:before {
+    content: "\F270"
+}
+
+.hicon-female-capsule:before {
+    content: "\F271"
+}
+
+.hicon-few-clouds:before {
+    content: "\F272"
+}
+
+.hicon-filled-baby-diaper:before {
+    content: "\F273"
+}
+
+.hicon-filled-baby:before {
+    content: "\F274"
+}
+
+.hicon-filled-bath-materials:before {
+    content: "\F275"
+}
+
+.hicon-filled-bath-temperature:before {
+    content: "\F276"
+}
+
+.hicon-filled-bath-water:before {
+    content: "\F277"
+}
+
+.hicon-filled-capacity:before {
+    content: "\F278"
+}
+
+.hicon-filled-change-flight:before {
+    content: "\F279"
+}
+
+.hicon-filled-child-meal-a:before {
+    content: "\F27A"
+}
+
+.hicon-filled-child-meal-b:before {
+    content: "\F27B"
+}
+
+.hicon-filled-children-yukata:before {
+    content: "\F27C"
+}
+
+.hicon-filled-family-with-teens-new:before {
+    content: "\F27D"
+}
+
+.hicon-filled-female-only:before {
+    content: "\F27E"
+}
+
+.hicon-filled-first-aid:before {
+    content: "\F27F"
+}
+
+.hicon-filled-gender:before {
+    content: "\F280"
+}
+
+.hicon-filled-hot-spring-access:before {
+    content: "\F281"
+}
+
+.hicon-filled-hot-spring-bath:before {
+    content: "\F282"
+}
+
+.hicon-filled-infant:before {
+    content: "\F283"
+}
+
+.hicon-filled-itinerary:before {
+    content: "\F284"
+}
+
+.hicon-filled-male-only:before {
+    content: "\F285"
+}
+
+.hicon-filled-meal:before {
+    content: "\F286"
+}
+
+.hicon-filled-modify-search:before {
+    content: "\F287"
+}
+
+.hicon-filled-mountain-view:before {
+    content: "\F288"
+}
+
+.hicon-filled-package-savings:before {
+    content: "\F289"
+}
+
+.hicon-filled-package:before {
+    content: "\F28A"
+}
+
+.hicon-filled-preselected-flight:before {
+    content: "\F28B"
+}
+
+.hicon-filled-price-fluctuates:before {
+    content: "\F28C"
+}
+
+.hicon-filled-salt:before {
+    content: "\F28D"
+}
+
+.hicon-filled-spa-sauna:before {
+    content: "\F28E"
+}
+
+.hicon-filled-tap-water:before {
+    content: "\F28F"
+}
+
+.hicon-filled-time-icon:before {
+    content: "\F290"
+}
+
+.hicon-filled-travel-protection:before {
+    content: "\F291"
+}
+
+.hicon-filled-walkability:before {
+    content: "\F292"
+}
+
+.hicon-filter-icon:before {
+    content: "\F293"
+}
+
+.hicon-filter-line:before {
+    content: "\F294"
+}
+
+.hicon-fire-extinguisher:before {
+    content: "\F295"
+}
+
+.hicon-fire-solid:before {
+    content: "\F296"
+}
+
+.hicon-fireplace:before {
+    content: "\F297"
+}
+
+.hicon-first-aid-kit:before {
+    content: "\F298"
+}
+
+.hicon-fishing:before {
+    content: "\F299"
+}
+
+.hicon-fitness-center-charge:before {
+    content: "\F29A"
+}
+
+.hicon-fitness-center:before {
+    content: "\F29B"
+}
+
+.hicon-fitness-club:before {
+    content: "\F29C"
+}
+
+.hicon-flash-deal-solid:before {
+    content: "\F29D"
+}
+
+.hicon-flash-deal:before {
+    content: "\F29E"
+}
+
+.hicon-flash-sale:before {
+    content: "\F29F"
+}
+
+.hicon-flight-earn:before {
+    content: "\F2A0"
+}
+
+.hicon-flights-airplane:before {
+    content: "\F2A1"
+}
+
+.hicon-flights-destination-line:before {
+    content: "\F2A2"
+}
+
+.hicon-flights-hotel-line:before {
+    content: "\F2A3"
+}
+
+.hicon-flights-layover-exchange-line:before {
+    content: "\F2A4"
+}
+
+.hicon-flights-one-ways:before {
+    content: "\F2A5"
+}
+
+.hicon-flights-pin:before {
+    content: "\F2A6"
+}
+
+.hicon-flights-round-trip:before {
+    content: "\F2A7"
+}
+
+.hicon-flights-stop-layover-line:before {
+    content: "\F2A8"
+}
+
+.hicon-foggy:before {
+    content: "\F2A9"
+}
+
+.hicon-forgot-pass:before {
+    content: "\F2AA"
+}
+
+.hicon-free-bicycle:before {
+    content: "\F2AB"
+}
+
+.hicon-free-breakfast-line:before {
+    content: "\F2AC"
+}
+
+.hicon-free-breakfast:before {
+    content: "\F2AD"
+}
+
+.hicon-free-cancellation:before {
+    content: "\F2AE"
+}
+
+.hicon-free-fitness-center:before {
+    content: "\F2AF"
+}
+
+.hicon-free-night-stay-circle:before {
+    content: "\F2B0"
+}
+
+.hicon-free-night-stay-solid:before {
+    content: "\F2B1"
+}
+
+.hicon-free-night-stay:before {
+    content: "\F2B2"
+}
+
+.hicon-free-night:before {
+    content: "\F2B3"
+}
+
+.hicon-free-welcome-drink:before {
+    content: "\F2B4"
+}
+
+.hicon-free-wifi-in-all-rooms:before {
+    content: "\F2B5"
+}
+
+.hicon-freezing-drizzle:before {
+    content: "\F2B6"
+}
+
+.hicon-freezing-rain:before {
+    content: "\F2B7"
+}
+
+.hicon-frequent-traveler:before {
+    content: "\F2B8"
+}
+
+.hicon-fresh-newly-built-property:before {
+    content: "\F2B9"
+}
+
+.hicon-frigid-ice-crystals:before {
+    content: "\F2BA"
+}
+
+.hicon-g-giftcard:before {
+    content: "\F2BB"
+}
+
+.hicon-garden:before {
+    content: "\F2BC"
+}
+
+.hicon-gca-wreath-left:before {
+    content: "\F2BD"
+}
+
+.hicon-gca-wreath-right:before {
+    content: "\F2BE"
+}
+
+.hicon-get-extra-space:before {
+    content: "\F2BF"
+}
+
+.hicon-gift-card:before {
+    content: "\F2C0"
+}
+
+.hicon-gift-souvenir-shop:before {
+    content: "\F2C1"
+}
+
+.hicon-giftcard-instant:before {
+    content: "\F2C2"
+}
+
+.hicon-giftcard:before {
+    content: "\F2C3"
+}
+
+.hicon-give-us-feedback:before {
+    content: "\F2C4"
+}
+
+.hicon-global:before {
+    content: "\F2C5"
+}
+
+.hicon-golf-course-on-site:before {
+    content: "\F2C6"
+}
+
+.hicon-golf-course-within-3k:before {
+    content: "\F2C7"
+}
+
+.hicon-grocery-deliveries:before {
+    content: "\F2C8"
+}
+
+.hicon-ground-floor:before {
+    content: "\F2C9"
+}
+
+.hicon-group-travelers-hover:before {
+    content: "\F2CA"
+}
+
+.hicon-group-travelers:before {
+    content: "\F2CB"
+}
+
+.hicon-guest-house:before {
+    content: "\F2CC"
+}
+
+.hicon-gym:before {
+    content: "\F2CD"
+}
+
+.hicon-hail:before {
+    content: "\F2CE"
+}
+
+.hicon-hair-dryer:before {
+    content: "\F2CF"
+}
+
+.hicon-halal-restaurant-b:before {
+    content: "\F2D0"
+}
+
+.hicon-halal-restaurant:before {
+    content: "\F2D1"
+}
+
+.hicon-half-full-board:before {
+    content: "\F2D2"
+}
+
+.hicon-hamburger-dote:before {
+    content: "\F2D3"
+}
+
+.hicon-hamburger-menu:before {
+    content: "\F2D4"
+}
+
+.hicon-hangers:before {
+    content: "\F2D5"
+}
+
+.hicon-haze-windy:before {
+    content: "\F2D6"
+}
+
+.hicon-heart-of-the-city:before {
+    content: "\F2D7"
+}
+
+.hicon-heating:before {
+    content: "\F2D8"
+}
+
+.hicon-heavy-rain:before {
+    content: "\F2D9"
+}
+
+.hicon-heavy-snow:before {
+    content: "\F2DA"
+}
+
+.hicon-high-floor:before {
+    content: "\F2DB"
+}
+
+.hicon-high-to-low:before {
+    content: "\F2DC"
+}
+
+.hicon-hiking-trails:before {
+    content: "\F2DD"
+}
+
+.hicon-holiday-house:before {
+    content: "\F2DE"
+}
+
+.hicon-homestay:before {
+    content: "\F2DF"
+}
+
+.hicon-horse-riding:before {
+    content: "\F2E0"
+}
+
+.hicon-hospitals-clinics:before {
+    content: "\F2E1"
+}
+
+.hicon-hot-spring-access:before {
+    content: "\F2E2"
+}
+
+.hicon-hot-spring-bath:before {
+    content: "\F2E3"
+}
+
+.hicon-hot-tub:before {
+    content: "\F2E4"
+}
+
+.hicon-hot:before {
+    content: "\F2E5"
+}
+
+.hicon-hotel-benefit:before {
+    content: "\F2E6"
+}
+
+.hicon-hotel-book-last:before {
+    content: "\F2E7"
+}
+
+.hicon-hotel-data:before {
+    content: "\F2E8"
+}
+
+.hicon-hotel-great-location:before {
+    content: "\F2E9"
+}
+
+.hicon-hotel-people-looking:before {
+    content: "\F2EA"
+}
+
+.hicon-hotel-star-half:before {
+    content: "\F2EB"
+}
+
+.hicon-hotel-star:before {
+    content: "\F2EC"
+}
+
+.hicon-hotel-wifi:before {
+    content: "\F2ED"
+}
+
+.hicon-hotel:before {
+    content: "\F2EE"
+}
+
+.hicon-hover-details:before {
+    content: "\F2EF"
+}
+
+.hicon-human-large:before {
+    content: "\F2F0"
+}
+
+.hicon-humidifier:before {
+    content: "\F2F1"
+}
+
+.hicon-hurricane:before {
+    content: "\F2F2"
+}
+
+.hicon-ic-filter-bestseller:before {
+    content: "\F2F3"
+}
+
+.hicon-icon-arrow-down:before {
+    content: "\F2F4"
+}
+
+.hicon-icon-arrow-up:before {
+    content: "\F2F5"
+}
+
+.hicon-iftar:before {
+    content: "\F2F6"
+}
+
+.hicon-import-calendar:before {
+    content: "\F2F7"
+}
+
+.hicon-in-room-safe:before {
+    content: "\F2F8"
+}
+
+.hicon-in-room-tablet:before {
+    content: "\F2F9"
+}
+
+.hicon-in-room-video-games:before {
+    content: "\F2FA"
+}
+
+.hicon-indoor-poor:before {
+    content: "\F2FB"
+}
+
+.hicon-infant:before {
+    content: "\F2FC"
+}
+
+.hicon-infirmary:before {
+    content: "\F2FD"
+}
+
+.hicon-info-alert:before {
+    content: "\F2FE"
+}
+
+.hicon-info-with-circle:before {
+    content: "\F2FF"
+}
+
+.hicon-information:before {
+    content: "\F300"
+}
+
+.hicon-inhouse-movies:before {
+    content: "\F301"
+}
+
+.hicon-insider-deal-desktop:before {
+    content: "\F302"
+}
+
+.hicon-installment-graph:before {
+    content: "\F303"
+}
+
+.hicon-installment-line:before {
+    content: "\F304"
+}
+
+.hicon-installment-solid:before {
+    content: "\F305"
+}
+
+.hicon-instant-booking:before {
+    content: "\F306"
+}
+
+.hicon-instant:before {
+    content: "\F307"
+}
+
+.hicon-insure-your-hotel:before {
+    content: "\F308"
+}
+
+.hicon-interconnecting-room-available:before {
+    content: "\F309"
+}
+
+.hicon-invalided-file:before {
+    content: "\F30A"
+}
+
+.hicon-ipod-docking-station:before {
+    content: "\F30B"
+}
+
+.hicon-islamic-prayer-room:before {
+    content: "\F30C"
+}
+
+.hicon-isolated-thunderstorms:before {
+    content: "\F30D"
+}
+
+.hicon-jacuzzi-bathtub:before {
+    content: "\F30E"
+}
+
+.hicon-japanese-futon:before {
+    content: "\F30F"
+}
+
+.hicon-jcb:before {
+    content: "\F310"
+}
+
+.hicon-karaoke:before {
+    content: "\F311"
+}
+
+.hicon-keyless-access:before {
+    content: "\F312"
+}
+
+.hicon-kids-club:before {
+    content: "\F313"
+}
+
+.hicon-king-bed:before {
+    content: "\F314"
+}
+
+.hicon-kitchen-new:before {
+    content: "\F315"
+}
+
+.hicon-kitchen:before {
+    content: "\F316"
+}
+
+.hicon-kitchenette-bold:before {
+    content: "\F317"
+}
+
+.hicon-kitchenette:before {
+    content: "\F318"
+}
+
+.hicon-kitchenware:before {
+    content: "\F319"
+}
+
+.hicon-kosher-restaurant:before {
+    content: "\F31A"
+}
+
+.hicon-lake-view:before {
+    content: "\F31B"
+}
+
+.hicon-landmark:before {
+    content: "\F31C"
+}
+
+.hicon-laptop-friendly-workspace:before {
+    content: "\F31D"
+}
+
+.hicon-laptop-safe-box:before {
+    content: "\F31E"
+}
+
+.hicon-last-minute-deal-2:before {
+    content: "\F31F"
+}
+
+.hicon-last-minute-deal-solid:before {
+    content: "\F320"
+}
+
+.hicon-last-minute-deal:before {
+    content: "\F321"
+}
+
+.hicon-last-viewed:before {
+    content: "\F322"
+}
+
+.hicon-late-check-out:before {
+    content: "\F323"
+}
+
+.hicon-laundromat:before {
+    content: "\F324"
+}
+
+.hicon-laundry-service:before {
+    content: "\F325"
+}
+
+.hicon-length-of-stay:before {
+    content: "\F326"
+}
+
+.hicon-library:before {
+    content: "\F327"
+}
+
+.hicon-light-rain:before {
+    content: "\F328"
+}
+
+.hicon-light-snow:before {
+    content: "\F329"
+}
+
+.hicon-lightbox:before {
+    content: "\F32A"
+}
+
+.hicon-limit-deal:before {
+    content: "\F32B"
+}
+
+.hicon-limited-access-floor:before {
+    content: "\F32C"
+}
+
+.hicon-line-close:before {
+    content: "\F32D"
+}
+
+.hicon-line-empty-circle:before {
+    content: "\F32E"
+}
+
+.hicon-linens:before {
+    content: "\F32F"
+}
+
+.hicon-link-out-bold:before {
+    content: "\F330"
+}
+
+.hicon-link-out:before {
+    content: "\F331"
+}
+
+.hicon-lobby:before {
+    content: "\F332"
+}
+
+.hicon-lockers:before {
+    content: "\F333"
+}
+
+.hicon-logo-ah:before {
+    content: "\F334"
+}
+
+.hicon-logo-wechat:before {
+    content: "\F335"
+}
+
+.hicon-long-stay-deal:before {
+    content: "\F336"
+}
+
+.hicon-long-stays-promotion:before {
+    content: "\F337"
+}
+
+.hicon-long-stays:before {
+    content: "\F338"
+}
+
+.hicon-low-floor:before {
+    content: "\F339"
+}
+
+.hicon-low-to-high:before {
+    content: "\F33A"
+}
+
+.hicon-luggage-storage:before {
+    content: "\F33B"
+}
+
+.hicon-luggage:before {
+    content: "\F33C"
+}
+
+.hicon-lunch:before {
+    content: "\F33D"
+}
+
+.hicon-luxury:before {
+    content: "\F33E"
+}
+
+.hicon-m-and-s:before {
+    content: "\F33F"
+}
+
+.hicon-male-capsule-b:before {
+    content: "\F340"
+}
+
+.hicon-male-capsule:before {
+    content: "\F341"
+}
+
+.hicon-mandarin:before {
+    content: "\F342"
+}
+
+.hicon-map-airport:before {
+    content: "\F343"
+}
+
+.hicon-map-attraction:before {
+    content: "\F344"
+}
+
+.hicon-map-city:before {
+    content: "\F345"
+}
+
+.hicon-map-night:before {
+    content: "\F346"
+}
+
+.hicon-map-pin-fat:before {
+    content: "\F347"
+}
+
+.hicon-map-room:before {
+    content: "\F348"
+}
+
+.hicon-map-transportation:before {
+    content: "\F349"
+}
+
+.hicon-map-view:before {
+    content: "\F34A"
+}
+
+.hicon-map-entry:before {
+    content: "\F34B"
+}
+
+.hicon-massage:before {
+    content: "\F34C"
+}
+
+.hicon-mastercard:before {
+    content: "\F34D"
+}
+
+.hicon-max-occupancy-plus:before {
+    content: "\F34E"
+}
+
+.hicon-max-occupancy:before {
+    content: "\F34F"
+}
+
+.hicon-meeting-banquet:before {
+    content: "\F350"
+}
+
+.hicon-meeting-facilities:before {
+    content: "\F351"
+}
+
+.hicon-menu-about:before {
+    content: "\F352"
+}
+
+.hicon-menu-account-hover:before {
+    content: "\F353"
+}
+
+.hicon-menu-account:before {
+    content: "\F354"
+}
+
+.hicon-menu-bookings:before {
+    content: "\F355"
+}
+
+.hicon-menu-bug:before {
+    content: "\F356"
+}
+
+.hicon-menu-calendar-hover:before {
+    content: "\F357"
+}
+
+.hicon-menu-calendar:before {
+    content: "\F358"
+}
+
+.hicon-menu-contact-us:before {
+    content: "\F359"
+}
+
+.hicon-menu-favorite:before {
+    content: "\F35A"
+}
+
+.hicon-menu-inbox-hover:before {
+    content: "\F35B"
+}
+
+.hicon-menu-inbox:before {
+    content: "\F35C"
+}
+
+.hicon-menu-listings-hover:before {
+    content: "\F35D"
+}
+
+.hicon-menu-listings:before {
+    content: "\F35E"
+}
+
+.hicon-menu-overviews-hover:before {
+    content: "\F35F"
+}
+
+.hicon-menu-overviews:before {
+    content: "\F360"
+}
+
+.hicon-menu-price-display:before {
+    content: "\F361"
+}
+
+.hicon-menu-reservations-hover:before {
+    content: "\F362"
+}
+
+.hicon-menu-reservations:before {
+    content: "\F363"
+}
+
+.hicon-menu-reviews:before {
+    content: "\F364"
+}
+
+.hicon-menu-today-deals:before {
+    content: "\F365"
+}
+
+.hicon-message-left:before {
+    content: "\F366"
+}
+
+.hicon-message-right:before {
+    content: "\F367"
+}
+
+.hicon-metro-subway-station:before {
+    content: "\F368"
+}
+
+.hicon-microwave:before {
+    content: "\F369"
+}
+
+.hicon-mini-bar:before {
+    content: "\F36A"
+}
+
+.hicon-minibar-b:before {
+    content: "\F36B"
+}
+
+.hicon-minus-thin:before {
+    content: "\F36C"
+}
+
+.hicon-minus-with-circle:before {
+    content: "\F36D"
+}
+
+.hicon-mirror:before {
+    content: "\F36E"
+}
+
+.hicon-mist:before {
+    content: "\F36F"
+}
+
+.hicon-mixed-rain-hail:before {
+    content: "\F370"
+}
+
+.hicon-mmb-account:before {
+    content: "\F371"
+}
+
+.hicon-mmb-booking:before {
+    content: "\F372"
+}
+
+.hicon-mmb-g-giftcard:before {
+    content: "\F373"
+}
+
+.hicon-mmb-gift-cards:before {
+    content: "\F374"
+}
+
+.hicon-mmb-inbox:before {
+    content: "\F375"
+}
+
+.hicon-mmb-my-booking:before {
+    content: "\F376"
+}
+
+.hicon-mmb-my-rewards:before {
+    content: "\F377"
+}
+
+.hicon-mmb-payment-methods:before {
+    content: "\F378"
+}
+
+.hicon-mmb-pointsmax:before {
+    content: "\F379"
+}
+
+.hicon-mmb-refer-a-friend:before {
+    content: "\F37A"
+}
+
+.hicon-mmb-reviews-b:before {
+    content: "\F37B"
+}
+
+.hicon-mmb-reviews:before {
+    content: "\F37C"
+}
+
+.hicon-mmb-vip:before {
+    content: "\F37D"
+}
+
+.hicon-more-bedrooms:before {
+    content: "\F37E"
+}
+
+.hicon-more-images:before {
+    content: "\F37F"
+}
+
+.hicon-more-money:before {
+    content: "\F380"
+}
+
+.hicon-mosquitonet:before {
+    content: "\F381"
+}
+
+.hicon-most-popular-destinations:before {
+    content: "\F382"
+}
+
+.hicon-mostly-cloudy-day:before {
+    content: "\F383"
+}
+
+.hicon-mostly-cloudy-night:before {
+    content: "\F384"
+}
+
+.hicon-motorbike:before {
+    content: "\F385"
+}
+
+.hicon-mountain-view:before {
+    content: "\F386"
+}
+
+.hicon-mse-icon:before {
+    content: "\F387"
+}
+
+.hicon-mse-price-icon:before {
+    content: "\F388"
+}
+
+.hicon-museum-arts:before {
+    content: "\F389"
+}
+
+.hicon-nav-back:before {
+    content: "\F38A"
+}
+
+.hicon-nav-down-bold:before {
+    content: "\F38B"
+}
+
+.hicon-nav-down-thin:before {
+    content: "\F38C"
+}
+
+.hicon-nav-left-bold:before {
+    content: "\F38D"
+}
+
+.hicon-nav-left-thin:before {
+    content: "\F38E"
+}
+
+.hicon-nav-right-bold:before {
+    content: "\F38F"
+}
+
+.hicon-nav-right-thin:before {
+    content: "\F390"
+}
+
+.hicon-nav-up-bold:before {
+    content: "\F391"
+}
+
+.hicon-nav-up-thin:before {
+    content: "\F392"
+}
+
+.hicon-negative:before {
+    content: "\F393"
+}
+
+.hicon-neighborhood-line:before {
+    content: "\F394"
+}
+
+.hicon-neighborhood:before {
+    content: "\F395"
+}
+
+.hicon-new-property:before {
+    content: "\F396"
+}
+
+.hicon-nha-icon:before {
+    content: "\F397"
+}
+
+.hicon-nha-logo:before {
+    content: "\F398"
+}
+
+.hicon-nightclub:before {
+    content: "\F399"
+}
+
+.hicon-nightlife:before {
+    content: "\F39A"
+}
+
+.hicon-no-breakfast-a:before {
+    content: "\F39B"
+}
+
+.hicon-no-breakfast-b:before {
+    content: "\F39C"
+}
+
+.hicon-no-cc-fee:before {
+    content: "\F39D"
+}
+
+.hicon-no-cc:before {
+    content: "\F39E"
+}
+
+.hicon-no-children-allowed:before {
+    content: "\F39F"
+}
+
+.hicon-non-smoking-room:before {
+    content: "\F3A0"
+}
+
+.hicon-non-smoking:before {
+    content: "\F3A1"
+}
+
+.hicon-not-available:before {
+    content: "\F3A2"
+}
+
+.hicon-noti-balloon-answer:before {
+    content: "\F3A3"
+}
+
+.hicon-noti-balloon-question:before {
+    content: "\F3A4"
+}
+
+.hicon-noti-check-mark-rounded-inner:before {
+    content: "\F3A5"
+}
+
+.hicon-noti-check-mark-sharp:before {
+    content: "\F3A6"
+}
+
+.hicon-notice-info:before {
+    content: "\F3A7"
+}
+
+.hicon-number-of-floors:before {
+    content: "\F3A8"
+}
+
+.hicon-number-of-rooms:before {
+    content: "\F3A9"
+}
+
+.hicon-number-reviews:before {
+    content: "\F3AA"
+}
+
+.hicon-number1:before {
+    content: "\F3AB"
+}
+
+.hicon-occupancy:before {
+    content: "\F3AC"
+}
+
+.hicon-ocean-view:before {
+    content: "\F3AD"
+}
+
+.hicon-one-click:before {
+    content: "\F3AE"
+}
+
+.hicon-open-a-new-tab:before {
+    content: "\F3AF"
+}
+
+.hicon-outdoor-pool:before {
+    content: "\F3B0"
+}
+
+.hicon-paperclip:before {
+    content: "\F3B1"
+}
+
+.hicon-partly-cloudy-day:before {
+    content: "\F3B2"
+}
+
+.hicon-partly-cloudy-night:before {
+    content: "\F3B3"
+}
+
+.hicon-password:before {
+    content: "\F3B4"
+}
+
+.hicon-pay-at-hotel-in-cash:before {
+    content: "\F3B5"
+}
+
+.hicon-pay-at-the-place:before {
+    content: "\F3B6"
+}
+
+.hicon-pay-on-checkin:before {
+    content: "\F3B7"
+}
+
+.hicon-payment-option-no-credit-card:before {
+    content: "\F3B8"
+}
+
+.hicon-payments-active:before {
+    content: "\F3B9"
+}
+
+.hicon-payments:before {
+    content: "\F3BA"
+}
+
+.hicon-pending-bold:before {
+    content: "\F3BB"
+}
+
+.hicon-pending:before {
+    content: "\F3BC"
+}
+
+.hicon-personal-cheque:before {
+    content: "\F3BD"
+}
+
+.hicon-personal-details-filled:before {
+    content: "\F3BE"
+}
+
+.hicon-personal-details:before {
+    content: "\F3BF"
+}
+
+.hicon-pet-allowed-room:before {
+    content: "\F3C0"
+}
+
+.hicon-pets-allowed:before {
+    content: "\F3C1"
+}
+
+.hicon-photo-uploader:before {
+    content: "\F3C2"
+}
+
+.hicon-photocopying:before {
+    content: "\F3C3"
+}
+
+.hicon-pin-airport:before {
+    content: "\F3C4"
+}
+
+.hicon-pin-beach:before {
+    content: "\F3C5"
+}
+
+.hicon-pin-business:before {
+    content: "\F3C6"
+}
+
+.hicon-pin-casino:before {
+    content: "\F3C7"
+}
+
+.hicon-pin-culture:before {
+    content: "\F3C8"
+}
+
+.hicon-pin-excellent:before {
+    content: "\F3C9"
+}
+
+.hicon-pin-family-fun:before {
+    content: "\F3CA"
+}
+
+.hicon-pin-heart-of-city-building:before {
+    content: "\F3CB"
+}
+
+.hicon-pin-heart-of-city-mind:before {
+    content: "\F3CC"
+}
+
+.hicon-pin-heart-of-city:before {
+    content: "\F3CD"
+}
+
+.hicon-pin-heart-of-the-city:before {
+    content: "\F3CE"
+}
+
+.hicon-pin-mountain-view:before {
+    content: "\F3CF"
+}
+
+.hicon-pin-museum-arts:before {
+    content: "\F3D0"
+}
+
+.hicon-pin-nightlife:before {
+    content: "\F3D1"
+}
+
+.hicon-pin-poi:before {
+    content: "\F3D2"
+}
+
+.hicon-pin-religious:before {
+    content: "\F3D3"
+}
+
+.hicon-pin-restaurant:before {
+    content: "\F3D4"
+}
+
+.hicon-pin-romance:before {
+    content: "\F3D5"
+}
+
+.hicon-pin-shopping-markets:before {
+    content: "\F3D6"
+}
+
+.hicon-pin-sightseeing:before {
+    content: "\F3D7"
+}
+
+.hicon-pin-skiing:before {
+    content: "\F3D8"
+}
+
+.hicon-pin-spas:before {
+    content: "\F3D9"
+}
+
+.hicon-pin-tennis-courts:before {
+    content: "\F3DA"
+}
+
+.hicon-pin-transportation-hub:before {
+    content: "\F3DB"
+}
+
+.hicon-pin:before {
+    content: "\F3DC"
+}
+
+.hicon-pin-star:before {
+    content: "\F3DD"
+}
+
+.hicon-plus-thin:before {
+    content: "\F3DE"
+}
+
+.hicon-plus-with-circle:before {
+    content: "\F3DF"
+}
+
+.hicon-poi-text-search:before {
+    content: "\F3E0"
+}
+
+.hicon-poi:before {
+    content: "\F3E1"
+}
+
+.hicon-pointsmax-line-logo:before {
+    content: "\F3E2"
+}
+
+.hicon-pointsmax-logo:before {
+    content: "\F3E3"
+}
+
+.hicon-pointsmax-placeholder:before {
+    content: "\F3E4"
+}
+
+.hicon-pointsmax:before {
+    content: "\F3E5"
+}
+
+.hicon-police:before {
+    content: "\F3E6"
+}
+
+.hicon-pool-kids:before {
+    content: "\F3E7"
+}
+
+.hicon-pool:before {
+    content: "\F3E8"
+}
+
+.hicon-poolside-bar:before {
+    content: "\F3E9"
+}
+
+.hicon-popular-guests:before {
+    content: "\F3EA"
+}
+
+.hicon-popular-icon:before {
+    content: "\F3EB"
+}
+
+.hicon-portable-wifi-rental:before {
+    content: "\F3EC"
+}
+
+.hicon-positive:before {
+    content: "\F3ED"
+}
+
+.hicon-postal-service:before {
+    content: "\F3EE"
+}
+
+.hicon-prepayment:before {
+    content: "\F3EF"
+}
+
+.hicon-price-display:before {
+    content: "\F3F0"
+}
+
+.hicon-price-drop:before {
+    content: "\F3F1"
+}
+
+.hicon-price-messaging:before {
+    content: "\F3F2"
+}
+
+.hicon-price-seen-user:before {
+    content: "\F3F3"
+}
+
+.hicon-printer:before {
+    content: "\F3F4"
+}
+
+.hicon-privacy-policy:before {
+    content: "\F3F5"
+}
+
+.hicon-private-bath:before {
+    content: "\F3F6"
+}
+
+.hicon-private-beach:before {
+    content: "\F3F7"
+}
+
+.hicon-private-entrance:before {
+    content: "\F3F8"
+}
+
+.hicon-private-pool:before {
+    content: "\F3F9"
+}
+
+.hicon-profiles:before {
+    content: "\F3FA"
+}
+
+.hicon-promo-code:before {
+    content: "\F3FB"
+}
+
+.hicon-promo-score:before {
+    content: "\F3FC"
+}
+
+.hicon-promoeligible-star:before {
+    content: "\F3FD"
+}
+
+.hicon-promotion-right:before {
+    content: "\F3FE"
+}
+
+.hicon-properties-without-price:before {
+    content: "\F3FF"
+}
+
+.hicon-properties:before {
+    content: "\F400"
+}
+
+.hicon-property-name:before {
+    content: "\F401"
+}
+
+.hicon-property-owner:before {
+    content: "\F402"
+}
+
+.hicon-property-tooltip:before {
+    content: "\F403"
+}
+
+.hicon-property-upgrades-line:before {
+    content: "\F404"
+}
+
+.hicon-queen-bed-bold:before {
+    content: "\F405"
+}
+
+.hicon-queen-bed:before {
+    content: "\F406"
+}
+
+.hicon-question-mark:before {
+    content: "\F407"
+}
+
+.hicon-questions:before {
+    content: "\F408"
+}
+
+.hicon-quick-filter:before {
+    content: "\F409"
+}
+
+.hicon-rain-sleet:before {
+    content: "\F40A"
+}
+
+.hicon-rain-to-snow-showers:before {
+    content: "\F40B"
+}
+
+.hicon-rain:before {
+    content: "\F40C"
+}
+
+.hicon-ratings:before {
+    content: "\F40D"
+}
+
+.hicon-recently:before {
+    content: "\F40E"
+}
+
+.hicon-reception:before {
+    content: "\F40F"
+}
+
+.hicon-recommendations:before {
+    content: "\F410"
+}
+
+.hicon-refresh-bold:before {
+    content: "\F411"
+}
+
+.hicon-refresh:before {
+    content: "\F412"
+}
+
+.hicon-refrigerator:before {
+    content: "\F413"
+}
+
+.hicon-regular-in-room-emergency-alarm:before {
+    content: "\F414"
+}
+
+.hicon-regular-in-room-toilet-and-bathtub-with-handrails:before {
+    content: "\F415"
+}
+
+.hicon-regular-internet-access-connecting-port-only:before {
+    content: "\F416"
+}
+
+.hicon-regular-accept-guide-dog-in-guest-room:before {
+    content: "\F417"
+}
+
+.hicon-regular-accept-guide-dog:before {
+    content: "\F418"
+}
+
+.hicon-regular-aesthetic-salon:before {
+    content: "\F419"
+}
+
+.hicon-regular-airline-counter:before {
+    content: "\F41A"
+}
+
+.hicon-regular-amusement-arcade:before {
+    content: "\F41B"
+}
+
+.hicon-regular-amusement-park:before {
+    content: "\F41C"
+}
+
+.hicon-regular-ana-crowne-plaza:before {
+    content: "\F41D"
+}
+
+.hicon-regular-annex:before {
+    content: "\F41E"
+}
+
+.hicon-regular-archery:before {
+    content: "\F41F"
+}
+
+.hicon-regular-aromatherapy:before {
+    content: "\F420"
+}
+
+.hicon-regular-automatic-mahjong:before {
+    content: "\F421"
+}
+
+.hicon-regular-baby-diaper:before {
+    content: "\F422"
+}
+
+.hicon-regular-baby-food-prepared:before {
+    content: "\F423"
+}
+
+.hicon-regular-baby-kids-room:before {
+    content: "\F424"
+}
+
+.hicon-regular-baby:before {
+    content: "\F425"
+}
+
+.hicon-regular-barber-shop:before {
+    content: "\F426"
+}
+
+.hicon-regular-baseball:before {
+    content: "\F427"
+}
+
+.hicon-regular-bath-materials:before {
+    content: "\F428"
+}
+
+.hicon-regular-bath-temperature:before {
+    content: "\F429"
+}
+
+.hicon-regular-bath-water:before {
+    content: "\F42A"
+}
+
+.hicon-regular-beauty-salon:before {
+    content: "\F42B"
+}
+
+.hicon-regular-bicycle-rental-for-kids:before {
+    content: "\F42C"
+}
+
+.hicon-regular-big-dog-allowed:before {
+    content: "\F42D"
+}
+
+.hicon-regular-botanical-observation:before {
+    content: "\F42E"
+}
+
+.hicon-regular-braille-support-in-rooms-and-public-spaces:before {
+    content: "\F42F"
+}
+
+.hicon-regular-braille-support:before {
+    content: "\F430"
+}
+
+.hicon-regular-capacity:before {
+    content: "\F431"
+}
+
+.hicon-regular-change-flight:before {
+    content: "\F432"
+}
+
+.hicon-regular-chargeable-internet-access:before {
+    content: "\F433"
+}
+
+.hicon-regular-child-meal-a:before {
+    content: "\F434"
+}
+
+.hicon-regular-child-meal-b:before {
+    content: "\F435"
+}
+
+.hicon-regular-children-yukata:before {
+    content: "\F436"
+}
+
+.hicon-regular-chinese-cuisine:before {
+    content: "\F437"
+}
+
+.hicon-regular-clam-digging:before {
+    content: "\F438"
+}
+
+.hicon-regular-complimentary-shuttle-service-reservation-required:before {
+    content: "\F439"
+}
+
+.hicon-regular-complimentary-shuttle-service:before {
+    content: "\F43A"
+}
+
+.hicon-regular-computer:before {
+    content: "\F43B"
+}
+
+.hicon-regular-cormorant-fishing:before {
+    content: "\F43C"
+}
+
+.hicon-regular-cosmetics:before {
+    content: "\F43D"
+}
+
+.hicon-regular-countryside:before {
+    content: "\F43E"
+}
+
+.hicon-regular-craft-workshop:before {
+    content: "\F43F"
+}
+
+.hicon-regular-cycling:before {
+    content: "\F440"
+}
+
+.hicon-regular-dance-hall:before {
+    content: "\F441"
+}
+
+.hicon-regular-electric-hot-water-pot:before {
+    content: "\F442"
+}
+
+.hicon-regular-elevator-for-wheelchair:before {
+    content: "\F443"
+}
+
+.hicon-regular-emergency-alarm-for-hearing-impaired:before {
+    content: "\F444"
+}
+
+.hicon-regular-emergency-alarm:before {
+    content: "\F445"
+}
+
+.hicon-regular-english:before {
+    content: "\F446"
+}
+
+.hicon-regular-exposition-hall:before {
+    content: "\F447"
+}
+
+.hicon-regular-family-bath:before {
+    content: "\F448"
+}
+
+.hicon-regular-family-with-teens-new:before {
+    content: "\F449"
+}
+
+.hicon-regular-farm-fish-tourism:before {
+    content: "\F44A"
+}
+
+.hicon-regular-female-only:before {
+    content: "\F44B"
+}
+
+.hicon-regular-first-aid:before {
+    content: "\F44C"
+}
+
+.hicon-regular-fishing-gear-rental:before {
+    content: "\F44D"
+}
+
+.hicon-regular-gallery:before {
+    content: "\F44E"
+}
+
+.hicon-regular-gateball-field:before {
+    content: "\F44F"
+}
+
+.hicon-regular-gateball:before {
+    content: "\F450"
+}
+
+.hicon-regular-gender:before {
+    content: "\F451"
+}
+
+.hicon-regular-go-game:before {
+    content: "\F452"
+}
+
+.hicon-regular-gravel-path-at-entrance:before {
+    content: "\F453"
+}
+
+.hicon-regular-gymnasium:before {
+    content: "\F454"
+}
+
+.hicon-regular-handrails-in-stairs-and-hallways:before {
+    content: "\F455"
+}
+
+.hicon-regular-hang-gliding:before {
+    content: "\F456"
+}
+
+.hicon-regular-hiking:before {
+    content: "\F457"
+}
+
+.hicon-regular-hot-spring-access:before {
+    content: "\F458"
+}
+
+.hicon-regular-hot-spring-bath:before {
+    content: "\F459"
+}
+
+.hicon-regular-hotel-chain:before {
+    content: "\F45A"
+}
+
+.hicon-regular-hotel-inside-accessible-by-wheelchair:before {
+    content: "\F45B"
+}
+
+.hicon-regular-hunting:before {
+    content: "\F45C"
+}
+
+.hicon-regular-in-room-emergency-alarm-for-hearing-impaired:before {
+    content: "\F45D"
+}
+
+.hicon-regular-infant:before {
+    content: "\F45E"
+}
+
+.hicon-regular-insect-collection:before {
+    content: "\F45F"
+}
+
+.hicon-regular-internet-access-from-all-rooms:before {
+    content: "\F460"
+}
+
+.hicon-regular-internet-access-limited-number-of-rooms:before {
+    content: "\F461"
+}
+
+.hicon-regular-itinerary:before {
+    content: "\F462"
+}
+
+.hicon-regular-japanese-cuisine:before {
+    content: "\F463"
+}
+
+.hicon-regular-japanese-style-tea-room:before {
+    content: "\F464"
+}
+
+.hicon-regular-japanese-style-toilet-squat-type:before {
+    content: "\F465"
+}
+
+.hicon-regular-large-indoor-bath:before {
+    content: "\F466"
+}
+
+.hicon-regular-light-meal-corner:before {
+    content: "\F467"
+}
+
+.hicon-regular-local-event:before {
+    content: "\F468"
+}
+
+.hicon-regular-mahjong:before {
+    content: "\F469"
+}
+
+.hicon-regular-male-only:before {
+    content: "\F46A"
+}
+
+.hicon-regular-martial-arts-gym:before {
+    content: "\F46B"
+}
+
+.hicon-regular-meal:before {
+    content: "\F46C"
+}
+
+.hicon-regular-meditation-hall:before {
+    content: "\F46D"
+}
+
+.hicon-regular-modify-search:before {
+    content: "\F46E"
+}
+
+.hicon-regular-mountain-view:before {
+    content: "\F46F"
+}
+
+.hicon-regular-multipurpose-sports-ground:before {
+    content: "\F470"
+}
+
+.hicon-regular-night:before {
+    content: "\F471"
+}
+
+.hicon-regular-noh-stage:before {
+    content: "\F472"
+}
+
+.hicon-regular-open-air-bath-mixed-gender:before {
+    content: "\F473"
+}
+
+.hicon-regular-open-air-bath-none-mixed:before {
+    content: "\F474"
+}
+
+.hicon-regular-open-air-workshop:before {
+    content: "\F475"
+}
+
+.hicon-regular-orienteering:before {
+    content: "\F476"
+}
+
+.hicon-regular-package-savings:before {
+    content: "\F477"
+}
+
+.hicon-regular-package:before {
+    content: "\F478"
+}
+
+.hicon-regular-pet-can-bath-in-room:before {
+    content: "\F479"
+}
+
+.hicon-regular-pet-can-eat-in-room:before {
+    content: "\F47A"
+}
+
+.hicon-regular-pharmacy:before {
+    content: "\F47B"
+}
+
+.hicon-regular-pool-seasonal-opening:before {
+    content: "\F47C"
+}
+
+.hicon-regular-pool-year-round:before {
+    content: "\F47D"
+}
+
+.hicon-regular-prayer-room:before {
+    content: "\F47E"
+}
+
+.hicon-regular-preselected-flight:before {
+    content: "\F47F"
+}
+
+.hicon-regular-price-fluctuates:before {
+    content: "\F480"
+}
+
+.hicon-regular-private-open-air-bath:before {
+    content: "\F481"
+}
+
+.hicon-regular-queen-bed:before {
+    content: "\F482"
+}
+
+.hicon-regular-razor:before {
+    content: "\F483"
+}
+
+.hicon-regular-reading-room:before {
+    content: "\F484"
+}
+
+.hicon-regular-rooms-with-kotatsu:before {
+    content: "\F485"
+}
+
+.hicon-regular-ropes-course:before {
+    content: "\F486"
+}
+
+.hicon-regular-rugby:before {
+    content: "\F487"
+}
+
+.hicon-regular-salt:before {
+    content: "\F488"
+}
+
+.hicon-regular-scuba-diving:before {
+    content: "\F489"
+}
+
+.hicon-regular-seat-with-leg-room:before {
+    content: "\F48A"
+}
+
+.hicon-regular-seine-fishing:before {
+    content: "\F48B"
+}
+
+.hicon-regular-shared-acccessible-toilet:before {
+    content: "\F48C"
+}
+
+.hicon-regular-shared-private-hot-bath-accessible-by-wheelchair:before {
+    content: "\F48D"
+}
+
+.hicon-regular-shared-western-style-toilets:before {
+    content: "\F48E"
+}
+
+.hicon-regular-shogi:before {
+    content: "\F48F"
+}
+
+.hicon-regular-show-more:before {
+    content: "\F490"
+}
+
+.hicon-regular-shower-booth:before {
+    content: "\F491"
+}
+
+.hicon-regular-sign-language-support-at-reception:before {
+    content: "\F492"
+}
+
+.hicon-regular-skating:before {
+    content: "\F493"
+}
+
+.hicon-regular-ski-clothes-rental:before {
+    content: "\F494"
+}
+
+.hicon-regular-ski-equipment-rentals-for-kids:before {
+    content: "\F495"
+}
+
+.hicon-regular-ski-rental:before {
+    content: "\F496"
+}
+
+.hicon-regular-ski-shoes-rental:before {
+    content: "\F497"
+}
+
+.hicon-regular-ski-slope:before {
+    content: "\F498"
+}
+
+.hicon-regular-skin-diving:before {
+    content: "\F499"
+}
+
+.hicon-regular-skylounge:before {
+    content: "\F49A"
+}
+
+.hicon-regular-sled-rental-for-kids:before {
+    content: "\F49B"
+}
+
+.hicon-regular-slippers-for-kids:before {
+    content: "\F49C"
+}
+
+.hicon-regular-slope-at-entrance:before {
+    content: "\F49D"
+}
+
+.hicon-regular-small-dog-allowed-indoor-dogs:before {
+    content: "\F49E"
+}
+
+.hicon-regular-snowboard-rental:before {
+    content: "\F49F"
+}
+
+.hicon-regular-soccer:before {
+    content: "\F4A0"
+}
+
+.hicon-regular-spa-sauna:before {
+    content: "\F4A1"
+}
+
+.hicon-regular-sudate:before {
+    content: "\F4A2"
+}
+
+.hicon-regular-tap-water:before {
+    content: "\F4A3"
+}
+
+.hicon-regular-tea-lounge:before {
+    content: "\F4A4"
+}
+
+.hicon-regular-tennis-racket-rental:before {
+    content: "\F4A5"
+}
+
+.hicon-regular-tennis:before {
+    content: "\F4A6"
+}
+
+.hicon-regular-theatre:before {
+    content: "\F4A7"
+}
+
+.hicon-regular-time-icon:before {
+    content: "\F4A8"
+}
+
+.hicon-regular-toilet-and-bathtub-with-handrails:before {
+    content: "\F4A9"
+}
+
+.hicon-regular-toilet-with-bidet:before {
+    content: "\F4AA"
+}
+
+.hicon-regular-toilet:before {
+    content: "\F4AB"
+}
+
+.hicon-regular-toothbrush:before {
+    content: "\F4AC"
+}
+
+.hicon-regular-travel-agency:before {
+    content: "\F4AD"
+}
+
+.hicon-regular-travel-protection:before {
+    content: "\F4AE"
+}
+
+.hicon-regular-travelers:before {
+    content: "\F4AF"
+}
+
+.hicon-regular-valley:before {
+    content: "\F4B0"
+}
+
+.hicon-regular-voleyball:before {
+    content: "\F4B1"
+}
+
+.hicon-regular-walkability:before {
+    content: "\F4B2"
+}
+
+.hicon-regular-wedding-venue:before {
+    content: "\F4B3"
+}
+
+.hicon-regular-western-cuisine:before {
+    content: "\F4B4"
+}
+
+.hicon-regular-wheel-chair-friendly-rooms:before {
+    content: "\F4B5"
+}
+
+.hicon-regular-wheelchair-accessible-rooms:before {
+    content: "\F4B6"
+}
+
+.hicon-regular-wild-bird-observation:before {
+    content: "\F4B7"
+}
+
+.hicon-regular-workshop:before {
+    content: "\F4B8"
+}
+
+.hicon-regular-yachting:before {
+    content: "\F4B9"
+}
+
+.hicon-regular-yukata-for-kids:before {
+    content: "\F4BA"
+}
+
+.hicon-regular-yukata-japanese-pajamas:before {
+    content: "\F4BB"
+}
+
+.hicon-religious:before {
+    content: "\F4BC"
+}
+
+.hicon-reporting-property:before {
+    content: "\F4BD"
+}
+
+.hicon-reporting:before {
+    content: "\F4BE"
+}
+
+.hicon-reservation-active:before {
+    content: "\F4BF"
+}
+
+.hicon-reservation:before {
+    content: "\F4C0"
+}
+
+.hicon-residence:before {
+    content: "\F4C1"
+}
+
+.hicon-resort-property-plan:before {
+    content: "\F4C2"
+}
+
+.hicon-restaurant-credit:before {
+    content: "\F4C3"
+}
+
+.hicon-restaurant:before {
+    content: "\F4C4"
+}
+
+.hicon-review-icon:before {
+    content: "\F4C5"
+}
+
+.hicon-review-line:before {
+    content: "\F4C6"
+}
+
+.hicon-review-your-stay:before {
+    content: "\F4C7"
+}
+
+.hicon-ribbon-card-no-circle:before {
+    content: "\F4C8"
+}
+
+.hicon-ribbon-card-solid:before {
+    content: "\F4C9"
+}
+
+.hicon-ribbon-card:before {
+    content: "\F4CA"
+}
+
+.hicon-right-tick:before {
+    content: "\F4CB"
+}
+
+.hicon-romance:before {
+    content: "\F4CC"
+}
+
+.hicon-room-plan:before {
+    content: "\F4CD"
+}
+
+.hicon-room-promotion-for-flashdeal:before {
+    content: "\F4CE"
+}
+
+.hicon-room-promotion-for-mobiledeal:before {
+    content: "\F4CF"
+}
+
+.hicon-room-promotion-for-otherdeal:before {
+    content: "\F4D0"
+}
+
+.hicon-room-promotion-for-smartdeal:before {
+    content: "\F4D1"
+}
+
+.hicon-room-promotion-super-savedeal:before {
+    content: "\F4D2"
+}
+
+.hicon-room-promotion:before {
+    content: "\F4D3"
+}
+
+.hicon-room-service:before {
+    content: "\F4D4"
+}
+
+.hicon-room-size:before {
+    content: "\F4D5"
+}
+
+.hicon-room-voltage:before {
+    content: "\F4D6"
+}
+
+.hicon-round-trip:before {
+    content: "\F4D7"
+}
+
+.hicon-safety-deposit-boxes:before {
+    content: "\F4D8"
+}
+
+.hicon-salon:before {
+    content: "\F4D9"
+}
+
+.hicon-satellite-cable-channels:before {
+    content: "\F4DA"
+}
+
+.hicon-satellite-television:before {
+    content: "\F4DB"
+}
+
+.hicon-sauna:before {
+    content: "\F4DC"
+}
+
+.hicon-save-to-pdf:before {
+    content: "\F4DD"
+}
+
+.hicon-scale:before {
+    content: "\F4DE"
+}
+
+.hicon-scattered-clouds:before {
+    content: "\F4DF"
+}
+
+.hicon-scattered-flurries:before {
+    content: "\F4E0"
+}
+
+.hicon-scattered-showers:before {
+    content: "\F4E1"
+}
+
+.hicon-scattered-snow-showe:before {
+    content: "\F4E2"
+}
+
+.hicon-scattered-thunderstorms:before {
+    content: "\F4E3"
+}
+
+.hicon-scissor:before {
+    content: "\F4E4"
+}
+
+.hicon-search-box:before {
+    content: "\F4E5"
+}
+
+.hicon-search-calendar:before {
+    content: "\F4E6"
+}
+
+.hicon-search-icon:before {
+    content: "\F4E7"
+}
+
+.hicon-seating-area:before {
+    content: "\F4E8"
+}
+
+.hicon-sec:before {
+    content: "\F4E9"
+}
+
+.hicon-secure-icon:before {
+    content: "\F4EA"
+}
+
+.hicon-secure-payment:before {
+    content: "\F4EB"
+}
+
+.hicon-selected-property:before {
+    content: "\F4EC"
+}
+
+.hicon-self-parking:before {
+    content: "\F4ED"
+}
+
+.hicon-semi-double-bed-b:before {
+    content: "\F4EE"
+}
+
+.hicon-semi-double-bed:before {
+    content: "\F4EF"
+}
+
+.hicon-send-arrow:before {
+    content: "\F4F0"
+}
+
+.hicon-separate-dining-area:before {
+    content: "\F4F1"
+}
+
+.hicon-separate-dinning-area-regular:before {
+    content: "\F4F2"
+}
+
+.hicon-separate-living-room:before {
+    content: "\F4F3"
+}
+
+.hicon-separate-shower-and-tub:before {
+    content: "\F4F4"
+}
+
+.hicon-seriously-multilingual:before {
+    content: "\F4F5"
+}
+
+.hicon-sewing-kit:before {
+    content: "\F4F6"
+}
+
+.hicon-shampoo:before {
+    content: "\F4F7"
+}
+
+.hicon-share:before {
+    content: "\F4F8"
+}
+
+.hicon-shared-bath:before {
+    content: "\F4F9"
+}
+
+.hicon-shared-kitchen:before {
+    content: "\F4FA"
+}
+
+.hicon-shoeshine-kit:before {
+    content: "\F4FB"
+}
+
+.hicon-shopping-markets:before {
+    content: "\F4FC"
+}
+
+.hicon-shopping:before {
+    content: "\F4FD"
+}
+
+.hicon-shops:before {
+    content: "\F4FE"
+}
+
+.hicon-show-more:before {
+    content: "\F4FF"
+}
+
+.hicon-shower-and-bathtub:before {
+    content: "\F500"
+}
+
+.hicon-shower-rain:before {
+    content: "\F501"
+}
+
+.hicon-shower:before {
+    content: "\F502"
+}
+
+.hicon-shrine:before {
+    content: "\F503"
+}
+
+.hicon-shuttle-service:before {
+    content: "\F504"
+}
+
+.hicon-sightseeing:before {
+    content: "\F505"
+}
+
+.hicon-single-bed-b:before {
+    content: "\F506"
+}
+
+.hicon-single-bed:before {
+    content: "\F507"
+}
+
+.hicon-size-of-rooms:before {
+    content: "\F508"
+}
+
+.hicon-ski-equipment-rentals:before {
+    content: "\F509"
+}
+
+.hicon-ski-lessons:before {
+    content: "\F50A"
+}
+
+.hicon-skiing:before {
+    content: "\F50B"
+}
+
+.hicon-sleet:before {
+    content: "\F50C"
+}
+
+.hicon-slippers:before {
+    content: "\F50D"
+}
+
+.hicon-smoke-detector:before {
+    content: "\F50E"
+}
+
+.hicon-smoke-windy:before {
+    content: "\F50F"
+}
+
+.hicon-smoking-allowed:before {
+    content: "\F510"
+}
+
+.hicon-smoking-area:before {
+    content: "\F511"
+}
+
+.hicon-smorking-yes-no:before {
+    content: "\F512"
+}
+
+.hicon-snorkeling:before {
+    content: "\F513"
+}
+
+.hicon-snow:before {
+    content: "\F514"
+}
+
+.hicon-sofa-bed:before {
+    content: "\F515"
+}
+
+.hicon-sofa:before {
+    content: "\F516"
+}
+
+.hicon-solarium:before {
+    content: "\F517"
+}
+
+.hicon-solid-24hour-front-desk:before {
+    content: "\F518"
+}
+
+.hicon-solid-24hour-room-service:before {
+    content: "\F519"
+}
+
+.hicon-solid-adults-b:before {
+    content: "\F51A"
+}
+
+.hicon-solid-adults-c:before {
+    content: "\F51B"
+}
+
+.hicon-solid-adults:before {
+    content: "\F51C"
+}
+
+.hicon-solid-air-conditioning:before {
+    content: "\F51D"
+}
+
+.hicon-solid-airport-transfer-service:before {
+    content: "\F51E"
+}
+
+.hicon-solid-airport-transfer:before {
+    content: "\F51F"
+}
+
+.hicon-solid-babies:before {
+    content: "\F520"
+}
+
+.hicon-solid-bar:before {
+    content: "\F521"
+}
+
+.hicon-solid-beach:before {
+    content: "\F522"
+}
+
+.hicon-solid-bedroom-door:before {
+    content: "\F523"
+}
+
+.hicon-solid-bedroom:before {
+    content: "\F524"
+}
+
+.hicon-solid-best-seller:before {
+    content: "\F525"
+}
+
+.hicon-solid-breakfast:before {
+    content: "\F526"
+}
+
+.hicon-solid-business-hover:before {
+    content: "\F527"
+}
+
+.hicon-solid-business-travel:before {
+    content: "\F528"
+}
+
+.hicon-solid-calendar:before {
+    content: "\F529"
+}
+
+.hicon-solid-car-park:before {
+    content: "\F52A"
+}
+
+.hicon-solid-chat:before {
+    content: "\F52B"
+}
+
+.hicon-solid-cleanliness:before {
+    content: "\F52C"
+}
+
+.hicon-solid-clock:before {
+    content: "\F52D"
+}
+
+.hicon-solid-compset-comparison:before {
+    content: "\F52E"
+}
+
+.hicon-solid-contact-details:before {
+    content: "\F52F"
+}
+
+.hicon-solid-couple-hover:before {
+    content: "\F530"
+}
+
+.hicon-solid-couple:before {
+    content: "\F531"
+}
+
+.hicon-solid-email-envelope:before {
+    content: "\F532"
+}
+
+.hicon-solid-everybody-fits:before {
+    content: "\F533"
+}
+
+.hicon-solid-families-b:before {
+    content: "\F534"
+}
+
+.hicon-solid-families:before {
+    content: "\F535"
+}
+
+.hicon-solid-family-friendly:before {
+    content: "\F536"
+}
+
+.hicon-solid-family-with-teens:before {
+    content: "\F537"
+}
+
+.hicon-solid-fitness:before {
+    content: "\F538"
+}
+
+.hicon-solid-flash:before {
+    content: "\F539"
+}
+
+.hicon-solid-flights-airplane:before {
+    content: "\F53A"
+}
+
+.hicon-solid-flights-destination:before {
+    content: "\F53B"
+}
+
+.hicon-solid-flights-hotel:before {
+    content: "\F53C"
+}
+
+.hicon-solid-flights-layover-exchange:before {
+    content: "\F53D"
+}
+
+.hicon-solid-flights-stop-layover:before {
+    content: "\F53E"
+}
+
+.hicon-solid-free-cancellation:before {
+    content: "\F53F"
+}
+
+.hicon-solid-free-extra-bed:before {
+    content: "\F540"
+}
+
+.hicon-solid-free-wi-fi:before {
+    content: "\F541"
+}
+
+.hicon-solid-garden:before {
+    content: "\F542"
+}
+
+.hicon-solid-generic-traveler-type:before {
+    content: "\F543"
+}
+
+.hicon-solid-green-credit-card:before {
+    content: "\F544"
+}
+
+.hicon-solid-groups-b:before {
+    content: "\F545"
+}
+
+.hicon-solid-groups:before {
+    content: "\F546"
+}
+
+.hicon-solid-hair-dryer:before {
+    content: "\F547"
+}
+
+.hicon-solid-insider-deal-flag:before {
+    content: "\F548"
+}
+
+.hicon-solid-jtb-loyalty:before {
+    content: "\F549"
+}
+
+.hicon-solid-ms-key-dark-grey:before {
+    content: "\F54A"
+}
+
+.hicon-solid-number-of-rooms:before {
+    content: "\F54B"
+}
+
+.hicon-solid-payment-options:before {
+    content: "\F54C"
+}
+
+.hicon-solid-price-match:before {
+    content: "\F54D"
+}
+
+.hicon-solid-private-entrance:before {
+    content: "\F54E"
+}
+
+.hicon-solid-property-upgrades:before {
+    content: "\F54F"
+}
+
+.hicon-solid-restaurant:before {
+    content: "\F550"
+}
+
+.hicon-solid-room-offers:before {
+    content: "\F551"
+}
+
+.hicon-solid-secure-icon:before {
+    content: "\F552"
+}
+
+.hicon-solid-spa:before {
+    content: "\F553"
+}
+
+.hicon-solid-special-requests-new:before {
+    content: "\F554"
+}
+
+.hicon-solid-special-requests:before {
+    content: "\F555"
+}
+
+.hicon-solid-swimming-pool:before {
+    content: "\F556"
+}
+
+.hicon-solid-tax-receipt:before {
+    content: "\F557"
+}
+
+.hicon-solid-telephone:before {
+    content: "\F558"
+}
+
+.hicon-solid-total-support:before {
+    content: "\F559"
+}
+
+.hicon-solid-transportation:before {
+    content: "\F55A"
+}
+
+.hicon-solid-unlock:before {
+    content: "\F55B"
+}
+
+.hicon-solo-hover:before {
+    content: "\F55C"
+}
+
+.hicon-solo:before {
+    content: "\F55D"
+}
+
+.hicon-sort-line:before {
+    content: "\F55E"
+}
+
+.hicon-soundproofing:before {
+    content: "\F55F"
+}
+
+.hicon-spa-credit:before {
+    content: "\F560"
+}
+
+.hicon-spa-sauna:before {
+    content: "\F561"
+}
+
+.hicon-spas:before {
+    content: "\F562"
+}
+
+.hicon-special-condition:before {
+    content: "\F563"
+}
+
+.hicon-spoken-1:before {
+    content: "\F564"
+}
+
+.hicon-spoken-10:before {
+    content: "\F565"
+}
+
+.hicon-spoken-11:before {
+    content: "\F566"
+}
+
+.hicon-spoken-12:before {
+    content: "\F567"
+}
+
+.hicon-spoken-13:before {
+    content: "\F568"
+}
+
+.hicon-spoken-2:before {
+    content: "\F569"
+}
+
+.hicon-spoken-20:before {
+    content: "\F56A"
+}
+
+.hicon-spoken-22:before {
+    content: "\F56B"
+}
+
+.hicon-spoken-23:before {
+    content: "\F56C"
+}
+
+.hicon-spoken-24:before {
+    content: "\F56D"
+}
+
+.hicon-spoken-25:before {
+    content: "\F56E"
+}
+
+.hicon-spoken-26:before {
+    content: "\F56F"
+}
+
+.hicon-spoken-27:before {
+    content: "\F570"
+}
+
+.hicon-spoken-28:before {
+    content: "\F571"
+}
+
+.hicon-spoken-29:before {
+    content: "\F572"
+}
+
+.hicon-spoken-3:before {
+    content: "\F573"
+}
+
+.hicon-spoken-30:before {
+    content: "\F574"
+}
+
+.hicon-spoken-31:before {
+    content: "\F575"
+}
+
+.hicon-spoken-32:before {
+    content: "\F576"
+}
+
+.hicon-spoken-33:before {
+    content: "\F577"
+}
+
+.hicon-spoken-34:before {
+    content: "\F578"
+}
+
+.hicon-spoken-35:before {
+    content: "\F579"
+}
+
+.hicon-spoken-36:before {
+    content: "\F57A"
+}
+
+.hicon-spoken-37:before {
+    content: "\F57B"
+}
+
+.hicon-spoken-38:before {
+    content: "\F57C"
+}
+
+.hicon-spoken-39:before {
+    content: "\F57D"
+}
+
+.hicon-spoken-4:before {
+    content: "\F57E"
+}
+
+.hicon-spoken-40:before {
+    content: "\F57F"
+}
+
+.hicon-spoken-43:before {
+    content: "\F580"
+}
+
+.hicon-spoken-46:before {
+    content: "\F581"
+}
+
+.hicon-spoken-47:before {
+    content: "\F582"
+}
+
+.hicon-spoken-48:before {
+    content: "\F583"
+}
+
+.hicon-spoken-49:before {
+    content: "\F584"
+}
+
+.hicon-spoken-5:before {
+    content: "\F585"
+}
+
+.hicon-spoken-50:before {
+    content: "\F586"
+}
+
+.hicon-spoken-6:before {
+    content: "\F587"
+}
+
+.hicon-spoken-7:before {
+    content: "\F588"
+}
+
+.hicon-spoken-8:before {
+    content: "\F589"
+}
+
+.hicon-spoken-9:before {
+    content: "\F58A"
+}
+
+.hicon-sqm:before {
+    content: "\F58B"
+}
+
+.hicon-squash-courts:before {
+    content: "\F58C"
+}
+
+.hicon-stack-of-square-papers:before {
+    content: "\F58D"
+}
+
+.hicon-star-1:before {
+    content: "\F58E"
+}
+
+.hicon-star-15:before {
+    content: "\F58F"
+}
+
+.hicon-star-2:before {
+    content: "\F590"
+}
+
+.hicon-star-25:before {
+    content: "\F591"
+}
+
+.hicon-star-3:before {
+    content: "\F592"
+}
+
+.hicon-star-35:before {
+    content: "\F593"
+}
+
+.hicon-star-4:before {
+    content: "\F594"
+}
+
+.hicon-star-45:before {
+    content: "\F595"
+}
+
+.hicon-star-5:before {
+    content: "\F596"
+}
+
+.hicon-steamroom:before {
+    content: "\F597"
+}
+
+.hicon-strong-storms:before {
+    content: "\F598"
+}
+
+.hicon-subways:before {
+    content: "\F599"
+}
+
+.hicon-suitable-for-events:before {
+    content: "\F59A"
+}
+
+.hicon-sunny:before {
+    content: "\F59B"
+}
+
+.hicon-super-king-bed:before {
+    content: "\F59C"
+}
+
+.hicon-surfing-lessons:before {
+    content: "\F59D"
+}
+
+.hicon-swimming-pool-access:before {
+    content: "\F59E"
+}
+
+.hicon-table-tennis:before {
+    content: "\F59F"
+}
+
+.hicon-tamil:before {
+    content: "\F5A0"
+}
+
+.hicon-tax-id:before {
+    content: "\F5A1"
+}
+
+.hicon-tax-receipt-available:before {
+    content: "\F5A2"
+}
+
+.hicon-taxi-service:before {
+    content: "\F5A3"
+}
+
+.hicon-telephone:before {
+    content: "\F5A4"
+}
+
+.hicon-television-plasma:before {
+    content: "\F5A5"
+}
+
+.hicon-tennis-courts:before {
+    content: "\F5A6"
+}
+
+.hicon-text-area:before {
+    content: "\F5A7"
+}
+
+.hicon-text-links:before {
+    content: "\F5A8"
+}
+
+.hicon-theme-park:before {
+    content: "\F5A9"
+}
+
+.hicon-thin-arrow-down:before {
+    content: "\F5AA"
+}
+
+.hicon-thin-arrow-left:before {
+    content: "\F5AB"
+}
+
+.hicon-thin-arrow-right:before {
+    content: "\F5AC"
+}
+
+.hicon-thin-arrow-up:before {
+    content: "\F5AD"
+}
+
+.hicon-thin-circle-arrow-left:before {
+    content: "\F5AE"
+}
+
+.hicon-thin-sub-arrow:before {
+    content: "\F5AF"
+}
+
+.hicon-thumb-down-line:before {
+    content: "\F5B0"
+}
+
+.hicon-thumb-up-line:before {
+    content: "\F5B1"
+}
+
+.hicon-thumb-up-solid-map:before {
+    content: "\F5B2"
+}
+
+.hicon-thumb-up-solid:before {
+    content: "\F5B3"
+}
+
+.hicon-thumb-up:before {
+    content: "\F5B4"
+}
+
+.hicon-thunder-and-hail:before {
+    content: "\F5B5"
+}
+
+.hicon-thunderstorm:before {
+    content: "\F5B6"
+}
+
+.hicon-ticket-service:before {
+    content: "\F5B7"
+}
+
+.hicon-time-clock:before {
+    content: "\F5B8"
+}
+
+.hicon-time-filled-icon:before {
+    content: "\F5B9"
+}
+
+.hicon-time-icon:before {
+    content: "\F5BA"
+}
+
+.hicon-time-to-airport:before {
+    content: "\F5BB"
+}
+
+.hicon-timer:before {
+    content: "\F5BC"
+}
+
+.hicon-toiletries:before {
+    content: "\F5BD"
+}
+
+.hicon-tonight-only:before {
+    content: "\F5BE"
+}
+
+.hicon-tools:before {
+    content: "\F5BF"
+}
+
+.hicon-tooltip-details:before {
+    content: "\F5C0"
+}
+
+.hicon-tooltip:before {
+    content: "\F5C1"
+}
+
+.hicon-top-floor:before {
+    content: "\F5C2"
+}
+
+.hicon-top-rated:before {
+    content: "\F5C3"
+}
+
+.hicon-topic-calendar:before {
+    content: "\F5C4"
+}
+
+.hicon-topic-filter:before {
+    content: "\F5C5"
+}
+
+.hicon-topic-hotel-highlight:before {
+    content: "\F5C6"
+}
+
+.hicon-topic-search:before {
+    content: "\F5C7"
+}
+
+.hicon-topic-user:before {
+    content: "\F5C8"
+}
+
+.hicon-tornado:before {
+    content: "\F5C9"
+}
+
+.hicon-total-savings:before {
+    content: "\F5CA"
+}
+
+.hicon-total-support:before {
+    content: "\F5CB"
+}
+
+.hicon-tours:before {
+    content: "\F5CC"
+}
+
+.hicon-towels:before {
+    content: "\F5CD"
+}
+
+.hicon-train-new-solid:before {
+    content: "\F5CE"
+}
+
+.hicon-train-new:before {
+    content: "\F5CF"
+}
+
+.hicon-train-station:before {
+    content: "\F5D0"
+}
+
+.hicon-tram-station:before {
+    content: "\F5D1"
+}
+
+.hicon-transfer-both-ways:before {
+    content: "\F5D2"
+}
+
+.hicon-transfer-one-ways:before {
+    content: "\F5D3"
+}
+
+.hicon-transportation-hub:before {
+    content: "\F5D4"
+}
+
+.hicon-transportation:before {
+    content: "\F5D5"
+}
+
+.hicon-trash-b:before {
+    content: "\F5D6"
+}
+
+.hicon-trash:before {
+    content: "\F5D7"
+}
+
+.hicon-travelers:before {
+    content: "\F5D8"
+}
+
+.hicon-trending-up:before {
+    content: "\F5D9"
+}
+
+.hicon-triangle-warning:before {
+    content: "\F5DA"
+}
+
+.hicon-tropical-storm:before {
+    content: "\F5DB"
+}
+
+.hicon-trouser-press:before {
+    content: "\F5DC"
+}
+
+.hicon-tv-area:before {
+    content: "\F5DD"
+}
+
+.hicon-tv-flat-screen:before {
+    content: "\F5DE"
+}
+
+.hicon-tv:before {
+    content: "\F5DF"
+}
+
+.hicon-twin-bed:before {
+    content: "\F5E0"
+}
+
+.hicon-umbrella:before {
+    content: "\F5E1"
+}
+
+.hicon-unionpay:before {
+    content: "\F5E2"
+}
+
+.hicon-unlock:before {
+    content: "\F5E3"
+}
+
+.hicon-upload-your-logo:before {
+    content: "\F5E4"
+}
+
+.hicon-user-b:before {
+    content: "\F5E5"
+}
+
+.hicon-user-font-icon:before {
+    content: "\F5E6"
+}
+
+.hicon-user:before {
+    content: "\F5E7"
+}
+
+.hicon-valet-parking:before {
+    content: "\F5E8"
+}
+
+.hicon-vending-machine:before {
+    content: "\F5E9"
+}
+
+.hicon-verified-checkmark:before {
+    content: "\F5EA"
+}
+
+.hicon-view-point:before {
+    content: "\F5EB"
+}
+
+.hicon-views:before {
+    content: "\F5EC"
+}
+
+.hicon-villa:before {
+    content: "\F5ED"
+}
+
+.hicon-vip:before {
+    content: "\F5EE"
+}
+
+.hicon-visa-stamp:before {
+    content: "\F5EF"
+}
+
+.hicon-visa:before {
+    content: "\F5F0"
+}
+
+.hicon-wake-up-service:before {
+    content: "\F5F1"
+}
+
+.hicon-walking:before {
+    content: "\F5F2"
+}
+
+.hicon-want-to-talk:before {
+    content: "\F5F3"
+}
+
+.hicon-washer:before {
+    content: "\F5F4"
+}
+
+.hicon-watch:before {
+    content: "\F5F5"
+}
+
+.hicon-water-park:before {
+    content: "\F5F6"
+}
+
+.hicon-water-sports-motorized:before {
+    content: "\F5F7"
+}
+
+.hicon-water-sports-non-motorized:before {
+    content: "\F5F8"
+}
+
+.hicon-watersports-equipment-rentals:before {
+    content: "\F5F9"
+}
+
+.hicon-weekend-discount:before {
+    content: "\F5FA"
+}
+
+.hicon-wheelchair-accessible:before {
+    content: "\F5FB"
+}
+
+.hicon-wifi-additional-charge:before {
+    content: "\F5FC"
+}
+
+.hicon-wifi-in-public-areas:before {
+    content: "\F5FD"
+}
+
+.hicon-wifi:before {
+    content: "\F5FE"
+}
+
+.hicon-wind-surfing:before {
+    content: "\F5FF"
+}
+
+.hicon-wintry-mix-snow-sleet:before {
+    content: "\F600"
+}
+
+.hicon-wired-internet:before {
+    content: "\F601"
+}
+
+.hicon-wooden-parqueted-flooring:before {
+    content: "\F602"
+}
+
+.hicon-world:before {
+    content: "\F603"
+}
+
+.hicon-x-icon:before {
+    content: "\F604"
+}
+
+.hicon-ycs-channels:before {
+    content: "\F605"
+}
+
+.hicon-ycs-dashboard:before {
+    content: "\F606"
+}
+
+.hicon-ycs-doc-csv:before {
+    content: "\F607"
+}
+
+.hicon-ycs-doc-excel:before {
+    content: "\F608"
+}
+
+.hicon-ycs-doc-pdf:before {
+    content: "\F609"
+}
+
+.hicon-ycs-doc-update:before {
+    content: "\F60A"
+}
+
+.hicon-ycs-generic:before {
+    content: "\F60B"
+}
+
+.hicon-ycs-no-show:before {
+    content: "\F60C"
+}
+
+.hicon-year-hotel-built:before {
+    content: "\F60D"
+}
+
+.hicon-year-hotel-last-renovated:before {
+    content: "\F60E"
+}
+
+.hicon-yoga-room:before {
+    content: "\F60F"
+}
+
+.hicon-zoom-bold:before {
+    content: "\F610"
+}

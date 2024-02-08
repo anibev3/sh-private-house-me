@@ -1,0 +1,139 @@
+<!-- Booking details -->
+<div class="sticky-top sticky-top-120 mb-10">
+  <div class="card" data-aos-delay="300">
+    <div class="card-body small">
+      <h2 class="h3">Détails de réservation</h2>
+      <hr />
+      <!-- Book Date -->
+      <div>
+        <div class="d-flex justify-content-between">
+          <span
+            ><i class="hicon hicon-menu-calendar"></i>
+            <span>Date d'arrivée: </span></span
+          >
+          <strong> {{ reservationInfo?.arrival_at }} </strong>
+        </div>
+        <div class="d-flex justify-content-between">
+          <span
+            ><i class="hicon hicon-menu-calendar"></i>
+            <span>Date de départ: </span></span
+          >
+          <strong> {{ reservationInfo?.departure_at }}</strong>
+        </div>
+        <div class="d-flex justify-content-between">
+          <span
+            ><i class="hicon hicon-menu-calendar"></i>
+            <span>Ville: </span></span
+          >
+          <strong> {{ roomdetails?.city?.name }}</strong>
+        </div>
+        <em
+          >(Durée du séjour: <strong> {{ numberOfDays }} Jours</strong> et
+          <strong> {{ numberOfNights }} nuits</strong>)</em
+        >
+
+        <div class="d-flex justify-content-between">
+          <span
+            ><i class="hicon hicon-menu-calendar"></i>
+            <span>Nombre de personnes: </span></span
+          >
+          <strong>{{ reservationInfo?.nbr_people }}</strong>
+        </div>
+      </div>
+      <!-- Book Date -->
+      <hr />
+      <!-- Room list -->
+      <div>
+        <!-- Room Item -->
+        <div class="mb-3">
+          <h3 class="h6 mb-0 d-flex align-items-center">
+            <span>{{ roomdetails?.name }}</span>
+            <a href="#" class="text-danger fs-6 ms-2"
+              ><i class="hicon hicon-line-close hicon-60 hicon-bold"></i
+            ></a>
+          </h3>
+          <div class="d-flex justify-content-between align-items-center">
+            <span>Tarif <strong> </strong>: </span>
+            <strong class="fw-semibold fs-6"
+              ><ng-container
+                *ngIf="
+                  roomdetails?.currency?.is_prefix_symbol === 1;
+                  else suffixSymbol
+                "
+              >
+                {{ roomdetails?.currency?.symbol }}
+                {{ roomdetails?.price | number : "1.0-0" }}
+              </ng-container>
+              <ng-template #suffixSymbol>
+                {{ roomdetails?.price | number : "1.0-0" }}
+                {{ roomdetails?.currency?.symbol }}
+              </ng-template></strong
+            >
+          </div>
+
+          <!-- <div
+                    class="d-flex justify-content-between align-items-center"
+                  >
+                    <span>Extra bed: </span>
+                    <strong class="fw-semibold fs-6"><sup>$</sup>15.00</strong>
+                  </div> -->
+        </div>
+        <!-- Room Item -->
+        <!-- Room Item -->
+        <!-- <div class="mb-3">
+          <h3 class="h6 mb-0 d-flex align-items-center">
+            <span>Taxe</span>
+            <a href="#" class="text-danger fs-6 ms-2"
+              ><i class="hicon hicon-line-close hicon-60 hicon-bold"></i
+            ></a>
+          </h3>
+          <div class="d-flex justify-content-between align-items-center">
+            <span>TVA <strong> </strong>: </span>
+            <strong class="fw-semibold fs-6"
+              >{{ roomdetails?.tax?.percentage || 0 }}<sup>%</sup></strong
+            >
+          </div>
+          <div class="d-flex justify-content-between align-items-center">
+            <span>Montant TVA <strong> </strong>: </span>
+            <strong class="fw-semibold fs-6">
+              {{
+                roomdetails?.price && roomdetails?.tax?.percentage
+                  ? (roomdetails?.price * roomdetails?.tax.percentage) / 100
+                  : "00.00"
+              }}
+            </strong>
+          </div>
+        </div> -->
+        <!-- Room Item -->
+      </div>
+      <!-- Room list -->
+      <hr />
+      <!-- Total Amount-->
+      <div>
+        <div class="d-flex justify-content-between align-items-center">
+          <h3 class="h4 mb-0">Montant total :</h3>
+          <strong class="fw-bold fs-4">
+            <ng-container
+              *ngIf="
+                roomdetails?.currency?.is_prefix_symbol === 1;
+                else suffixSymbol
+              "
+            >
+              <sup>{{ roomdetails?.currency?.symbol }}</sup
+              >{{ totalAmount }}
+              <!-- | number : "1.0-0"  permet d'arrondir -->
+            </ng-container>
+            <ng-template #suffixSymbol>
+              {{ totalAmount }}<sup>{{ roomdetails?.currency?.symbol }}</sup>
+            </ng-template>
+          </strong>
+        </div>
+        <p><em>*Toutes taxes et frais inclus</em></p>
+      </div>
+      <!-- Total Amount-->
+
+      <!-- Next step -->
+    </div>
+  </div>
+</div>
+<!-- /Booking details -->

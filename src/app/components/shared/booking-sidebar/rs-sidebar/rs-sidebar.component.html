@@ -1,0 +1,262 @@
+<div *ngIf="showDateInfo" class="date-info-overlay">
+  <!-- <h5>Sélectionnez les dates</h5>
+  <p>Ajoutez vos dates de voyage pour voir le prix exact</p> -->
+  <div class="flex-column">
+    <app-calendar-sidebar [currentHome]="currentHome"></app-calendar-sidebar>
+    <hr />
+    <div style="background-color: #f2efef; padding: 10px" (click)="showDrop1()">
+      <h5 class="text-center">Fermer</h5>
+    </div>
+  </div>
+</div>
+
+<div class="shadowed-div" style="border-radius: 10px">
+  <div style="margin-bottom: 10px">
+    <h4 class="text-center">
+      <strong>Ajoutez des dates pour voir le prix</strong>
+    </h4>
+  </div>
+  <div style="margin: 10px"></div>
+
+  <div style="border: 1px solid rgba(0, 0, 0, 0.125); border-radius: 10px">
+    <div
+      class="d-flex justify-content-between custom-cursor"
+      (click)="showDrop1()"
+    >
+      <div style="padding: 15px">
+        <h6>ARRIVÉE</h6>
+
+        <h6 *ngIf="(fromDate$ | async) == null">Ajouter une date</h6>
+        <h5 *ngIf="(fromDate$ | async) != null" style="margin-top: 5px">
+          <strong
+            >{{ (fromDate$ | async)?.day }}/ {{ (fromDate$ | async)?.month }}/{{
+              (fromDate$ | async)?.year
+            }}</strong
+          >
+        </h5>
+      </div>
+      <div style="border-left: 1px solid rgba(0, 0, 0, 0.125)"></div>
+      <div style="padding: 15px">
+        <h5>DÉPART</h5>
+        <p *ngIf="(toDate$ | async) == null || (toDate$ | async)?.day == null">
+          Ajouter une date
+        </p>
+        <h5
+          *ngIf="(toDate$ | async) != null && (toDate$ | async)?.year != 0"
+          style="margin-top: 5px"
+        >
+          <strong
+            >{{ (toDate$ | async)?.day }}/ {{ (toDate$ | async)?.month }}/{{
+              (toDate$ | async)?.year
+            }}</strong
+          >
+        </h5>
+      </div>
+    </div>
+    <div style="border-top: 1px solid rgba(0, 0, 0, 0.125); padding: 15px">
+      <h5>VOYAGEURS</h5>
+      <p>
+        {{ nbr_people }} <span *ngIf="nbr_people > 1">voyageurs</span
+        ><span *ngIf="nbr_people === 1">voyageur</span>
+      </p>
+    </div>
+  </div>
+  <div style="margin: 10px"></div>
+  <div
+    *ngIf="(fromDate$ | async) == null || (toDate$ | async)?.day == null"
+    class="text-center custom-cursor"
+    style="
+      border-radius: 10px;
+      background-color: black;
+      color: white;
+      padding: 10px;
+      display: flex;
+      justify-content: center; /* Centrer horizontalement */
+      align-items: center;
+      width: 100%;
+      margin-left: 5px;
+    "
+    (click)="displayAlert()"
+  >
+    Vérifier la disponibilité
+  </div>
+  <div
+    *ngIf="
+      (toDate$ | async) != null &&
+      (fromDate$ | async) != null &&
+      (toDate$ | async)?.day != null
+    "
+    (click)="storeParams()"
+    class="text-center custom-cursor"
+    style="
+      border-radius: 10px;
+      background-color: black;
+      color: white;
+      padding: 10px;
+      display: flex;
+      justify-content: center; /* Centrer horizontalement */
+      align-items: center;
+      width: 100%;
+      margin-left: 5px;
+    "
+  >
+    Réserver maintenant
+  </div>
+
+  <div
+    style="
+      border: 1px solid green;
+      color: #403e3e;
+      margin-top: 10px;
+      padding: 10px;
+      border-radius: 10px;
+      font-size: 13px;
+    "
+    *ngIf="
+      currentHome?.is_rented_bedroom === 1 &&
+      (toDate$ | async) != null &&
+      (fromDate$ | async) != null &&
+      (toDate$ | async)?.day != null
+    "
+    class="align-items-center"
+  >
+    <!-- <p>
+  <strong style="font-size: 15px"
+    >Vous avez la possibilité de réserver une seule chambre</strong
+  ><span style="font-size: 17px; margin-left: 10px">
+    <ng-container
+      *ngIf="
+        roomdetails?.currency?.is_prefix_symbol === 1;
+        else suffixSymbol
+      "
+    >
+      {{ roomdetails?.currency?.symbol }}
+      {{ roomdetails?.rented_bedroom_price | number : "1.0-0" }}
+      / Le séjour
+    </ng-container>
+    <ng-template #suffixSymbol>
+      {{ roomdetails?.rented_bedroom_price | number : "1.0-0" }}
+      {{ roomdetails?.currency?.symbol }} / Le séjour
+    </ng-template>
+  </span>
+</p> -->
+    <div
+      class="text-center custom-cursor"
+      style="
+        border-radius: 10px;
+        background-color: black;
+        color: white;
+        padding: 10px;
+        display: flex;
+        justify-content: center; /* Centrer horizontalement */
+        align-items: center;
+        /* width: 100%; */
+        margin-left: 5px;
+      "
+      (click)="gotToPayment()"
+    >
+      Réserver une chambre
+    </div>
+  </div>
+
+  <div
+    style="margin-top: 15px"
+    *ngIf="
+      (toDate$ | async) != null &&
+      (fromDate$ | async) != null &&
+      (toDate$ | async)?.day != null
+    "
+  >
+    <h6 class="text-center">
+      Aucun montant ne vous sera débité pour le moment
+    </h6>
+    <div style="margin-top: 20px" *ngIf="!isAmountApiIsOK">
+      <div class="d-flex justify-content-between">
+        <h5>
+          <!--<ng-container
+            *ngIf="
+              currentHome?.currency?.is_prefix_symbol === 1;
+              else suffixSymbol
+            "
+          >
+             <sup style="font-size: 13px">{{
+              currentHome?.currency?.symbol
+            }}</sup>
+            {{ currentHome?.price | number : "1.0-0" }}
+          </ng-container>
+          <ng-template #suffixSymbol> -->
+          {{ currentHome?.price | number : "1.0-0"
+          }}<sup style="font-size: 11px">{{
+            currentHome?.currency?.symbol
+          }}</sup>
+          <!-- </ng-template> -->
+
+          x {{ numberOfDays }} jours
+        </h5>
+        <h5>
+          {{ bookins_amount?.sub_total | number : "1.0-0"
+          }}<sup style="font-size: 11px">{{
+            currentHome?.currency?.symbol
+          }}</sup>
+        </h5>
+      </div>
+      <div class="d-flex justify-content-between">
+        <h5>Taxe</h5>
+        <h5>
+          {{ bookins_amount?.tax_amount | number : "1.0-0"
+          }}<sup style="font-size: 11px">{{
+            currentHome?.currency?.symbol
+          }}</sup>
+        </h5>
+      </div>
+      <!-- <div class="d-flex justify-content-between">
+        <h5>Frais de service SHERYLUX</h5>
+        <h5>2000000$</h5>
+      </div> -->
+      <hr />
+      <div class="d-flex justify-content-between">
+        <h4><strong>Total</strong></h4>
+        <h3>
+          <strong>
+            <ng-container
+              *ngIf="
+                currentHome?.currency?.is_prefix_symbol === 1;
+                else suffixSymbol
+              "
+            >
+              <sup>{{ currentHome?.currency?.symbol }}</sup>
+              {{ bookins_amount.amount | number : "1.0-0" }}
+            </ng-container>
+            <ng-template #suffixSymbol>
+              {{ bookins_amount.amount | number : "1.0-0"
+              }}<sup class="supp">{{ currentHome?.currency?.symbol }}</sup>
+            </ng-template>
+          </strong>
+        </h3>
+      </div>
+    </div>
+  </div>
+  <div class="text-center justify-content-center" *ngIf="isAmountApiIsOK">
+    <span
+      class="spinner-border spinner-border-sm"
+      role="status"
+      aria-hidden="true"
+    ></span>
+    <h6>Calcule du montant en cours</h6>
+  </div>
+</div>
+
+<!-- <div class="shadowed-div" style="border-radius: 10px; position: relative">
+  <app-calendar-sidebar></app-calendar-sidebar>
+</div> -->
+
+<div
+  class="snackbar-toast bg-green1-dark color-white text-center"
+  style="
+    margin-bottom: calc(100px + (env(safe-area-inset-bottom)) * 1.1) !important;
+    background-color: rgb(193, 14, 14) !important;
+  "
+  *ngIf="canReservedError"
+>
+  Veuillez entrer les dates d'arrivée et de départ
+</div>

@@ -1,0 +1,181 @@
+<app-header [layout]="Headerclassname"></app-header>
+<app-breadcrumb></app-breadcrumb>
+<section class="user-dashboard-section section-b-space">
+  <div class="container-fluid-lg">
+    <div class="row">
+      <div class="col-xxl-3 col-lg-4">
+        <div class="dashboard-left-sidebar">
+          <div class="close-button d-flex d-lg-none">
+            <button class="close-sidebar" id="close_sidebar_btn" type="submit">
+              <div>
+                <i class="ri-close-fill"></i>
+              </div>
+            </button>
+          </div>
+          <div class="profile-box">
+            <div class="cover-image">
+              <img
+                src="https://www.vf-architectures.fr/public/img/big/meilleurarchitecteCannespourvillamaisonluxejpg_637123da2fa64.jpg"
+                alt="cover-img"
+                class="img-fluid"
+              />
+            </div>
+            <div class="profile-contain">
+              <div class="profile-image">
+                <div class="position-relative">
+                  <div class="user-round ng-star-inserted">
+                    <img
+                      src="https://cdn-icons-png.flaticon.com/512/6596/6596121.png"
+                      alt=""
+                    />
+                  </div>
+                </div>
+              </div>
+              <div class="profile-name">
+                <h3>{{ userData?.first_name }}</h3>
+                <h6 class="text-content">{{ userData?.email }}</h6>
+              </div>
+            </div>
+          </div>
+          <ul
+            id="pills-tab"
+            role="tablist"
+            class="nav nav-pills user-nav-pills"
+          >
+            <li role="presentation" class="nav-item">
+              <a class="nav-link active dash_active" routerLink="/profil-user"
+                ><i style="margin-right: 12px" class="fa fa-home"></i>
+                Dashboard
+              </a>
+            </li>
+            <li role="presentation" class="nav-item">
+              <a class="nav-link" href="javascript:void(0)"
+                ><i style="margin-right: 12px" class="fas fa-bell"></i>
+                Notifications
+              </a>
+            </li>
+            <li role="presentation" class="nav-item">
+              <a class="nav-link" routerLink="/profil-user/historique"
+                ><i style="margin-right: 12px" class="fas fa-file"></i
+                >Historique
+              </a>
+            </li>
+            <li role="presentation" class="nav-item">
+              <a class="nav-link" routerLink="/profil-user/update-profil"
+                ><i style="margin-right: 12px" class="fas fa-user"></i>
+                Profil
+              </a>
+            </li>
+            <li role="presentation" class="nav-item">
+              <a class="nav-link" href="javascript:void(0)"
+                ><i style="margin-right: 12px" class="fas fa-cog"></i>
+                Paramètre
+              </a>
+            </li>
+            <li role="presentation" class="nav-item logout-cls">
+              <a (click)="logout()" class="btn"
+                ><i style="margin-right: 12px" class="fas fa-sign-out"></i>
+                Déconnexion
+              </a>
+            </li>
+          </ul>
+          <!-- <app-confirmation-modal></app-confirmation-modal> -->
+        </div>
+      </div>
+      <div class="col-xxl-9 col-lg-8 custom-box-loader">
+        <button
+          class="btn btn-animation btn-md d-block d-lg-none fw-bold left-dashboard-show mb-4"
+          type="button"
+          (click)="collapse.toggle()"
+          [attr.aria-expanded]="!isCollapsed"
+          aria-controls="collapseExample"
+        >
+          <div>Afficher le menu</div>
+        </button>
+        <div #collapse="ngbCollapse" [(ngbCollapse)]="isCollapsed">
+          <div class="card">
+            <div class="card-body">
+              <ul
+                id="pills-tab"
+                role="tablist"
+                class="nav nav-pills user-nav-pills"
+              >
+                <li role="presentation" class="nav-item">
+                  <a
+                    class="nav-link active dash_active"
+                    routerLink="/profil-user"
+                    ><i style="margin-right: 12px" class="fa fa-home"></i>
+                    Dashboard
+                  </a>
+                </li>
+                <li role="presentation" class="nav-item">
+                  <a class="nav-link" href="javascript:void(0)"
+                    ><i style="margin-right: 12px" class="fas fa-bell"></i>
+                    Notifications
+                  </a>
+                </li>
+                <li role="presentation" class="nav-item">
+                  <a class="nav-link" routerLink="/profil-user/historique"
+                    ><i style="margin-right: 12px" class="fas fa-file"></i
+                    >Historique
+                  </a>
+                </li>
+                <li role="presentation" class="nav-item">
+                  <a
+                    class="nav-link"
+                    routerLink="/profil-user/update-profil"
+                    style="margin-left: 18px"
+                    ><i style="margin-right: 12px" class="fas fa-user"></i>
+                    Profil
+                  </a>
+                </li>
+                <li role="presentation" class="nav-item">
+                  <a class="nav-link" href="javascript:void(0)"
+                    ><i style="margin-right: 12px" class="fas fa-cog"></i>
+                    Paramètre
+                  </a>
+                </li>
+                <li role="presentation" class="nav-item logout-cls">
+                  <a
+                    (click)="logout()"
+                    class="btn"
+                    style="color: red; margin-left: 13px"
+                    ><i style="margin-right: 12px" class="fas fa-sign-out"></i>
+                    Déconnexion
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div
+          class="dashboard-right-sidebar"
+          style="
+            background: #f8f8f8;
+            box-shadow: 0 0 8px #22222224;
+            border-radius: 10px;
+            overflow: hidden;
+            position: sticky;
+            top: 107px;
+            z-index: 0;
+          "
+        >
+          <div class="tab-content">
+            <!-- <router-outlet></router-outlet> -->
+            <div class="ng-star-inserted">
+              <div class="tab-pane fade show active">
+                <router-outlet></router-outlet>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- <app-back-button
+  [customUrl]="'/room-details/' + roomdetails?.id"
+></app-back-button> -->
+<app-back-button></app-back-button>
+
+<app-footer></app-footer>

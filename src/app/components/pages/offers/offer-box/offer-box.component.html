@@ -1,0 +1,75 @@
+<section class="offers-area pt-120 pb-60">
+  <div class="container">
+    <div class="offer-boxes-loop">
+      <!-- <div class="offer-box" *ngFor="let item of getOffer()"> -->
+      <div class="offer-box" *ngFor="let item of logements">
+        <div class="thumb">
+          <div class="thumb">
+            <div class="thumb">
+              <img
+                *ngIf="logements && logements[0] && logements[0].images"
+                [src]="
+                  logements[0].images && logements[0].images.length > 0
+                    ? logements[0].images[0].url
+                    : 'https://cc-3frontieres.fr/wp-content/uploads/2021/11/immobilier-quelles-regles.jpg'
+                "
+                class="w-100"
+                alt="item.title"
+              />
+            </div>
+          </div>
+        </div>
+
+        <div class="offer-desc">
+          <div class="title-wrap">
+            <div class="title">
+              <!-- <span
+                class="room-cat"
+                *ngFor="
+                  let category of getCategories(item.category) | slice : 0 : 1
+                "
+                >{{ category.title }}</span
+              > -->
+              <h2>{{ item.name }}</h2>
+            </div>
+            <div class="price">
+              <ng-container
+                *ngIf="item.currency?.is_prefix_symbol === 1; else suffixSymbol"
+              >
+                {{ item.currency?.symbol }}
+                {{ item.price | number : "1.0-0" }}
+              </ng-container>
+              <ng-template #suffixSymbol>
+                {{ item.price | number : "1.0-0" }}
+                {{ item.currency?.symbol }} </ng-template
+              ><span>
+                <!-- /{{ item.period }} -->
+              </span>
+            </div>
+          </div>
+          <div class="row justify-content-between">
+            <div class="col-lg-6">
+              <div class="offer-text">
+                <p>{{ item.description }}</p>
+                <a
+                  routerLink="/room-details/{{ item.id }}"
+                  class="main-btn btn-filled"
+                  >Book now</a
+                >
+              </div>
+            </div>
+            <div class="col-lg-5">
+              <div class="offer-feature">
+                <ul>
+                  <li *ngFor="let amertie of item.amenities | slice : 0 : 10">
+                    <i [class]="amertie.icon"></i>{{ amertie.name }}
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

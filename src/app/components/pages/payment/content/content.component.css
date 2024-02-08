@@ -1,0 +1,224 @@
+.iniput {
+  border: black;
+  width: 100%;
+  height: 16px;
+  background-color: #f8f8f8;
+  padding: 0 40px;
+  margin-left: 100px;
+  font-family: "Old Standard TT", serif;
+}
+
+.la-div {
+  align-items: center;
+  background-color: black;
+  display: flex;
+  height: 100%;
+  justify-content: center;
+  margin: 0;
+  font-family: "Old Standard TT", serif;
+}
+
+.loader {
+  width: 60px;
+  font-family: "Old Standard TT", serif;
+}
+
+.loader-wheel {
+  animation: spin 1s infinite linear;
+  border: 2px solid rgba(30, 30, 30, 0.5);
+  border-left: 4px solid #fff;
+  border-radius: 50%;
+  height: 50px;
+  margin-bottom: 10px;
+  width: 50px;
+  font-family: "Old Standard TT", serif;
+}
+
+.loader-text {
+  color: #fff;
+  font-family: arial, sans-serif;
+  font-family: "Old Standard TT", serif;
+}
+
+.loader-text:after {
+  content: "Loading";
+  animation: load 2s linear infinite;
+  font-family: "Old Standard TT", serif;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+    font-family: "Old Standard TT", serif;
+  }
+  100% {
+    transform: rotate(360deg);
+    font-family: "Old Standard TT", serif;
+  }
+  font-family: "Old Standard TT", serif;
+}
+
+@keyframes load {
+  0% {
+    content: "Loading";
+    font-family: "Old Standard TT", serif;
+  }
+  33% {
+    content: "Loading.";
+    font-family: "Old Standard TT", serif;
+  }
+  67% {
+    content: "Loading..";
+    font-family: "Old Standard TT", serif;
+  }
+  100% {
+    content: "Loading...";
+    font-family: "Old Standard TT", serif;
+  }
+  font-family: "Old Standard TT", serif;
+}
+
+.iniput {
+  border: black;
+  width: 100%;
+  height: 100%;
+  background-color: #f8f8f8;
+  padding: 0 40px;
+  font-family: "Old Standard TT", serif;
+}
+
+.amenities-list {
+  list-style-type: none;
+  padding: 0;
+  font-family: "Old Standard TT", serif;
+}
+
+.amenity-item {
+  display: inline-block;
+  width: 50%; /* Affichez deux éléments par ligne */
+  box-sizing: border-box;
+  padding: 0 15px; /* Espacement entre les éléments */
+  font-family: "Old Standard TT", serif;
+}
+
+.mon-padding {
+  padding: 10px;
+  border: solid 1px rgba(0, 0, 0, 0.125);
+  border-radius: 10px;
+  font-family: "Old Standard TT", serif;
+}
+
+.input-formulaire {
+  border-radius: 4px;
+  width: 100%;
+  height: 35px;
+  border: 1px solid rgba(0, 0, 0, 0.125);
+  font-family: "Old Standard TT", serif;
+}
+
+.m10 {
+  margin-top: 10px;
+  font-family: "Old Standard TT", serif;
+}
+
+.petiit {
+  background-color: #e7fde9;
+  color: #006607;
+  padding: 0px 6px 6px 6px;
+  margin-right: 4px;
+  border-radius: 5px;
+  border: 1px solid #97e59c;
+  font-family: "Old Standard TT", serif;
+}
+
+.petiiit {
+  background-color: #e7fde9;
+  color: #006607;
+  padding: 6px 6px 6px 6px;
+  margin-right: 4px;
+  border-radius: 5px;
+  border: 1px solid #97e59c;
+  font-family: "Old Standard TT", serif;
+}
+
+.a001 {
+  padding-left: 200px;
+  padding-right: 200px;
+  padding-top: 60px;
+  font-family: "Old Standard TT", serif;
+}
+
+.fs13 {
+  font-size: 13px;
+  font-family: "Old Standard TT", serif;
+}
+
+.a002 {
+  font-size: 13px;
+  background-color: dodgerblue;
+  border-radius: 4px;
+  padding: 2px;
+  margin-left: 10px;
+  font-family: "Old Standard TT", serif;
+}
+
+.a003 {
+  width: 5%;
+  margin-right: 10px;
+  font-family: "Old Standard TT", serif;
+}
+
+.a004 {
+  border-left: rgba(0, 0, 0, 0.125) 2px solid;
+  font-family: "Old Standard TT", serif;
+}
+
+.mr10 {
+  margin-right: 10px;
+  font-family: "Old Standard TT", serif;
+}
+
+.mb10 {
+  margin-bottom: 10px;
+  font-family: "Old Standard TT", serif;
+}
+
+.fs14 {
+  font-size: 14px;
+  font-family: "Old Standard TT", serif;
+}
+
+.mt15 {
+  margin-top: 15px;
+  font-family: "Old Standard TT", serif;
+}
+
+input {
+  padding-left: 10px;
+  padding-right: 10px;
+  font-family: "Old Standard TT", serif;
+}
+
+textarea {
+  padding: 10px;
+  font-family: "Old Standard TT", serif;
+}
+
+:host ::ng-deep .p-button {
+  margin: 0 0.5rem 0 0;
+  min-width: 10rem;
+}
+
+p {
+  margin: 0;
+}
+
+.confirmation-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+:host ::ng-deep .p-dialog .p-button {
+  min-width: 6rem;
+}

@@ -1,0 +1,89 @@
+<footer>
+  <div class="footer-subscibe-area pt-120 pb-120">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-8">
+          <div class="subscribe-text text-center">
+            <div class="footer-logo mb-45">
+              <img src="assets/img/logo-sh-black.png" alt="logo" />
+            </div>
+            <p>
+              SHERYLUX met tout en œuvre pour vous maintenir informé des toutes
+              dernières actualités et évolutions concernant l'industrie
+              hôtelière. Notre engagement est de vous offrir un accès privilégié
+              à des informations pertinentes, des nouveautés aux tendances
+              émergentes, afin de vous permettre de rester constamment à jour
+              sur l'univers passionnant et dynamique des hôtels.
+            </p>
+            <form
+              [formGroup]="newsletterForm"
+              (ngSubmit)="onSubmit()"
+              class="subscribe-form mt-50"
+            >
+              <input
+                class="simple-radius"
+                type="email"
+                placeholder="Souscrivez à notre newsletter"
+                formControlName="email"
+              />
+
+              <button class="simple-radius" type="submit">Souscrire</button>
+            </form>
+            <div *ngIf="isSuccess" class="success-message">
+              Inscription réussie !
+            </div>
+            <div *ngIf="isError" class="error-message">
+              Échec de l'inscription. Veuillez réessayer.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="copyright-area pt-20 pb-20">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-md-5 order-2 order-md-1">
+          <p class="copyright-text">copyright SHERYLUX</p>
+        </div>
+        <div class="col-md-7 order-1 order-md-2">
+          <div class="social-links">
+            <!-- <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-behance"></i></a> -->
+            <a href="https://www.linkedin.com/company/sherylux-lmt"
+              ><i class="fab fa-linkedin"></i
+            ></a>
+            <!-- <a href="#"><i class="fab fa-youtube"></i></a> -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- <div
+    class="snackbar-toast bg-green1-dark color-white text-center"
+    style="
+      margin-bottom: calc(
+        100px + (env(safe-area-inset-bottom)) * 1.1
+      ) !important;
+      background-color: rgb(193, 14, 14) !important;
+    "
+    *ngIf="isError"
+  >
+    Echec de l'Abonnement
+  </div>
+
+  <div
+    class="snackbar-toast bg-green1-dark color-white text-center"
+    style="
+      margin-bottom: calc(
+        100px + (env(safe-area-inset-bottom)) * 1.1
+      ) !important;
+      background-color: green !important;
+    "
+    *ngIf="isSuccess"
+  >
+    <i class="fa fa-shopping-cart mr-3"></i>'Ce adresse email est déjà utilisé'
+  </div> -->
+</footer>

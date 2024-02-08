@@ -1,0 +1,102 @@
+{
+  "data": [
+    {
+      "id": 1,
+      "name": "Côte d'Ivoire",
+      "cities": [
+        {
+          "id": 1,
+          "name": "Abidjan",
+          "region": "Abidjan",
+          "municipalities": [
+            {
+              "id": 1,
+              "name": "Attécoubé"
+            },
+            {
+              "id": 2,
+              "name": "Cocody"
+            },
+            {
+              "id": 3,
+              "name": "Koumassi"
+            },
+            {
+              "id": 4,
+              "name": "Marcory"
+            },
+            {
+              "id": 5,
+              "name": "Plateau"
+            },
+            {
+              "id": 6,
+              "name": "Port-Bouët"
+            },
+            {
+              "id": 7,
+              "name": "Treichville"
+            }
+          ]
+        },
+        {
+          "id": 4,
+          "name": "Yamoussoukro",
+          "region": "Region des lacs",
+          "municipalities": []
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "name": "France",
+      "cities": [
+        {
+          "id": 2,
+          "name": "Paris",
+          "region": "Île-de-France",
+          "municipalities": [
+            {
+              "id": 8,
+              "name": "Paris"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "name": "Émirats Arabes Unis",
+      "cities": [
+        {
+          "id": 3,
+          "name": "Dubai",
+          "region": "Dubai",
+          "municipalities": [
+            {
+              "id": 9,
+              "name": "Dubai Marina"
+            },
+            {
+              "id": 10,
+              "name": "Downtown Dubai"
+            },
+            {
+              "id": 11,
+              "name": "Palm Jumeirah"
+            },
+            {
+              "id": 12,
+              "name": "Jumeirah Beach Residence"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "name": "Belgique",
+      "cities": []
+    }
+  ]
+}

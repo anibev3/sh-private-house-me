@@ -1,0 +1,570 @@
+<ng-container *ngIf="dataIsOk">
+  <div class="user-dashboard-section">
+    <!-- <div class="container-fluid-lg"> -->
+    <!-- <div class="row"> -->
+    <!-- <div class="col-xxl-3 col-lg-4"></div> -->
+    <!-- <div class="col-xxl-12 col-lg-12 custom-box-loader"> -->
+    <div class="dashboard-right-sidebar" style="padding: 0px">
+      <div class="tab-content">
+        <!-- <router-outlet></router-outlet> -->
+        <div class="ng-star-inserted">
+          <div class="tab-pane fade show active">
+            <div class="dashboard-home">
+              <div class="title-header">
+                <div class="d-flex align-items-center">
+                  <h5>Tableau de bord</h5>
+                </div>
+              </div>
+              <div class="dashboard-user-name">
+                <h6 class="text-content">
+                  Bienvenu,
+                  <b class="text-title">M. {{ userData?.full_name }}</b>
+
+                  <ng-container
+                    *ngIf="showFullDescription; else truncatedDescription"
+                  >
+                    <div style="white-space: pre-line">
+                      {{ description }}
+                    </div>
+                    <span
+                      style="color: rgb(129, 21, 255)"
+                      (click)="toggleShowFullDescription()"
+                      class="custom-cursor"
+                    >
+                      Voir moins
+                    </span>
+                  </ng-container>
+                  <ng-template #truncatedDescription>
+                    <div style="white-space: pre-line">
+                      {{ description.slice(0, maxDisplayedChars) + "..." }}
+                      <span
+                        style="color: rgb(129, 21, 255)"
+                        (click)="toggleShowFullDescription()"
+                        class="custom-cursor"
+                      >
+                        Voir plus
+                      </span>
+                    </div>
+                  </ng-template>
+                </h6>
+              </div>
+
+              <div class="total-box">
+                <div class="row g-sm-4 g-3">
+                  <div class="col-lg-4">
+                    <div class="totle-contain">
+                      <div class="wallet-point-box">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="32"
+                          height="32"
+                          viewBox="0 0 24 24"
+                          class="img-1"
+                        >
+                          <path
+                            fill="currentColor"
+                            d="M15.058 21v-1h3.327q.23 0 .423-.192q.192-.193.192-.423v-8.77H5V14.5H4V6.615q0-.69.463-1.152Q4.925 5 5.615 5h1.77V2.77h1.077V5h7.153V2.77h1V5h1.77q.69 0 1.152.463q.463.462.463 1.152v12.77q0 .69-.462 1.152q-.463.463-1.153.463zM8 23.288l-.688-.688l3.055-3.1H1.5v-1h8.867l-3.055-3.1l.688-.688L12.288 19zM5 9.615h14v-3q0-.23-.192-.423Q18.615 6 18.385 6H5.615q-.23 0-.423.192Q5 6.385 5 6.615zm0 0V6z"
+                          />
+                        </svg>
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="32"
+                          height="32"
+                          viewBox="0 0 24 24"
+                          style="color: rgb(129, 21, 255)"
+                        >
+                          <path
+                            fill="currentColor"
+                            d="M15.058 21v-1h3.327q.23 0 .423-.192q.192-.193.192-.423v-8.77H5V14.5H4V6.615q0-.69.463-1.152Q4.925 5 5.615 5h1.77V2.77h1.077V5h7.153V2.77h1V5h1.77q.69 0 1.152.463q.463.462.463 1.152v12.77q0 .69-.462 1.152q-.463.463-1.153.463zM8 23.288l-.688-.688l3.055-3.1H1.5v-1h8.867l-3.055-3.1l.688-.688L12.288 19zM5 9.615h14v-3q0-.23-.192-.423Q18.615 6 18.385 6H5.615q-.23 0-.423.192Q5 6.385 5 6.615zm0 0V6z"
+                          />
+                        </svg>
+                        <div class="totle-detail">
+                          <h5 style="color: rgb(129, 21, 255)">
+                            Réservation à venir
+                          </h5>
+                          <h3 *ngIf="!isPending">
+                            {{ confirmCount + pendingCount }}
+                          </h3>
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="32"
+                            height="32"
+                            viewBox="0 0 24 24"
+                            *ngIf="isPending"
+                          >
+                            <circle cx="4" cy="12" r="3" fill="currentColor">
+                              <animate
+                                id="svgSpinners3DotsBounce0"
+                                attributeName="cy"
+                                begin="0;svgSpinners3DotsBounce1.end+0.25s"
+                                calcMode="spline"
+                                dur="0.6s"
+                                keySplines=".33,.66,.66,1;.33,0,.66,.33"
+                                values="12;6;12"
+                              />
+                            </circle>
+                            <circle cx="12" cy="12" r="3" fill="currentColor">
+                              <animate
+                                attributeName="cy"
+                                begin="svgSpinners3DotsBounce0.begin+0.1s"
+                                calcMode="spline"
+                                dur="0.6s"
+                                keySplines=".33,.66,.66,1;.33,0,.66,.33"
+                                values="12;6;12"
+                              />
+                            </circle>
+                            <circle cx="20" cy="12" r="3" fill="currentColor">
+                              <animate
+                                id="svgSpinners3DotsBounce1"
+                                attributeName="cy"
+                                begin="svgSpinners3DotsBounce0.begin+0.2s"
+                                calcMode="spline"
+                                dur="0.6s"
+                                keySplines=".33,.66,.66,1;.33,0,.66,.33"
+                                values="12;6;12"
+                              />
+                            </circle>
+                          </svg>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-lg-4">
+                    <div class="totle-contain">
+                      <div class="wallet-point-box">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="32"
+                          height="32"
+                          viewBox="0 0 1024 1024"
+                          class="img-1"
+                        >
+                          <path
+                            fill="currentColor"
+                            d="M280.768 753.728L691.456 167.04a32 32 0 1 1 52.416 36.672L314.24 817.472a32 32 0 0 1-45.44 7.296l-230.4-172.8a32 32 0 0 1 38.4-51.2zM736 448a32 32 0 1 1 0-64h192a32 32 0 1 1 0 64zM608 640a32 32 0 0 1 0-64h319.936a32 32 0 1 1 0 64zM480 832a32 32 0 1 1 0-64h447.936a32 32 0 1 1 0 64z"
+                          /></svg
+                        ><svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="32"
+                          height="32"
+                          viewBox="0 0 1024 1024"
+                          style="color: blue"
+                        >
+                          <path
+                            fill="currentColor"
+                            d="M280.768 753.728L691.456 167.04a32 32 0 1 1 52.416 36.672L314.24 817.472a32 32 0 0 1-45.44 7.296l-230.4-172.8a32 32 0 0 1 38.4-51.2zM736 448a32 32 0 1 1 0-64h192a32 32 0 1 1 0 64zM608 640a32 32 0 0 1 0-64h319.936a32 32 0 1 1 0 64zM480 832a32 32 0 1 1 0-64h447.936a32 32 0 1 1 0 64z"
+                          />
+                        </svg>
+                        <div class="totle-detail">
+                          <h5 style="color: blue">Réservation terminées</h5>
+                          <h3 *ngIf="!isPending">{{ completedCount }}</h3>
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="32"
+                            height="32"
+                            viewBox="0 0 24 24"
+                            *ngIf="isPending"
+                          >
+                            <circle cx="4" cy="12" r="3" fill="currentColor">
+                              <animate
+                                id="svgSpinners3DotsBounce0"
+                                attributeName="cy"
+                                begin="0;svgSpinners3DotsBounce1.end+0.25s"
+                                calcMode="spline"
+                                dur="0.6s"
+                                keySplines=".33,.66,.66,1;.33,0,.66,.33"
+                                values="12;6;12"
+                              />
+                            </circle>
+                            <circle cx="12" cy="12" r="3" fill="currentColor">
+                              <animate
+                                attributeName="cy"
+                                begin="svgSpinners3DotsBounce0.begin+0.1s"
+                                calcMode="spline"
+                                dur="0.6s"
+                                keySplines=".33,.66,.66,1;.33,0,.66,.33"
+                                values="12;6;12"
+                              />
+                            </circle>
+                            <circle cx="20" cy="12" r="3" fill="currentColor">
+                              <animate
+                                id="svgSpinners3DotsBounce1"
+                                attributeName="cy"
+                                begin="svgSpinners3DotsBounce0.begin+0.2s"
+                                calcMode="spline"
+                                dur="0.6s"
+                                keySplines=".33,.66,.66,1;.33,0,.66,.33"
+                                values="12;6;12"
+                              />
+                            </circle>
+                          </svg>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-lg-4">
+                    <div class="totle-contain">
+                      <div class="wallet-point-box">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="32"
+                          height="32"
+                          viewBox="0 0 24 24"
+                          class="img-1"
+                        >
+                          <path
+                            fill="currentColor"
+                            d="m12 13.4l2.9 2.9q.275.275.7.275t.7-.275q.275-.275.275-.7t-.275-.7L13.4 12l2.9-2.9q.275-.275.275-.7t-.275-.7q-.275-.275-.7-.275t-.7.275L12 10.6L9.1 7.7q-.275-.275-.7-.275t-.7.275q-.275.275-.275.7t.275.7l2.9 2.9l-2.9 2.9q-.275.275-.275.7t.275.7q.275.275.7.275t.7-.275zm0 8.6q-2.075 0-3.9-.788t-3.175-2.137q-1.35-1.35-2.137-3.175T2 12q0-2.075.788-3.9t2.137-3.175q1.35-1.35 3.175-2.137T12 2q2.075 0 3.9.788t3.175 2.137q1.35 1.35 2.138 3.175T22 12q0 2.075-.788 3.9t-2.137 3.175q-1.35 1.35-3.175 2.138T12 22m0-2q3.35 0 5.675-2.325T20 12q0-3.35-2.325-5.675T12 4Q8.65 4 6.325 6.325T4 12q0 3.35 2.325 5.675T12 20m0-8"
+                          /></svg
+                        ><svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="32"
+                          height="32"
+                          viewBox="0 0 24 24"
+                          style="color: red"
+                        >
+                          <path
+                            fill="currentColor"
+                            d="m12 13.4l2.9 2.9q.275.275.7.275t.7-.275q.275-.275.275-.7t-.275-.7L13.4 12l2.9-2.9q.275-.275.275-.7t-.275-.7q-.275-.275-.7-.275t-.7.275L12 10.6L9.1 7.7q-.275-.275-.7-.275t-.7.275q-.275.275-.275.7t.275.7l2.9 2.9l-2.9 2.9q-.275.275-.275.7t.275.7q.275.275.7.275t.7-.275zm0 8.6q-2.075 0-3.9-.788t-3.175-2.137q-1.35-1.35-2.137-3.175T2 12q0-2.075.788-3.9t2.137-3.175q1.35-1.35 3.175-2.137T12 2q2.075 0 3.9.788t3.175 2.137q1.35 1.35 2.138 3.175T22 12q0 2.075-.788 3.9t-2.137 3.175q-1.35 1.35-3.175 2.138T12 22m0-2q3.35 0 5.675-2.325T20 12q0-3.35-2.325-5.675T12 4Q8.65 4 6.325 6.325T4 12q0 3.35 2.325 5.675T12 20m0-8"
+                          />
+                        </svg>
+                        <div class="totle-detail">
+                          <h5 style="color: red">Réservation annulées</h5>
+                          <h3 *ngIf="!isPending">{{ cancelledCount }}</h3>
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="32"
+                            height="32"
+                            viewBox="0 0 24 24"
+                            *ngIf="isPending"
+                          >
+                            <circle cx="4" cy="12" r="3" fill="currentColor">
+                              <animate
+                                id="svgSpinners3DotsBounce0"
+                                attributeName="cy"
+                                begin="0;svgSpinners3DotsBounce1.end+0.25s"
+                                calcMode="spline"
+                                dur="0.6s"
+                                keySplines=".33,.66,.66,1;.33,0,.66,.33"
+                                values="12;6;12"
+                              />
+                            </circle>
+                            <circle cx="12" cy="12" r="3" fill="currentColor">
+                              <animate
+                                attributeName="cy"
+                                begin="svgSpinners3DotsBounce0.begin+0.1s"
+                                calcMode="spline"
+                                dur="0.6s"
+                                keySplines=".33,.66,.66,1;.33,0,.66,.33"
+                                values="12;6;12"
+                              />
+                            </circle>
+                            <circle cx="20" cy="12" r="3" fill="currentColor">
+                              <animate
+                                id="svgSpinners3DotsBounce1"
+                                attributeName="cy"
+                                begin="svgSpinners3DotsBounce0.begin+0.2s"
+                                calcMode="spline"
+                                dur="0.6s"
+                                keySplines=".33,.66,.66,1;.33,0,.66,.33"
+                                values="12;6;12"
+                              />
+                            </circle>
+                          </svg>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="profile-about dashboard-bg-box">
+                <div class="row">
+                  <div class="col-xxl-7">
+                    <div
+                      class="dashboard-title mb-3 d-flex justify-content-between"
+                    >
+                      <h3>Vos informations</h3>
+                      <h5
+                        class="custom-cursor"
+                        routerLink="/profil-user/update-profil"
+                        style="color: rgb(129, 21, 255)"
+                      >
+                        modifier
+                      </h5>
+                    </div>
+                    <div class="table-responsive">
+                      <table class="table">
+                        <tbody>
+                          <tr>
+                            <td>Nom et prénom:</td>
+                            <td>{{ userData?.full_name }}</td>
+                          </tr>
+                          <tr>
+                            <td>Contact:</td>
+                            <td>+225 {{ userData?.phone }}</td>
+                          </tr>
+                          <tr class="ng-star-inserted">
+                            <td>Adresse:</td>
+                            <td>
+                              {{ userData?.address }}
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                    <div
+                      class="dashboard-title mb-3 d-flex justify-content-between"
+                    >
+                      <h3>Session</h3>
+                      <h5
+                        class="custom-cursor"
+                        routerLink="/profil-user/update-profil"
+                        style="color: rgb(129, 21, 255)"
+                      >
+                        modifier
+                      </h5>
+                    </div>
+                    <div class="table-responsive">
+                      <table class="table">
+                        <tbody>
+                          <tr>
+                            <td>Email :</td>
+                            <td>
+                              {{ userData?.email }}
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>Mot de passe :</td>
+                            <td>●●●●●●●●</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                  <div class="col-xxl-5">
+                    <div class="profile-image">
+                      <img
+                        src="https://angular.pixelstrap.net/fastkart-rest/assets/images/inner-page/dashboard-profile.png"
+                        alt="dashboard-profile"
+                        class="img-fluid"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- <app-edit-profile-modal _nghost-ng-c1241341672=""
+                    ></app-edit-profile-modal
+                  ><app-change-password-modal _nghost-ng-c797858041=""
+                    ></app-change-password-modal
+                  ></
+                > -->
+        </div>
+        <section class="mb-20">
+          <div class="container">
+            <div>
+              <div
+                class="d-flex align-items-center justify-content-between mb-5"
+              >
+                <h3 class="">Dernière réservation</h3>
+                <a routerLink="/profil-user/historique" class="fw-medium">
+                  <span>Tout voir</span>
+                  <i
+                    class="far fa-arrow-alt-circle-right"
+                    style="margin-left: 10px"
+                  ></i>
+                </a>
+              </div>
+
+              <div class="table-responsive table-radius-me">
+                <table class="table table-bordered bg-white">
+                  <thead>
+                    <tr>
+                      <th scope="col" class="text-nowrap">Résidences</th>
+                      <th scope="col" class="text-nowrap">N° Réservation</th>
+                      <th scope="col" class="text-nowrap">Montant</th>
+                      <th scope="col" class="text-nowrap">
+                        Date de réservation
+                      </th>
+                      <th scope="col" class="text-nowrap">Status</th>
+                      <th scope="col" class="text-nowrap">Action</th>
+                    </tr>
+                  </thead>
+
+                  <tbody *ngIf="historyList">
+                    <tr
+                      *ngFor="
+                        let item of historyList
+                          | paginate : { itemsPerPage: 5, currentPage: page }
+                      "
+                    >
+                      <td>
+                        <div class="mb-2">
+                          <div>
+                            <a
+                              routerLink="/profil-user/detail-reservation/{{
+                                item.booking_id
+                              }}"
+                              class="d-inline-block text-dark link-hover-primary"
+                            >
+                              <strong>
+                                {{ item?.booking_room?.room_name }}
+                              </strong>
+                            </a>
+                          </div>
+                        </div>
+                        <div>
+                          <small class="text-nowrap d-block">
+                            <i class="fa fa-calendar pousser-icon"></i>
+                            <span
+                              >{{ item?.booking_room?.start_date }} -
+                              {{ item?.booking_room?.end_date }}</span
+                            >
+                          </small>
+                          <small class="text-nowrap d-block">
+                            <i class="fa fa-users pousser-icon"></i>
+                            <span>{{ item?.number_of_guests }} Adultes</span>
+                          </small>
+                        </div>
+                      </td>
+                      <td>
+                        <span class="text-nowrap"
+                          >#{{ item?.booking_number }}</span
+                        >
+                      </td>
+                      <td>
+                        <strong>
+                          <ng-container
+                            *ngIf="
+                              item?.booking_currency?.is_prefix_symbol === 1;
+                              else suffixSymbol
+                            "
+                          >
+                            <sup>{{ item.booking_currency?.symbol }}</sup
+                            >{{ item.booking_amount | number : "1.0-0" }}
+                          </ng-container>
+                          <ng-template #suffixSymbol>
+                            {{ item.booking_amount | number : "1.0-0"
+                            }}<sup>{{ item.booking_currency?.symbol }}</sup>
+                          </ng-template>
+                        </strong>
+                      </td>
+                      <td>
+                        <span class="text-nowrap fs-7">{{
+                          item?.booking_date
+                        }}</span>
+                      </td>
+                      <td class="text-nowrap">
+                        <span
+                          style="
+                            color: white;
+                            padding: 3px 10px 3px 10px;
+                            border-radius: 4px;
+                          "
+                          [style.backgroundColor]="getStatusColor(item?.status)"
+                          >{{ item?.status }}</span
+                        >
+                      </td>
+
+                      <td>
+                        <div class="d-inline-flex">
+                          <a
+                            href="#"
+                            class="btn btn-sm btn-outline-light btn-square rounded-circle shadow-sm me-2"
+                            title="Detail booking"
+                            style="
+                              box-shadow: 0 0.125rem 0.25rem
+                                rgba(0, 0, 0, 0.045) !important;
+                            "
+                          >
+                            <i class="fas fa-print" style="color: #a7856a"></i>
+                          </a>
+                          <a
+                            href="#"
+                            class="btn btn-sm btn-outline-light btn-square rounded-circle shadow-sm me-2"
+                            title="Delete booking"
+                            style="
+                              box-shadow: 0 0.125rem 0.25rem
+                                rgba(0, 0, 0, 0.045) !important;
+                            "
+                          >
+                            <i class="fa fa-trash" style="color: #a7856a"></i>
+                          </a>
+                        </div>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <div class="text-center justify-content-center" *ngIf="isPending">
+                <span
+                  class="spinner-border spinner-border-sm"
+                  role="status"
+                  aria-hidden="true"
+                ></span>
+                <div>Chargement en cours</div>
+              </div>
+
+              <div
+                class="text-center justify-content-center"
+                *ngIf="!historyList"
+              >
+                <img
+                  src="https://angular.pixelstrap.net/fastkart-rest/assets/svg/empty-items.svg"
+                  alt=""
+                  width="40%"
+                />
+                <h4>Aucune réservation</h4>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+  </div>
+
+  <!-- <app-back-button
+    [customUrl]="'/room-details/' + roomdetails?.id"
+  ></app-back-button> -->
+  <app-back-button></app-back-button>
+</ng-container>
+
+<div
+  class="d-flex text-center justify-content-center align-self-center align-items-center"
+  *ngIf="!dataIsOk"
+  style="height: 50vh"
+>
+  <div>
+    <!-- <span
+      class="spinner-border spinner-border-sm"
+      role="status"
+      aria-hidden="true"
+    ></span> -->
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="32"
+      height="32"
+      viewBox="0 0 24 24"
+    >
+      <path
+        fill="currentColor"
+        d="M12,1A11,11,0,1,0,23,12,11,11,0,0,0,12,1Zm0,19a8,8,0,1,1,8-8A8,8,0,0,1,12,20Z"
+        opacity=".25"
+      />
+      <path
+        fill="currentColor"
+        d="M12,4a8,8,0,0,1,7.89,6.7A1.53,1.53,0,0,0,21.38,12h0a1.5,1.5,0,0,0,1.48-1.75,11,11,0,0,0-21.72,0A1.5,1.5,0,0,0,2.62,12h0a1.53,1.53,0,0,0,1.49-1.3A8,8,0,0,1,12,4Z"
+      >
+        <animateTransform
+          attributeName="transform"
+          dur="0.75s"
+          repeatCount="indefinite"
+          type="rotate"
+          values="0 12 12;360 12 12"
+        />
+      </path>
+    </svg>
+    <div>Chargement des données</div>
+  </div>
+</div>

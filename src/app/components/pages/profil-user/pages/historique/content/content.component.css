@@ -1,0 +1,82 @@
+.iniput {
+  border: black;
+  width: 100%;
+  height: 38px;
+  background-color: #f8f8f8;
+  padding: 0 40px;
+}
+
+.pousser-icon {
+  margin-right: 15px;
+}
+
+.badge-success {
+  width: 100% !important;
+  color: #fff !important;
+  background-color: RGBA(90, 183, 123, var(--bs-bg-opacity, 1)) !important;
+  --bs-badge-padding-x: 0.65em;
+  --bs-badge-padding-y: 0.35em;
+  --bs-badge-font-size: 0.75em;
+  --bs-badge-font-weight: 400;
+  --bs-badge-color: #fff;
+  --bs-badge-border-radius: 0.135rem;
+  display: inline-block;
+  padding: var(--bs-badge-padding-y) var(--bs-badge-padding-x);
+  font-size: var(--bs-badge-font-size);
+  font-weight: var(--bs-badge-font-weight);
+  line-height: 1;
+  color: var(--bs-badge-color);
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: baseline;
+  border-radius: var(--bs-badge-border-radius);
+}
+
+.badge-danger {
+  width: 100% !important;
+  color: #fff !important;
+  background-color: RGBA(90, 183, 123, var(--bs-bg-opacity, 1)) !important;
+  --bs-badge-padding-x: 0.65em;
+  --bs-badge-padding-y: 0.35em;
+  --bs-badge-font-size: 0.75em;
+  --bs-badge-font-weight: 400;
+  --bs-badge-color: #fff;
+  --bs-badge-border-radius: 0.135rem;
+  display: inline-block;
+  padding: var(--bs-badge-padding-y) var(--bs-badge-padding-x);
+  font-size: var(--bs-badge-font-size);
+  font-weight: var(--bs-badge-font-weight);
+  line-height: 1;
+  color: red;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: baseline;
+  border-radius: var(--bs-badge-border-radius);
+}
+
+.badge-warning {
+  width: 100% !important;
+  color: #fff !important;
+  background-color: RGBA(90, 183, 123, var(--bs-bg-opacity, 1)) !important;
+  --bs-badge-padding-x: 0.65em;
+  --bs-badge-padding-y: 0.35em;
+  --bs-badge-font-size: 0.75em;
+  --bs-badge-font-weight: 400;
+  --bs-badge-color: #fff;
+  --bs-badge-border-radius: 0.135rem;
+  display: inline-block;
+  padding: var(--bs-badge-padding-y) var(--bs-badge-padding-x);
+  font-size: var(--bs-badge-font-size);
+  font-weight: var(--bs-badge-font-weight);
+  line-height: 1;
+  color: var(--bs-badge-color);
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: baseline;
+  border-radius: var(--bs-badge-border-radius);
+}
+
+input.simple-radius {
+  height: 67px;
+  width: 100%;
+}

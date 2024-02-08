@@ -1,0 +1,136 @@
+.iniput {
+  border: black;
+  width: 100%;
+  height: 100%;
+  background-color: #f8f8f8;
+
+  font-family: "Old Standard TT", serif;
+  padding: 0 40px;
+}
+
+.amenities-list {
+  list-style-type: none;
+
+  font-family: "Old Standard TT", serif;
+  padding: 0;
+}
+
+.amenity-item {
+  display: inline-block;
+  width: 50%; /* Affichez deux éléments par ligne */
+  box-sizing: border-box;
+
+  font-family: "Old Standard TT", serif;
+  padding: 0 15px; /* Espacement entre les éléments */
+}
+
+.mon-padding {
+  padding: 10px;
+  border: solid 1px rgba(0, 0, 0, 0.125);
+
+  font-family: "Old Standard TT", serif;
+  border-radius: 10px;
+}
+
+.input-formulaire {
+  border-radius: 4px;
+  width: 100%;
+  height: 35px;
+
+  font-family: "Old Standard TT", serif;
+  border: 1px solid rgba(0, 0, 0, 0.125);
+}
+
+.m10 {
+  font-family: "Old Standard TT", serif;
+  margin-top: 10px;
+}
+
+.petiit {
+  background-color: #e7fde9;
+  color: #006607;
+  padding: 0px 6px 6px 6px;
+  margin-right: 4px;
+  border-radius: 5px;
+
+  font-family: "Old Standard TT", serif;
+  border: 1px solid #97e59c;
+}
+
+.petiiit {
+  background-color: #e7fde9;
+  color: #006607;
+  padding: 6px 6px 6px 6px;
+  margin-right: 4px;
+  border-radius: 5px;
+
+  font-family: "Old Standard TT", serif;
+  border: 1px solid #97e59c;
+}
+
+.a001 {
+  padding-left: 200px;
+  padding-right: 200px;
+
+  font-family: "Old Standard TT", serif;
+  padding-top: 60px;
+}
+
+.fs13 {
+  font-family: "Old Standard TT", serif;
+  font-size: 13px;
+}
+
+.a002 {
+  font-size: 13px;
+  background-color: black;
+  border-radius: 4px;
+  padding: 2px;
+
+  font-family: "Old Standard TT", serif;
+  margin-left: 10px;
+}
+
+.a003 {
+  width: 5%;
+
+  font-family: "Old Standard TT", serif;
+  margin-right: 10px;
+}
+
+.a004 {
+  font-family: "Old Standard TT", serif;
+  border-left: rgba(0, 0, 0, 0.125) 2px solid;
+}
+
+.mr10 {
+  font-family: "Old Standard TT", serif;
+  margin-right: 10px;
+}
+
+.mb10 {
+  font-family: "Old Standard TT", serif;
+  margin-bottom: 10px;
+}
+
+.fs14 {
+  font-family: "Old Standard TT", serif;
+  font-size: 14px;
+}
+
+.mt15 {
+  font-family: "Old Standard TT", serif;
+  margin-top: 15px;
+}
+
+input {
+  padding-left: 10px;
+
+  font-family: "Old Standard TT", serif;
+  padding-right: 10px;
+}
+
+textarea {
+  font-family: "Old Standard TT", serif;
+  padding: 10px;
+}

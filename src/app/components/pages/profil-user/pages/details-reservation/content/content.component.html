@@ -1,0 +1,919 @@
+<ng-container *ngIf="dataIsOk">
+  <!-- <div class="d-block d-md-none mt-30"></div> -->
+  <!-- <section class="blog-section pb-60"> -->
+  <div style="margin: -17px">
+    <div class="mon-padding" style="margin-top: 10px; background-color: white">
+      <div>
+        <div class="mon-padding m10" style="border: 0px">
+          <div>
+            <h3 style="color: rgb(129, 21, 255)">
+              <strong
+                >Résidence: {{ reservationDetail?.room?.room_name }}
+              </strong>
+            </h3>
+          </div>
+          <!-- <div class="d-none d-md-block">
+              <h5 style="color: rgb(129, 21, 255)">
+                <strong
+                  style="
+                    color: white;
+                    padding: 3px 10px 3px 10px;
+                    border-radius: 4px;
+                  "
+                  [style.backgroundColor]="
+                    getReservationSatus(reservationDetail?.status)
+                  "
+                >
+                  {{ reservationDetail?.status }}
+                </strong>
+              </h5>
+            </div> -->
+        </div>
+        <div class="d-block d-md-none">
+          <h5 style="color: rgb(129, 21, 255)">
+            <strong
+              style="
+                color: white;
+                padding: 3px 10px 3px 10px;
+                border-radius: 4px;
+              "
+            >
+            </strong>
+          </h5>
+        </div>
+      </div>
+      <hr />
+      <!-- <div>
+          <div
+            class="mon-padding m10"
+            style="margin-bottom: 10px; background-color: white"
+            [style.backgroundColor]="
+              getReservationSatus(reservationDetail?.status)
+            "
+          >
+            <div>
+              <h4 style="color: white" class="text-center">
+                <strong
+                  ><i
+                    class="fa fa-check-circle"
+                    style="font-size: 28px; margin-right: 15px"
+                  ></i
+                  >En attente de confirmation </strong
+                >
+              </h4>
+            </div>
+          </div>
+        </div> -->
+      <div>
+        <div
+          class="mon-padding m10"
+          style="margin-bottom: 10px; background-color: white"
+          [style.backgroundColor]="
+            getReservationStatusColor(reservationDetail?.status)
+          "
+        >
+          <div>
+            <h4 style="color: white" class="text-center">
+              <strong>
+                <i
+                  class="fas {{
+                    getReservationStatusIcon(reservationDetail?.status)
+                  }}"
+                  style="font-size: 28px; margin-right: 15px"
+                ></i>
+                {{ getReservationStatusMessage(reservationDetail?.status) }}
+                <!-- ({{
+                  reservationDetail?.status
+                }}) -->
+              </strong>
+            </h4>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="m10"></div>
+    <form [formGroup]="infoPersoForm">
+      <div class="mon-padding" style="background-color: white">
+        <div class="text-center">
+          <h6><strong>Les détails de votre réservation</strong></h6>
+          <br />
+          <br />
+          <div style="margin-bottom: 10px">
+            <h4>N°: {{ reservationDetail?.booking_number }}</h4>
+          </div>
+          <hr />
+          <div style="margin-bottom: 10px">
+            <h6>Date de rés. : {{ reservationDetail?.booking_date }}</h6>
+          </div>
+
+          <div style="margin-bottom: 10px">
+            <h6>
+              Nombre d'adultes. : {{ reservationDetail?.number_of_guests }}
+            </h6>
+          </div>
+          <hr />
+          <div class="d-flex justify-content-around">
+            <div>
+              <p>
+                Arrivée <br />
+                <strong>{{ reservationDetail?.start_date }} </strong> <br />
+                <!-- 12h00 - 0h00 -->
+              </p>
+            </div>
+            <div class="a004"></div>
+            <div>
+              <p>
+                Départ <br />
+                <strong>{{ reservationDetail?.end_date }} </strong> <br />
+                <!-- 12h00 - 0h00 -->
+              </p>
+            </div>
+          </div>
+
+          <div style="margin-top: 10px" class="d-block d-lg-none">
+            <svg
+              class="bk-icon -streamline-credit_card_crossed"
+              fill="#008009"
+              height="16"
+              role="presentation"
+              width="16"
+              viewBox="0 0 128 128"
+              aria-hidden="true"
+              focusable="false"
+            >
+              <path
+                d="M88.72 108a4 4 0 0 1-4 4H12c-6.627 0-12-5.373-12-12V28a4 4 0 0 1 8 0v12h12.11a4 4 0 0 1 0 8H8v52a4 4 0 0 0 4 4h72.72a4 4 0 0 1 4 4zM116 16H43.1a4 4 0 0 0 0 8H116a4 4 0 0 1 4 4v12H66.86a4 4 0 0 0 0 8H120v52a4 4 0 0 0 8 0V28c0-6.627-5.373-12-12-12zM44.3 64H28a4 4 0 0 0 0 8h16.3a4 4 0 0 0 0-8zM24 84a4 4 0 0 0 4 4h29.88a4 4 0 0 0 0-8H28a4 4 0 0 0-4 4zM6.83 1.17a4.002 4.002 0 1 0-5.66 5.66l120 120a4.002 4.002 0 1 0 5.66-5.66z"
+              ></path>
+            </svg>
+            <span style="margin-left: 15px">
+              Heure d'arrivée: {{ reservationDetail?.arrival_time }}
+            </span>
+          </div>
+          <hr />
+          <div class="d-flex justify-content-around">
+            <div>
+              <p>Durée totale du séjour :</p>
+              <div class="d-flex">
+                <p>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="17"
+                    height="17"
+                    fill="currentColor"
+                    class="bi bi-sun"
+                    viewBox="0 0 16 16"
+                    style="margin-right: 10px"
+                  >
+                    <path
+                      d="M8 11a3 3 0 1 1 0-6 3 3 0 0 1 0 6zm0 1a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z"
+                    />
+                  </svg>
+                  <strong>{{ numberOfDays }} Jours </strong>
+                </p>
+                <p style="margin-left: 10px; margin-right: 10px">/</p>
+                <p>
+                  <svg
+                    viewBox="0 0 1024 1024"
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="17"
+                    height="17"
+                    style="margin-right: 10px"
+                  >
+                    <path
+                      fill="currentColor"
+                      d="M384 512a448 448 0 0 1 215.872-383.296A384 384 0 0 0 213.76 640h188.8A448.256 448.256 0 0 1 384 512zM171.136 704a448 448 0 0 1 636.992-575.296A384 384 0 0 0 499.328 704h-328.32z"
+                    />
+                    <path
+                      fill="currentColor"
+                      d="M32 640h960q32 0 32 32t-32 32H32q-32 0-32-32t32-32zm128 128h384a32 32 0 1 1 0 64H160a32 32 0 1 1 0-64zm160 127.68 224 .256a32 32 0 0 1 32 32V928a32 32 0 0 1-32 32l-224-.384a32 32 0 0 1-32-32v-.064a32 32 0 0 1 32-32z"
+                    />
+                  </svg>
+                  <strong>{{ numberOfNights }} Nuits</strong>
+                </p>
+              </div>
+            </div>
+            <!-- <div class="a004"></div> -->
+
+            <div class="d-none d-md-block">
+              <p>Heure d'arrivée :</p>
+              <div class="d-flex">
+                <input
+                  type="time"
+                  class="input-formulaire"
+                  formControlName="arrival_time"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="mon-padding m10" style="border: 0px">
+          <div>
+            <!-- <h5><strong>Demandes spéciales</strong></h5> -->
+
+            <label for=""><strong>Démande spéciale</strong></label>
+            <textarea
+              name=""
+              class="input-formulaire"
+              formControlName="special_request"
+              rows="10"
+              style="height: 100px"
+            ></textarea>
+          </div>
+        </div>
+      </div>
+
+      <div class="m10"></div>
+
+      <div class="mon-padding" style="background-color: white">
+        <div>
+          <h6><strong> Récapitulatif du montant </strong></h6>
+          <div class="m10"></div>
+
+          <div class="d-flex justify-content-between">
+            <h6>Montant de la résidence</h6>
+
+            <h5>
+              {{ reservationDetail?.room.room_price | number : "1.0-0"
+              }}<sup style="font-size: 13px">{{
+                reservationDetail?.currency?.symbol
+              }}</sup>
+            </h5>
+          </div>
+
+          <div class="d-flex justify-content-between">
+            <h6>Montant total hors taxe</h6>
+
+            <h5>
+              {{ reservationDetail?.sub_total | number : "1.0-0"
+              }}<sup style="font-size: 13px">{{
+                reservationDetail?.currency?.symbol
+              }}</sup>
+            </h5>
+          </div>
+          <div class="d-flex justify-content-between">
+            <h6>Taxe</h6>
+
+            <h5>
+              {{ reservationDetail?.tax_amount | number : "1.0-0"
+              }}<sup style="font-size: 13px">{{
+                reservationDetail?.currency?.symbol
+              }}</sup>
+            </h5>
+          </div>
+          <!-- <div *ngIf="couponExist_oh">
+              <br />
+              <div
+                class="mon-padding self-align-center align-items-center justify-content-center"
+                style="padding-bottom: 14px; margin-bottom: 10px"
+              >
+                <span class="fs14">
+                  <span class="d-flex">
+                    <svg
+                      class="bk-icon -streamline-info_sign"
+                      height="16"
+                      role="presentation"
+                      width="16"
+                      viewBox="0 0 24 24"
+                      aria-hidden="true"
+                      focusable="false"
+                      style="margin-right: 10px"
+                    >
+                      <path
+                        d="M14.25 15.75h-.75a.75.75 0 0 1-.75-.75v-3.75a1.5 1.5 0 0 0-1.5-1.5h-.75a.75.75 0 0 0 0 1.5h.75V15a2.25 2.25 0 0 0 2.25 2.25h.75a.75.75 0 0 0 0-1.5zM11.625 6a1.125 1.125 0 1 0 0 2.25 1.125 1.125 0 0 0 0-2.25.75.75 0 0 0 0 1.5.375.375 0 1 1 0-.75.375.375 0 0 1 0 .75.75.75 0 0 0 0-1.5zM22.5 12c0 5.799-4.701 10.5-10.5 10.5S1.5 17.799 1.5 12 6.201 1.5 12 1.5 22.5 6.201 22.5 12zm1.5 0c0-6.627-5.373-12-12-12S0 5.373 0 12s5.373 12 12 12 12-5.373 12-12z"
+                      ></path>
+                    </svg>
+
+                    <h6 style="color: green; font-size: 13px">
+                      <strong>
+                        Un coupon de {{ reservationDetail?.coupon?.value }}
+                        <span *ngIf="couponExist?.coupon?.type === 'percentage'"
+                          >%</span
+                        >
+                        <span *ngIf="couponExist?.coupon?.type === 'fixed'">
+                          {{ reservationDetail?.currency?.symbol }}
+                        </span>
+                        est appliqué sur le montant initial.</strong
+                      >
+                    </h6>
+                  </span>
+                </span>
+              </div>
+              <div class="d-flex justify-content-between">
+                <h6>Montant initial</h6>
+
+                <h5>
+                  <ng-container
+                    *ngIf="
+                      reservationDetail?.currency?.is_prefix_symbol === 1;
+                      else suffixSymbol
+                    "
+                  >
+                    <sup style="font-size: 13px">{{
+                      reservationDetail?.currency?.symbol
+                    }}</sup>
+                    {{ reservationDetail?.initialAmount | number : "1.0-0" }}
+                  </ng-container>
+                  <ng-template #suffixSymbol>
+                    {{ reservationDetail?.initialAmount | number : "1.0-0"
+                    }}<sup style="font-size: 13px">{{
+                      reservationDetail?.currency?.symbol
+                    }}</sup>
+                  </ng-template>
+                </h5>
+              </div>
+
+              <div class="d-flex justify-content-between">
+                <h6>Reduction appliquée</h6>
+                <h5>
+                  <!-- <ng-container
+                      *ngIf="
+                        roomdetails?.currency?.is_prefix_symbol === 1;
+                        else suffixSymbol
+                      "
+                    >
+                      <sup style="font-size: 13px">{{
+                        roomdetails?.currency?.symbol
+                      }}</sup>
+                      {{ couponExist?.discountAmount | number : "1.0-0" }}
+                    </ng-container>
+                    <ng-template #suffixSymbol>--
+                  {{ reservationDetail?.discountAmount | number : "1.0-0"
+                  }}<sup style="font-size: 13px">{{
+                    reservationDetail?.currency?.symbol
+                  }}</sup>
+                  <!-- </ng-template>  --
+                </h5>
+              </div>
+            </div> -->
+          <br />
+          <div class="d-flex justify-content-between petiiit">
+            <div>
+              <h5 style="font-size: 15px">Montant total TTC</h5>
+            </div>
+            <div>
+              <h2>
+                <ng-container
+                  *ngIf="
+                    reservationDetail?.currency?.is_prefix_symbol === 1;
+                    else suffixSymbol
+                  "
+                >
+                  <sup>{{ reservationDetail?.currency?.symbol }}</sup>
+                  {{ reservationDetail.amount | number : "1.0-0" }}
+                </ng-container>
+                <ng-template #suffixSymbol>
+                  {{ reservationDetail?.amount | number : "1.0-0"
+                  }}<sup class="supp">{{
+                    reservationDetail?.currency?.symbol
+                  }}</sup>
+                </ng-template>
+              </h2>
+
+              <em> Taxes et frais compris * </em>
+            </div>
+          </div>
+          <!-- <hr />
+              <h6><strong> Informations sur le tarif </strong></h6> -->
+          <!-- <br /> -->
+          <span style="margin-top: 10px"
+            ><svg
+              class="bk-icon -streamline-accounting_bills"
+              height="20"
+              width="20"
+              viewBox="0 0 24 24"
+              class="mr10"
+              role="presentation"
+              aria-hidden="true"
+              focusable="false"
+            >
+              <path
+                d="M4.125 8.25a.375.375 0 1 1 0-.75.375.375 0 0 1 0 .75.75.75 0 0 0 0-1.5 1.125 1.125 0 1 0 0 2.25 1.125 1.125 0 0 0 0-2.25.75.75 0 0 0 0 1.5zm12.75 5.25a.375.375 0 1 1 0-.75.375.375 0 0 1 0 .75.75.75 0 0 0 0-1.5 1.125 1.125 0 1 0 0 2.25 1.125 1.125 0 0 0 0-2.25.75.75 0 0 0 0 1.5zm2.625-3V15a.75.75 0 0 1-.75.75H2.25A.75.75 0 0 1 1.5 15V6a.75.75 0 0 1 .75-.75h16.5a.75.75 0 0 1 .75.75v4.5zm1.5 0V6a2.25 2.25 0 0 0-2.25-2.25H2.25A2.25 2.25 0 0 0 0 6v9a2.25 2.25 0 0 0 2.25 2.25h16.5A2.25 2.25 0 0 0 21 15v-4.5zm-8.25 0a2.25 2.25 0 1 1-4.5 0 2.25 2.25 0 0 1 4.5 0zm1.5 0a3.75 3.75 0 1 0-7.5 0 3.75 3.75 0 0 0 7.5 0zM22.5 9v9a.75.75 0 0 1-.75.75H5.25a.75.75 0 0 0 0 1.5h16.5A2.25 2.25 0 0 0 24 18V9a.75.75 0 0 0-1.5 0z"
+              ></path></svg
+            >Taxes et frais compris dans le montant</span
+          >
+        </div>
+      </div>
+      <!-- <div class="m10"></div>
+
+          <div class="mon-padding">
+            <div>
+              <h6><strong> Calendrier des paiements </strong></h6>
+              <br />
+              <p>
+                Vous serez débité(e) d'un prépaiement correspondant au montant total de la
+                réservation.
+              </p>
+            </div>
+          </div> -->
+      <div class="m10"></div>
+
+      <div
+        class="mon-padding"
+        style="background-color: #fff1f1; border: 1px solid rgb(249, 154, 154)"
+      >
+        <div>
+          <h6>
+            <svg
+              class="bk-icon -streamline-alarm"
+              height="24"
+              width="24"
+              viewBox="0 0 24 24"
+              role="presentation"
+              aria-hidden="true"
+              focusable="false"
+            >
+              <path
+                d="M20.25 12.75a8.25 8.25 0 1 1-16.5 0 8.25 8.25 0 0 1 16.5 0zm1.5 0C21.75 7.365 17.385 3 12 3s-9.75 4.365-9.75 9.75S6.615 22.5 12 22.5s9.75-4.365 9.75-9.75zM6.67 23.585l1.387-2.77a.75.75 0 1 0-1.342-.672L5.33 22.915a.75.75 0 1 0 1.342.671zM12 12H8.609a.75.75 0 0 0 0 1.5H12a.75.75 0 0 0 0-1.5zm-.75-4.5v5.25a.75.75 0 0 0 1.5 0V7.5a.75.75 0 0 0-1.5 0zM1.969 4.336l3.75-3A.75.75 0 1 0 4.78.164l-3.75 3a.75.75 0 1 0 .938 1.172zM18.67 22.915l-1.386-2.772a.75.75 0 1 0-1.342.67l1.386 2.772a.75.75 0 1 0 1.342-.67zm4.297-19.75l-3.75-3a.75.75 0 0 0-.936 1.17l3.75 3a.75.75 0 1 0 .936-1.17z"
+              ></path></svg
+            ><strong style="margin-left: 15px"
+              >Combien me coûtera l'annulation ?
+            </strong>
+          </h6>
+          <div>
+            <br />
+            <!-- <p>
+    <span class="text-danger" class="mb10"
+      >Annulation gratuite avant le 2 févr.</span
+    >
+  </p> -->
+
+            <div
+              class="d-flex justify-content-between"
+              *ngIf="reservationDetail?.room?.is_free_cancelled == 0"
+            >
+              <div
+                *ngIf="reservationDetail?.room?.cancellation_type == 'fixed'"
+              >
+                <span>Le montant est fixe : </span>
+                <strong>
+                  <span
+                    >{{
+                      reservationDetail?.room?.cancellation_value
+                        | number : "1.0-0"
+                    }}<sup style="font-size: 12px">{{
+                      reservationDetail?.currency?.symbol
+                    }}</sup>
+                  </span>
+                </strong>
+              </div>
+              <div
+                *ngIf="
+                  reservationDetail?.room?.cancellation_type == 'percentage'
+                "
+              >
+                <span
+                  >{{
+                    reservationDetail?.room?.cancellation_value
+                      | number : "1.0-0"
+                  }}% du montant de réservation :
+                </span>
+                <strong>
+                  <span
+                    >{{ annulationAmount | number : "1.0-0"
+                    }}<sup style="font-size: 12px">{{
+                      reservationDetail?.currency?.symbol
+                    }}</sup>
+                  </span>
+                </strong>
+              </div>
+            </div>
+            <div
+              class="d-flex justify-content-between"
+              *ngIf="reservationDetail?.room?.is_free_cancelled == 1"
+            >
+              <div>
+                <span>L'annulation est gratuite pour cette résidence </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!--  -->
+      <!--  -->
+      <!--  -->
+      <!--  -->
+      <!--  -->
+      <!--  -->
+      <!--  -->
+      <!--  -->
+      <!--  -->
+      <!--  -->
+      <!--  -->
+      <!--  -->
+      <!--  -->
+      <!--  -->
+      <!--  -->
+      <!--  -->
+      <!--  -->
+      <!--  -->
+      <!--  -->
+      <!--  -->
+      <!--  -->
+
+      <div class="m10"></div>
+      <div class="mon-padding m10" style="background-color: white">
+        <div>
+          <h5><strong>Vos coordonnées personnel</strong></h5>
+          <p class="fs14"></p>
+          <br />
+
+          <div class="row m10">
+            <div class="col-lg-6 m10">
+              <h6>
+                <strong class="fs13">Prénom</strong
+                ><span class="text-danger">*</span>
+              </h6>
+
+              <input
+                type="text"
+                class="input-formulaire"
+                placeholder="Entrez votre prénom"
+                disabled
+                formControlName="user_first_name"
+              />
+            </div>
+            <div class="col-lg-6 m10">
+              <h6>
+                <strong class="fs13">Nom</strong
+                ><span class="text-danger">*</span>
+              </h6>
+
+              <input
+                type="text"
+                class="input-formulaire"
+                formControlName="user_last_name"
+                placeholder="Entrez votre nom"
+                disabled
+              />
+            </div>
+            <div class="col-lg-6 m10">
+              <h6>
+                <strong class="fs13">Adresse e-mail</strong
+                ><span class="text-danger">*</span>
+              </h6>
+
+              <input
+                type="text"
+                class="input-formulaire"
+                placeholder="Entrez votre adresse email"
+                disabled
+                formControlName="user_email"
+              />
+              <em class="fs13"
+                >L'e-mail de confirmation sera envoyé à cette adresse
+              </em>
+            </div>
+            <div class="col-lg-6 m10">
+              <h6>
+                <strong class="fs13">Pays/région</strong
+                ><span class="text-danger">*</span>
+              </h6>
+              <input
+                type="text"
+                class="input-formulaire"
+                placeholder="Entrez votre adresse email"
+                disabled
+                formControlName="country_and_country_code"
+              />
+            </div>
+            <div class="col-lg-6 m10">
+              <h6>
+                <strong class="fs13"
+                  >Téléphone (de préférence numéro de portable)</strong
+                ><span class="text-danger">*</span>
+              </h6>
+
+              <input
+                type="number"
+                class="input-formulaire"
+                placeholder="Entrez votre numero de téléphone"
+                disabled
+                formControlName="phone_number"
+              />
+              <em class="fs13"
+                >Pour que l'établissement puisse vous joindre
+              </em>
+            </div>
+
+            <div class="col-lg-6 m10">
+              <h6>
+                <strong class="fs13">Adresse</strong
+                ><span class="text-danger">*</span>
+              </h6>
+
+              <input
+                type="text"
+                class="input-formulaire"
+                placeholder="Entrez votre adresse de résidence"
+                formControlName="adresse"
+                disabled
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </form>
+
+    <div
+      class="mon-padding m10"
+      style="background-color: white"
+      *ngIf="showAnulationBox"
+    >
+      <div>
+        <h5 class="text-center"><strong>Annulation</strong></h5>
+        <br />
+        <div *ngIf="showCancelledReason">
+          <span style="color: red"
+            ><strong>Vous êtes sur le point d'annuler la réservation</strong>
+          </span>
+          <br />
+          <br />
+          <div *ngIf="reservationDetail?.room?.is_free_cancelled == 1">
+            <i class="fas fa-arrow-right"></i> Annulation gratuite
+          </div>
+          <div *ngIf="reservationDetail?.room?.is_free_cancelled == 0">
+            <div>
+              <i class="fas fa-arrow-right"></i> Hébergement non-fumeurs
+            </div>
+            <div
+              class="mon-padding"
+              style="
+                background-color: #fff1f1;
+                border: 1px solid rgb(249, 154, 154);
+              "
+            >
+              <div>
+                <h6>
+                  <svg
+                    class="bk-icon -streamline-alarm"
+                    height="24"
+                    width="24"
+                    viewBox="0 0 24 24"
+                    role="presentation"
+                    aria-hidden="true"
+                    focusable="false"
+                  >
+                    <path
+                      d="M20.25 12.75a8.25 8.25 0 1 1-16.5 0 8.25 8.25 0 0 1 16.5 0zm1.5 0C21.75 7.365 17.385 3 12 3s-9.75 4.365-9.75 9.75S6.615 22.5 12 22.5s9.75-4.365 9.75-9.75zM6.67 23.585l1.387-2.77a.75.75 0 1 0-1.342-.672L5.33 22.915a.75.75 0 1 0 1.342.671zM12 12H8.609a.75.75 0 0 0 0 1.5H12a.75.75 0 0 0 0-1.5zm-.75-4.5v5.25a.75.75 0 0 0 1.5 0V7.5a.75.75 0 0 0-1.5 0zM1.969 4.336l3.75-3A.75.75 0 1 0 4.78.164l-3.75 3a.75.75 0 1 0 .938 1.172zM18.67 22.915l-1.386-2.772a.75.75 0 1 0-1.342.67l1.386 2.772a.75.75 0 1 0 1.342-.67zm4.297-19.75l-3.75-3a.75.75 0 0 0-.936 1.17l3.75 3a.75.75 0 1 0 .936-1.17z"
+                    ></path></svg
+                  ><strong style="margin-left: 15px"
+                    >Combien me coûtera l'annulation ?
+                  </strong>
+                </h6>
+                <div>
+                  <br />
+                  <!-- <p>
+            <span class="text-danger" class="mb10"
+              >Annulation gratuite avant le 2 févr.</span
+            >
+          </p> -->
+
+                  <div
+                    class="d-flex justify-content-between"
+                    *ngIf="reservationDetail?.room?.is_free_cancelled == 0"
+                  >
+                    <div
+                      *ngIf="
+                        reservationDetail?.room?.cancellation_type == 'fixed'
+                      "
+                    >
+                      <span>Le montant est fixe : </span>
+                      <strong>
+                        <span
+                          >{{
+                            reservationDetail?.room?.cancellation_value
+                              | number : "1.0-0"
+                          }}<sup style="font-size: 12px">{{
+                            reservationDetail?.currency?.symbol
+                          }}</sup>
+                        </span>
+                      </strong>
+                    </div>
+                    <div
+                      *ngIf="
+                        reservationDetail?.room?.cancellation_type ==
+                        'percentage'
+                      "
+                    >
+                      <span
+                        >{{
+                          reservationDetail?.room?.cancellation_value
+                            | number : "1.0-0"
+                        }}% du montant de réservation :
+                      </span>
+                      <strong>
+                        <span
+                          >{{ annulationAmount | number : "1.0-0"
+                          }}<sup style="font-size: 12px">{{
+                            reservationDetail?.currency?.symbol
+                          }}</sup>
+                        </span>
+                      </strong>
+                    </div>
+                  </div>
+                  <div
+                    class="d-flex justify-content-between"
+                    *ngIf="
+                      reservationDetail?.booking?.room?.room
+                        ?.is_free_cancelled == 1
+                    "
+                  >
+                    <div>
+                      <span
+                        >L'annulation est gratuite pour cette résidence
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <br />
+          <!-- <div>
+              <input type="checkbox" disabled
+              <span
+                ><strong class="text-danger"
+                  >En continuant vous acceptez les conditions d'annulation</strong
+                ></span
+              >
+            </div> -->
+        </div>
+      </div>
+      <div class="amertie-cart" style="margin-top: 10px">
+        <div
+          class="d-flex justify-content-between"
+          *ngIf="!showCancelledReason"
+        >
+          <div
+            class="text-center custom-cursor"
+            style="
+              border-radius: 10px;
+              background-color: red;
+              color: white;
+              padding: 10px;
+              display: flex;
+              justify-content: center; /* Centrer horizontalement */
+              align-items: center;
+              width: 100%;
+              margin-right: 5px;
+            "
+            (click)="wantCancelled()"
+          >
+            Annuler
+          </div>
+          <div
+            class="text-center custom-cursor"
+            style="
+              border-radius: 10px;
+              background-color: black;
+              color: white;
+              padding: 10px;
+              display: flex;
+              justify-content: center; /* Centrer horizontalement */
+              align-items: center;
+              width: 100%;
+
+              margin-left: 5px;
+            "
+          >
+            Réserver à nouveau
+          </div>
+        </div>
+        <!-- ... -->
+        <div *ngIf="showCancelledReason">
+          <textarea
+            [(ngModel)]="cancellationReason"
+            style="height: 80px; border-radius: 10px"
+          ></textarea>
+          <div class="mt-3">
+            <label>
+              <input type="checkbox" [(ngModel)]="acceptanceChecked" />
+              <!-- <span class="ml-2">
+                  <strong class="text-danger"
+                >-->
+              En continuant, vous acceptez les conditions d'annulation
+              <!-- </strong
+                  >
+                </span> -->
+            </label>
+          </div>
+          <div *ngIf="showAnnulMsg">
+            <em> Veuillez accepter les conditions d'annulation </em>
+          </div>
+          <div *ngIf="showAnnulMsg_2">
+            <em> Donnez la raison de votre annulation </em>
+          </div>
+          <div class="d-flex justify-content-between" style="margin-top: 10px">
+            <div
+              class="text-center custom-cursor"
+              style="
+                border-radius: 10px;
+                background-color: black;
+                color: white;
+                padding: 10px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 100%;
+                margin-left: 5px;
+              "
+              (click)="cancel()"
+              *ngIf="!showAnnulRequest"
+            >
+              Abandonner
+            </div>
+            <div
+              class="text-center custom-cursor"
+              style="
+                border-radius: 10px;
+                background-color: red;
+                color: white;
+                padding: 10px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 100%;
+                margin-right: 5px;
+              "
+              (click)="confirmCancellation(reservationDetail?.booking_number)"
+            >
+              <span *ngIf="!showAnnulRequest"> Annuler </span>
+
+              <div
+                class="d-flex justify-content-center align-items-center h-100"
+                *ngIf="showAnnulRequest"
+              >
+                <div class="mr-2">
+                  <span
+                    class="spinner-border spinner-border-sm"
+                    role="status"
+                    aria-hidden="true"
+                  ></span>
+                </div>
+                <div>
+                  <span>Annulation en cours</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- ... -->
+      </div>
+      <hr />
+      <div *ngIf="reservationDetail?.status === statuus">
+        <app-make-comment
+          [room_id]="reservationDetail?.room?.room_id"
+        ></app-make-comment>
+      </div>
+    </div>
+
+    <!-- <br />-->
+  </div>
+  <!-- </section> -->
+
+  <!-- <app-back-button
+    [customUrl]="'/room-details/' + roomdetails?.id"
+  ></app-back-button> -->
+  <app-back-button></app-back-button>
+</ng-container>
+
+<div
+  class="d-flex text-center justify-content-center align-self-center align-items-center"
+  *ngIf="!dataIsOk"
+  style="height: 50vh"
+>
+  <div>
+    <!-- <span
+      class="spinner-border spinner-border-sm"
+      role="status"
+      aria-hidden="true"
+    ></span> -->
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="32"
+      height="32"
+      viewBox="0 0 24 24"
+    >
+      <path
+        fill="currentColor"
+        d="M12,1A11,11,0,1,0,23,12,11,11,0,0,0,12,1Zm0,19a8,8,0,1,1,8-8A8,8,0,0,1,12,20Z"
+        opacity=".25"
+      />
+      <path
+        fill="currentColor"
+        d="M12,4a8,8,0,0,1,7.89,6.7A1.53,1.53,0,0,0,21.38,12h0a1.5,1.5,0,0,0,1.48-1.75,11,11,0,0,0-21.72,0A1.5,1.5,0,0,0,2.62,12h0a1.53,1.53,0,0,0,1.49-1.3A8,8,0,0,1,12,4Z"
+      >
+        <animateTransform
+          attributeName="transform"
+          dur="0.75s"
+          repeatCount="indefinite"
+          type="rotate"
+          values="0 12 12;360 12 12"
+        />
+      </path>
+    </svg>
+    <div>Chargement des données</div>
+  </div>
+</div>

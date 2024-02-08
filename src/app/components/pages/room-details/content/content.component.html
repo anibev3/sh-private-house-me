@@ -1,0 +1,1023 @@
+<ng-container *ngIf="isRoomOk">
+  <!-- <h1>udrghireughteiugtihugb</h1> -->
+
+  <div class="d-none d-md-block pt-60"></div>
+  <div class="d-block d-md-none mt-30"></div>
+  <section class="blog-section pb-60">
+    <div class="container" style="padding-right: 0px; padding-left: 0px">
+      <!-- <div class="row justify-content-center"> -->
+      <!-- <div class="col-lg-4 col-md-8 col-sm-10 d-none d-md-block">
+        <div
+          class="sidebar"
+          style="
+            padding: 22px;
+            border-radius: 10px;
+            border: solid 1px rgba(0, 0, 0, 0.125);
+            background-color: white;
+            padding: 1px;
+          "
+        >
+          <app-rooms-sidebar></app-rooms-sidebar>
+        </div>
+      </div> -->
+
+      <!-- <div class="col-lg-8"> -->
+      <div
+        class="news-details-box"
+        style="
+          border: 0px solid rgba(0, 0, 0, 0.125);
+          border-radius: 10px;
+          padding: 15px;
+        "
+      >
+        <!-- <app-room-detail-slider
+        [currentHome]="roomdetails"
+      ></app-room-detail-slider> -->
+        <app-gallery [currentHome]="roomdetails"></app-gallery>
+
+        <div class="entry-content">
+          <!-- start mode web -->
+
+          <span>
+            <div class="d-none d-md-block">
+              <div class="d-flex justify-content-between">
+                <h2 class="color-sh">
+                  <!-- <i class="fas fa-arrow-alt-circle-left"></i> -->
+                  <strong>
+                    {{ roomdetails?.name }}
+                  </strong>
+                </h2>
+                <!-- <a
+                class="cat btn-radiuss custom-cursor"
+                routerLink="/reservation/{{ roomdetails?.id }}"
+                >{{ "Réserver" }}</a
+              > -->
+              </div>
+
+              <ul class="post-meta">
+                <li>
+                  <a routerLink="#"
+                    ><i class="fal fa-user"></i>by {{ "SHERYLUX" }}</a
+                  >
+                </li>
+                <li>
+                  <a routerLink="#"
+                    ><i class="fal fa-calendar-alt"></i
+                    >{{ roomdetails?.published_date }}</a
+                  >
+                </li>
+                <li>
+                  <a routerLink="#"
+                    ><i class="fal fa-comments"></i
+                    >{{ roomdetails?.comments?.length }} Comment{{
+                      roomdetails?.comments?.length <= 1 ? "aire" : "aires"
+                    }}
+                  </a>
+                </li>
+              </ul>
+              <!-- <ul class="post-meta">
+                <li>
+                  <a routerLink="#"
+                    ><i class="fas fa-road"></i>{{ roomdetails?.adresse }},
+                    {{ roomdetails?.city?.name }}</a
+                  >
+                </li>
+              </ul> -->
+              <div class="row">
+                <div class="col-lg-8" style="width: 100%">
+                  <app-reviews
+                    [displayTop]="true"
+                    [review]="roomdetails?.reviews"
+                    [comment]="roomdetails?.comments"
+                    [mark]="roomdetails?.mark"
+                  ></app-reviews>
+                </div>
+                <div
+                  class="col-lg-4 text-center align-items-center d-flex justify-content-center"
+                >
+                  <h2 style="margin: 30px">
+                    <ng-container
+                      *ngIf="
+                        roomdetails?.currency?.is_prefix_symbol === 1;
+                        else suffixSymbol
+                      "
+                    >
+                      {{ roomdetails?.currency?.symbol }}
+                      {{ roomdetails?.price | number : "1.0-0" }} / Le séjour
+                    </ng-container>
+                    <ng-template #suffixSymbol>
+                      {{ roomdetails?.price | number : "1.0-0" }}
+                      {{ roomdetails?.currency?.symbol }} / Le séjour
+                    </ng-template>
+                  </h2>
+                </div>
+              </div>
+            </div>
+            <div>
+              <!-- <app-room-detail-slider
+              [currentHome]="roomdetails"
+            ></app-room-detail-slider> -->
+            </div>
+            <!-- end mode web -->
+            <!-- start mode mobile -->
+
+            <div class="d-block d-md-none">
+              <h3 class="color-sh text-center">
+                <strong>
+                  {{ roomdetails?.name }}
+                </strong>
+              </h3>
+              <ul class="post-meta mtop30 d-none d-md-block">
+                <li>
+                  <a routerLink="#"
+                    ><i class="fal fa-user"></i>by {{ "SHERYLUX" }}</a
+                  >
+                </li>
+                <li>
+                  <a routerLink="#"
+                    ><i class="fal fa-calendar-alt"></i
+                    >{{ roomdetails?.published_date }}</a
+                  >
+                </li>
+                <li>
+                  <a routerLink="#"
+                    ><i class="fal fa-comments"></i>{{ 14 }} Commentaires</a
+                  >
+                </li>
+              </ul>
+              <ul class="post-meta text-center">
+                <li>
+                  <a routerLink="#"
+                    ><i class="fas fa-road"></i>Adresse:
+                    {{ roomdetails?.adresse }}, {{ roomdetails?.city?.name }}</a
+                  >
+                </li>
+              </ul>
+              <h3 style="margin-bottom: 40px" class="text-center">
+                <ng-container
+                  *ngIf="
+                    roomdetails?.currency?.is_prefix_symbol === 1;
+                    else suffixSymbol
+                  "
+                >
+                  {{ roomdetails?.currency?.symbol }}
+                  <sup>{{ roomdetails?.price | number : "1.0-0" }} </sup><br />
+                  / Le séjour
+                </ng-container>
+                <ng-template #suffixSymbol>
+                  {{ roomdetails?.price | number : "1.0-0" }}
+                  <sup
+                    ><span style="font-size: 15px">{{
+                      roomdetails?.currency?.symbol
+                    }}</span>
+                  </sup>
+
+                  <span style="font-size: 14px">/ Le séjour</span>
+                </ng-template>
+              </h3>
+
+              <div style="width: 100%">
+                <app-reviews
+                  [displayTop]="true"
+                  [review]="roomdetails?.reviews"
+                  [comment]="roomdetails?.comments"
+                  [mark]="roomdetails?.mark"
+                ></app-reviews>
+              </div>
+            </div>
+            <!-- end mode mobile -->
+            <hr />
+            <div style="margin: 40px"></div>
+            <div class="mtop20">
+              <h4 class="text-center">Atouts</h4>
+              <div class="container-test">
+                <a
+                  class="amertie-cart box-amertie"
+                  *ngFor="let item of roomdetails?.amenities"
+                  ><i class="{{ item?.icon }}" style="margin-right: 10px"></i
+                  >{{ item?.name }}</a
+                >
+              </div>
+            </div>
+            <!-- <div [innerHtml]="item.longdescription"></div> -->
+            <!-- <a
+              routerLink="/blog/cat/{{ category.id }}"
+              class="cat btn-radiuss"
+              *ngFor="let category of getCategories(item.categories)"
+              >{{ category.title }}</a
+            > -->
+            <hr />
+            <h3 class="subtitle"><strong>Détails</strong></h3>
+
+            <div class="row">
+              <div class="col-lg-6">
+                <div class="equipement">
+                  <!-- <p>
+                    <i class="{{ item?.icon }}" style="margin-right: 10px"></i>
+                    <strong>{{ item?.name }}</strong>
+                  </p> -->
+                  <p>
+                    <i class="fa fa-check" style="margin-right: 10px"></i>
+                    Superficie: <strong> {{ roomdetails?.size }} m²</strong>
+                  </p>
+                  <p *ngIf="roomdetails?.order > 1">
+                    <i class="fa fa-check" style="margin-right: 10px"></i>
+                    Nombre de réservation:
+                    <strong> {{ roomdetails?.order }}</strong>
+                  </p>
+                  <p>
+                    <i class="fa fa-check" style="margin-right: 10px"></i>
+                    Catégorie:
+                    <strong> {{ roomdetails?.room_category }}</strong>
+                  </p>
+                  <p>
+                    <i class="fa fa-check" style="margin-right: 10px"></i>
+                    Type: <strong> {{ roomdetails?.type_room }}</strong>
+                  </p>
+                  <p>
+                    <i class="fa fa-check" style="margin-right: 10px"></i>
+                    Chambres:
+                    <strong> {{ roomdetails?.number_of_rooms }}</strong>
+                  </p>
+                  <p>
+                    <i class="fa fa-check" style="margin-right: 10px"></i>
+                    Lits: <strong> {{ roomdetails?.number_of_beds }}</strong>
+                  </p>
+
+                  <p>
+                    <i class="fa fa-check" style="margin-right: 10px"></i>
+                    Salles de bain:
+                    <strong> {{ roomdetails?.number_of_bathrooms }}</strong>
+                  </p>
+                  <p>
+                    <i class="fa fa-check" style="margin-right: 10px"></i>
+                    Max adultes: <strong> {{ roomdetails?.max_adults }}</strong>
+                  </p>
+                  <p>
+                    <i class="fa fa-check" style="margin-right: 10px"></i>
+                    Max enfants:
+                    <strong> {{ roomdetails?.max_children }}</strong>
+                  </p>
+                  <hr />
+                  <p
+                    *ngIf="roomdetails?.is_breakfast_free === 1"
+                    style="color: green"
+                  >
+                    <i class="fa fa-check" style="margin-right: 10px"></i>
+                    <strong>Petit-déjeuner compris</strong>
+                  </p>
+                  <p
+                    *ngIf="roomdetails?.is_free_cancelled === 1"
+                    style="color: green"
+                  >
+                    <i class="fa fa-check" style="margin-right: 10px"></i>
+                    <strong>Annulation gratuite</strong>
+                  </p>
+                </div>
+              </div>
+              <div class="col-lg-6">
+                <div class="d-block d-lg-none">
+                  <hr />
+                </div>
+                <app-rs-sidebar [currentHome]="roomdetails"></app-rs-sidebar>
+                <!--  -->
+                <!--  -->
+                <!--  -->
+                <!--  -->
+                <!--  -->
+                <!--  -->
+                <!--  -->
+                <!--  -->
+                <!--  -->
+                <!--  -->
+                <!--  -->
+                <!--  -->
+                <!--  -->
+                <!--  -->
+                <!--  -->
+                <!--  -->
+                <!--  -->
+                <!--  -->
+                <!--  -->
+                <!--  -->
+                <!--  -->
+                <!--  -->
+                <!--  -->
+                <!--  -->
+                <!--  -->
+                <!--  -->
+                <!--  -->
+                <!--  -->
+                <!--  -->
+                <!--  -->
+                <!--  -->
+                <!--  -->
+                <!--  -->
+                <!--  -->
+                <!--  -->
+                <!--  -->
+                <!--  -->
+                <!--  -->
+                <!--  -->
+                <!--  -->
+                <!--  -->
+                <!--  -->
+                <!--  -->
+                <!--  -->
+                <!--  -->
+                <!--  -->
+                <!--  -->
+                <!--  -->
+                <!--  -->
+                <!--  -->
+                <!--  -->
+                <!--  -->
+                <!--  -->
+                <!--  -->
+                <!--  -->
+                <!--  -->
+                <!--  -->
+                <!--  -->
+                <!--  -->
+                <!--  -->
+                <!--  -->
+                <!--  -->
+                <!--  -->
+                <!--  -->
+                <!--  -->
+                <!--  -->
+                <!--  -->
+                <!--  -->
+                <!--  -->
+                <!--  -->
+                <!--  -->
+                <!--  -->
+                <!--  -->
+                <!--  -->
+                <!--  -->
+                <!--  -->
+                <!--  -->
+                <!--  -->
+                <!-- vvvv -->
+              </div>
+            </div>
+            <div
+              style="
+                border: 1px solid rgba(0, 0, 0, 0.125);
+                color: #403e3e;
+                padding: 10px;
+                border-radius: 10px;
+                font-size: 13px;
+                margin-top: 15px;
+              "
+              *ngIf="roomdetails?.is_for_partner === 1"
+              class="d-flex justify-content-between align-items-center"
+            >
+              <p>
+                <span style="color: green"
+                  >Partenaire exclusif de SHERYLUX –
+                </span>
+                <strong style="font-size: 17px">{{
+                  roomdetails?.partner?.name
+                }}</strong>
+              </p>
+              <img src="{{ roomdetails?.partner?.logo }}" alt="" width="60px" />
+            </div>
+            <div
+              style="
+                border: 1px solid green;
+                color: #403e3e;
+                margin-top: 10px;
+                padding: 10px;
+                border-radius: 10px;
+                font-size: 13px;
+              "
+              *ngIf="roomdetails?.is_rented_bedroom === 1"
+              class="d-flex justify-content-between align-items-center"
+            >
+              <p>
+                <strong style="font-size: 15px"
+                  >Vous avez la possibilité de réserver une seule
+                  chambre</strong
+                ><span style="font-size: 17px; margin-left: 10px">
+                  <ng-container
+                    *ngIf="
+                      roomdetails?.currency?.is_prefix_symbol === 1;
+                      else suffixSymbol
+                    "
+                  >
+                    {{ roomdetails?.currency?.symbol }}
+                    {{ roomdetails?.rented_bedroom_price | number : "1.0-0" }}
+                    / Le séjour
+                  </ng-container>
+                  <ng-template #suffixSymbol>
+                    {{ roomdetails?.rented_bedroom_price | number : "1.0-0" }}
+                    {{ roomdetails?.currency?.symbol }} / Le séjour
+                  </ng-template>
+                </span>
+              </p>
+              <div
+                class="text-center custom-cursor"
+                style="
+                  border-radius: 10px;
+                  background-color: black;
+                  color: white;
+                  padding: 10px;
+                  display: flex;
+                  justify-content: center; /* Centrer horizontalement */
+                  align-items: center;
+                  /* width: 100%; */
+                  margin-left: 5px;
+                "
+                (click)="gotToPayment()"
+              >
+                Réserver maintenant
+              </div>
+            </div>
+            <hr />
+            <h3 class="subtitle"><strong>Description</strong></h3>
+            <div>
+              <ng-container
+                *ngIf="showFullDescription; else truncatedDescription"
+              >
+                <div style="white-space: pre-line">
+                  {{ roomdetails?.description }}
+                </div>
+                <span (click)="toggleShowFullDescription()" style="color: blue">
+                  Voir moins
+                </span>
+              </ng-container>
+              <ng-template #truncatedDescription>
+                <div style="white-space: pre-line">
+                  {{
+                    roomdetails?.description.slice(0, maxDisplayedChars) + "..."
+                  }}
+                </div>
+                <span (click)="toggleShowFullDescription()" style="color: blue"
+                  >Voir plus</span
+                >
+              </ng-template>
+            </div>
+            <hr />
+            <div class="m10"></div>
+            <h4><strong>disponibilités</strong></h4>
+            <div style="margin: 20px"></div>
+
+            <!-- <div class="text-center justify-content-center"> -->
+            <app-calendar-sidebar
+              [currentHome]="roomdetails"
+            ></app-calendar-sidebar>
+
+            <!-- <app-calendar-sidebar
+          [showResBar]="false"
+          [showCalendar]="true"
+        ></app-calendar-sidebar> -->
+            <!-- </div> -->
+
+            <!-- <hr />
+
+          <div>
+            <div
+              class="d-flex justify-content-between align-items-center align-self-center"
+            >
+              <h3 class="subtitle"><strong>Ses points forts</strong></h3>
+              <a class="cat simple-radius"
+                ><i class="fal fa-calendar-alt" style="margin-right: 10px"></i
+                >{{ "Voir plus" }}</a
+              >
+            </div>
+          </div> -->
+            <!-- <div class="container-test">
+            <a class="amertie-cart box-amertie"
+              ><i class="fal fa-calendar-alt" style="margin-right: 10px"></i
+              >{{ "Calendrier" }}</a
+            ><a class="amertie-cart box-amertie"
+              ><i class="fal fa-calendar-alt" style="margin-right: 10px"></i
+              >{{ "Calendrier" }}</a
+            ><a class="amertie-cart box-amertie"
+              ><i class="fal fa-calendar-alt" style="margin-right: 10px"></i
+              >{{ "Calendrier" }}</a
+            ><a class="amertie-cart box-amertie"
+              ><i class="fal fa-calendar-alt" style="margin-right: 10px"></i
+              >{{ "Calendrier" }}</a
+            ><a class="amertie-cart box-amertie"
+              ><i class="fal fa-calendar-alt" style="margin-right: 10px"></i
+              >{{ "Calendrier" }}</a
+            >
+          </div> -->
+
+            <hr />
+            <h3 class="subtitle"><strong>Règles d'annulation</strong></h3>
+
+            <div class="amertie-cart">
+              <div>
+                <ng-container
+                  *ngIf="showFullAnnulation; else truncatedAnnulation"
+                >
+                  <div style="white-space: pre-line">
+                    {{ roomdetails?.cancelation }}
+                  </div>
+                  <span
+                    (click)="toggleShowFullAnnulation()"
+                    style="color: blue"
+                  >
+                    Voir moins
+                  </span>
+                </ng-container>
+                <ng-template #truncatedAnnulation>
+                  <div style="white-space: pre-line">
+                    {{
+                      roomdetails?.cancelation.slice(0, maxDisplayedChars) +
+                        "..."
+                    }}
+                  </div>
+                  <span
+                    (click)="toggleShowFullAnnulation()"
+                    style="color: blue"
+                  >
+                    Voir plus
+                  </span>
+                </ng-template>
+              </div>
+            </div>
+
+            <div class="amertie-cart" *ngIf="!isUserConnected">
+              <div class="d-flex justify-content-between">
+                <h5 class="subtitle"><strong>Status</strong></h5>
+                <p class="subtitle text-danger">Non connecté</p>
+              </div>
+              <div class="d-flex justify-content-between">
+                <div
+                  class="text-center custom-cursor"
+                  style="
+                    border-radius: 10px;
+                    background-color: red;
+                    color: white;
+                    padding: 10px;
+                    display: flex;
+                    justify-content: center; /* Centrer horizontalement */
+                    align-items: center;
+                    width: 100%;
+                    margin-right: 5px;
+                  "
+                  routerLink="/login"
+                >
+                  Veuillez vous connecter
+                </div>
+                <div
+                  class="text-center custom-cursor"
+                  style="
+                    border-radius: 10px;
+                    background-color: black;
+                    color: white;
+                    padding: 10px;
+                    display: flex;
+                    justify-content: center; /* Centrer horizontalement */
+                    align-items: center;
+                    width: 100%;
+                    margin-left: 5px;
+                  "
+                  routerLink="/register"
+                >
+                  Créer un compte
+                </div>
+              </div>
+            </div>
+
+            <div class="gap"></div>
+            <div class="d-flex justify-content-between">
+              <h3 class="subtitle">Environs de l'hôtel</h3>
+              <h6>{{ roomdetails?.city?.name }}</h6>
+            </div>
+            <div class="row">
+              <div
+                class="col-lg-6"
+                *ngFor="let item of roomdetails?.surroundings"
+              >
+                <div class="amertie-cart">
+                  <h5>
+                    <!-- <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 24 24"
+                      style="width: 20px; height: 20px"
+                    >
+                      <path
+                        d="M12.974 3.554a1.875 1.875 0 1 1-3.75 0 1.875 1.875 0 0 1 3.75 0zm1.5 0a3.375 3.375 0 1 0-6.75 0 3.375 3.375 0 0 0 6.75 0zm3.675 7.496a1.488 1.488 0 0 1-1.168-.56 8.45 8.45 0 0 0-6.634-3.19A6.756 6.756 0 0 0 3.6 14.05a2.25 2.25 0 1 0 4.5 0 2.255 2.255 0 0 1 1.689-2.174l-.189-.726h-.75v.5a15.568 15.568 0 0 1-2.622 8.66 2.252 2.252 0 1 0 3.748 2.496 20.15 20.15 0 0 0 2.336-4.768l-1.111.396a7.288 7.288 0 0 1 3.018 3.838c.343 1.165 1.595 1.846 2.787 1.494a2.25 2.25 0 0 0 1.47-2.944 11.771 11.771 0 0 0-5.785-6.712l.398.788c.175-1.074.263-2.16.263-3.248v-.03h-.75l-.356.66a3.98 3.98 0 0 1 1.223 1.022 5.971 5.971 0 0 0 4.688 2.252 2.25 2.25 0 0 0-.002-4.5v.75l.6-.45-.003-.004a.75.75 0 0 0-.602-.3zm.004 1.5l-.002-.75-.6.45.003.004a.75.75 0 0 0 .6.3.75.75 0 0 1 0 1.5 4.473 4.473 0 0 1-3.513-1.687 5.48 5.48 0 0 0-1.684-1.407.75.75 0 0 0-1.106.66v.03c0 1.007-.081 2.012-.243 3.006a.75.75 0 0 0 .398.788 10.288 10.288 0 0 1 5.081 5.952.75.75 0 0 1-1.439.425A8.804 8.804 0 0 0 12 17.166a.75.75 0 0 0-1.111.396 18.65 18.65 0 0 1-2.162 4.412.752.752 0 0 1-1.252-.832 17.066 17.066 0 0 0 2.874-9.493v-.499a.75.75 0 0 0-.939-.726A3.756 3.756 0 0 0 6.6 14.048a.75.75 0 1 1-1.5.002 5.256 5.256 0 0 1 5.25-5.25 6.95 6.95 0 0 1 5.459 2.624 2.989 2.989 0 0 0 2.345 1.126z"
+                      ></path>
+                    </svg> -->
+                    <i class="{{ item?.icon }}"> </i>
+                    <strong> {{ item?.title }} </strong>
+                    <div>
+                      <div
+                        style="color: black; margin-top: 30px; font-size: 13px"
+                      >
+                        <div class="d-flex justify-content-between">
+                          <p style="color: green">
+                            <strong>
+                              <i
+                                class="fa fa-check"
+                                style="margin-right: 12px"
+                              ></i>
+                              {{ item?.value }}</strong
+                            >
+                          </p>
+                          <span> {{ item?.distance }} Km </span>
+                        </div>
+                      </div>
+                    </div>
+                  </h5>
+                </div>
+              </div>
+            </div>
+            <hr />
+            <div class="d-flex justify-content-between">
+              <h3 class="subtitle">Équipements de l'Hotel</h3>
+              <h6 style="color: #8115ff">Tout voir</h6>
+            </div>
+            <div class="row">
+              <div
+                class="col-lg-6 col-lg-6-bottom"
+                *ngFor="let item of roomdetails?.equipments"
+              >
+                <div class="equipement">
+                  <p>
+                    <i class="{{ item?.icon }}" style="margin-right: 10px"></i>
+                    <strong>{{ item?.name }}</strong>
+                  </p>
+                  <!-- <p>
+                    <i class="fa fa-check" style="margin-right: 10px"></i>
+                    Annulation gratuite
+                  </p>
+                  <p>
+                    <i class="fa fa-check" style="margin-right: 10px"></i>
+                    Aucun prépaiement requis
+                  </p> -->
+                </div>
+              </div>
+            </div>
+            <hr />
+          </span>
+          <!--  -->
+          <!--  -->
+          <!--  -->
+          <!--  -->
+          <!--  -->
+          <!--  -->
+          <!--  -->
+          <!--  -->
+          <!--  -->
+          <!--  -->
+          <!--  -->
+          <!--  -->
+          <!--  -->
+          <!--  -->
+          <!--  -->
+          <!--  -->
+          <!--  -->
+          <!--  -->
+          <!--  -->
+          <!--  -->
+          <!--  -->
+          <!--  -->
+          <!--  -->
+          <!--  -->
+          <!--  -->
+          <!--  -->
+          <!--  -->
+          <!--  -->
+          <!--  -->
+          <!--  -->
+          <!--  -->
+          <!--  -->
+          <!--  -->
+          <!--  -->
+          <!--  -->
+          <!--  -->
+          <!--  -->
+          <!--  -->
+          <!--  -->
+          <!--  -->
+          <!--  -->
+          <!--  -->
+          <!--  -->
+          <!--  -->
+          <!--  -->
+          <!--  -->
+          <!--  -->
+          <!--  -->
+          <!--  -->
+          <!--  -->
+          <blockquote class="mt-40 mb-40">
+            <span class="quote-by">LA RÈGLE D'OR</span> Garder le domaine
+            propre.
+          </blockquote>
+
+          <div class="row align-items-center">
+            <div class="col-md-5 mb-30">
+              <img
+                src="https://www.vf-architectures.fr/public/img/big/ArchitectepourvilladeluxeetprestigeCannesarchitectesVF1jpg_5e9c5280605f4.jpg"
+                alt="img"
+                style="border-radius: 10px"
+              />
+            </div>
+            <div class="col-md-7 mb-30">
+              <p class="text-justify">
+                <strong>SHERYLUX</strong> vous propose une large gamme de
+                logements. Villas luxueuses de 2, 3 ou 4 chambres, Suites
+                Premium, Appartement Haut Standing de deux chambres. Nos clients
+                trouveront à coup sûr ce qui leur convient le mieux. Tous les
+                logements ont un design moderne, toutes les commodités
+                nécessaires et une vue parfaite depuis les fenêtres.
+              </p>
+            </div>
+          </div>
+          <!-- <hr />
+        <div class="d-flex justify-content-between">
+          <h3 class="subtitle">À savoir <br /></h3>
+
+          <h6 style="color: #8115ff">Voir les disponibilité</h6>
+        </div>
+        <div class="amertie-cart">
+          <p class="text-center" style="margin-bottom: 5px">
+            <strong> Les informations essentielles </strong>
+          </p>
+
+          <p class="text-justify" style="font-size: 14px">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+            aliquip ex ea commodo consequat. Duis aute irure dolor in
+            reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+            pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+            culpa qui officia deserunt mollit anim id est laborum. Sed ut
+            perspiciatis unde omnis iste natus error sit voluptatem.
+          </p>
+        </div> -->
+        </div>
+        <div class="entry-footer">
+          <!-- <div
+          class="tag-and-share mt-50 mb-50 d-md-flex align-items-center justify-content-between"
+        > -->
+          <!-- <div class="tag">
+                <h5>Related Tags</h5>
+                <ul>
+                  <li *ngFor="let tags of getTags(item.tags)">
+                    <a routerLink="/blog/tag/{{ tags.id }}">{{ tags.title }}</a>
+                  </li>
+                </ul>
+              </div> -->
+          <!-- <div class="share text-md-right">
+            <h5>Partager</h5>
+            <ul>
+              <li>
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+              </li>
+              <li>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+              </li>
+              <li>
+                <a href="#"><i class="fab fa-medium"></i></a>
+              </li>
+              <li>
+                <a href="#"><i class="fab fa-google-plus-g"></i></a>
+              </li>
+              <li>
+                <a href="#"><i class="fab fa-tumblr"></i></a>
+              </li>
+            </ul>
+          </div> -->
+          <!-- </div> -->
+          <!-- <div class="related-post mt-50"> -->
+          <!-- <h3 class="mb-10">Résidences semblable</h3>
+          <p style="font-size: 14px; margin-bottom: 10px">
+            Les voyageurs qui ont consulté la page de l'établissement Abidjan
+            ont fini par réserver ces options
+          </p> -->
+          <!-- <div class="row"> -->
+          <!-- <div
+                  class="col-md-4"
+                  *ngFor="
+                    let post of getPostByCategory(item.categories)
+                      | slice : 0 : 3
+                  "
+                >
+                  <div
+                    class="related-post-box mb-50"
+                    style="
+                      border: 1px solid rgba(0, 0, 0, 0.13);
+                      border-radius: 10px;
+                    "
+                  >
+                    <div
+                      class="thumb"
+                      style="border-radius: 10px; height: 148px"
+                      [style.background-image]="'url(' + post.gridimg + ')'"
+                    ></div>
+                    <div
+                      class="thumb"
+                      style="border-radius: 10px; height: 148px"
+                      [style.background-image]="
+                        'url(https://www.vf-architectures.fr/public/img/big/ArchitectepourvilladeluxeetprestigeCannesarchitectesVF1jpg_5e9c5280605f4.jpg)'
+                      "
+                    ></div>
+                    <div class="desc">
+                      <h4 class="text-center">
+                        <a routerLink="/blog-details/{{ post.id }}">{{
+                          post.title | slice : 0 : 12
+                        }}</a>
+                      </h4>
+                      <div class="d-flex">
+                        <div
+                          style="
+                            background-color: rgb(129, 21, 255);
+                            padding: 5px;
+                            border-radius: 15% 15% 15% 0%;
+                            color: white;
+                            margin-right: 10px;
+                          "
+                        >
+                          8,6
+                        </div>
+                        <div style="margin-right: 8px">
+                          <h5 style="font-size: 16px">Superbe</h5>
+                          <p style="color: grey; font-size: 12px">
+                            444 expériences
+                          </p>
+                        </div>
+                      </div>
+                      <a href="#" class="date" style="margin-top: 10px">
+                        <i class="far fa-money"></i>9 km du centre
+                      </a>
+                      <hr />
+                      <div class="text-center">
+                        <a href="#" class="date text-center">
+                          <strong>
+                            <i class="far fa-calendar"></i>{{ "50 000" }} XOF
+                          </strong>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div> -->
+          <!-- </div> -->
+          <!-- </div> -->
+          <!-- <div
+              class="author-info-box mb-45"
+              *ngFor="let author of getAuthor(item.author)"
+            >
+              <div class="author-img">
+                <img
+                  src="https://www.vf-architectures.fr/public/img/big/ArchitectepourvilladeluxeetprestigeCannesarchitectesVF1jpg_5e9c5280605f4.jpg"
+                  [alt]="author.name"
+                  style="border-radius: 10px"
+                />
+              </div>
+              <div class="info-text">
+                <span>La plus visité</span>
+                <h3>{{ "Seen Hotel Abidjan" }}</h3>
+                <hr />
+                <div class="d-flex justify-content-between">
+                  <div class="d-flex">
+                    <div
+                      style="
+                        background-color: rgb(129, 21, 255);
+                        padding: 5px;
+                        border-radius: 15% 15% 15% 0%;
+                        color: white;
+                        margin-right: 10px;
+                      "
+                    >
+                      8,6
+                    </div>
+                    <div style="margin-right: 8px">
+                      <h5 style="font-size: 16px">Superbe</h5>
+                      <p style="color: grey; font-size: 12px">
+                        444 expériences
+                      </p>
+                    </div>
+                  </div>
+                  <a href="#" class="date">
+                    <i class="far fa-money"></i> Situé à 9 km du centre
+                  </a>
+                </div>
+
+                <hr />
+                <div class="text-center">
+                  <a href="#" class="date text-center">
+                    <strong>
+                      <h4>
+                        <i
+                          class="far fa-calendar"
+                          style="margin-right: 10px"
+                        ></i
+                        >{{ "50 000" }} XOF
+                      </h4>
+                    </strong>
+                  </a>
+                </div>
+              </div>
+            </div> -->
+          <div>
+            <app-reviews
+              [displayBottom]="true"
+              [comment]="roomdetails?.comments"
+              [review]="roomdetails?.reviews"
+              [mark]="roomdetails?.mark"
+            ></app-reviews>
+          </div>
+        </div>
+      </div>
+      <!-- </div> -->
+      <!-- </div> -->
+    </div>
+  </section>
+
+  <!-- <div
+style="
+  color: black;
+  margin-top: 30px;
+  font-size: 13px;
+  border-left: solid 1px gray;
+  padding-left: 10px;
+"
+>
+<p><strong>Appartement 1 Chambre</strong></p>
+<p>
+  Appartement entier • 1 chambre • 1 salon • 1 salle de bains •
+</p>
+<p>40m²</p>
+<p>1 très grand lit double</p>
+<p style="color: green">
+  <strong>
+    <i class="fa fa-check" style="margin-right: 10px"></i>
+    Annulation gratuite</strong
+  >
+</p>
+<p style="color: green">
+  <strong>
+    <i class="fa fa-check" style="margin-right: 10px"></i>
+    Aucun prépaiement requis</strong
+  >
+  – Payez sur place
+</p>
+<p style="color: red">
+  <strong>Plus que 3 à ce prix sur notre site</strong>
+</p>
+</div> -->
+
+  <!-- <app-back-button
+  [customUrl]="'/room-details/' + roomdetails?.id"
+></app-back-button> -->
+  <app-back-button></app-back-button>
+  <div
+    class="snackbar-toast bg-green1-dark color-white text-center"
+    style="
+      margin-bottom: calc(
+        100px + (env(safe-area-inset-bottom)) * 1.1
+      ) !important;
+      background-color: rgb(193, 14, 14) !important;
+    "
+    *ngIf="canReservedError"
+  >
+    Veuillez entrer les dates d'arrivée et de départ
+  </div>
+</ng-container>
+
+<div
+  class="d-flex text-center justify-content-center align-self-center align-items-center"
+  *ngIf="!isRoomOk"
+  style="height: 50vh"
+>
+  <div>
+    <!-- <span
+      class="spinner-border spinner-border-sm"
+      role="status"
+      aria-hidden="true"
+    ></span> -->
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="32"
+      height="32"
+      viewBox="0 0 24 24"
+    >
+      <path
+        fill="currentColor"
+        d="M12,1A11,11,0,1,0,23,12,11,11,0,0,0,12,1Zm0,19a8,8,0,1,1,8-8A8,8,0,0,1,12,20Z"
+        opacity=".25"
+      />
+      <path
+        fill="currentColor"
+        d="M12,4a8,8,0,0,1,7.89,6.7A1.53,1.53,0,0,0,21.38,12h0a1.5,1.5,0,0,0,1.48-1.75,11,11,0,0,0-21.72,0A1.5,1.5,0,0,0,2.62,12h0a1.53,1.53,0,0,0,1.49-1.3A8,8,0,0,1,12,4Z"
+      >
+        <animateTransform
+          attributeName="transform"
+          dur="0.75s"
+          repeatCount="indefinite"
+          type="rotate"
+          values="0 12 12;360 12 12"
+        />
+      </path>
+    </svg>
+    <div>Chargement des données</div>
+  </div>
+</div>

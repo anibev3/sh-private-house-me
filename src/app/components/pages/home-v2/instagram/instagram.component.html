@@ -1,0 +1,16 @@
+<section class="instagram-feed-section" style="padding: 70px">
+  <h4 class="text-center" style="margin-bottom: 50px">Nos partenaires</h4>
+  <div class="container-fluid p-0">
+    <ngx-slick-carousel
+      #slickModal="slick-carousel"
+      [config]="settings"
+      class="instagram-slider"
+    >
+      <div ngxSlickItem class="image" *ngFor="let item of partners" st>
+        <a href="#" class="insta-popup">
+          <img [src]="item.logo" [alt]="item.name" width="50%" />
+        </a>
+      </div>
+    </ngx-slick-carousel>
+  </div>
+</section>

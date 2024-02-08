@@ -1,0 +1,53 @@
+<section
+  class="feature-room-section with-bg pt-155 pb-115"
+  [style.background-image]="
+    'url(https://cdn.lecollectionist.com/__lecollectionist__/production/houses/7194/photos/gb7CwF8US12864ThDGev_84abcf71-318a-42d5-8fac-9e6513a47b8a.jpg?width=2880&q=65)'
+  "
+>
+  <div class="container">
+    <div class="section-title white-color text-center">
+      <span class="title-tag">LISTE</span>
+      <h2>Résidence populaires</h2>
+    </div>
+    <!-- Room Looop -->
+    <div class="row room-gird-loop justify-content-center mt-30">
+      <div
+        class="col-lg-4 col-sm-6"
+        *ngFor="let item of logements | slice : 0 : 3"
+      >
+        <div class="room-box mt-30">
+          <div class="room-img-wrap">
+            <div
+              class="room-img"
+              *ngIf="item.images"
+              [style.background-image]="
+                item.images && item.images.length > 0
+                  ? 'url(' + item.images[0] + ')'
+                  : 'url(https://cc-3frontieres.fr/wp-content/uploads/2021/11/immobilier-quelles-regles.jpg)'
+              "
+            ></div>
+          </div>
+          <div class="room-desc">
+            <ul class="icons">
+              <li *ngFor="let item of item.amenities | slice : 0 : 7">
+                <i [class]="item.icon"></i>
+              </li>
+            </ul>
+            <h4 class="title">
+              <a routerLink="/room-details/{{ item.id }}">{{
+                item.name | slice : 0 : 25
+              }}</a>
+            </h4>
+            <p>{{ item.description | slice : 0 : 75 }}...</p>
+            <span class="price"
+              >${{ item.price | number : "1.0-0" }}/{{ "Le séjour" }}</span
+            >
+            <a routerLink="/room-details/{{ item.id }}" class="book-btn"
+              >Voir plus</a
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

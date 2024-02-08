@@ -1,0 +1,888 @@
+<ng-container *ngIf="dataIsOk">
+  <!--  -->
+  <!--  -->
+  <!--  -->
+  <!--  -->
+  <!--  -->
+  <!--  -->
+  <!--  -->
+  <!--  -->
+  <!--  -->
+  <!--  -->
+  <!--  -->
+  <!--  -->
+  <!--  -->
+  <!--  -->
+  <!--  -->
+  <!--  -->
+  <!--  -->
+  <!--  -->
+  <!--  -->
+  <!--  -->
+  <!-- AU CAS OÙ IL N'Y A PAS DE RESIDENCE TROUVE -->
+  <!--  -->
+  <!--  -->
+  <!--  -->
+  <!--  -->
+  <!--  -->
+  <!--  -->
+  <!--  -->
+  <!--  -->
+  <!--  -->
+  <!--  -->
+  <!--  -->
+  <!--  -->
+  <!--  -->
+  <!--  -->
+  <div class="d-block d-lg-none" style="margin-top: 15px">
+    <div
+      class="text-center custom-cursor"
+      style="
+        border-radius: 10px;
+        background-color: black;
+        color: white;
+        padding: 10px;
+        display: flex;
+        justify-content: center; /* Centrer horizontalement */
+        align-items: center;
+        /* width: 100%; */
+        margin-left: 15px;
+        margin-right: 15px;
+      "
+      (click)="showDialog()"
+    >
+      Afficher le filtre
+    </div>
+    <p-dialog header="Recherche" [(visible)]="display">
+      <app-rooms-sidebar></app-rooms-sidebar>
+    </p-dialog>
+  </div>
+
+  <!--  -->
+  <!--  -->
+  <!--  -->
+  <!--  -->
+  <!--  -->
+  <!--  -->
+  <!--  -->
+  <!--  -->
+  <!--  -->
+  <!--  -->
+  <!--  -->
+  <!--  -->
+  <!--  -->
+  <!--  -->
+  <!--  -->
+  <!--  -->
+  <!--  -->
+  <!--  -->
+  <!--  -->
+  <!--  -->
+  <!-- AU CAS OÙ IL N'Y A PAS DE RESIDENCE TROUVE -->
+  <!--  -->
+  <!--  -->
+  <!--  -->
+  <!--  -->
+  <!--  -->
+  <!--  -->
+  <!--  -->
+  <!--  -->
+  <!--  -->
+  <!--  -->
+  <!--  -->
+  <!--  -->
+  <!--  -->
+  <!--  -->
+
+  <div
+    class="row"
+    style="
+      margin-left: 30px;
+      margin-right: 30px;
+      margin-top: 34px;
+      margin-bottom: 100px;
+    "
+  >
+    <div class="col-lg-3 d-none d-lg-block">
+      <div
+        style="
+          background: #f8f8f8;
+          box-shadow: 0 0 8px #22222224;
+          border-radius: 10px;
+          overflow: hidden;
+          position: sticky;
+          top: 107px;
+          z-index: 0;
+        "
+      >
+        <div class="card dark" style="padding: 10px; flex-direction: column">
+          <app-rooms-sidebar [displayText]="true"></app-rooms-sidebar>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-9">
+      <!--  -->
+      <!--  -->
+      <!--  -->
+      <!--  -->
+      <!--  -->
+      <!--  -->
+      <!--  -->
+      <!-- AFFICHAGE DU MODE WEB -->
+      <!--  -->
+      <!--  -->
+      <div class="d-none d-md-block">
+        <ng-container *ngIf="logements && logements.length > 0">
+          <div>
+            <div
+              *ngFor="
+                let item of logements
+                  | paginate : { itemsPerPage: 10, currentPage: page }
+              "
+            >
+              <div
+                class="card dark shadodow"
+                style="position: relative; margin-top: 16px"
+              >
+                <img
+                  [src]="
+                    item.images && item.images.length > 0
+                      ? item.images[0]
+                      : 'https://codingyaar.com/wp-content/uploads/chair-image.jpg'
+                  "
+                  class="card-img-top"
+                  alt="..."
+                  style="height: 250px; object-fit: cover"
+                />
+                <div class="badge-offer" *ngIf="item?.is_breakfast_free === 1">
+                  <span>Petit déjeuner offert</span>
+                </div>
+                <div class="card-body">
+                  <div class="text-section">
+                    <h3 class="card-title">
+                      <a
+                        routerLink="/room-details/{{ item.id }}"
+                        class="titre-de"
+                        style="color: rgb(129, 21, 255)"
+                      >
+                        <strong>{{ item.name }}</strong>
+                      </a>
+                    </h3>
+                    <div style="font-size: 14px; margin-top: -11px">
+                      <span style="color: rgb(129, 21, 255); margin-right: 10px"
+                        ><u>{{ item?.adresse }}</u></span
+                      >
+                      <!-- <span style="color: gray">5,7 km du centre ville</span> -->
+                    </div>
+                    <div
+                      style="
+                        color: black;
+                        margin-top: 30px;
+                        font-size: 13px;
+                        border-left: solid 1px gray;
+                        padding-left: 10px;
+                      "
+                    >
+                      <p>
+                        <strong
+                          >{{ item?.type_room }} • {{ item?.size }}m²</strong
+                        >
+                      </p>
+                      <p
+                        style="color: green"
+                        *ngIf="item?.is_free_cancelled === 1"
+                      >
+                        <strong>
+                          <i class="fa fa-check" style="margin-right: 10px"></i>
+                          Annulation gratuite</strong
+                        >
+                      </p>
+                      <p
+                        style="color: green"
+                        *ngIf="item?.is_payment_before === 0"
+                      >
+                        <strong>
+                          <i class="fa fa-check" style="margin-right: 10px"></i>
+                          Aucun prépaiement requis</strong
+                        >
+                        <!-- – Payez sur place -->
+                      </p>
+                      <p style="color: red" *ngIf="item?.is_for_partner === 1">
+                        <strong>Cette résidence est pour un partenaire</strong>
+                      </p>
+                    </div>
+                  </div>
+                  <div class="cta-section">
+                    <div>
+                      <!-- Dans votre modèle HTML -->
+                      <div class="d-flex">
+                        <div style="margin-right: 8px">
+                          <h5 style="text-align: end; font-size: 16px">
+                            {{ getMarkDescription(item?.mark) }}
+                          </h5>
+                          <p style="color: grey; font-size: 12px">
+                            {{
+                              item?.order === 0
+                                ? "Très belle résidence"
+                                : "Plus de " + item?.order + " réservations"
+                            }}
+                          </p>
+                        </div>
+                        <div
+                          style="
+                            background-color: rgb(129, 21, 255);
+                            padding: 5px;
+                            border-radius: 15% 15% 15% 0%;
+                          "
+                        >
+                          {{ item?.mark }}
+                        </div>
+                      </div>
+
+                      <h5 style="margin-top: 15px; text-align: end">
+                        <strong style="color: rgb(129, 21, 255)"
+                          >Confort 9,1</strong
+                        >
+                      </h5>
+                    </div>
+                    <div>
+                      <div>
+                        <p
+                          style="color: grey; font-size: 12px; text-align: end"
+                        >
+                          {{ item?.max_adults }} adultes,
+                          {{ item?.max_children }} enfants,
+                        </p>
+                        <p
+                          style="color: grey; font-size: 12px; text-align: end"
+                        >
+                          <em>Taxes et frais compris</em>
+                        </p>
+                        <h4 style="text-align: end">
+                          <ng-container
+                            *ngIf="
+                              item.currency?.is_prefix_symbol === 1;
+                              else suffixSymbol
+                            "
+                          >
+                            <sub>{{ item.currency?.symbol }}</sub>
+                            {{ item.price | number : "1.0-0" }}
+                          </ng-container>
+                          <ng-template #suffixSymbol>
+                            {{ item.price | number : "1.0-0" }}
+                            {{ item.currency?.symbol }}
+                          </ng-template>
+                        </h4>
+                      </div>
+                      <div style="text-align: end">
+                        <a
+                          routerLink="/room-details/{{ item.id }}"
+                          class="btn btn-light"
+                          >Voir les disponibilités
+                          <i
+                            class="fas fa-angle-right"
+                            style="margin-left: 10px"
+                          ></i
+                        ></a>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- <ul class="icons">
+        <li *ngFor="let item of item.amenities | slice : 0 : 7">
+          <i [class]="item.icon"></i>
+        </li>
+      </ul> -->
+                </div>
+              </div>
+
+              <div
+                style="
+                  border: 1px solid rgba(0, 0, 0, 0.125);
+                  color: #403e3e;
+                  padding: 0px 10px 0px 10px;
+                  border-radius: 10px;
+                  font-size: 13px;
+                "
+                *ngIf="item?.is_for_partner === 1"
+                class="d-flex justify-content-between align-items-center"
+              >
+                <p>
+                  Partenaire exclusif de SHERYLUX –
+                  <strong>{{ item?.partner?.name }}</strong>
+                </p>
+                <img src="{{ item?.partner?.logo }}" alt="" width="60px" />
+              </div>
+            </div>
+          </div>
+          <div class="pagination-wrap">
+            <pagination-controls
+              (pageChange)="page = $event"
+              responsive="true"
+              previousLabel="<<"
+              nextLabel=">>"
+            ></pagination-controls>
+          </div>
+        </ng-container>
+      </div>
+
+      <!--  -->
+      <!--  -->
+      <!--  -->
+      <!--  -->
+      <!--  -->
+      <!--  -->
+      <!--  -->
+      <!-- AFFICHAGE DU MODE MOBILE -->
+      <!--  -->
+      <!--  -->
+      <div class="d-block d-md-none">
+        <ng-container *ngIf="logements && logements.length > 0">
+          <div>
+            <div class="row">
+              <div
+                class="col-sm-6"
+                *ngFor="
+                  let item of logements
+                    | paginate : { itemsPerPage: 10, currentPage: page }
+                "
+                style="
+                  padding-right: 2px;
+                  padding-left: 2px;
+                  margin-bottom: -35px;
+                "
+              >
+                <div
+                  class="related-post-box mb-50 shadodow"
+                  style="
+                    border: 1px solid rgba(0, 0, 0, 0.13);
+                    border-radius: 10px;
+                  "
+                >
+                  <!-- <div
+                    class="thumb"
+                    style="border-radius: 10px; height: 148px"
+                    [style.background-image]="'url(' + post.gridimg + ')'"
+                  ></div> -->
+                  <div style="padding: 10px">
+                    <div
+                      class="thumb"
+                      [ngStyle]="{
+                        'border-radius': '10px',
+                        height: '200px',
+                        'object-fit': 'cover',
+                        'background-image': 'url(' + item.thumbnail + ')'
+                      }"
+                    ></div>
+                  </div>
+
+                  <div class="desc" style="padding: 11px">
+                    <h4 class="text-center">
+                      <a routerLink="/room-details/{{ item.id }}">{{
+                        item.name
+                      }}</a>
+                    </h4>
+                    <!-- <hr /> -->
+
+                    <div
+                      style="
+                        color: black;
+                        margin-top: 7px;
+                        font-size: 13px;
+                        border-left: solid 1px gray;
+                        padding-left: 10px;
+                        border-left-color: #cfcaca;
+                      "
+                    >
+                      <p>
+                        <strong
+                          >{{ item?.type_room }} • {{ item?.size }}m²</strong
+                        >
+                      </p>
+                      <p
+                        style="color: green"
+                        *ngIf="item?.is_free_cancelled === 1"
+                      >
+                        <strong>
+                          <i class="fa fa-check" style="margin-right: 10px"></i>
+                          Annulation gratuite</strong
+                        >
+                      </p>
+                      <p
+                        style="color: green"
+                        *ngIf="item?.is_payment_before === 0"
+                      >
+                        <strong>
+                          <i class="fa fa-check" style="margin-right: 10px"></i>
+                          Aucun prépaiement requis</strong
+                        >
+                        <!-- – Payez sur place -->
+                      </p>
+                      <p style="color: red" *ngIf="item?.is_for_partner === 1">
+                        <strong>Cette résidence est pour un partenaire</strong>
+                      </p>
+                    </div>
+                    <div
+                      style="
+                        border: 1px solid rgba(0, 0, 0, 0.125);
+                        color: #403e3e;
+                        padding: 0px 10px 0px 10px;
+                        border-radius: 10px;
+                        font-size: 13px;
+                        margin-top: 5px;
+                      "
+                      *ngIf="item?.is_for_partner === 1"
+                      class="d-flex justify-content-between align-items-center"
+                    >
+                      <p>
+                        Partenaire –
+                        <strong>{{ item?.partner?.name }}</strong>
+                      </p>
+                      <img
+                        src="{{ item?.partner?.logo }}"
+                        alt=""
+                        width="60px"
+                      />
+                    </div>
+                    <hr />
+                    <div
+                      class="d-flex justify-content-between align-items-center"
+                    >
+                      <h5>
+                        <ng-container
+                          *ngIf="
+                            item.currency?.is_prefix_symbol === 1;
+                            else suffixSymbol
+                          "
+                        >
+                          <sup style="font-size: 11px">{{
+                            item.currency?.symbol
+                          }}</sup>
+                          <strong
+                            style="color: rgb(129, 21, 255); font-size: 20px"
+                            >{{ item.price | number : "1.0-0" }}
+                          </strong>
+                        </ng-container>
+                        <ng-template #suffixSymbol>
+                          <strong
+                            style="color: rgb(129, 21, 255); font-size: 20px"
+                            >{{ item.price | number : "1.0-0" }}</strong
+                          >
+                          <sup
+                            style="font-size: 11px; color: rgba(129, 21, 255)"
+                            >{{ item.currency?.symbol }}</sup
+                          >
+                        </ng-template>
+                      </h5>
+                      <!-- <div class="d-flex">
+                      <div
+                        style="
+                          background-color: rgb(129, 21, 255);
+                          padding: 5px;
+                          border-radius: 15% 15% 15% 0%;
+                          color: white;
+                          margin-right: 10px;
+                        "
+                      >
+                        8,6
+                      </div>
+                      <div style="margin-right: 8px">
+                        <h5 style="font-size: 16px">Superbe</h5>
+                        <p style="color: grey; font-size: 12px">
+                          {{
+                            item?.order === 0
+                              ? "Très belle résidence"
+                              : item?.order + " réservations"
+                          }}
+                        </p>
+                      </div>
+                    </div> -->
+                      <div class="d-flex">
+                        <div style="margin-right: 8px">
+                          <h5 style="text-align: end; font-size: 16px">
+                            <strong>
+                              {{ getMarkDescription(item?.mark) }}</strong
+                            >
+                          </h5>
+                          <p style="color: grey; font-size: 12px">
+                            {{
+                              item?.order === 0
+                                ? "Très belle résidence"
+                                : item?.order + " réservations"
+                            }}
+                          </p>
+                        </div>
+                        <div
+                          style="
+                            background-color: rgb(129, 21, 255);
+                            padding: 5px;
+                            border-radius: 15% 15% 15% 0%;
+                            color: white;
+                          "
+                        >
+                          <strong> {{ item?.mark }}</strong>
+                        </div>
+                      </div>
+                    </div>
+                    <div style="text-align: center; margin-top: 10px">
+                      <a
+                        class="btn btn-light w-100"
+                        style="background-color: #cfcaca"
+                        routerLink="/room-details/{{ item.id }}"
+                        >Voir les disponibilités
+                        <i
+                          class="fas fa-angle-right"
+                          style="margin-left: 10px"
+                        ></i
+                      ></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="pagination-wrap">
+            <pagination-controls
+              (pageChange)="page = $event"
+              responsive="true"
+              previousLabel="<<"
+              nextLabel=">>"
+            ></pagination-controls>
+          </div>
+        </ng-container>
+      </div>
+      <!--  -->
+      <!--  -->
+      <!--  -->
+      <!--  -->
+      <!--  -->
+      <!--  -->
+      <!--  -->
+      <!-- AU CAS OÙ IL N'Y A PA DE LOGEMENT DISPONIBLE POUR LES OPTIONS CHOISI -->
+      <!--  -->
+      <!--  -->
+
+      <!--  -->
+      <div class="" *ngIf="isLodgeEmpty">
+        <div class="text-center">
+          <img
+            src="https://angular.pixelstrap.net/fastkart/assets/svg/no-product.svg"
+            alt=""
+            width="30%"
+          />
+          <h4>Aucune chambre disponible pour les options choisi</h4>
+          <h6>
+            Désolé! Vous n'avez pas trouvé la résidence que vous recherchiez !
+            Essayez de rechercher d'une autre manière.
+          </h6>
+        </div>
+        <hr />
+        <h4 class="text-center">
+          <Strong>Découvrez nos meilleurs résidences</Strong>
+        </h4>
+        <div style="margin: 10px"></div>
+        <ng-container *ngIf="topRooms && topRooms.length > 0">
+          <div>
+            <div class="row">
+              <div
+                class="col-sm-6 col-md-4"
+                *ngFor="
+                  let item of topRooms
+                    | paginate : { itemsPerPage: 9, currentPage: page }
+                "
+                style="
+                  padding-right: 2px;
+                  padding-left: 2px;
+                  margin-bottom: -35px;
+                "
+              >
+                <div
+                  class="related-post-box mb-50 shadodow"
+                  style="
+                    border: 1px solid rgba(0, 0, 0, 0.13);
+                    border-radius: 10px;
+                  "
+                >
+                  <!-- <div
+                    class="thumb"
+                    style="border-radius: 10px; height: 148px"
+                    [style.background-image]="'url(' + post.gridimg + ')'"
+                  ></div> -->
+                  <div style="padding: 10px">
+                    <div
+                      class="thumb"
+                      [ngStyle]="{
+                        'border-radius': '10px',
+                        height: '200px',
+                        'object-fit': 'cover',
+                        'background-image': 'url(' + item.thumbnail + ')'
+                      }"
+                    ></div>
+                  </div>
+
+                  <div class="desc" style="padding: 11px">
+                    <h4 class="text-center">
+                      <a routerLink="/room-details/{{ item.id }}">{{
+                        item.name
+                      }}</a>
+                    </h4>
+                    <!-- <hr /> -->
+
+                    <div
+                      style="
+                        color: black;
+                        margin-top: 7px;
+                        font-size: 13px;
+                        border-left: solid 1px gray;
+                        padding-left: 10px;
+                        border-left-color: #cfcaca;
+                      "
+                    >
+                      <p>
+                        <strong
+                          >{{ item?.type_room }} • {{ item?.size }}m²</strong
+                        >
+                      </p>
+                      <p
+                        style="color: green"
+                        *ngIf="item?.is_free_cancelled === 1"
+                      >
+                        <strong>
+                          <i class="fa fa-check" style="margin-right: 10px"></i>
+                          Annulation gratuite</strong
+                        >
+                      </p>
+                      <p
+                        style="color: green"
+                        *ngIf="item?.is_payment_before === 0"
+                      >
+                        <strong>
+                          <i class="fa fa-check" style="margin-right: 10px"></i>
+                          Aucun prépaiement requis</strong
+                        >
+                        <!-- – Payez sur place -->
+                      </p>
+                      <p style="color: red" *ngIf="item?.is_for_partner === 1">
+                        <strong>Cette résidence est pour un partenaire</strong>
+                      </p>
+                    </div>
+                    <div
+                      style="
+                        border: 1px solid rgba(0, 0, 0, 0.125);
+                        color: #403e3e;
+                        padding: 0px 10px 0px 10px;
+                        border-radius: 10px;
+                        font-size: 13px;
+                        margin-top: 5px;
+                      "
+                      *ngIf="item?.is_for_partner === 1"
+                      class="d-flex justify-content-between align-items-center"
+                    >
+                      <p>
+                        Partenaire –
+                        <strong>{{ item?.partner?.name }}</strong>
+                      </p>
+                      <img
+                        src="{{ item?.partner?.logo }}"
+                        alt=""
+                        width="60px"
+                      />
+                    </div>
+                    <hr />
+                    <div
+                      class="d-flex justify-content-between align-items-center"
+                    >
+                      <h5>
+                        <ng-container
+                          *ngIf="
+                            item.currency?.is_prefix_symbol === 1;
+                            else suffixSymbol
+                          "
+                        >
+                          <sup style="font-size: 11px">{{
+                            item.currency?.symbol
+                          }}</sup>
+                          <strong
+                            style="color: rgb(129, 21, 255); font-size: 20px"
+                            >{{ item.price | number : "1.0-0" }}
+                          </strong>
+                        </ng-container>
+                        <ng-template #suffixSymbol>
+                          <strong
+                            style="color: rgb(129, 21, 255); font-size: 20px"
+                            >{{ item.price | number : "1.0-0" }}</strong
+                          >
+                          <sup
+                            style="font-size: 11px; color: rgba(129, 21, 255)"
+                            >{{ item.currency?.symbol }}</sup
+                          >
+                        </ng-template>
+                      </h5>
+                      <!-- <div class="d-flex">
+                      <div
+                        style="
+                          background-color: rgb(129, 21, 255);
+                          padding: 5px;
+                          border-radius: 15% 15% 15% 0%;
+                          color: white;
+                          margin-right: 10px;
+                        "
+                      >
+                        8,6
+                      </div>
+                      <div style="margin-right: 8px">
+                        <h5 style="font-size: 16px">Superbe</h5>
+                        <p style="color: grey; font-size: 12px">
+                          {{
+                            item?.order === 0
+                              ? "Très belle résidence"
+                              : item?.order + " réservations"
+                          }}
+                        </p>
+                      </div>
+                    </div> -->
+                      <div class="d-flex">
+                        <div style="margin-right: 8px">
+                          <h5 style="text-align: end; font-size: 16px">
+                            <strong>
+                              {{ getMarkDescription(item?.mark) }}</strong
+                            >
+                          </h5>
+                          <p style="color: grey; font-size: 12px">
+                            {{
+                              item?.order === 0
+                                ? "Très belle résidence"
+                                : item?.order + " réservations"
+                            }}
+                          </p>
+                        </div>
+                        <div
+                          style="
+                            background-color: rgb(129, 21, 255);
+                            padding: 5px;
+                            border-radius: 15% 15% 15% 0%;
+                            color: white;
+                          "
+                        >
+                          <strong> {{ item?.mark }}</strong>
+                        </div>
+                      </div>
+                    </div>
+                    <div style="text-align: center; margin-top: 10px">
+                      <a
+                        class="btn btn-light w-100"
+                        style="background-color: #cfcaca"
+                        routerLink="/room-details/{{ item.id }}"
+                        >Voir les disponibilités
+                        <i
+                          class="fas fa-angle-right"
+                          style="margin-left: 10px"
+                        ></i
+                      ></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="pagination-wrap">
+            <pagination-controls
+              (pageChange)="page = $event"
+              responsive="true"
+              previousLabel="<<"
+              nextLabel=">>"
+            ></pagination-controls>
+          </div>
+        </ng-container>
+      </div>
+
+      <!--  -->
+      <!--  -->
+      <!--  -->
+      <!--  -->
+      <!--  -->
+      <!--  -->
+      <!--  -->
+      <!--  -->
+      <!--  -->
+      <!--  -->
+      <!--  -->
+      <!--  -->
+      <!--  -->
+      <!--  -->
+      <!--  -->
+      <!--  -->
+      <!-- ACTIVATION DU LOADER -->
+      <!--  -->
+      <!--  -->
+      <!--  -->
+      <!--  -->
+      <!--  -->
+      <!--  -->
+      <!--  -->
+      <!--  -->
+      <!--  -->
+      <!--  -->
+      <!--  -->
+      <!--  -->
+      <!--  -->
+      <!--  -->
+      <!--  -->
+      <!--  -->
+      <div
+        class="text-center justify-content-center"
+        *ngIf="isGetFilterPending"
+      >
+        <span
+          class="spinner-border spinner-border-sm"
+          role="status"
+          aria-hidden="true"
+        ></span>
+        <div>Chargement en cours</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- <app-back-button
+  [customUrl]="'/room-details/' + roomdetails?.id"
+></app-back-button> -->
+  <app-back-button></app-back-button>
+</ng-container>
+
+<div
+  class="d-flex text-center justify-content-center align-self-center align-items-center"
+  *ngIf="!dataIsOk"
+  style="height: 50vh"
+>
+  <div>
+    <!-- <span
+      class="spinner-border spinner-border-sm"
+      role="status"
+      aria-hidden="true"
+    ></span> -->
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="32"
+      height="32"
+      viewBox="0 0 24 24"
+    >
+      <path
+        fill="currentColor"
+        d="M12,1A11,11,0,1,0,23,12,11,11,0,0,0,12,1Zm0,19a8,8,0,1,1,8-8A8,8,0,0,1,12,20Z"
+        opacity=".25"
+      />
+      <path
+        fill="currentColor"
+        d="M12,4a8,8,0,0,1,7.89,6.7A1.53,1.53,0,0,0,21.38,12h0a1.5,1.5,0,0,0,1.48-1.75,11,11,0,0,0-21.72,0A1.5,1.5,0,0,0,2.62,12h0a1.53,1.53,0,0,0,1.49-1.3A8,8,0,0,1,12,4Z"
+      >
+        <animateTransform
+          attributeName="transform"
+          dur="0.75s"
+          repeatCount="indefinite"
+          type="rotate"
+          values="0 12 12;360 12 12"
+        />
+      </path>
+    </svg>
+    <div>Chargement des données</div>
+  </div>
+</div>

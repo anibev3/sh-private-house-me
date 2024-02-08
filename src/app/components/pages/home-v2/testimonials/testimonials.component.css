@@ -1,0 +1,9 @@
+.limited-lines {
+  max-height: 4.5em; /* 4 lignes approximativement */
+  overflow: hidden;
+  text-overflow: ellipsis;
+  line-height: 1.5em; /* Hauteur de ligne typique. Ajustez si nécessaire */
+  display: -webkit-box;
+  -webkit-line-clamp: 4; /* Nombre de lignes */
+  -webkit-box-orient: vertical;
+}

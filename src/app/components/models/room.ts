@@ -1,0 +1,46 @@
+import { Amenity } from "./amenity";
+import { BookingDates } from "./booking-dates";
+import { City } from "./city";
+import { Currency } from "./currency";
+import { Equipment } from "./equipement";
+import { Partner } from "./partner";
+import { Surrounding } from "./surrounding";
+import { Tax } from "./tax";
+
+export interface Room {
+    id?: number;
+    name?: string;
+    adresse?: string;
+    latitude?: number;
+    longitude?: number;
+    thumbnail?: string;
+    images?: string[];
+    size?: number;
+    order?: number;
+    booking_dates?: BookingDates[];
+    max_adults?: number;
+    max_children?: number;
+    room_category?: string;
+    type_room?: string;
+    number_of_beds?: number;
+    number_of_bathrooms?: number;
+    number_of_rooms?: number;
+    rented_bedroom_price?: string;
+    price?: string;
+    is_payment_before?: number;
+    is_for_partner?: number;
+    is_free_cancelled?: number;
+    is_breakfast_free?: number;
+    is_rented_bedroom?: number;
+    description?: string;
+    rules?: string;
+    cancelation?: string;
+    city?: City;
+    partner?: Partner;
+    currency?: Currency;
+    published_date?: string;
+    surroundings?: Surrounding[];
+    amenities?: Amenity[];
+    equipments?: Equipment[];
+    tax?: Tax;
+}
