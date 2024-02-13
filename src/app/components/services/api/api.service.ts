@@ -123,8 +123,8 @@ export class ApiService {
     );
     const form_data = {
       customer_email: email,
-      success_url: `http://localhost:4200/payment/${resi_id?.id}`,
-      // success_url: `${this.prod_url}/payment/${resi_id?.id}`,
+      // success_url: `http://localhost:4200/payment/${resi_id?.id}`,
+      success_url: `${this.prod_url}/payment/${resi_id?.id}`,
       cancel_url: 'http://localhost:4200/failure',
       cart: cart,
     };
@@ -138,7 +138,7 @@ export class ApiService {
   getCountries(): Observable<any[]> {
     return this.http.get<any>(this.apiUrl).pipe(
       map((data) => {
-        // console.log('VOICI LES COUNTRY', data);
+        console.log('VOICI LES COUNTRY', data);
 
         return this.transformData(data.data);
       })
