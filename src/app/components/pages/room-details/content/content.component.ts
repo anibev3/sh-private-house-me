@@ -117,9 +117,7 @@ export class ContentComponent implements OnInit, AfterContentInit {
       if (
         queryParams['arrival_at'] &&
         queryParams['departure_at'] &&
-        queryParams['nbr_people'] &&
-        queryParams['city_id'] &&
-        queryParams['type_house_id']
+        queryParams['nbr_people']
       ) {
         this.dataFromShGlobal = {
           arrival_at: queryParams['arrival_at'],
@@ -130,8 +128,6 @@ export class ContentComponent implements OnInit, AfterContentInit {
           nbr_room: '1',
           type_house_id: queryParams['type_house_id'],
         };
-
-        console.log('QUERY PARAMS EXISTE', this.dataFromShGlobal);
 
         this.cryptoService
           .setEncryptedItemNew(Constants.QUERY_PARAMS, this.dataFromShGlobal)

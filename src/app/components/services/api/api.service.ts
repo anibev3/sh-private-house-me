@@ -138,7 +138,7 @@ export class ApiService {
   getCountries(): Observable<any[]> {
     return this.http.get<any>(this.apiUrl).pipe(
       map((data) => {
-        console.log('VOICI LES COUNTRY', data);
+        // console.log('VOICI LES COUNTRY', data);
 
         return this.transformData(data.data);
       })

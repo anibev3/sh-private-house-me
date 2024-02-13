@@ -33,6 +33,7 @@ export class ContentComponent implements OnInit {
   showAnnulMsg_2: boolean = false;
   showAnnulRequest: boolean = false;
   public showAnulationBox: boolean = false;
+  public displayResponsive: boolean = false;
   public annulationAmount: any;
   public statuus: string = 'completed';
 
@@ -46,6 +47,10 @@ export class ContentComponent implements OnInit {
     private confirmationService: ConfirmationService
   ) {}
 
+  public showCommentModal(): void {
+    this.displayResponsive = !this.displayResponsive;
+  }
+
   initDetailRsData(): void {
     this.initForm();
 
@@ -55,6 +60,9 @@ export class ContentComponent implements OnInit {
       .subscribe(
         (response) => {
           this.reservationDetail = response?.data;
+
+          console.log(this.reservationDetail);
+
           if (this.reservationDetail?.room?.cancellation_type == 'percentage') {
             this.annulationAmount =
               (parseFloat(this.reservationDetail?.amount) *

@@ -2,6 +2,40 @@
   <!-- <div class="d-block d-md-none mt-30"></div> -->
   <!-- <section class="blog-section pb-60"> -->
   <div style="margin: -17px">
+    <div
+      class="d-block d-lg-none custom-cursor"
+      (click)="showCommentModal()"
+      *ngIf="
+        reservationDetail?.is_reviewed === 0 &&
+        reservationDetail?.status === statuus
+      "
+    >
+      <div class="mon-padding m10" style="margin-bottom: 10px">
+        <div>
+          <h5 style="" class="text-center">
+            <strong>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="32"
+                height="32"
+                viewBox="0 0 24 24"
+                style="color: black"
+              >
+                <path
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M7 8h10M7 11h10M7 14h4m3.828 4H19a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h3.188c1 0 1.812.811 1.812 1.812v0c0 .808.976 1.212 1.547.641l1.867-1.867A2 2 0 0 1 14.828 18"
+                />
+              </svg>
+              Ajouter un commentaire
+            </strong>
+          </h5>
+        </div>
+      </div>
+    </div>
     <div class="mon-padding" style="margin-top: 10px; background-color: white">
       <div>
         <div class="mon-padding m10" style="border: 0px">
@@ -64,10 +98,10 @@
             </div>
           </div>
         </div> -->
-      <div>
+      <div class="">
         <div
           class="mon-padding m10"
-          style="margin-bottom: 10px; background-color: white"
+          style="margin-bottom: 10px; width: 100%"
           [style.backgroundColor]="
             getReservationStatusColor(reservationDetail?.status)
           "
@@ -87,6 +121,39 @@
                 }}) -->
               </strong>
             </h4>
+          </div>
+        </div>
+        <div
+          class="d-none d-lg-block custom-cursor"
+          (click)="showCommentModal()"
+          *ngIf="
+            reservationDetail?.is_reviewed === 0 &&
+            reservationDetail?.status === statuus
+          "
+        >
+          <div class="mon-padding m10" style="margin-bottom: 10px; width: 100%">
+            <div>
+              <h6 class="text-center">
+                <strong>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="32"
+                    height="32"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M7 8h10M7 11h10M7 14h4m3.828 4H19a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h3.188c1 0 1.812.811 1.812 1.812v0c0 .808.976 1.212 1.547.641l1.867-1.867A2 2 0 0 1 14.828 18"
+                    />
+                  </svg>
+                  Ajouter un commentaire
+                </strong>
+              </h6>
+            </div>
           </div>
         </div>
       </div>
@@ -861,12 +928,20 @@
         </div>
         <!-- ... -->
       </div>
-      <hr />
-      <div *ngIf="reservationDetail?.status === statuus">
-        <app-make-comment
-          [room_id]="reservationDetail?.room?.room_id"
-        ></app-make-comment>
-      </div>
+    </div>
+
+    <div
+      class="mon-padding m10"
+      style="background-color: white"
+      *ngIf="
+        reservationDetail?.status === statuus &&
+        reservationDetail?.is_reviewed === 0
+      "
+    >
+      <app-make-comment
+        [room_id]="reservationDetail?.room?.room_id"
+        [booking_id]="reservationDetail?.id"
+      ></app-make-comment>
     </div>
 
     <!-- <br />-->
@@ -917,3 +992,31 @@
     <div>Chargement des données</div>
   </div>
 </div>
+<p-dialog
+  header="Commentaire"
+  [(visible)]="displayResponsive"
+  [breakpoints]="{ '960px': '75vw' }"
+  [style]="{ width: '50vw', 'background-color': 'red' }"
+  [baseZIndex]="10000"
+  [draggable]="false"
+  [resizable]="false"
+>
+  <div>
+    <app-make-comment
+      [room_id]="reservationDetail?.room?.room_id"
+      [booking_id]="reservationDetail?.id"
+    ></app-make-comment>
+  </div>
+  <!-- <ng-template pTemplate="footer">
+    <p-button
+    (click)="displayResponsive = false"
+    label="No"
+    styleClass="p-button-text"
+  ></p-button>
+    <p-button
+      (click)="displayResponsive = false"
+      label="OK"
+      styleClass="p-button-text"
+    ></p-button>
+  </ng-template> -->
+</p-dialog>

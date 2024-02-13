@@ -9,6 +9,8 @@ import { SharedModule } from '../../../../shared/shared.module';
 import { ContentComponent } from './content/content.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ConfirmPopupModule } from 'primeng/confirmpopup';
+import { DialogModule } from 'primeng/dialog';
+import { ButtonModule } from 'primeng/button';
 
 @NgModule({
   declarations: [DetailsReservationComponent, ContentComponent],
@@ -21,6 +23,8 @@ import { ConfirmPopupModule } from 'primeng/confirmpopup';
     NgxPaginationModule,
     ReactiveFormsModule,
     ConfirmPopupModule,
+    DialogModule,
+    ButtonModule,
   ],
 })
 export class DetailsReservationModule {}

@@ -267,8 +267,12 @@
                       <img
                         alt="En savoir plus"
                         src="//a0.muscache.com/airbnb/static/packages/assets/frontend/pdp-platform-shared/icons/ic_info_italic_12.c1d882f56185230eae5936e49eab0ded.svg"
-                        width="12"
-                        height="12" /></span
+                        width="14"
+                        height="14"
+                        class="custom-cursor"
+                        ngbTooltip="Seuls les voyageurs ayant effectué une réservation peuvent laisser un commentaire. Les commentaires sont classés par date. Airbnb ne modère que les commentaires signalés comme étant contraires à ses politiques."
+                        triggers="click:blur"
+                        style="margin-left: 6px" /></span
                   ></span>
                 </h6>
               </div>
@@ -545,7 +549,7 @@
               top: 0px !important;
               overflow-y: auto !important;
               padding-right: 32px !important;
-              height: 332.8px;
+              height: 100%;
             "
           >
             <div>
@@ -684,134 +688,155 @@
                           class="ciubx2o row atm_9s_1txwivl atm_h_1fhbwtr atm_fc_1y6m0gg atm_be_1g80g66 atm_gz_169eiex atm_h0_169eiex atm_vy_1ku6ftx atm_gz_1cz4k7g__oggzyc atm_h0_1cz4k7g__oggzyc atm_vy_1l2ly1k__oggzyc dir dir-ltr"
                           role="list"
                         >
-                          <div
-                            role="listitem"
-                            class="_b7zir4z col-lg-12"
-                            *ngFor="let item of comment"
+                          <ng-container
+                            *ngIf="
+                              comment && comment.length > 0;
+                              else noComments
+                            "
                           >
-                            <div class="rijjzz2 atm_gq_1ylpe5n dir dir-ltr">
-                              <div
-                                class="n55i6ux atm_9s_1txwivl atm_ar_1bp4okc atm_cx_1fwxnve atm_gq_1y44olf dir dir-ltr"
-                              >
-                                <div>
-                                  <div
-                                    class="chnzxuf atm_9s_1txwivl atm_ar_1sbvcyy atm_fc_1e5hqsa atm_h_1h6ojuz atm_fc_usich2_10saat9 c9gtck5 atm_cx_dlk8xv dir dir-ltr"
-                                  >
+                            <div
+                              role="listitem"
+                              class="_b7zir4z col-lg-12"
+                              *ngFor="let item of comment"
+                            >
+                              <div class="rijjzz2 atm_gq_1ylpe5n dir dir-ltr">
+                                <div
+                                  class="n55i6ux atm_9s_1txwivl atm_ar_1bp4okc atm_cx_1fwxnve atm_gq_1y44olf dir dir-ltr"
+                                >
+                                  <div>
                                     <div
-                                      class="t11wgnhd atm_c8_1uu2kvu atm_g3_nf5qcc atm_cs_qo5vgd atm_9s_1txwivl atm_ar_1bp4okc atm_cx_yh40bf dir dir-ltr"
-                                      id="review_815047167457103502_title"
+                                      class="chnzxuf atm_9s_1txwivl atm_ar_1sbvcyy atm_fc_1e5hqsa atm_h_1h6ojuz atm_fc_usich2_10saat9 c9gtck5 atm_cx_dlk8xv dir dir-ltr"
                                     >
-                                      <h3
-                                        tabindex="-1"
-                                        class="hpipapi atm_7l_1kw7nm4 atm_c8_1x4eueo atm_cs_1kw7nm4 atm_g3_1kw7nm4 atm_gi_idpfg4 atm_l8_idpfg4 atm_kd_idpfg4_pfnrn2 dir dir-ltr"
-                                        elementtiming="LCP-target"
-                                      >
-                                        {{ item?.customer?.first_name }}
-                                      </h3>
                                       <div
-                                        class="s9v16xq atm_c8_8na9z atm_g3_czwsb8 atm_cs_atq67q dir dir-ltr"
+                                        class="t11wgnhd atm_c8_1uu2kvu atm_g3_nf5qcc atm_cs_qo5vgd atm_9s_1txwivl atm_ar_1bp4okc atm_cx_yh40bf dir dir-ltr"
+                                        id="review_815047167457103502_title"
                                       >
-                                        {{ item?.customer?.city }},
-                                        {{ item?.customer?.country }}
+                                        <h3
+                                          tabindex="-1"
+                                          class="hpipapi atm_7l_1kw7nm4 atm_c8_1x4eueo atm_cs_1kw7nm4 atm_g3_1kw7nm4 atm_gi_idpfg4 atm_l8_idpfg4 atm_kd_idpfg4_pfnrn2 dir dir-ltr"
+                                          elementtiming="LCP-target"
+                                        >
+                                          {{ item?.customer?.first_name }}
+                                        </h3>
+                                        <div
+                                          class="s9v16xq atm_c8_8na9z atm_g3_czwsb8 atm_cs_atq67q dir dir-ltr"
+                                        >
+                                          {{ item?.customer?.city }},
+                                          {{ item?.customer?.country }}
+                                        </div>
+                                      </div>
+                                      <div
+                                        class="_e7hn5"
+                                        style="height: 48px; width: 48px"
+                                      >
+                                        <a
+                                          target="_blank"
+                                          aria-label="Akynos"
+                                          href="/users/show/2292019"
+                                          class="_9bezani l1ovpqvx atm_1y33qqm_1ggndnn_10saat9 atm_17zvjtw_zk357r_10saat9 atm_w3cb4q_il40rs_10saat9 dir dir-ltr"
+                                          ><div
+                                            class="_1c81x67"
+                                            style="
+                                              height: 48px;
+                                              width: 48px;
+                                              border-radius: 50%;
+                                            "
+                                          >
+                                            <div
+                                              class="d1l1iq7v atm_9s_1o8liyq atm_vh_yfq0k3 atm_e2_88yjaz atm_vy_1r2rij0 atm_j6_t94yts bmwtyu7 atm_2m_1qred53 atm_2s_mgnkw2 dir dir-ltr"
+                                              style="
+                                                --dls-liteimage-height: 100%;
+                                                --dls-liteimage-width: 100%;
+                                                --dls-liteimage-background-image: url('data:image/png;base64,null');
+                                                --dls-liteimage-background-size: cover;
+                                              "
+                                              role="img"
+                                              aria-busy="false"
+                                              aria-label="Akynos"
+                                            >
+                                              <img
+                                                class="i9if2t0 atm_e2_idpfg4 atm_vy_idpfg4 atm_mk_stnw88 atm_e2_1osqo2v__1lzdix4 atm_vy_1osqo2v__1lzdix4 atm_mk_pfqszd__1lzdix4 i1cqnm0r atm_jp_pyzg9w atm_jr_nyqth1 i1de1kle atm_vh_yfq0k3 dir dir-ltr"
+                                                style="
+                                                  --dls-liteimage-object-fit: cover;
+                                                "
+                                                aria-hidden="true"
+                                                alt="Akynos"
+                                                decoding="async"
+                                                elementtiming="LCP-target"
+                                                [src]="item?.customer?.avatar"
+                                                data-original-uri="https://a0.muscache.com/im/pictures/user/47bf17ce-1348-4e67-a07e-cd690b2fded7.jpg?im_w=240"
+                                              />
+                                              <div
+                                                class="rsb5yse atm_9s_1o8liyq atm_vh_yfq0k3 atm_e2_1osqo2v atm_vy_1osqo2v atm_9s_glywfm__1lzdix4 bmwtyu7 atm_2m_1qred53 atm_2s_mgnkw2 dqqltwe atm_2g_1isa5lx atm_2w_k6d6ah dir dir-ltr"
+                                                style="
+                                                  --dls-liteimage-background-size: cover;
+                                                  --dls-liteimage-background-image: url(https://a0.muscache.com/im/pictures/user/47bf17ce-1348-4e67-a07e-cd690b2fded7.jpg?im_w=240);
+                                                "
+                                              ></div>
+                                            </div></div
+                                        ></a>
                                       </div>
                                     </div>
+                                  </div>
+                                  <div
+                                    class="s1joulhb atm_c8_8na9z atm_g3_czwsb8 atm_cs_qo5vgd atm_9s_1txwivl atm_h_1h6ojuz dir dir-ltr"
+                                  >
                                     <div
-                                      class="_e7hn5"
-                                      style="height: 48px; width: 48px"
+                                      class="c5dn5hn atm_9s_1txwivl atm_cx_t94yts dir dir-ltr"
                                     >
-                                      <a
-                                        target="_blank"
-                                        aria-label="Akynos"
-                                        href="/users/show/2292019"
-                                        class="_9bezani l1ovpqvx atm_1y33qqm_1ggndnn_10saat9 atm_17zvjtw_zk357r_10saat9 atm_w3cb4q_il40rs_10saat9 dir dir-ltr"
-                                        ><div
-                                          class="_1c81x67"
-                                          style="
-                                            height: 48px;
-                                            width: 48px;
-                                            border-radius: 50%;
-                                          "
-                                        >
-                                          <div
-                                            class="d1l1iq7v atm_9s_1o8liyq atm_vh_yfq0k3 atm_e2_88yjaz atm_vy_1r2rij0 atm_j6_t94yts bmwtyu7 atm_2m_1qred53 atm_2s_mgnkw2 dir dir-ltr"
-                                            style="
-                                              --dls-liteimage-height: 100%;
-                                              --dls-liteimage-width: 100%;
-                                              --dls-liteimage-background-image: url('data:image/png;base64,null');
-                                              --dls-liteimage-background-size: cover;
-                                            "
-                                            role="img"
-                                            aria-busy="false"
-                                            aria-label="Akynos"
-                                          >
-                                            <img
-                                              class="i9if2t0 atm_e2_idpfg4 atm_vy_idpfg4 atm_mk_stnw88 atm_e2_1osqo2v__1lzdix4 atm_vy_1osqo2v__1lzdix4 atm_mk_pfqszd__1lzdix4 i1cqnm0r atm_jp_pyzg9w atm_jr_nyqth1 i1de1kle atm_vh_yfq0k3 dir dir-ltr"
-                                              style="
-                                                --dls-liteimage-object-fit: cover;
-                                              "
-                                              aria-hidden="true"
-                                              alt="Akynos"
-                                              decoding="async"
-                                              elementtiming="LCP-target"
-                                              [src]="item?.customer?.avatar"
-                                              data-original-uri="https://a0.muscache.com/im/pictures/user/47bf17ce-1348-4e67-a07e-cd690b2fded7.jpg?im_w=240"
-                                            />
-                                            <div
-                                              class="rsb5yse atm_9s_1o8liyq atm_vh_yfq0k3 atm_e2_1osqo2v atm_vy_1osqo2v atm_9s_glywfm__1lzdix4 bmwtyu7 atm_2m_1qred53 atm_2s_mgnkw2 dqqltwe atm_2g_1isa5lx atm_2w_k6d6ah dir dir-ltr"
-                                              style="
-                                                --dls-liteimage-background-size: cover;
-                                                --dls-liteimage-background-image: url(https://a0.muscache.com/im/pictures/user/47bf17ce-1348-4e67-a07e-cd690b2fded7.jpg?im_w=240);
-                                              "
-                                            ></div>
-                                          </div></div
-                                      ></a>
+                                      <ngb-rating
+                                        [rate]="item?.star"
+                                        [max]="5"
+                                      ></ngb-rating>
                                     </div>
-                                  </div>
-                                </div>
-                                <div
-                                  class="s1joulhb atm_c8_8na9z atm_g3_czwsb8 atm_cs_qo5vgd atm_9s_1txwivl atm_h_1h6ojuz dir dir-ltr"
-                                >
-                                  <div
-                                    class="c5dn5hn atm_9s_1txwivl atm_cx_t94yts dir dir-ltr"
-                                  >
-                                    <ngb-rating
-                                      [rate]="item?.star"
-                                      [max]="5"
-                                    ></ngb-rating>
-                                  </div>
-                                  <div
-                                    class="dq3izqp atm_7l_12u4tyr atm_cs_atq67q atm_l8_1s5ai0k dir dir-ltr"
-                                    aria-hidden="true"
-                                  >
-                                    <span
-                                      class="a8jt5op atm_3f_idpfg4 atm_7h_hxbz6r atm_7i_ysn8ba atm_e2_t94yts atm_ks_zryt35 atm_l8_idpfg4 atm_mk_stnw88 atm_vv_1q9ccgz atm_vy_t94yts dir dir-ltr"
-                                      >, </span
-                                    ><span aria-hidden="true"> · </span>
-                                  </div>
-                                  {{
-                                    item?.created_at
-                                      | date : "dd MMMM yyyy" : "fr-FR"
-                                  }}
-                                </div>
-                              </div>
-                              <div>
-                                <div
-                                  class="r1bctolv atm_c8_4ibt3s atm_g3_1ae29am atm_26_1ph4j2b_13uojos atm_5j_1y44olf_13uojos atm_l8_1s2714j_13uojos dir dir-ltr"
-                                >
-                                  <div style="line-height: 1.5rem">
-                                    <span
-                                      ><span
-                                        class="ll4r2nl atm_kd_pg2kvz_1bqn0at dir dir-ltr"
-                                        >{{
-                                          item?.content.slice(0, 40) + "..."
-                                        }}</span
-                                      ></span
+                                    <div
+                                      class="dq3izqp atm_7l_12u4tyr atm_cs_atq67q atm_l8_1s5ai0k dir dir-ltr"
+                                      aria-hidden="true"
                                     >
+                                      <span
+                                        class="a8jt5op atm_3f_idpfg4 atm_7h_hxbz6r atm_7i_ysn8ba atm_e2_t94yts atm_ks_zryt35 atm_l8_idpfg4 atm_mk_stnw88 atm_vv_1q9ccgz atm_vy_t94yts dir dir-ltr"
+                                        >, </span
+                                      ><span aria-hidden="true"> · </span>
+                                    </div>
+                                    {{
+                                      item?.created_at
+                                        | date : "dd MMMM yyyy" : "fr-FR"
+                                    }}
+                                  </div>
+                                </div>
+                                <div>
+                                  <div
+                                    class="r1bctolv atm_c8_4ibt3s atm_g3_1ae29am atm_26_1ph4j2b_13uojos atm_5j_1y44olf_13uojos atm_l8_1s2714j_13uojos dir dir-ltr"
+                                  >
+                                    <div style="line-height: 1.5rem">
+                                      <span
+                                        ><span
+                                          class="ll4r2nl atm_kd_pg2kvz_1bqn0at dir dir-ltr"
+                                          >{{
+                                            item?.content.slice(0, 40) + "..."
+                                          }}</span
+                                        ></span
+                                      >
+                                    </div>
                                   </div>
                                 </div>
                               </div>
                             </div>
-                          </div>
+                          </ng-container>
+
+                          <ng-template #noComments>
+                            <div class="text-center">
+                              <!-- <img src="chemin_vers_image_vide.png" alt="Aucun commentaire disponible" style="width: 100px; height: 100px;" /> -->
+                              <img
+                                src="https://angular.pixelstrap.net/fastkart-rest/assets/svg/empty-items.svg"
+                                alt=""
+                                width="40%"
+                              />
+                              <p style="font-size: 18px; margin-top: 10px">
+                                Aucun commentaire disponible
+                              </p>
+                            </div>
+                          </ng-template>
                         </div>
                       </div>
                     </div>

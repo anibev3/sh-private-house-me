@@ -482,6 +482,7 @@ import { Endpoint } from '../../constants.ts/enpoint';
 export class MakeCommentComponent implements OnInit {
   @Input() currentHome: any;
   @Input() room_id: any;
+  @Input() booking_id: any;
 
   submittingForm: boolean = false;
   facturationForm: any;
@@ -560,8 +561,6 @@ export class MakeCommentComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    console.log(this.room_id);
-
     if (this.cryptoService.getDecryptedItem(Constants.USER)) {
       this.user = this.cryptoService.getDecryptedItem(Constants.USER);
     }
@@ -579,6 +578,7 @@ export class MakeCommentComponent implements OnInit {
       const formData = {
         customer_id: this.user?.id,
         room_id: this.room_id,
+        booking_id: this.booking_id,
         content: this.commentForm?.value?.content,
         reviews: [
           {
@@ -608,6 +608,7 @@ export class MakeCommentComponent implements OnInit {
         (response) => {
           console.log('Soumission avec succes', response);
           this.submittingForm = false;
+          return location.reload();
         },
         (error) => {
           this.submittingForm = false;
@@ -615,7 +616,7 @@ export class MakeCommentComponent implements OnInit {
         }
       );
 
-      console.log(formData);
+      // console.log(formData);
     } else {
       this.isError = true;
 
@@ -633,55 +634,5 @@ export class MakeCommentComponent implements OnInit {
     } else {
       this.isCollapseVisible = false;
     }
-  }
-  //---------------------- Payment Option
-
-  submitInfoFacturationAndProcessToPaiement() {
-    this.submittingForm = true;
-    // Vérifiez si le formulaire est valide
-    this.facturationForm.value.isEntreprise = this.selectedOption;
-
-    setTimeout(() => {
-      this.submittingForm = false;
-    }, 300);
-
-    if (this.facturationForm.value.isEntreprise) {
-      if (!this.facturationForm.value.villeFacturation) {
-        this.showSnackbar = true;
-        this.submittingForm = true;
-        setTimeout(() => {
-          this.showSnackbar = false;
-        }, 1000);
-        setTimeout(() => {
-          this.submittingForm = false;
-        }, 300);
-
-        return;
-      }
-    } else {
-      if (!this.facturationForm.value.prenomFacturation) {
-        this.showSnackbar = true;
-        this.submittingForm = true;
-        setTimeout(() => {
-          this.showSnackbar = false;
-        }, 1000);
-        setTimeout(() => {
-          this.submittingForm = false;
-        }, 300);
-
-        return;
-      }
-    }
-  }
-
-  public initialiseFacturationInfo() {
-    // this.commentForm = new FormGroup({
-    //   content: new FormControl(''),
-    //   emplacement_id_1: new FormControl(0),
-    //   arrivee_id_2: new FormControl(0),
-    //   qualite_prix_id_3: new FormControl(0),
-    //   communication_id_4: new FormControl(0),
-    //   proprete_id_5: new FormControl(0),
-    // });
   }
 }
