@@ -31,6 +31,7 @@ export class ContentComponent implements OnInit, AfterContentInit {
 
   public dataIsOk: boolean = false;
   public isUserConnected: boolean = false;
+  public formData: any;
 
   page: number = 1;
   public logements!: ListRoom[];
@@ -58,7 +59,7 @@ export class ContentComponent implements OnInit, AfterContentInit {
     this.city_id = this.route.snapshot.queryParamMap.get('city_id');
     this.type_house_id = this.route.snapshot.queryParamMap.get('type_house_id');
 
-    const formData = {
+    this.formData = {
       arrival_at: this.route.snapshot.queryParamMap.get('arrival_at'),
       departure_at: this.route.snapshot.queryParamMap.get('departure_at'),
       city_id: this.route.snapshot.queryParamMap.get('city_id'),
@@ -69,7 +70,7 @@ export class ContentComponent implements OnInit, AfterContentInit {
       nbr_bathroom: this.route.snapshot.queryParamMap.get('nbr_bathroom'),
     };
 
-    this.getLodge(formData);
+    this.getLodge(this.formData);
   }
 
   public getQueryParams(): void {

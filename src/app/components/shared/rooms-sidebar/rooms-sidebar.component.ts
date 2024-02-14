@@ -165,16 +165,21 @@ export class RoomsSidebarComponent implements OnInit {
       nbr_people: this.route.snapshot.queryParamMap.get('nbr_people'),
     };
 
+    this.cryptoService.setEncryptedItem(
+      Constants.QUERY_PARAMS,
+      this.queryParams
+    );
+
     if (infoRes) {
       this.bookingForm = this.fb.group({
-        arrival_at: [infoRes.arrival_at || ''],
-        departure_at: [infoRes.departure_at || ''],
-        nbr_people: [infoRes.nbr_people || '1'],
-        city_id: [infoRes.city_id || ''],
-        type_house_id: [infoRes.type_house_id || ''],
-        nbr_room: [infoRes.nbr_room || '1'],
-        name: [infoRes.name || ''],
-        nbr_bathroom: [infoRes.nbr_bathroom || '1'],
+        arrival_at: [this.queryParams.arrival_at || ''],
+        departure_at: [this.queryParams.departure_at || ''],
+        nbr_people: [this.queryParams.nbr_people || '1'],
+        city_id: [this.queryParams.city_id || ''],
+        type_house_id: [this.queryParams.type_house_id || ''],
+        nbr_room: [this.queryParams.nbr_room || '1'],
+        name: [''],
+        nbr_bathroom: [this.queryParams.nbr_bathroom || '1'],
         // sub_type_house_id: [''],
       });
     } else if (this.queryParams) {
