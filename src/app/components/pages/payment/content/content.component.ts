@@ -340,9 +340,6 @@ export class ContentComponent implements OnInit {
       }
 
       // Utilisez maintenant 'finalAmount' pour la suite de votre logique
-      console.log(finalAmount);
-
-      console.log(amount);
 
       // Vérifier si 'amount' est valide avant de continuer
       if (finalAmount == null || isNaN(+finalAmount)) {
@@ -358,7 +355,7 @@ export class ContentComponent implements OnInit {
         },
       ];
 
-      console.log(JSON.stringify(cart), cart[0].price);
+      // console.log(JSON.stringify(cart), cart[0].price);
 
       this.apiService.initiatePayment(cart, this.userInfo_.email).subscribe(
         (paymentResponse) => {

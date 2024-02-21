@@ -98,7 +98,7 @@ export class RsSidebarComponent implements OnInit {
 
   public getQueryParams(): void {
     if (this.queryParams?.departure_at != '') {
-      console.log('USER CAN RESERVED');
+      // console.log('USER CAN RESERVED');
 
       this.canReserved = true;
     }

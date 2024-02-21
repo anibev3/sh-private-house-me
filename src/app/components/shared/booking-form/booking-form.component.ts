@@ -92,40 +92,40 @@ export class BookingFormComponent implements OnInit {
       this.bookingForm.get('type_house_id')?.value
     );
 
-    console.log('Selected Property Type ID:', selectedPropertyTypeId);
+    // console.log('Selected Property Type ID:', selectedPropertyTypeId);
 
     this.selectedPropertyType = this.roomTypeList.find(
       (propertyType) => propertyType.id === selectedPropertyTypeId
     );
 
-    console.log('Selected Property Type:', this.selectedPropertyType);
+    // console.log('Selected Property Type:', this.selectedPropertyType);
 
     this.subPropertyTypes = this.selectedPropertyType
       ? this.selectedPropertyType.children
       : [];
 
-    console.log('Sub Property Types:', this.subPropertyTypes);
+    // console.log('Sub Property Types:', this.subPropertyTypes);
   }
 
   onCountryChange(): void {
     const selectedCountryId = parseInt(
       this.bookingForm.get('country_id')?.value
     );
-    console.log('Selected Country ID Type:', typeof selectedCountryId);
-    console.log('Selected Country ID:', selectedCountryId);
+    // console.log('Selected Country ID Type:', typeof selectedCountryId);
+    // console.log('Selected Country ID:', selectedCountryId);
 
-    console.log('All Countries:', this.countries);
+    // console.log('All Countries:', this.countries);
     this.selectedCountry = this.countries
       ? this.countries.find((country) => country.id === selectedCountryId)
       : null;
-    console.log('Selected Country:', this.selectedCountry);
+    // console.log('Selected Country:', this.selectedCountry);
 
     this.cities = this.selectedCountry ? this.selectedCountry.cities : [];
-    console.log('Cities:', this.cities);
+    // console.log('Cities:', this.cities);
 
     this.selectedCity = null;
     this.municipalities = [];
-    console.log('Selected City and Municipalities reset.');
+    // console.log('Selected City and Municipalities reset.');
   }
 
   onCityChange(): void {
@@ -140,22 +140,22 @@ export class BookingFormComponent implements OnInit {
     this.apiService.getItems(Endpoint.COUNTRIES).subscribe((response) => {
       this.countries = response.data;
 
-      console.log('LA REPO?N: ', this.countries);
+      // console.log('LA REPO?N: ', this.countries);
     });
   }
 
   public inputDateChanged(): void {
-    console.log(this.departure_at);
-    console.log(this.date);
+    // console.log(this.departure_at);
+    // console.log(this.date);
   }
 
   onSubmit() {
     this.submittingForm = true;
-    console.log(this.roomTypeList);
+    // console.log(this.roomTypeList);
     // if (this.bookingForm.value) {
     const arrivalDate = this.bookingForm.get('arrival_at')?.value ?? null;
     const departureDate = this.bookingForm.get('departure_at')?.value ?? null;
-    console.log(this.bookingForm.get('municipality_id')?.value?.id);
+    // console.log(this.bookingForm.get('municipality_id')?.value?.id);
 
     this.bookingForm.value.arrival_at = this.functions.formatDate(arrivalDate);
     this.bookingForm.value.departure_at =
@@ -169,7 +169,7 @@ export class BookingFormComponent implements OnInit {
     // }
 
     const formData = this.bookingForm.value;
-    console.log(formData);
+    // console.log(formData);
 
     localStorage.setItem('infoRes', JSON.stringify(formData));
     this.cryptoService.setEncryptedItem(Constants.QUERY_PARAMS, formData);

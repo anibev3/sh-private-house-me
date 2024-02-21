@@ -34,8 +34,8 @@ export class ReviewsComponent implements OnInit {
   ) {}
 
   ngOnInit() {
-    console.log('REVIEWS', this.review);
-    console.log('COMMENTS', this.comment);
+    // console.log('REVIEWS', this.review);
+    // console.log('COMMENTS', this.comment);
   }
 
   showMaximizableDialog() {

@@ -131,9 +131,9 @@ export class ProfilHelperService implements AfterContentInit {
       const userCredantials: any = this.cryptoService.getDecryptedItem(
         Constants.TOKEN
       );
-      console.log(userCredantials);
+      // console.log(userCredantials);
 
-      console.log('LE CONTENU DU FORMULAIRE', formData);
+      // console.log('LE CONTENU DU FORMULAIRE', formData);
       this.apiService
         .patchItemWithHeader(
           Endpoint.UPDATE_USER_INFO,
@@ -143,7 +143,7 @@ export class ProfilHelperService implements AfterContentInit {
         )
         .subscribe(
           (response) => {
-            console.log(JSON.stringify(response));
+            // console.log(JSON.stringify(response));
             this.cryptoService.setEncryptedItem(Constants.USER, response?.user);
             this.responseIcon = 'fa-check-circle';
             this.responseMsg = 'Vos informations ont bien été modifié';
@@ -176,7 +176,7 @@ export class ProfilHelperService implements AfterContentInit {
     this.apiService.getItemById('history', this.userData?.id).subscribe(
       (response) => {
         this.historyList = response?.data;
-        console.log(this.historyList);
+        // console.log(this.historyList);
 
         if (this.historyList != null || this.historyList != undefined) {
           this.historyList = this.historyList.reverse();
@@ -223,9 +223,9 @@ export class ProfilHelperService implements AfterContentInit {
       const userCredantials: any = this.cryptoService.getDecryptedItem(
         Constants.TOKEN
       );
-      console.log(userCredantials);
+      // console.log(userCredantials);
 
-      console.log('LE CONTENU DU FORMULAIRE', formData);
+      // console.log('LE CONTENU DU FORMULAIRE', formData);
       this.apiService
         .putItemWithHeader(
           Endpoint.UPDATE_USER_PASSWORD,

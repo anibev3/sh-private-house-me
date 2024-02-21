@@ -19,7 +19,7 @@ import { Galleria } from 'primeng/galleria';
       [containerClass]="galleriaClass()"
       [showThumbnails]="showThumbnails"
       [showItemNavigators]="true"
-      [showItemNavigatorsOnHover]="true"
+      [showItemNavigatorsOnHover]="false"
       [circular]="true"
       [autoPlay]="true"
       [transitionInterval]="3000"
@@ -158,7 +158,7 @@ export class GalleryComponent implements OnInit {
     },
   ];
 
-  showThumbnails: boolean = false;
+  showThumbnails: boolean = true;
 
   fullscreen: boolean = false;
 
@@ -172,7 +172,7 @@ export class GalleryComponent implements OnInit {
 
   ngOnInit(): void {
     this.images_ = this.currentHome;
-    console.log(this.images_);
+    // console.log(this.images_);
 
     // Ajouter chaque image au tableau 'images'
     this.currentHome.images.forEach((image: string, index: number) => {
@@ -184,7 +184,7 @@ export class GalleryComponent implements OnInit {
       });
     });
 
-    console.log('Voici les image', this.images);
+    // console.log('Voici les image', this.images);
     this.bindDocumentListeners();
   }
 

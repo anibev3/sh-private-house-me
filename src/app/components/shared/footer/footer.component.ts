@@ -29,7 +29,7 @@ export class FooterComponent implements OnInit {
 
       this.apiService.createItem('subscribe-newsletter', formData).subscribe(
         (response) => {
-          console.log(response);
+          // console.log(response);
 
           if (response.status === 'success') {
             this.isSuccess = true;

@@ -42,7 +42,7 @@ export class Functions {
 
     // Créer une instance de Date en utilisant les composants
     const outputDate = new Date(year, month - 1, day); // Mois - 1 car les mois commencent à 0
-    console.log(outputDate);
+    // console.log(outputDate);
 
     // Utiliser outputDate comme vous le souhaitez
     return outputDate;

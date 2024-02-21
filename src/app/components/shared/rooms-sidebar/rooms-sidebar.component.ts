@@ -83,11 +83,11 @@ export class RoomsSidebarComponent implements OnInit {
 
         this.bookingForm.get('departure_at')?.setValue(newDepartureDate);
 
-        console.log(
-          'VALEUR DE DEPARTURE',
-          this.departure_at_minDate.getDate() + 1,
-          this.departure_at_minDate
-        );
+        // console.log(
+        //   'VALEUR DE DEPARTURE',
+        //   this.departure_at_minDate.getDate() + 1,
+        //   this.departure_at_minDate
+        // );
       });
   }
 
@@ -150,30 +150,34 @@ export class RoomsSidebarComponent implements OnInit {
 
   initForm(): void {
     let infoRes: any;
-    if (this.cryptoService.getDecryptedItem(Constants.QUERY_PARAMS)) {
-      infoRes = this.cryptoService.getDecryptedItem(Constants.QUERY_PARAMS);
-    }
+    const today = new Date();
+    const tomorrow = new Date();
+    tomorrow.setDate(today.getDate() + 1);
 
-    this.queryParams = {
-      arrival_at: this.route.snapshot.queryParamMap.get('arrival_at'),
-      departure_at: this.route.snapshot.queryParamMap.get('departure_at'),
-      city_id: this.route.snapshot.queryParamMap.get('city_id'),
-      type_house_id: this.route.snapshot.queryParamMap.get('type_house_id'),
-      name: this.route.snapshot.queryParamMap.get('name'),
-      nbr_bathroom: this.route.snapshot.queryParamMap.get('nbr_bathroom'),
-      nbr_room: this.route.snapshot.queryParamMap.get('nbr_room'),
-      nbr_people: this.route.snapshot.queryParamMap.get('nbr_people'),
-    };
+    infoRes = this.cryptoService.getDecryptedItem(Constants.QUERY_PARAMS);
 
-    this.cryptoService.setEncryptedItem(
-      Constants.QUERY_PARAMS,
-      this.queryParams
-    );
+    if (
+      this.route.snapshot.queryParamMap.get('arrival_at') &&
+      this.route.snapshot.queryParamMap.get('departure_at')
+    ) {
+      this.queryParams = {
+        arrival_at: this.route.snapshot.queryParamMap.get('arrival_at'),
+        departure_at: this.route.snapshot.queryParamMap.get('departure_at'),
+        city_id: this.route.snapshot.queryParamMap.get('city_id'),
+        type_house_id: this.route.snapshot.queryParamMap.get('type_house_id'),
+        name: this.route.snapshot.queryParamMap.get('name'),
+        nbr_bathroom: this.route.snapshot.queryParamMap.get('nbr_bathroom'),
+        nbr_room: this.route.snapshot.queryParamMap.get('nbr_room'),
+        nbr_people: this.route.snapshot.queryParamMap.get('nbr_people'),
+      };
 
-    if (infoRes) {
+      this.cryptoService.setEncryptedItem(
+        Constants.QUERY_PARAMS,
+        this.queryParams
+      );
       this.bookingForm = this.fb.group({
-        arrival_at: [this.queryParams.arrival_at || ''],
-        departure_at: [this.queryParams.departure_at || ''],
+        arrival_at: [this.queryParams.arrival_at || today],
+        departure_at: [this.queryParams.departure_at || tomorrow],
         nbr_people: [this.queryParams.nbr_people || '1'],
         city_id: [this.queryParams.city_id || ''],
         type_house_id: [this.queryParams.type_house_id || ''],
@@ -182,26 +186,22 @@ export class RoomsSidebarComponent implements OnInit {
         nbr_bathroom: [this.queryParams.nbr_bathroom || '1'],
         // sub_type_house_id: [''],
       });
-    } else if (this.queryParams) {
+    } else if (infoRes) {
       this.bookingForm = this.fb.group({
-        arrival_at: [this.queryParams.arrival_at || ''],
-        departure_at: [this.queryParams.departure_at || ''],
-        nbr_people: [this.nbr_people || '1'],
-        city_id: [this.queryParams.city_id || ''],
-        type_house_id: [this.queryParams.type_house_id || ''],
-        nbr_room: [this.nbr_room || '1'],
-        name: [this.name || ''],
-        nbr_bathroom: [this.nbr_bathroom || '1'],
+        arrival_at: [infoRes.arrival_at || today],
+        departure_at: [infoRes.departure_at || tomorrow],
+        nbr_people: [infoRes.nbr_people || '1'],
+        city_id: [infoRes.city_id || ''],
+        type_house_id: [infoRes.type_house_id || ''],
+        nbr_room: [infoRes.nbr_room || '1'],
+        name: [''],
+        nbr_bathroom: [infoRes.nbr_bathroom || '1'],
         // sub_type_house_id: [''],
       });
     } else {
-      const today = new Date();
-      const tomorrow = new Date();
-      tomorrow.setDate(today.getDate() + 1);
-
       this.bookingForm = this.fb.group({
-        arrival_at: new Date(),
-        departure_at: [''],
+        arrival_at: today,
+        departure_at: tomorrow,
         nbr_people: ['1'],
         city_id: [''],
         type_house_id: [''],

@@ -6,7 +6,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "Miranda": {
+    "Sherylux": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:application": {
@@ -20,7 +20,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/Miranda",
+            "outputPath": "dist/Sherylux",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -78,18 +78,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "Miranda:build"
+            "browserTarget": "Sherylux:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "Miranda:build:production"
+              "browserTarget": "Sherylux:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "Miranda:build"
+            "browserTarget": "Sherylux:build"
           }
         },
         "test": {
@@ -119,16 +119,16 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "Miranda:serve"
+            "devServerTarget": "Sherylux:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "Miranda:serve:production"
+              "devServerTarget": "Sherylux:serve:production"
             }
           }
         }
       }
     }
   },
-  "defaultProject": "Miranda"
+  "defaultProject": "Sherylux"
 }

@@ -144,10 +144,10 @@ export class ContentComponent implements OnInit, AfterContentInit {
     this.apiService.getItems(Endpoint.TOP_ROOMS).subscribe(
       (response) => {
         this.topRooms = response?.data;
-        console.log('GetTopLodge');
+        // console.log('GetTopLodge');
       },
       (error) => {
-        console.log(error);
+        // console.log(error);
       }
     );
   }

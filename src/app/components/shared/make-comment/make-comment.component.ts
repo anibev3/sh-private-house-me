@@ -606,7 +606,7 @@ export class MakeCommentComponent implements OnInit {
 
       this.apiService.createItem(Endpoint.REVIEW, formData).subscribe(
         (response) => {
-          console.log('Soumission avec succes', response);
+          // console.log('Soumission avec succes', response);
           this.submittingForm = false;
           return location.reload();
         },

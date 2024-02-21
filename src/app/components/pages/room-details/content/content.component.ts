@@ -143,14 +143,14 @@ export class ContentComponent implements OnInit, AfterContentInit {
       this.query_params = this.cryptoService.getDecryptedItem(
         Constants.QUERY_PARAMS
       );
-      console.log('LA QUERY PARAMS', this.query_params);
-
       if (
         this.query_params?.departure_at != '' &&
         this.query_params?.arrival_at != ''
       ) {
         console.log('USER CAN RESERVED');
         this.canReserved = true;
+      } else {
+        console.log("USER CAN'T RESERVED");
       }
     }
   }

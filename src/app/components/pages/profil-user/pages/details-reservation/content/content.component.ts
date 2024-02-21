@@ -61,7 +61,7 @@ export class ContentComponent implements OnInit {
         (response) => {
           this.reservationDetail = response?.data;
 
-          console.log(this.reservationDetail);
+          // console.log(this.reservationDetail);
 
           if (this.reservationDetail?.room?.cancellation_type == 'percentage') {
             this.annulationAmount =
