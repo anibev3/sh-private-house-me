@@ -7,6 +7,7 @@ import { Endpoint } from 'src/app/components/constants.ts/enpoint';
 import { ConfirmationService } from 'primeng/api';
 import { NgbActiveModal, NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { Constants } from 'src/app/components/constants.ts/constants';
+import { NavigationService } from 'src/app/components/services/crypto/navigation.service';
 
 export class NgbdModalConfirmAutofocus {
   constructor(public modal: NgbActiveModal) {}
@@ -44,11 +45,16 @@ export class ContentComponent implements OnInit {
     private route: ActivatedRoute,
     private router: Router,
     public apiService: ApiService,
-    private confirmationService: ConfirmationService
+    private confirmationService: ConfirmationService,
+    private navigationService: NavigationService
   ) {}
 
   public showCommentModal(): void {
     this.displayResponsive = !this.displayResponsive;
+  }
+
+  public goToListingLodge() {
+    return this.navigationService.onSubmit();
   }
 
   initDetailRsData(): void {

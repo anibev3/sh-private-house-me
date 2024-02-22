@@ -14,6 +14,7 @@ export class ContentComponent implements OnInit {
   public numberOfDays: any;
   public numberOfNights: any;
   public dataIsOk: boolean = false;
+
   mapOptions = {
     mapTypeId: 'satellite',
   };
@@ -24,6 +25,9 @@ export class ContentComponent implements OnInit {
     this.initData();
   }
 
+  classname = '';
+  // ftlogo = 'assets/img/*-sh-white.png';
+  ftlogo = 'assets/img/logo-sh-white.png';
   initData(): void {
     if (
       this.crypstoService.getDecryptedItem(Constants.SUCCESS_RESERVATION_DATA)

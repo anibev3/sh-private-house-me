@@ -139,15 +139,6 @@ const routes: Routes = [
       ),
     data: { breadcrumb: 'À propos de nous' },
   },
-  // Gallery
-  {
-    path: 'gallery',
-    loadChildren: () =>
-      import('./components/pages/gallery/gallery.module').then(
-        (m) => m.GalleryModule
-      ),
-    data: { breadcrumb: 'Galleries' },
-  },
   // Restaurant
   {
     path: 'restaurant',

@@ -12,6 +12,9 @@ import { ProfilHelperService } from 'src/app/components/services/profil-helper.s
 })
 export class BaseProfilComponent extends ProfilHelperService {
   Headerclassname = 'inner-page';
+  classname = '';
+  // ftlogo = 'assets/img/*-sh-white.png';
+  ftlogo = 'assets/img/logo-sh-white.png';
   public isCollapsed = true;
 
   // constructor(

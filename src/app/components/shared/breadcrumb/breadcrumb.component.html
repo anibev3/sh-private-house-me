@@ -11,7 +11,7 @@
           <span>By Sherylux</span>
           <h2 class="page-title">{{ route.displayName }}</h2>
           <ul class="breadcrumb-nav" style="border-radius: 10px 0px">
-            <li><a routerLink="/">Home</a></li>
+            <li><a routerLink="/">Accueil</a></li>
             <li *ngIf="!route.terminal">
               <a href="" [routerLink]="[route.url]">{{ route.displayName }}</a>
             </li>

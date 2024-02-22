@@ -173,7 +173,7 @@ a {
 
 a,
 a:hover {
-  color: rgb(129, 21, 255);
+  color: black;
 }
 
 select,
@@ -267,7 +267,7 @@ select {
   position: absolute;
   left: 30px;
   top: 50%;
-  color: rgb(129, 21, 255);
+  color: black;
   -webkit-transform: translateY(-50%);
   transform: translateY(-50%);
 }
@@ -291,7 +291,7 @@ select {
   position: absolute;
   left: 40px;
   bottom: 35px;
-  color: rgb(129, 21, 255);
+  color: black;
   -webkit-transform: translateY(50%);
   transform: translateY(50%);
 }
@@ -406,11 +406,11 @@ select {
   text-transform: uppercase;
   letter-spacing: 2px;
   color: #777;
-  border: 2px solid rgb(129, 21, 255);
+  border: 2px solid black;
 }
 
 .main-btn.btn-filled {
-  background-color: rgb(129, 21, 255);
+  background-color: black;
   color: #fff;
   -webkit-box-shadow: 0px 14px 24px 0px rgba(190, 173, 142, 0.4);
   box-shadow: 0px 14px 24px 0px rgba(190, 173, 142, 0.4);
@@ -424,11 +424,11 @@ select {
 }
 
 .main-btn.btn-border {
-  border-color: rgb(129, 21, 255);
+  border-color: black;
 }
 
 .main-btn.btn-border:hover {
-  background-color: rgb(129, 21, 255);
+  background-color: black;
   color: #fff;
   -webkit-box-shadow: 0px 14px 24px 0px rgba(190, 173, 142, 0.4);
   box-shadow: 0px 14px 24px 0px rgba(190, 173, 142, 0.4);
@@ -485,7 +485,7 @@ select {
 }
 
 .section-title.white-color span.title-tag {
-  color: rgb(129, 21, 255);
+  color: black;
 }
 
 .section-title.white-color h2 {
@@ -520,7 +520,7 @@ select {
 
 .arrow-style .slick-arrow:hover,
 .arrow-style .slick-arrow.next-arrow {
-  background-color: rgb(129, 21, 255);
+  background-color: black;
   color: #fff;
   -webkit-box-shadow: 0px 14px 24px 0px rgba(190, 173, 142, 0.3);
   box-shadow: 0px 14px 24px 0px rgba(190, 173, 142, 0.3);
@@ -528,7 +528,7 @@ select {
 
 /*=======  Preloader  =======*/
 .preloader {
-  background-color: rgb(129, 21, 255);
+  background-color: black;
   width: 100%;
   height: 100%;
   position: fixed;
@@ -1051,9 +1051,9 @@ header .nav-container .menu-items ul li .submenu li a {
 }
 
 header .nav-container .menu-items ul li .submenu li a:hover {
-  background-color: rgb(129, 21, 255);
+  background-color: black;
   color: #fff !important;
-  border-color: rgb(129, 21, 255);
+  border-color: black;
 }
 
 header .nav-container .menu-items ul li .submenu li .submenu {
@@ -1156,7 +1156,7 @@ header .nav-container .navbar-close .cross-wrap span.bottom {
 }
 
 header .nav-container.breakpoint-on .nav-menu {
-  background-color: rgb(129, 21, 255);
+  background-color: black;
   position: fixed;
   top: 0;
   left: -300px;
@@ -1374,7 +1374,7 @@ header.header-three .header-top ul.header-top-info li {
 
 header.header-three .header-top ul.header-top-info li i {
   margin-right: 10px;
-  color: rgb(129, 21, 255);
+  color: black;
 }
 
 header.header-three .nav-container {
@@ -1488,7 +1488,7 @@ header.header-three .nav-container .menu-right-buttons a {
 }
 
 header.header-three .nav-container .menu-right-buttons a:hover {
-  background-color: rgb(129, 21, 255);
+  background-color: black;
   color: #fff;
 }
 
@@ -1588,7 +1588,7 @@ header.header-three .search .search-form form button {
   width: 60px;
   height: 100%;
   z-index: 1;
-  background-color: rgb(129, 21, 255);
+  background-color: black;
   font-size: 14px;
   color: #fff;
   -webkit-transition: all 0.3s ease-out 0s;
@@ -1755,7 +1755,7 @@ header.sticky-header.sticky-active.header-two .header-info .item .title {
   right: 30px;
   top: 30px;
   font-size: 28px;
-  color: rgb(129, 21, 255);
+  color: black;
 }
 
 .offcanvas-wrapper .offcanvas-widget .widget {
@@ -1780,7 +1780,7 @@ header.sticky-header.sticky-active.header-two .header-info .item .title {
   top: 0;
   height: 100%;
   width: 2px;
-  background-color: rgb(129, 21, 255);
+  background-color: black;
   content: "";
 }
 
@@ -1806,7 +1806,7 @@ header.sticky-header.sticky-active.header-two .header-info .item .title {
   width: 60px;
   height: 100%;
   z-index: 1;
-  background-color: rgb(129, 21, 255);
+  background-color: black;
   font-size: 14px;
   color: #fff;
   -webkit-transition: all 0.3s ease-out 0s;
@@ -1829,7 +1829,7 @@ header.sticky-header.sticky-active.header-two .header-info .item .title {
 
 .offcanvas-wrapper .offcanvas-widget .widget.nav-widget ul li a:hover {
   padding-left: 10px;
-  color: rgb(129, 21, 255);
+  color: black;
 }
 
 .offcanvas-wrapper .offcanvas-widget .widget.nav-widget ul li .submenu {
@@ -1844,7 +1844,7 @@ header.sticky-header.sticky-active.header-two .header-info .item .title {
 .offcanvas-wrapper .offcanvas-widget .widget.social-link ul li a {
   height: 40px;
   width: 40px;
-  background-color: rgb(129, 21, 255);
+  background-color: black;
   color: #fff;
   line-height: 40px;
   text-align: center;
@@ -1968,7 +1968,7 @@ header.sticky-header.sticky-active.header-two .header-info .item .title {
 }
 
 .breadcrumb-area .breadcrumb-text .breadcrumb-nav li a:hover {
-  color: rgb(129, 21, 255);
+  color: black;
 }
 
 .breadcrumb-area .breadcrumb-text .breadcrumb-nav li:not(:first-child) {
@@ -1987,11 +1987,11 @@ header.sticky-header.sticky-active.header-two .header-info .item .title {
 }
 
 .breadcrumb-area .breadcrumb-text .breadcrumb-nav li.active {
-  color: rgb(129, 21, 255);
+  color: black;
 }
 
 .breadcrumb-area .breadcrumb-text .breadcrumb-nav li.active::before {
-  color: rgb(129, 21, 255);
+  color: black;
 }
 
 /*=======  BANNER CSS  =======*/
@@ -2265,7 +2265,7 @@ header.sticky-header.sticky-active.header-two .header-info .item .title {
 }
 
 .banner-area .slick-arrow:hover {
-  background-color: rgb(129, 21, 255);
+  background-color: black;
   color: #fff;
 }
 
@@ -2298,7 +2298,7 @@ header.sticky-header.sticky-active.header-two .header-info .item .title {
 }
 
 .banner-area ul.slick-dots li.slick-active button {
-  background-color: rgb(129, 21, 255);
+  background-color: black;
 }
 
 /*=======  ABOUT CSS  =======*/
@@ -2363,7 +2363,7 @@ header.sticky-header.sticky-active.header-two .header-info .item .title {
 }
 
 .about-section .about-title span.title-tag span {
-  color: rgb(129, 21, 255);
+  color: black;
 }
 
 @media only screen and (min-width: 768px) and (max-width: 991px) {
@@ -2432,7 +2432,7 @@ header.sticky-header.sticky-active.header-two .header-info .item .title {
   box-shadow: 0px 14px 24px 0px rgba(184, 184, 184, 0.1);
   text-align: center;
   display: block;
-  color: rgb(129, 21, 255);
+  color: black;
   position: relative;
   z-index: 1;
 }
@@ -2610,7 +2610,7 @@ header.sticky-header.sticky-active.header-two .header-info .item .title {
   font-size: 70px;
   margin-bottom: 20px;
   line-height: 1;
-  color: rgb(129, 21, 255);
+  color: black;
 }
 
 .about-section .about-features-boxes .single-feature-box h4 {
@@ -2647,7 +2647,7 @@ header.sticky-header.sticky-active.header-two .header-info .item .title {
 }
 
 .about-section .about-features-boxes .single-feature-box.dark a:hover {
-  color: rgb(129, 21, 255);
+  color: black;
 }
 
 @media only screen and (min-width: 768px) and (max-width: 991px) {
@@ -3022,8 +3022,8 @@ header.sticky-header.sticky-active.header-two .header-info .item .title {
 }
 
 .cta-section .cta-inner .cta-text a.main-btn.btn-filled:hover {
-  background-color: rgb(129, 21, 255);
-  border-color: rgb(129, 21, 255);
+  background-color: black;
+  border-color: black;
 }
 
 @media only screen and (min-width: 768px) and (max-width: 991px) {
@@ -3078,7 +3078,7 @@ header.sticky-header.sticky-active.header-two .header-info .item .title {
   text-align: center;
   line-height: 120px;
   font-size: 60px;
-  color: rgb(129, 21, 255);
+  color: black;
   -webkit-transition: all 0.3s ease-out 0s;
   transition: all 0.3s ease-out 0s;
   position: relative;
@@ -3157,7 +3157,7 @@ header.sticky-header.sticky-active.header-two .header-info .item .title {
 }
 
 .cta-section .cta-inner .cta-features .single-feature:hover .icon {
-  background-color: rgb(129, 21, 255);
+  background-color: black;
   color: #fff;
 }
 
@@ -3171,7 +3171,7 @@ header.sticky-header.sticky-active.header-two .header-info .item .title {
   left: 35px;
   right: 35px;
   bottom: -40px;
-  background-color: rgb(129, 21, 255);
+  background-color: black;
   height: 20px;
 }
 
@@ -3295,7 +3295,7 @@ header.sticky-header.sticky-active.header-two .header-info .item .title {
   text-transform: uppercase;
   letter-spacing: 3px;
   padding-bottom: 20px;
-  color: rgb(129, 21, 255);
+  color: black;
 }
 
 .room-gallery-cta .rotate-images img {
@@ -3431,7 +3431,7 @@ header.sticky-header.sticky-active.header-two .header-info .item .title {
 }
 
 .text-block.bg-black .section-title .title-tag {
-  color: rgb(129, 21, 255);
+  color: black;
 }
 
 .text-block.bg-black .main-btn.btn-filled {
@@ -3714,7 +3714,7 @@ header.sticky-header.sticky-active.header-two .header-info .item .title {
   height: 50px;
   width: 50px;
   border-radius: 50%;
-  background-color: rgb(129, 21, 255);
+  background-color: black;
   text-align: center;
   line-height: 50px;
   color: #fff;
@@ -3742,7 +3742,7 @@ header.sticky-header.sticky-active.header-two .header-info .item .title {
 .testimonial-box .clinet-post {
   font-weight: bold;
   text-transform: uppercase;
-  color: rgb(129, 21, 255);
+  color: black;
   margin-bottom: 30px;
   letter-spacing: 2px;
 }
@@ -3790,7 +3790,7 @@ header.sticky-header.sticky-active.header-two .header-info .item .title {
 
 .testimonial-slider ul.slick-dots li.slick-active button {
   width: 26px;
-  background-color: rgb(129, 21, 255);
+  background-color: black;
 }
 
 /*=======  Latest Post   =======*/
@@ -3946,7 +3946,7 @@ header.sticky-header.sticky-active.header-two .header-info .item .title {
 .features-loop .feature-box .icon {
   margin-bottom: 30px;
   font-size: 70px;
-  color: rgb(129, 21, 255);
+  color: black;
   line-height: 1;
 }
 
@@ -4117,7 +4117,7 @@ header.sticky-header.sticky-active.header-two .header-info .item .title {
 .room-gird-loop .room-box .room-desc a.book-btn {
   font-size: 16px;
   font-weight: 700;
-  color: rgb(129, 21, 255);
+  color: black;
   margin-top: 25px;
 }
 
@@ -4140,7 +4140,7 @@ header.sticky-header.sticky-active.header-two .header-info .item .title {
 }
 
 .room-gird-loop .room-box .room-desc a.book-btn:hover {
-  color: rgb(129, 21, 255);
+  color: black;
 }
 
 /*=======  Room List  =======*/
@@ -4245,7 +4245,7 @@ header.sticky-header.sticky-active.header-two .header-info .item .title {
 }
 
 .room-list-loop .room-box .room-desc a.book-btn:hover {
-  color: rgb(129, 21, 255);
+  color: black;
 }
 
 .room-list-loop .room-box .room-desc a.book-btn::before {
@@ -4263,7 +4263,7 @@ header.sticky-header.sticky-active.header-two .header-info .item .title {
 .room-list-loop .room-box .room-desc .price {
   font-size: 40px;
   font-weight: 700;
-  color: rgb(129, 21, 255);
+  color: black;
   line-height: 1;
   display: block;
 }
@@ -4369,7 +4369,7 @@ header.sticky-header.sticky-active.header-two .header-info .item .title {
 }
 
 .room-slider .rooms-content-wrap .room-content-box .slider-count .current {
-  color: rgb(129, 21, 255);
+  color: black;
 }
 
 .room-slider .rooms-content-wrap .room-content-box .slider-count-big {
@@ -4403,7 +4403,7 @@ header.sticky-header.sticky-active.header-two .header-info .item .title {
 
 .room-slider .rooms-content-wrap .room-content-box .icon {
   line-height: 1;
-  color: rgb(129, 21, 255);
+  color: black;
   margin-bottom: 40px;
   font-size: 70px;
 }
@@ -4465,7 +4465,7 @@ header.sticky-header.sticky-active.header-two .header-info .item .title {
   li.slick-active
   button {
   width: 26px;
-  background-color: rgb(129, 21, 255);
+  background-color: black;
 }
 
 .room-slider .rooms-slider-two .single-rooms-box {
@@ -4604,7 +4604,7 @@ header.sticky-header.sticky-active.header-two .header-info .item .title {
 .room-slider .rooms-slider-two .single-rooms-box .room-desc .price {
   text-align: right;
   font-size: 40px;
-  color: rgb(129, 21, 255);
+  color: black;
 }
 
 @media only screen and (min-width: 768px) and (max-width: 991px) {
@@ -4706,7 +4706,7 @@ header.sticky-header.sticky-active.header-two .header-info .item .title {
 
 .room-slider .rooms-slider-two .slick-arrow:hover,
 .room-slider .rooms-slider-two .slick-arrow.next-arrow {
-  background-color: rgb(129, 21, 255);
+  background-color: black;
   color: #fff;
   -webkit-box-shadow: 0px 14px 24px 0px rgba(190, 173, 142, 0.3);
   box-shadow: 0px 14px 24px 0px rgba(190, 173, 142, 0.3);
@@ -4787,7 +4787,7 @@ header.sticky-header.sticky-active.header-two .header-info .item .title {
 
 .room-details .deatils-box .title-wrap .price {
   font-size: 40px;
-  color: rgb(129, 21, 255);
+  color: black;
   font-weight: 700;
   font-family: "Archivo", sans-serif;
 }
@@ -4873,7 +4873,7 @@ header.sticky-header.sticky-active.header-two .header-info .item .title {
 }
 
 .room-details .deatils-box .room-fearures .room-fearures-list li i {
-  color: rgb(129, 21, 255);
+  color: black;
   position: absolute;
   left: 0;
   top: 50%;
@@ -4910,7 +4910,7 @@ header.sticky-header.sticky-active.header-two .header-info .item .title {
   top: 50%;
   -webkit-transform: translateY(-50%);
   transform: translateY(-50%);
-  color: rgb(129, 21, 255);
+  color: black;
   font-family: "Font Awesome 5 Pro";
   font-weight: 300;
   content: "\f00c";
@@ -5018,7 +5018,7 @@ header.sticky-header.sticky-active.header-two .header-info .item .title {
   transform: translateY(-50%);
   width: 40px;
   height: 2px;
-  background-color: rgb(129, 21, 255);
+  background-color: black;
   content: "";
 }
 
@@ -5115,7 +5115,7 @@ header.sticky-header.sticky-active.header-two .header-info .item .title {
   top: 40px;
   left: 40px;
   font-size: 60px;
-  color: rgb(129, 21, 255);
+  color: black;
   margin: 0;
   line-height: 1;
 }
@@ -5300,7 +5300,7 @@ header.sticky-header.sticky-active.header-two .header-info .item .title {
   -webkit-transform: translateY(-50%);
   transform: translateY(-50%);
   font-size: 24px;
-  color: rgb(129, 21, 255);
+  color: black;
   z-index: 2;
   -webkit-transition: all 0.3s ease-out 0s;
   transition: all 0.3s ease-out 0s;
@@ -5402,7 +5402,7 @@ header.sticky-header.sticky-active.header-two .header-info .item .title {
 
 .contact-part .contact-info .info-box .icon {
   font-size: 40px;
-  color: rgb(129, 21, 255);
+  color: black;
 }
 
 @media (max-width: 767px) {
@@ -5453,7 +5453,7 @@ header.sticky-header.sticky-active.header-two .header-info .item .title {
   padding: 65px 60px 60px;
   margin-left: 60px;
   margin-right: 60px;
-  border-top: 6px solid rgb(129, 21, 255);
+  border-top: 6px solid black;
   margin-top: -75px;
   z-index: 2;
   position: relative;
@@ -5566,7 +5566,7 @@ header.sticky-header.sticky-active.header-two .header-info .item .title {
 
 .offers-area .offer-boxes-loop .offer-box .offer-desc .title-wrap .price {
   font-size: 40px;
-  color: rgb(129, 21, 255);
+  color: black;
   font-weight: 700;
   text-align: right;
   line-height: 1;
@@ -5620,7 +5620,7 @@ header.sticky-header.sticky-active.header-two .header-info .item .title {
 }
 
 .offers-area .offer-boxes-loop .offer-box .offer-desc .offer-feature li i {
-  color: rgb(129, 21, 255);
+  color: black;
   position: absolute;
   left: 0;
   top: 50%;
@@ -5731,7 +5731,7 @@ header.sticky-header.sticky-active.header-two .header-info .item .title {
   font-family: "Roboto", sans-serif;
   display: inline-block;
   color: #fff;
-  background-color: rgb(129, 21, 255);
+  background-color: black;
 }
 
 .post-box .post-desc .cat:hover {
@@ -5810,7 +5810,7 @@ header.sticky-header.sticky-active.header-two .header-info .item .title {
 }
 
 .post-box .post-desc .post-meta li a:hover {
-  color: rgb(129, 21, 255);
+  color: black;
 }
 
 .post-box .post-desc .post-meta li a i {
@@ -5854,7 +5854,7 @@ header.sticky-header.sticky-active.header-two .header-info .item .title {
 }
 
 .post-box .post-desc .post-footer .read-more a:hover {
-  color: rgb(129, 21, 255);
+  color: black;
 }
 
 .post-box .with-video.post-media {
@@ -5867,7 +5867,7 @@ header.sticky-header.sticky-active.header-two .header-info .item .title {
   top: 50%;
   width: 80px;
   height: 80px;
-  background-color: rgb(129, 21, 255);
+  background-color: black;
   color: #fff;
   line-height: 80px;
   text-align: center;
@@ -5952,7 +5952,7 @@ header.sticky-header.sticky-active.header-two .header-info .item .title {
   top: 0;
   width: 100%;
   height: 100%;
-  background-color: rgb(129, 21, 255);
+  background-color: black;
   z-index: -1;
   content: "";
 }
@@ -6064,7 +6064,7 @@ header.sticky-header.sticky-active.header-two .header-info .item .title {
   display: inline-block;
   font-weight: 700;
   color: #fff;
-  background-color: rgb(129, 21, 255);
+  background-color: black;
 }
 
 .news-details-box .entry-content .cat:hover {
@@ -6179,7 +6179,7 @@ header.sticky-header.sticky-active.header-two .header-info .item .title {
 }
 
 .news-details-box .entry-content .post-meta li a:hover {
-  color: rgb(129, 21, 255);
+  color: black;
 }
 
 .news-details-box .entry-content .post-meta li a i {
@@ -6227,7 +6227,7 @@ header.sticky-header.sticky-active.header-two .header-info .item .title {
 .news-details-box .entry-content blockquote {
   position: relative;
   padding: 45px 55px;
-  background-color: rgb(129, 21, 255);
+  background-color: black;
   border-radius: 10px;
   z-index: 1;
   font-size: 28px;
@@ -6315,7 +6315,7 @@ header.sticky-header.sticky-active.header-two .header-info .item .title {
 }
 
 .news-details-box .entry-footer .tag-and-share .tag li a:hover {
-  background-color: rgb(129, 21, 255);
+  background-color: black;
   color: #fff;
 }
 
@@ -6355,7 +6355,7 @@ header.sticky-header.sticky-active.header-two .header-info .item .title {
   font-size: 14px;
   font-weight: 500;
   display: block;
-  color: rgb(129, 21, 255);
+  color: black;
 }
 
 .news-details-box .entry-footer .post-nav .prev-post a,
@@ -6508,7 +6508,7 @@ header.sticky-header.sticky-active.header-two .header-info .item .title {
 .news-details-box .entry-footer .author-info-box .info-text span {
   font-weight: 700;
   margin-bottom: 5px;
-  color: rgb(129, 21, 255);
+  color: black;
 }
 
 .news-details-box .entry-footer .author-info-box .info-text h3 {
@@ -6738,12 +6738,12 @@ header.sticky-header.sticky-active.header-two .header-info .item .title {
 }
 
 .pagination-wrap ul li a:hover {
-  background-color: rgb(129, 21, 255);
+  background-color: black;
   color: #fff;
 }
 
 .pagination-wrap ul li.active a {
-  background-color: rgb(129, 21, 255);
+  background-color: black;
   color: #fff;
 }
 
@@ -6791,7 +6791,7 @@ header.sticky-header.sticky-active.header-two .header-info .item .title {
   top: 0;
   height: 100%;
   width: 2px;
-  background-color: rgb(129, 21, 255);
+  background-color: black;
   content: "";
 }
 
@@ -6822,7 +6822,7 @@ header.sticky-header.sticky-active.header-two .header-info .item .title {
 }
 
 .sidebar .widget.about-author-widget .author-box .social-icon li a:hover {
-  color: rgb(129, 21, 255);
+  color: black;
 }
 
 .sidebar .widget.search-widget form {
@@ -6847,7 +6847,7 @@ header.sticky-header.sticky-active.header-two .header-info .item .title {
   width: 60px;
   height: 100%;
   z-index: 1;
-  background-color: rgb(129, 21, 255);
+  background-color: black;
   font-size: 14px;
   color: #fff;
   -webkit-transition: all 0.3s ease-out 0s;
@@ -6929,7 +6929,7 @@ header.sticky-header.sticky-active.header-two .header-info .item .title {
 }
 
 .sidebar .widget.categories-widget ul li a:hover {
-  background-color: rgb(129, 21, 255);
+  background-color: black;
   color: #fff;
 }
 
@@ -6965,7 +6965,7 @@ header.sticky-header.sticky-active.header-two .header-info .item .title {
 }
 
 .sidebar .widget.socail-widget ul li a:hover {
-  background-color: rgb(129, 21, 255);
+  background-color: black;
 }
 
 .sidebar .widget.twitter-feed-widget .twitter-looop .single-twitter {
@@ -6984,7 +6984,7 @@ header.sticky-header.sticky-active.header-two .header-info .item .title {
   content: "\f099";
   font-family: "Font Awesome 5 Brands";
   font-size: 14px;
-  color: rgb(129, 21, 255);
+  color: black;
 }
 
 .sidebar .widget.twitter-feed-widget .twitter-looop .single-twitter:last-child {
@@ -7038,7 +7038,7 @@ header.sticky-header.sticky-active.header-two .header-info .item .title {
 }
 
 .sidebar .widget.popular-tag-widget ul li a:hover {
-  background-color: rgb(129, 21, 255);
+  background-color: black;
 }
 
 .sidebar .widget.banner-ad-widget {
@@ -7066,7 +7066,7 @@ header.sticky-header.sticky-active.header-two .header-info .item .title {
   height: 50px;
   font-size: 14px;
   border: none;
-  border-bottom: 2px solid rgb(129, 21, 255);
+  border-bottom: 2px solid black;
   line-height: 50px;
   color: rgba(119, 119, 119, 0.5);
 }
@@ -7106,13 +7106,13 @@ header.sticky-header.sticky-active.header-two .header-info .item .title {
   left: 0;
   bottom: 15px;
   font-size: 14px;
-  color: rgb(129, 21, 255);
+  color: black;
 }
 
 .booking-form form button {
   width: 100%;
   border: none;
-  background-color: rgb(129, 21, 255);
+  background-color: black;
   font-size: 14px;
   font-weight: 700;
   color: #fff;
@@ -7333,7 +7333,7 @@ header.sticky-header.sticky-active.header-two .header-info .item .title {
 }
 
 .places-details .title-wrap .link a:hover {
-  background-color: rgb(129, 21, 255);
+  background-color: black;
   color: #fff;
 }
 
@@ -7368,7 +7368,7 @@ header.sticky-header.sticky-active.header-two .header-info .item .title {
 }
 
 .restaurant-tab-area .restaurant-rood-list .nav-link i {
-  color: rgb(129, 21, 255);
+  color: black;
   font-size: 60px;
   -webkit-transition: all 0.3s ease-out 0s;
   transition: all 0.3s ease-out 0s;
@@ -7382,7 +7382,7 @@ header.sticky-header.sticky-active.header-two .header-info .item .title {
 
 .restaurant-tab-area .restaurant-rood-list .nav-link.active,
 .restaurant-tab-area .restaurant-rood-list .nav-link:hover {
-  background-color: rgb(129, 21, 255);
+  background-color: black;
 }
 
 .restaurant-tab-area .restaurant-rood-list .nav-link.active i,
@@ -7415,7 +7415,7 @@ header.sticky-header.sticky-active.header-two .header-info .item .title {
   position: absolute;
   right: 10px;
   top: 10px;
-  background-color: rgb(129, 21, 255);
+  background-color: black;
   font-size: 18px;
   font-weight: 700;
   color: #fff;
@@ -7565,7 +7565,7 @@ footer .footer-subscibe-area .subscribe-text .subscribe-form button {
   right: 15px;
   bottom: 15px;
   top: 15px;
-  background-color: rgb(129, 21, 255);
+  background-color: black;
   color: #fff;
   font-size: 14px;
   font-weight: 700;
@@ -7679,7 +7679,7 @@ footer .footer-widget-area .widget.site-info-widget .social-links a {
 }
 
 footer .footer-widget-area .widget.site-info-widget .social-links a:hover {
-  background-color: rgb(129, 21, 255);
+  background-color: black;
 }
 
 footer .footer-widget-area .widget.nav-widget {
@@ -7719,7 +7719,7 @@ footer .footer-widget-area .widget.nav-widget ul li a {
 
 footer .footer-widget-area .widget.nav-widget ul li a:hover {
   padding-left: 30px;
-  color: rgb(129, 21, 255);
+  color: black;
 }
 
 footer .footer-widget-area .widget.nav-widget ul li a::before {
@@ -7796,7 +7796,7 @@ footer
   .contact-box
   .icon {
   font-size: 40px;
-  color: rgb(129, 21, 255);
+  color: black;
 }
 
 footer .footer-widget-area.light-theme {
@@ -7831,7 +7831,7 @@ footer
   .widget.site-info-widget
   .social-links
   a:hover {
-  background-color: rgb(129, 21, 255);
+  background-color: black;
 }
 
 footer .footer-widget-area.light-theme .widget.contact-widget .contact-box {
@@ -7893,7 +7893,7 @@ footer .copyright-area .social-links a {
 }
 
 footer .copyright-area .social-links a:hover {
-  background-color: rgb(129, 21, 255);
+  background-color: black;
 }
 
 footer .copyright-area .copyright-text {
@@ -7976,7 +7976,7 @@ footer .copyright-area .footer-menu ul li a {
 }
 
 footer .copyright-area .footer-menu ul li a:hover {
-  color: rgb(129, 21, 255);
+  color: black;
 }
 
 footer .copyright-area.light-theme {
@@ -8003,7 +8003,7 @@ footer .copyright-area.light-theme .footer-menu ul li::before {
   width: 40px;
   text-align: center;
   line-height: 40px;
-  background-color: rgb(129, 21, 255);
+  background-color: black;
   z-index: 99;
   color: #fff;
   font-size: 18px;

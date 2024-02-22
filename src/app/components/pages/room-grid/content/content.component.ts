@@ -25,6 +25,9 @@ export class ContentComponent implements OnInit, AfterContentInit {
 
   public arrival_at: any;
   public departure_at: any;
+  classname = '';
+  // ftlogo = 'assets/img/*-sh-white.png';
+  ftlogo = 'assets/img/logo-sh-white.png';
 
   public city_id: any;
   public type_house_id: any;

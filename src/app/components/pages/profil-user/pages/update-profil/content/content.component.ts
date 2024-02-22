@@ -6,4 +6,8 @@ import { ProfilHelperService } from 'src/app/components/services/profil-helper.s
   templateUrl: './content.component.html',
   styleUrls: ['./content.component.css'],
 })
-export class ContentComponent extends ProfilHelperService {}
+export class ContentComponent extends ProfilHelperService {
+  classname = '';
+  // ftlogo = 'assets/img/*-sh-white.png';
+  ftlogo = 'assets/img/logo-sh-white.png';
+}

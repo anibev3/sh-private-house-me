@@ -27,7 +27,7 @@
                       {{ description }}
                     </div>
                     <span
-                      style="color: rgb(129, 21, 255)"
+                      style="color: black"
                       (click)="toggleShowFullDescription()"
                       class="custom-cursor"
                     >
@@ -38,7 +38,7 @@
                     <div style="white-space: pre-line">
                       {{ description.slice(0, maxDisplayedChars) + "..." }}
                       <span
-                        style="color: rgb(129, 21, 255)"
+                        style="color: black"
                         (click)="toggleShowFullDescription()"
                         class="custom-cursor"
                       >
@@ -71,7 +71,7 @@
                           width="32"
                           height="32"
                           viewBox="0 0 24 24"
-                          style="color: rgb(129, 21, 255)"
+                          style="color: black"
                         >
                           <path
                             fill="currentColor"
@@ -79,9 +79,7 @@
                           />
                         </svg>
                         <div class="totle-detail">
-                          <h5 style="color: rgb(129, 21, 255)">
-                            Réservation à venir
-                          </h5>
+                          <h5 style="color: black">Réservation à venir</h5>
                           <h3 *ngIf="!isPending">
                             {{ confirmCount + pendingCount }}
                           </h3>
@@ -287,7 +285,7 @@
                       <h5
                         class="custom-cursor"
                         routerLink="/profil-user/update-profil"
-                        style="color: rgb(129, 21, 255)"
+                        style="color: black"
                       >
                         modifier
                       </h5>
@@ -319,7 +317,7 @@
                       <h5
                         class="custom-cursor"
                         routerLink="/profil-user/update-profil"
-                        style="color: rgb(129, 21, 255)"
+                        style="color: black"
                       >
                         modifier
                       </h5>
@@ -376,147 +374,7 @@
                   ></i>
                 </a>
               </div>
-
-              <div class="table-responsive table-radius-me">
-                <table class="table table-bordered bg-white">
-                  <thead>
-                    <tr>
-                      <th scope="col" class="text-nowrap">Résidences</th>
-                      <th scope="col" class="text-nowrap">N° Réservation</th>
-                      <th scope="col" class="text-nowrap">Montant</th>
-                      <th scope="col" class="text-nowrap">
-                        Date de réservation
-                      </th>
-                      <th scope="col" class="text-nowrap">Status</th>
-                      <th scope="col" class="text-nowrap">Action</th>
-                    </tr>
-                  </thead>
-
-                  <tbody *ngIf="historyList">
-                    <tr
-                      *ngFor="
-                        let item of historyList
-                          | paginate : { itemsPerPage: 5, currentPage: page }
-                      "
-                    >
-                      <td>
-                        <div class="mb-2">
-                          <div>
-                            <a
-                              routerLink="/profil-user/detail-reservation/{{
-                                item.booking_id
-                              }}"
-                              class="d-inline-block text-dark link-hover-primary"
-                            >
-                              <strong>
-                                {{ item?.booking_room?.room_name }}
-                              </strong>
-                            </a>
-                          </div>
-                        </div>
-                        <div>
-                          <small class="text-nowrap d-block">
-                            <i class="fa fa-calendar pousser-icon"></i>
-                            <span
-                              >{{ item?.booking_room?.start_date }} -
-                              {{ item?.booking_room?.end_date }}</span
-                            >
-                          </small>
-                          <small class="text-nowrap d-block">
-                            <i class="fa fa-users pousser-icon"></i>
-                            <span>{{ item?.number_of_guests }} Adultes</span>
-                          </small>
-                        </div>
-                      </td>
-                      <td>
-                        <span class="text-nowrap"
-                          >#{{ item?.booking_number }}</span
-                        >
-                      </td>
-                      <td>
-                        <strong>
-                          <ng-container
-                            *ngIf="
-                              item?.booking_currency?.is_prefix_symbol === 1;
-                              else suffixSymbol
-                            "
-                          >
-                            <sup>{{ item.booking_currency?.symbol }}</sup
-                            >{{ item.booking_amount | number : "1.0-0" }}
-                          </ng-container>
-                          <ng-template #suffixSymbol>
-                            {{ item.booking_amount | number : "1.0-0"
-                            }}<sup>{{ item.booking_currency?.symbol }}</sup>
-                          </ng-template>
-                        </strong>
-                      </td>
-                      <td>
-                        <span class="text-nowrap fs-7">{{
-                          item?.booking_date
-                        }}</span>
-                      </td>
-                      <td class="text-nowrap">
-                        <span
-                          style="
-                            color: white;
-                            padding: 3px 10px 3px 10px;
-                            border-radius: 4px;
-                          "
-                          [style.backgroundColor]="getStatusColor(item?.status)"
-                          >{{ item?.status }}</span
-                        >
-                      </td>
-
-                      <td>
-                        <div class="d-inline-flex">
-                          <a
-                            href="#"
-                            class="btn btn-sm btn-outline-light btn-square rounded-circle shadow-sm me-2"
-                            title="Detail booking"
-                            style="
-                              box-shadow: 0 0.125rem 0.25rem
-                                rgba(0, 0, 0, 0.045) !important;
-                            "
-                          >
-                            <i class="fas fa-print" style="color: #a7856a"></i>
-                          </a>
-                          <a
-                            href="#"
-                            class="btn btn-sm btn-outline-light btn-square rounded-circle shadow-sm me-2"
-                            title="Delete booking"
-                            style="
-                              box-shadow: 0 0.125rem 0.25rem
-                                rgba(0, 0, 0, 0.045) !important;
-                            "
-                          >
-                            <i class="fa fa-trash" style="color: #a7856a"></i>
-                          </a>
-                        </div>
-                      </td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
-              <div class="text-center justify-content-center" *ngIf="isPending">
-                <span
-                  class="spinner-border spinner-border-sm"
-                  role="status"
-                  aria-hidden="true"
-                ></span>
-                <div>Chargement en cours</div>
-              </div>
-
-              <div
-                class="text-center justify-content-center"
-                *ngIf="!historyList"
-              >
-                <img
-                  src="https://angular.pixelstrap.net/fastkart-rest/assets/svg/empty-items.svg"
-                  alt=""
-                  width="40%"
-                />
-                <h4>Aucune réservation</h4>
-              </div>
+              <app-history [isPagination]="false"> </app-history>
             </div>
           </div>
         </section>

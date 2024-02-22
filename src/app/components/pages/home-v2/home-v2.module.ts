@@ -14,8 +14,8 @@ import { TestimonialsComponent } from './testimonials/testimonials.component';
 import { VideoWrapComponent } from './video-wrap/video-wrap.component';
 import { BlogPostComponent } from './blog-post/blog-post.component';
 import { InstagramComponent } from './instagram/instagram.component';
-import { RoomTypeComponent } from '../home/room-type/room-type.component';
-import { RoomSliderComponent } from '../home/room-slider/room-slider.component';
+// import { RoomTypeComponent } from '../home/room-type/room-type.component';
+import { RoomSliderComponent } from './room-slider/room-slider.component';
 import { ButtonModule } from 'primeng/button';
 import { CalendarModule } from 'primeng/calendar';
 import { DialogModule } from 'primeng/dialog';
@@ -24,7 +24,7 @@ import { DialogModule } from 'primeng/dialog';
 @NgModule({
   declarations: [
     RoomSliderComponent,
-    RoomTypeComponent,
+    // RoomTypeComponent,
     HomeV2Component,
     BannerComponent,
     TextBlockComponent,

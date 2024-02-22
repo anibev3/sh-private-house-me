@@ -3,15 +3,15 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'app-menu',
   templateUrl: './menu.component.html',
-  styleUrls: ['./menu.component.css']
+  styleUrls: ['./menu.component.css'],
 })
 export class MenuComponent implements OnInit {
-
-  constructor() { }
+  constructor() {}
   // Header style
-  Headerclassname = "inner-page";
+  Headerclassname = 'inner-page';
+  classname = '';
+  // ftlogo = 'assets/img/*-sh-white.png';
+  ftlogo = 'assets/img/logo-sh-white.png';
 
-  ngOnInit(): void {
-  }
-
+  ngOnInit(): void {}
 }

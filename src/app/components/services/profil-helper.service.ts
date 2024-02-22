@@ -180,6 +180,7 @@ export class ProfilHelperService implements AfterContentInit {
 
         if (this.historyList != null || this.historyList != undefined) {
           this.historyList = this.historyList.reverse();
+          // this.historyList = [];
           // Réinitialisez les compteurs
           this.pendingCount = 0;
           this.confirmCount = 0;
@@ -344,6 +345,21 @@ export class ProfilHelperService implements AfterContentInit {
         return 'rgb(106, 106, 38)';
       case 'completed':
         return 'blue';
+      default:
+        return ''; // default color or fallback
+    }
+  }
+
+  getStatusFormated(status: string): string {
+    switch (status) {
+      case 'cancelled':
+        return 'Annulée';
+      case 'confirmed':
+        return 'Confirmé';
+      case 'pending':
+        return 'En attente';
+      case 'completed':
+        return 'Terminé';
       default:
         return ''; // default color or fallback
     }

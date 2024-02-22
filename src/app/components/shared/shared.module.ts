@@ -8,7 +8,6 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NiceSelectModule } from 'ng-nice-select';
 
 import { BackToTopComponent } from './back-to-top/back-to-top.component';
-import { BlogSidebarComponent } from './blog-sidebar/blog-sidebar.component';
 import { RoomsSidebarComponent } from './rooms-sidebar/rooms-sidebar.component';
 import { BreadcrumbComponent } from './breadcrumb/breadcrumb.component';
 import { CanvasComponent } from './canvas/canvas.component';
@@ -16,11 +15,8 @@ import { FooterComponent } from './footer/footer.component';
 import { FooterTwoComponent } from './footer-two/footer-two.component';
 import { HeaderComponent } from './header/header.component';
 import { HeaderTwoComponent } from './header-two/header-two.component';
-import { HeaderThreeComponent } from './header-three/header-three.component';
 import { BookingFormComponent } from './booking-form/booking-form.component';
 import { CounterComponent } from './counter/counter.component';
-import { ProfilSidebarComponent } from './profil-sidebar/profil-sidebar.component';
-import { RoomDetailSliderComponent } from '../pages/home/room-detail-slider/room-detail-slider.component';
 import { DetailReservationSidbarComponent } from '../pages/reservation/content/detail-reservation-sidbar/detail-reservation-sidbar.component';
 import { PriceReservationSidbarComponent } from '../pages/reservation/content/price-reservation-sidbar/price-reservation-sidbar.component';
 import { RsSidebarComponent } from './booking-sidebar/rs-sidebar/rs-sidebar.component';
@@ -39,18 +35,19 @@ import { RatingModule } from 'primeng/rating';
 import { DynamicDialogModule } from 'primeng/dynamicdialog';
 import { DialogModule } from 'primeng/dialog';
 import { MakeCommentComponent } from './make-comment/make-comment.component';
+import { HistoryComponent } from './history/history.component';
+import { NgxPaginationModule } from 'ngx-pagination';
+// import { HistoryComponent } from './history/history.component';
 // import {MatSelectModule} from '@angular/material/select';
 // import { CascadeSelectModule } from 'primeng/cascadeselect';
 
 // import { DialogModule } from 'primeng/dialog';
 
-// import { MapComponent } from './map/map.component';
 // import { DropdownModule } from 'primeng/dropdown';
 
 @NgModule({
   declarations: [
     BackToTopComponent,
-    BlogSidebarComponent,
     BreadcrumbComponent,
     CanvasComponent,
     FooterComponent,
@@ -58,12 +55,9 @@ import { MakeCommentComponent } from './make-comment/make-comment.component';
     HeaderComponent,
     // RoomSidebarComponent,
     HeaderTwoComponent,
-    HeaderThreeComponent,
     BookingFormComponent,
     RoomsSidebarComponent,
     CounterComponent,
-    ProfilSidebarComponent,
-    RoomDetailSliderComponent,
     DetailReservationSidbarComponent,
     PriceReservationSidbarComponent,
     CalendarSidebarComponent,
@@ -73,7 +67,7 @@ import { MakeCommentComponent } from './make-comment/make-comment.component';
     GalleryComponent,
     ReviewsComponent,
     MakeCommentComponent,
-    // MapComponent,
+    HistoryComponent,
   ],
   imports: [
     CommonModule,
@@ -95,22 +89,19 @@ import { MakeCommentComponent } from './make-comment/make-comment.component';
     RatingModule,
     DynamicDialogModule,
     DialogModule,
+    NgxPaginationModule,
     // CascadeSelectModule,
   ],
   exports: [
-    BlogSidebarComponent,
     BreadcrumbComponent,
     FooterComponent,
     FooterTwoComponent,
     HeaderComponent,
     // RoomSidebarComponent,
     HeaderTwoComponent,
-    HeaderThreeComponent,
     BookingFormComponent,
     RoomsSidebarComponent,
     CounterComponent,
-    ProfilSidebarComponent,
-    RoomDetailSliderComponent,
     DetailReservationSidbarComponent,
     PriceReservationSidbarComponent,
     CalendarSidebarComponent,
@@ -120,7 +111,7 @@ import { MakeCommentComponent } from './make-comment/make-comment.component';
     GalleryComponent,
     ReviewsComponent,
     MakeCommentComponent,
-    // MapComponent,
+    HistoryComponent,
   ],
 })
 export class SharedModule {}

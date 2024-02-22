@@ -3,15 +3,16 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'app-restaurant',
   templateUrl: './restaurant.component.html',
-  styleUrls: ['./restaurant.component.css']
+  styleUrls: ['./restaurant.component.css'],
 })
 export class RestaurantComponent implements OnInit {
-
-  constructor() { }
+  constructor() {}
   // Header style
-  Headerclassname = "inner-page";
+  Headerclassname = 'inner-page';
 
-  ngOnInit(): void {
-  }
+  classname = '';
+  // ftlogo = 'assets/img/*-sh-white.png';
+  ftlogo = 'assets/img/logo-sh-white.png';
 
+  ngOnInit(): void {}
 }

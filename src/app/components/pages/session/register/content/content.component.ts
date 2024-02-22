@@ -9,4 +9,8 @@ import { SessionHelperService } from 'src/app/components/services/session-helper
   templateUrl: './content.component.html',
   styleUrls: ['./content.component.css'],
 })
-export class ContentComponent extends SessionHelperService {}
+export class ContentComponent extends SessionHelperService {
+  classname = '';
+  // ftlogo = 'assets/img/*-sh-white.png';
+  ftlogo = 'assets/img/logo-sh-white.png';
+}

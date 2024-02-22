@@ -12,13 +12,13 @@ export class BannerComponent implements OnInit {
   bannerPosts = [
     {
       img: 'https://www.vf-architectures.fr/public/img/big/ArchitectepourvilladeluxeetprestigeCannesarchitectesVF1jpg_5e9c5280605f4.jpg',
-      tag: "L'expérience de luxe ultime",
-      title: 'La base <br/>parfaite pour vous',
+      tag: "L'expérience de luxe ultime à",
+      title: 'La Casa',
     },
     {
       img: 'https://www.vf-architectures.fr/public/img/big/meilleurarchitecteCannespourvillamaisonluxejpg_637123da2fa64.jpg',
-      tag: "L'expérience de luxe ultime",
-      title: 'La base <br/>parfaite pour vous',
+      tag: "L'expérience de luxe ultime à",
+      title: 'La Casa',
     },
   ];
   settings = {

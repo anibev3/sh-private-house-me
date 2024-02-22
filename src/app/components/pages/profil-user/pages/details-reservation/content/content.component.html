@@ -40,14 +40,14 @@
       <div>
         <div class="mon-padding m10" style="border: 0px">
           <div>
-            <h3 style="color: rgb(129, 21, 255)">
+            <h3 style="color: black">
               <strong
                 >Résidence: {{ reservationDetail?.room?.room_name }}
               </strong>
             </h3>
           </div>
           <!-- <div class="d-none d-md-block">
-              <h5 style="color: rgb(129, 21, 255)">
+              <h5 style="color: black">
                 <strong
                   style="
                     color: white;
@@ -64,7 +64,7 @@
             </div> -->
         </div>
         <div class="d-block d-md-none">
-          <h5 style="color: rgb(129, 21, 255)">
+          <h5 style="color: black">
             <strong
               style="
                 color: white;
@@ -278,12 +278,13 @@
           <div>
             <!-- <h5><strong>Demandes spéciales</strong></h5> -->
 
-            <label for=""><strong>Démande spéciale</strong></label>
+            <label for=""><strong>Demande spéciale</strong></label>
             <textarea
               name=""
               class="input-formulaire"
               formControlName="special_request"
               rows="10"
+              readonly
               style="height: 100px"
             ></textarea>
           </div>
@@ -582,7 +583,7 @@
       <div class="m10"></div>
       <div class="mon-padding m10" style="background-color: white">
         <div>
-          <h5><strong>Vos coordonnées personnel</strong></h5>
+          <h5><strong>Vos coordonnées personnelles</strong></h5>
           <p class="fs14"></p>
           <br />
 
@@ -701,9 +702,9 @@
             <i class="fas fa-arrow-right"></i> Annulation gratuite
           </div>
           <div *ngIf="reservationDetail?.room?.is_free_cancelled == 0">
-            <div>
+            <!-- <div>
               <i class="fas fa-arrow-right"></i> Hébergement non-fumeurs
-            </div>
+            </div> -->
             <div
               class="mon-padding"
               style="
@@ -771,8 +772,8 @@
                         }}% du montant de réservation :
                       </span>
                       <strong>
-                        <span
-                          >{{ annulationAmount | number : "1.0-0"
+                        <span>
+                          {{ annulationAmount | number : "1.0-0"
                           }}<sup style="font-size: 12px">{{
                             reservationDetail?.currency?.symbol
                           }}</sup>
@@ -841,9 +842,9 @@
               justify-content: center; /* Centrer horizontalement */
               align-items: center;
               width: 100%;
-
               margin-left: 5px;
             "
+            (click)="goToListingLodge()"
           >
             Réserver à nouveau
           </div>
@@ -883,7 +884,7 @@
                 display: flex;
                 justify-content: center;
                 align-items: center;
-                width: 100%;
+                width: 38%;
                 margin-left: 5px;
               "
               (click)="cancel()"
@@ -901,7 +902,7 @@
                 display: flex;
                 justify-content: center;
                 align-items: center;
-                width: 100%;
+                width: 58%;
                 margin-right: 5px;
               "
               (click)="confirmCancellation(reservationDetail?.booking_number)"

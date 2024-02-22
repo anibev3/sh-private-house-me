@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ApiService } from '../../services/api/api.service';
 
@@ -8,6 +8,7 @@ import { ApiService } from '../../services/api/api.service';
   styleUrls: ['./footer.component.css'],
 })
 export class FooterComponent implements OnInit {
+  @Input() isCopyRight: boolean = true;
   newsletterForm: FormGroup;
   public email: any;
   public isSuccess: boolean = false;

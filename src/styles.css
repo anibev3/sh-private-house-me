@@ -679,13 +679,13 @@ pagination-template .ngx-pagination li.pagination-previous::before {
 }
 
 .color-sh {
-  color: #8115ff !important;
+  color: black !important;
 }
 .bg-color-sh {
-  color: #8115ff !important;
+  color: black !important;
 }
 .sh-bg-color {
-  background-color: #8115ff !important;
+  background-color: black !important;
 }
 .radius10 {
   border-radius: 10px !important;
@@ -845,10 +845,10 @@ sup.supp {
 /* ------------------------------------------ */
 
 .dash_active {
-  border-left: 3px solid #8115ff !important;
+  border-left: 3px solid black !important;
   font-weight: 600 !important;
   background-color: transparent !important;
-  color: #8115ff !important;
+  color: black !important;
 }
 
 .centeroh {

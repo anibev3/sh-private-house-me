@@ -16,6 +16,9 @@ import { CryptoService } from 'src/app/components/services/crypto/crypto.service
 export class ContentComponent implements OnInit, AfterContentInit {
   roomId: any;
   dataFromShGlobal: any;
+  classname = '';
+  // ftlogo = 'assets/img/*-sh-white.png';
+  ftlogo = 'assets/img/logo-sh-white.png';
 
   constructor(
     public fb: FormBuilder,

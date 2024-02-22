@@ -17,6 +17,9 @@ export class ContentComponent implements OnInit, AfterContentInit {
 
   public query_params: any;
   public user_to_store: any;
+  classname = '';
+  // ftlogo = 'assets/img/*-sh-white.png';
+  ftlogo = 'assets/img/logo-sh-white.png';
 
   public isRoomOk: boolean = false;
   public isAmountCalculating: boolean = false;

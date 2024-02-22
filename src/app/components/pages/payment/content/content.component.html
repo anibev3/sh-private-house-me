@@ -15,7 +15,7 @@
                 <span
                   class="a002"
                   style="
-                    background-color: rgb(129, 21, 255);
+                    background-color: black;
                     color: white;
                     padding-left: 10px;
                     padding-right: 10px;
@@ -227,8 +227,12 @@
             </div>
             <div class="mon-padding m10" style="background-color: white">
               <div class="d-flex justify-content-between">
-                <h2 class="h5 d-block d-lg-none">Information de facturation</h2>
-                <h2 class="h4 d-none d-lg-block">Information de facturation</h2>
+                <h2 class="h5 d-block d-lg-none">
+                  Informations de facturation
+                </h2>
+                <h2 class="h4 d-none d-lg-block">
+                  Informations de facturation
+                </h2>
                 <div class="d-flex justify-content-between">
                   <div
                     class="align-self-center align-item-center d-none d-lg-block"
@@ -342,14 +346,14 @@
                   *ngIf="!isCollapseVisible"
                 >
                   <h6>
-                    <strong class="fs13">Prénom</strong
+                    <strong class="fs13">Prénom(s)</strong
                     ><span class="text-danger">*</span>
                   </h6>
 
                   <input
                     type="text"
                     class="input-formulaire"
-                    placeholder="Entrez votre prénom"
+                    placeholder="Entrez le(s) prénom(s)"
                     required=""
                     formControlName="prenomFacturation"
                   />
@@ -401,7 +405,7 @@
                     type="text"
                     class="input-formulaire"
                     id="x"
-                    placeholder="Entrez l'Adresse de notification"
+                    placeholder="Entrez l'adresse"
                     formControlName="adresseFacturation"
                   />
                 </div>
@@ -417,7 +421,9 @@
                     data-live-search="true"
                     formControlName="paysFacturation"
                   >
-                    <option value="" disabled="disabled">-</option>
+                    <option value="" disabled="disabled">
+                      Sélectionnez le pays
+                    </option>
                     <option value="1">Afghanistan</option>
                     <option value="2">Aland</option>
                     <option value="3">Albania</option>
@@ -563,7 +569,7 @@
                     type="text"
                     class="input-formulaire"
                     id="x"
-                    placeholder="Entrez l'Adresse de notification"
+                    placeholder="Entrez la ville"
                     formControlName="villeFacturation"
                   />
                   <!-- <span
@@ -580,7 +586,7 @@
                     type="text"
                     class="input-formulaire"
                     id="x"
-                    placeholder="Entrez l'Adresse de notification"
+                    placeholder="Entrez le code postal"
                     formControlName="codePostalFacturation"
                   />
                   <!-- <span

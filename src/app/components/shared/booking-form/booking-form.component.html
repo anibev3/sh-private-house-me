@@ -83,12 +83,22 @@
     <div class="text-center" style="margin-top: 30px">
       <h5
         class="custom-cursor"
-        style="color: blueviolet"
+        style="color: black"
         (click)="collapse.toggle()"
         [attr.aria-expanded]="!rechercheAvance"
         aria-controls="collapseExample"
       >
-        <strong>Recherche avancée</strong>
+        <strong
+          style="
+            padding: 10px;
+            background-color: #f8f5f5;
+            color: grey;
+            border-radius: 7px;
+          "
+          >{{
+            rechercheAvance ? "Recherche avancée" : "Fermer la recherche"
+          }}</strong
+        >
       </h5>
     </div>
     <div

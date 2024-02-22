@@ -8,12 +8,13 @@
               <img src="assets/img/logo-sh-black.png" alt="logo" />
             </div>
             <p>
-              SHERYLUX met tout en œuvre pour vous maintenir informé des toutes
-              dernières actualités et évolutions concernant l'industrie
-              hôtelière. Notre engagement est de vous offrir un accès privilégié
-              à des informations pertinentes, des nouveautés aux tendances
-              émergentes, afin de vous permettre de rester constamment à jour
-              sur l'univers passionnant et dynamique des hôtels.
+              SHERYLUX met tout en œuvre pour vous maintenir informé(e)s des
+              toutes dernières actualités et évolutions concernant l'industrie
+              hôtelière et résidentielle. Notre engagement est de vous offrir un
+              accès privilégié à des informations pertinentes, des nouveautés
+              aux tendances émergentes, afin de vous permettre de rester
+              constamment à jour dans l'univers passionnant et dynamique du luxe
+              hôtelier.
             </p>
             <form
               [formGroup]="newsletterForm"
@@ -40,7 +41,7 @@
       </div>
     </div>
   </div>
-  <div class="copyright-area pt-20 pb-20">
+  <div class="copyright-area pt-20 pb-20" *ngIf="isCopyRight">
     <div class="container">
       <div class="row align-items-center">
         <div class="col-md-5 order-2 order-md-1">
