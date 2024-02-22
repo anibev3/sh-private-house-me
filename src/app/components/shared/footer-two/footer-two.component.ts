@@ -10,10 +10,12 @@ export class FooterTwoComponent implements OnInit {
   @Input() layout: number | string | undefined;
   @Input() logo: number | string | undefined;
 
-  public assistanceLink: string = '';
-  public transportLink: string = '';
-  public venteLink: string = '';
-  public residenceLink: string = '';
+  public assistanceLink: string = 'https://sherylux.com/airportvip';
+  public transportLink: string = 'https://sherylux.com/transportvip';
+  public venteLink: string = '#';
+  public residenceLink: string = 'https://sherylux-privee.netlify.app/';
+  public linkedinLink: string =
+    'https://www.linkedin.com/company/sherylux-lmt/';
 
   ngOnInit(): void {}
 }
