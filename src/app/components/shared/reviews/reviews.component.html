@@ -170,7 +170,7 @@
     </div>
   </div>
 
-  <div class="d-none d-md-block">
+  <div class="d-none d-md-block" *ngIf="mark >= 3">
     <h6 class="text-center">
       <strong
         >Ce logement est <br />
@@ -199,7 +199,9 @@
     <h6 class="text-center">
       <strong> {{ comment?.length }} </strong>
       <div>
-        <p style="font-size: 14px; text-decoration: underline">commentaires</p>
+        <p style="font-size: 14px; text-decoration: underline">
+          commentaire(s)
+        </p>
       </div>
     </h6>
   </div>
@@ -494,6 +496,7 @@
               </div>
 
               <div
+                *ngIf="comment?.length > 0"
                 class="s1ovlb5h atm_h3_ftgil2__oggzyc atm_h3_idpfg4__qky54b dir dir-ltr"
               >
                 <button
@@ -503,7 +506,7 @@
                   type="button"
                   class="l1ovpqvx atm_1y33qqm_1ggndnn_10saat9 atm_17zvjtw_zk357r_10saat9 atm_w3cb4q_il40rs_10saat9 b65jmrv atm_9j_tlke0l atm_9s_1o8liyq atm_gi_idpfg4 atm_mk_h2mmj6 atm_r3_1h6ojuz atm_rd_glywfm atm_3f_97hwo atm_vy_1wugsn5 atm_tl_1gw4zv3 atm_9j_13gfvf7_1o5j5ji v7aged4 atm_bx_1ltc5j7 atm_c8_8ycq01 atm_g3_adnk3f atm_cs_qo5vgd atm_5j_9l7fl4 atm_6h_t94yts atm_66_nqa18y atm_uc_1c5iv21 atm_kd_glywfm atm_4b_18pqv07 atm_26_1hbpp16 atm_7l_18pqv07 atm_l8_1vkzbvs atm_uc_glywfm__p88qr9 atm_3f_glywfm_jo46a5 atm_l8_idpfg4_jo46a5 atm_gi_idpfg4_jo46a5 atm_3f_glywfm_1icshfk atm_kd_glywfm_19774hq atm_uc_x37zl0_1w3cfyq atm_uc_glywfm_1w3cfyq_p88qr9 atm_uc_x37zl0_18zk5v0 atm_uc_glywfm_18zk5v0_p88qr9 atm_tr_18md41p_csw3t1 atm_k4_kb7nvz_1o5j5ji atm_4b_18pqv07_1w3cfyq atm_7l_18pqv07_1w3cfyq atm_70_216vci_1w3cfyq atm_4b_18pqv07_18zk5v0 atm_7l_18pqv07_18zk5v0 atm_70_216vci_18zk5v0 atm_4b_1otlplk_1nos8r atm_26_1nh1gcj_1nos8r atm_7l_18pqv07_1nos8r atm_4b_1otlplk_csw3t1 atm_26_1nh1gcj_csw3t1 atm_7l_18pqv07_csw3t1 atm_4b_161hw1_1o5j5ji atm_26_1hbpp16_1o5j5ji atm_7l_161hw1_1o5j5ji dir dir-ltr"
                 >
-                  Afficher les {{ comment?.length }} &nbsp;commentaires
+                  Afficher les {{ comment?.length }} &nbsp;commentaire(s)
                 </button>
               </div>
             </section>
