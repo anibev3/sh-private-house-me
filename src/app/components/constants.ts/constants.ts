@@ -6,6 +6,7 @@ export class Constants {
   public static API_ENDPOINT: string = 'https://monapi.com';
   public static LOGIN: string = '/api/login';
   public static REGISTER: string = '/api/register';
+  public static PAYMENT: string = 'bookings/make-payment';
   public static USERS: string = '/api/users';
   public static PRODUCTS: string = '/api/products';
   public static TOKEN: string = 'sh-0001';
@@ -13,6 +14,7 @@ export class Constants {
   public static SUCCESS_RESERVATION_DATA: string = 'success_reservation_data';
   public static LE_DJAI: string = 'ledjai';
   public static DATE_: string = 'sh-0002';
+  public static PAYMENT_STATUS: string = 'sh-0003';
   public static GENERIC_ERROR: string =
     "Une erreur s'est produite. Veuillez réessayer.";
   public static LOGIN_FAILED: string =

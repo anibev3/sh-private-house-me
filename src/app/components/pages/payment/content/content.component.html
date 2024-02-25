@@ -139,7 +139,7 @@
                   class="text-center custom-cursor"
                   style="
                     border-radius: 10px;
-                    background-color: red;
+                    background-color: rgb(159, 41, 159);
                     color: white;
                     padding: 10px;
                     display: flex;
@@ -247,7 +247,7 @@
                     >
                       <div
                         [class.selected-option]="selectedOption === true"
-                        class="content"
+                        class="content custom-cursor"
                         (click)="selectOption(true); toggleCollapse()"
                         style="
                           height: 30px;
@@ -265,7 +265,7 @@
                       </div>
                       <div
                         [class.rs-for-me-option]="selectedOption === false"
-                        class="content rounded-s"
+                        class="content rounded-s custom-cursor"
                         (click)="selectOption(false); toggleCollapse()"
                         style="
                           height: 30px;
@@ -619,7 +619,7 @@
                   >
                     <div
                       [class.selected-option]="paymentSelectedOption === true"
-                      class="content"
+                      class="content custom-cursor"
                       (click)="
                         PaymentSelectOption(true); paymentToggleCollapse()
                       "
@@ -639,7 +639,7 @@
                     </div>
                     <div
                       [class.rs-for-me-option]="paymentSelectedOption === false"
-                      class="content rounded-s"
+                      class="content rounded-s custom-cursor"
                       (click)="
                         PaymentSelectOption(false); paymentToggleCollapse()
                       "
@@ -676,7 +676,7 @@
               class="main-btn btn-filled text-center w-100 simple-radius"
               type="submit"
               [disabled]="submittingForm"
-              *ngIf="!isReservation"
+              *ngIf="!isReservation && !isPayment"
             >
               <span *ngIf="!submittingForm">
                 <span *ngIf="!isPaymentCollapseVisible">
@@ -702,7 +702,7 @@
             </button>
 
             <button
-              class="main-btn btn-filled text-center w-100"
+              class="main-btn text-center w-100 btn-success simple-radius"
               disabled
               *ngIf="isReservation"
             >
@@ -718,6 +718,26 @@
                 </div>
                 <div>
                   <span>Réservation en cours</span>
+                </div>
+              </div>
+            </button>
+            <button
+              class="main-btn text-center w-100 btn-success simple-radius"
+              disabled
+              *ngIf="isPayment"
+            >
+              <div
+                class="d-flex justify-content-center align-items-center h-100"
+              >
+                <div class="mr-2">
+                  <span
+                    class="spinner-border spinner-border-sm"
+                    role="status"
+                    aria-hidden="true"
+                  ></span>
+                </div>
+                <div>
+                  <span>Initialement au paiement</span>
                 </div>
               </div>
             </button>

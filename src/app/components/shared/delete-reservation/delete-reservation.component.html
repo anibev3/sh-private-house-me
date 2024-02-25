@@ -1,0 +1,233 @@
+<div>
+  <div>
+    <h5 class="text-center"><strong>Annulation</strong></h5>
+    <br />
+    <div *ngIf="showCancelledReason">
+      <span style="color: red"
+        ><strong>Vous êtes sur le point d'annuler la réservation</strong>
+      </span>
+      <br />
+      <br />
+      <div *ngIf="reservationDetail?.room?.is_free_cancelled == 1">
+        <i class="fas fa-arrow-right"></i> Annulation gratuite
+      </div>
+      <div *ngIf="reservationDetail?.room?.is_free_cancelled == 0">
+        <!-- <div>
+              <i class="fas fa-arrow-right"></i> Hébergement non-fumeurs
+            </div> -->
+        <div
+          class="mon-padding"
+          style="
+            background-color: #fff1f1;
+            border: 1px solid rgb(249, 154, 154);
+          "
+        >
+          <div>
+            <h6>
+              <svg
+                class="bk-icon -streamline-alarm"
+                height="24"
+                width="24"
+                viewBox="0 0 24 24"
+                role="presentation"
+                aria-hidden="true"
+                focusable="false"
+              >
+                <path
+                  d="M20.25 12.75a8.25 8.25 0 1 1-16.5 0 8.25 8.25 0 0 1 16.5 0zm1.5 0C21.75 7.365 17.385 3 12 3s-9.75 4.365-9.75 9.75S6.615 22.5 12 22.5s9.75-4.365 9.75-9.75zM6.67 23.585l1.387-2.77a.75.75 0 1 0-1.342-.672L5.33 22.915a.75.75 0 1 0 1.342.671zM12 12H8.609a.75.75 0 0 0 0 1.5H12a.75.75 0 0 0 0-1.5zm-.75-4.5v5.25a.75.75 0 0 0 1.5 0V7.5a.75.75 0 0 0-1.5 0zM1.969 4.336l3.75-3A.75.75 0 1 0 4.78.164l-3.75 3a.75.75 0 1 0 .938 1.172zM18.67 22.915l-1.386-2.772a.75.75 0 1 0-1.342.67l1.386 2.772a.75.75 0 1 0 1.342-.67zm4.297-19.75l-3.75-3a.75.75 0 0 0-.936 1.17l3.75 3a.75.75 0 1 0 .936-1.17z"
+                ></path></svg
+              ><strong style="margin-left: 15px"
+                >Combien me coûtera l'annulation ?
+              </strong>
+            </h6>
+            <div>
+              <br />
+              <!-- <p>
+            <span class="text-danger" class="mb10"
+              >Annulation gratuite avant le 2 févr.</span
+            >
+          </p> -->
+
+              <div
+                class="d-flex justify-content-between"
+                *ngIf="reservationDetail?.room?.is_free_cancelled == 0"
+              >
+                <div
+                  *ngIf="reservationDetail?.room?.cancellation_type == 'fixed'"
+                >
+                  <span>Le montant est fixe : </span>
+                  <strong>
+                    <span
+                      >{{
+                        reservationDetail?.room?.cancellation_value
+                          | number : "1.0-0"
+                      }}<sup style="font-size: 12px">{{
+                        reservationDetail?.currency?.symbol
+                      }}</sup>
+                    </span>
+                  </strong>
+                </div>
+                <div
+                  *ngIf="
+                    reservationDetail?.room?.cancellation_type == 'percentage'
+                  "
+                >
+                  <span
+                    >{{
+                      reservationDetail?.room?.cancellation_value
+                        | number : "1.0-0"
+                    }}% du montant de réservation :
+                  </span>
+                  <strong>
+                    <span>
+                      {{ annulationAmount | number : "1.0-0"
+                      }}<sup style="font-size: 12px">{{
+                        reservationDetail?.currency?.symbol
+                      }}</sup>
+                    </span>
+                  </strong>
+                </div>
+              </div>
+              <div
+                class="d-flex justify-content-between"
+                *ngIf="
+                  reservationDetail?.booking?.room?.room?.is_free_cancelled == 1
+                "
+              >
+                <div>
+                  <span>L'annulation est gratuite pour cette résidence </span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <br />
+      <!-- <div>
+              <input type="checkbox" disabled
+              <span
+                ><strong class="text-danger"
+                  >En continuant vous acceptez les conditions d'annulation</strong
+                ></span
+              >
+            </div> -->
+    </div>
+  </div>
+  <div class="amertie-cart" style="margin-top: 10px">
+    <div class="d-flex justify-content-between" *ngIf="!showCancelledReason">
+      <div
+        class="text-center custom-cursor"
+        style="
+          border-radius: 10px;
+          background-color: red;
+          color: white;
+          padding: 10px;
+          display: flex;
+          justify-content: center; /* Centrer horizontalement */
+          align-items: center;
+          width: 100%;
+          margin-right: 5px;
+        "
+        (click)="wantCancelled()"
+      >
+        Annuler
+      </div>
+      <div
+        class="text-center custom-cursor"
+        style="
+          border-radius: 10px;
+          background-color: black;
+          color: white;
+          padding: 10px;
+          display: flex;
+          justify-content: center; /* Centrer horizontalement */
+          align-items: center;
+          width: 100%;
+          margin-left: 5px;
+        "
+        (click)="goToListingLodge()"
+      >
+        Réserver à nouveau
+      </div>
+    </div>
+    <!-- ... -->
+    <div *ngIf="showCancelledReason">
+      <textarea
+        [(ngModel)]="cancellationReason"
+        style="height: 80px; border-radius: 10px"
+      ></textarea>
+      <div class="mt-3">
+        <label>
+          <input type="checkbox" [(ngModel)]="acceptanceChecked" />
+          <!-- <span class="ml-2">
+                  <strong class="text-danger"
+                >-->
+          En continuant, vous acceptez les conditions d'annulation
+          <!-- </strong
+                  >
+                </span> -->
+        </label>
+      </div>
+      <div *ngIf="showAnnulMsg">
+        <em> Veuillez accepter les conditions d'annulation </em>
+      </div>
+      <div *ngIf="showAnnulMsg_2">
+        <em> Donnez la raison de votre annulation </em>
+      </div>
+      <div class="d-flex justify-content-between" style="margin-top: 10px">
+        <div
+          class="text-center custom-cursor"
+          style="
+            border-radius: 10px;
+            background-color: black;
+            color: white;
+            padding: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 38%;
+            margin-left: 5px;
+          "
+          (click)="cancel()"
+          *ngIf="!showAnnulRequest"
+        >
+          Abandonner
+        </div>
+        <div
+          class="text-center custom-cursor"
+          style="
+            border-radius: 10px;
+            background-color: red;
+            color: white;
+            padding: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 58%;
+            margin-right: 5px;
+          "
+          (click)="confirmCancellation(reservationDetail?.booking_number)"
+        >
+          <span *ngIf="!showAnnulRequest"> Annuler </span>
+
+          <div
+            class="d-flex justify-content-center align-items-center h-100"
+            *ngIf="showAnnulRequest"
+          >
+            <div class="mr-2">
+              <span
+                class="spinner-border spinner-border-sm"
+                role="status"
+                aria-hidden="true"
+              ></span>
+            </div>
+            <div>
+              <span>Annulation en cours</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- ... -->
+  </div>
+</div>

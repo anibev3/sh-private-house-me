@@ -15,6 +15,8 @@ export class ContentComponent implements OnInit, AfterContentInit {
   lat: number = 31.53912;
   lng: number = -89.29163;
 
+  time = { hour: 13, minute: 30 };
+
   public query_params: any;
   public user_to_store: any;
   classname = '';
@@ -43,7 +45,7 @@ export class ContentComponent implements OnInit, AfterContentInit {
   public avanceFilterData: any;
   public submittingFilterForm: boolean = false;
   public isUserConnected: boolean = false;
-  acceptanceChecked: boolean = false;
+  // acceptanceChecked: boolean = false;
 
   userInfo: any;
   public infoUser: any = [];
@@ -88,6 +90,7 @@ export class ContentComponent implements OnInit, AfterContentInit {
         special_request: new FormControl(this.infoUser.special_request),
         arrival_time: new FormControl(''),
         reservationType: new FormControl('me'),
+        acceptanceChecked: new FormControl(this.infoUser.acceptanceChecked),
       });
     } else {
       this.infoPersoForm = new FormGroup({
@@ -100,6 +103,7 @@ export class ContentComponent implements OnInit, AfterContentInit {
         special_request: new FormControl(''),
         arrival_time: new FormControl(''),
         reservationType: new FormControl('me'),
+        acceptanceChecked: new FormControl(),
       });
     }
 
@@ -120,6 +124,7 @@ export class ContentComponent implements OnInit, AfterContentInit {
         arrival_time: new FormControl(this.user_to_store.arrival_time),
         reservation_for_other: new FormControl(''),
         reservationType: new FormControl(this.user_to_store.reservationType),
+        acceptanceChecked: new FormControl(this.infoUser.acceptanceChecked),
       });
     }
   }
@@ -203,7 +208,9 @@ export class ContentComponent implements OnInit, AfterContentInit {
       return;
     }
 
-    if (!this.acceptanceChecked) {
+    console.log();
+
+    if (!this.infoPersoForm.value.acceptanceChecked) {
       this.showAcceptMsg = true;
       setTimeout(() => {
         this.showAcceptMsg = false;
@@ -335,5 +342,15 @@ export class ContentComponent implements OnInit, AfterContentInit {
           }
         );
     }
+  }
+
+  // Inside your component
+  changeHour(event: any) {
+    // Ensure that the object (this.someObject) is defined before accessing changeHour
+    console.log(event);
+
+    // if (this.someObject) {
+    //   this.someObject.changeHour(event);
+    // }
   }
 }

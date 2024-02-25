@@ -14,6 +14,8 @@ export class ContentComponent implements OnInit {
   public numberOfDays: any;
   public numberOfNights: any;
   public dataIsOk: boolean = false;
+  public paymentInfo: any;
+  public paymentIsOk: boolean = false;
 
   mapOptions = {
     mapTypeId: 'satellite',
@@ -29,35 +31,48 @@ export class ContentComponent implements OnInit {
   // ftlogo = 'assets/img/*-sh-white.png';
   ftlogo = 'assets/img/logo-sh-white.png';
   initData(): void {
+    this.paymentInfo = this.crypstoService.getDecryptedItem(
+      Constants.PAYMENT_STATUS
+    );
+
+    // console.log(this.paymentInfo);
+
+    if (this.paymentInfo) {
+      this.paymentIsOk = true;
+    }
     if (
       this.crypstoService.getDecryptedItem(Constants.SUCCESS_RESERVATION_DATA)
     ) {
       this.successData = this.crypstoService.getDecryptedItem(
         Constants.SUCCESS_RESERVATION_DATA
       );
+
+      const arrivalDate = new Date(this.successData.start_date);
+      const departureDate = new Date(this.successData.end_date);
+
+      const timeDifference = departureDate.getTime() - arrivalDate.getTime();
+      this.numberOfDays = Math.ceil(timeDifference / (1000 * 3600 * 24));
+
+      // Nombre de nuits est le nombre de jours moins 1 (car la dernière nuit est incluse)
+      this.numberOfNights = this.numberOfDays - 1;
+
+      // console.log('Durée du séjour en jours:', this.numberOfDays);
+      // console.log('Nombre de nuits:', this.numberOfNights);
+
+      // Afficher la date d'arrivée dans la console ou où vous le souhaitez
+      // console.log("Date d'arrivée : ", arrivalDate);
+      // console.log('LES SUCCESS DATA', this.successData);
+
+      this.annulationAmount =
+        (this.successData.booking.amount *
+          parseFloat(
+            this.successData?.booking?.room?.room?.cancellation_value
+          )) /
+        100;
+
+      this.dataIsOk = true;
+
+      // console.log(this.successData);
     }
-
-    const arrivalDate = new Date(this.successData.start_date);
-    const departureDate = new Date(this.successData.end_date);
-
-    const timeDifference = departureDate.getTime() - arrivalDate.getTime();
-    this.numberOfDays = Math.ceil(timeDifference / (1000 * 3600 * 24));
-
-    // Nombre de nuits est le nombre de jours moins 1 (car la dernière nuit est incluse)
-    this.numberOfNights = this.numberOfDays - 1;
-
-    // console.log('Durée du séjour en jours:', this.numberOfDays);
-    // console.log('Nombre de nuits:', this.numberOfNights);
-
-    // Afficher la date d'arrivée dans la console ou où vous le souhaitez
-    // console.log("Date d'arrivée : ", arrivalDate);
-    // console.log('LES SUCCESS DATA', this.successData);
-
-    this.annulationAmount =
-      (this.successData.booking.amount *
-        parseFloat(this.successData?.booking?.room?.room?.cancellation_value)) /
-      100;
-
-    this.dataIsOk = true;
   }
 }

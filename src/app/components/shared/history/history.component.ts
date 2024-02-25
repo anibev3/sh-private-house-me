@@ -22,7 +22,9 @@ import { ProfilHelperService } from '../../services/profil-helper.service';
                 <th>Date</th>
                 <th>Montant</th>
                 <th>Statut</th>
-                <!-- <th>Payment Method</th> -->
+                <th #collapse="ngbCollapse" [(ngbCollapse)]="plusBool">
+                  Détails
+                </th>
                 <th>Option</th>
               </tr>
               <ng-container *ngIf="historyList">
@@ -69,36 +71,10 @@ import { ProfilHelperService } from '../../services/profil-helper.service';
                       <span>{{ getStatusFormated(item?.status) }}</span>
                     </div>
                   </td>
-                  <!-- <td>PAYPAL</td> -->
-                  <td>
-                    <div class="d-flex justify-content-around">
-                      <i
-                        class="fas fa-eye custom-cursor"
-                        routerLink="/profil-user/detail-reservation/{{
-                          item.booking_id
-                        }}"
-                      ></i>
-                      <i class="fas fa-print"></i>
-                      <i class="fas fa-trash"></i>
-                      <h5
-                        class="custom-cursor"
-                        style="color: gray"
-                        (click)="collapse.toggle()"
-                        [attr.aria-expanded]="!plusBool"
-                        aria-controls="collapseExample"
-                      >
-                        <strong>Plus</strong>
-                      </h5>
-                    </div>
-                  </td>
-                  <div
-                    class="row align-items-end"
-                    #collapse="ngbCollapse"
-                    [(ngbCollapse)]="plusBool"
-                  >
+                  <td #collapse="ngbCollapse" [(ngbCollapse)]="plusBool">
                     <div>
                       <div class="mb-2">
-                        <div>
+                        <div style="text-align: left;">
                           <a
                             routerLink="/profil-user/detail-reservation/{{
                               item.booking_id
@@ -111,21 +87,80 @@ import { ProfilHelperService } from '../../services/profil-helper.service';
                           </a>
                         </div>
                       </div>
-                      <div>
+                      <div class="d-flex" style="mar">
                         <small class="text-nowrap d-block">
                           <i class="fa fa-calendar pousser-icon"></i>
                           <span
-                            >{{ item?.booking_room?.start_date }} -
-                            {{ item?.booking_room?.end_date }}</span
+                            >Du
+                            <strong>
+                              {{ item?.booking_room?.start_date }}
+                            </strong>
+                            au
+                            <strong>{{
+                              item?.booking_room?.end_date
+                            }}</strong></span
                           >
                         </small>
-                        <small class="text-nowrap d-block">
+                        <!-- <small class="text-nowrap d-block">
                           <i class="fa fa-users pousser-icon"></i>
                           <span>{{ item?.number_of_guests }} Adultes</span>
-                        </small>
+                        </small> -->
                       </div>
                     </div>
-                  </div>
+                  </td>
+
+                  <td>
+                    <div class="d-flex justify-content-around">
+                      <i
+                        class="fas fa-eye custom-cursor"
+                        routerLink="/profil-user/detail-reservation/{{
+                          item.booking_id
+                        }}"
+                      ></i>
+                      <ng-container *ngIf="plusBool">
+                        <i class="fas fa-print"></i>
+                        <i
+                          class="fas fa-trash"
+                          (click)="showMaximizableDialog()"
+                        ></i>
+                      </ng-container>
+                      <span *ngIf="!plusBool" style="margin-left: 20px;"></span>
+                      <h5
+                        class="custom-cursor"
+                        style="color: gray"
+                        (click)="collapse.toggle()"
+                        [attr.aria-expanded]="!plusBool"
+                        aria-controls="collapseExample"
+                      >
+                        <i class="fas fa-plus" *ngIf="plusBool"></i>
+                        <i class="fas fa-minus" *ngIf="!plusBool"></i>
+                        <!-- <strong> {{ plusBool ? 'Plus' : 'Reduire' }} </strong> -->
+                      </h5>
+                    </div>
+                  </td>
+                  <p-dialog
+                    header="Requête d'annulation"
+                    [(visible)]="displayMaximizable"
+                    [modal]="true"
+                    [maximizable]="true"
+                    [baseZIndex]="9999"
+                    [draggable]="false"
+                    [resizable]="false"
+                  >
+                    <app-delete-reservation
+                      [isModal]="true"
+                      [reservationDetail_]="item"
+                    ></app-delete-reservation>
+
+                    <ng-template pTemplate="footer">
+                      <p-button
+                        icon="pi pi-check"
+                        (click)="displayMaximizable = false"
+                        label="Ok"
+                        styleClass="p-button-text"
+                      ></p-button>
+                    </ng-template>
+                  </p-dialog>
                 </tr>
               </ng-container>
 
@@ -216,6 +251,12 @@ import { ProfilHelperService } from '../../services/profil-helper.service';
 })
 export class HistoryComponent extends ProfilHelperService {
   @Input() isPagination: boolean = false;
+
+  displayMaximizable: boolean = false;
+
+  showMaximizableDialog() {
+    this.displayMaximizable = true;
+  }
 
   public plusBool = true;
   // ngOnInit(): void {}

@@ -1,0 +1,52 @@
+<div class="d-flex justify-content-between">
+  <h2 class="h5 d-block d-lg-none">Informations de facturation</h2>
+  <h2 class="h4 d-none d-lg-block">Informations de facturation</h2>
+  <div class="d-flex justify-content-between">
+    <div
+      class="align-self-center align-item-center d-none d-lg-block"
+      style="margin-top: -8px; margin-right: 10px"
+    >
+      <h4 class="">Entreprise ?</h4>
+    </div>
+    <div class="d-none d-lg-block">
+      <div class="d-flex justify-content-between" style="margin-top: 2px">
+        <div
+          [class.selected-option]="selectedOption === true"
+          class="content"
+          (click)="selectOption(true); toggleCollapse()"
+          style="
+            height: 30px;
+            width: 58px;
+            padding-top: 5px;
+            border-radius: 7px;
+          "
+        >
+          <h5
+            class="mb-n2 font-14 font-700 mb-0 text-center"
+            style="margin-left: -3px"
+          >
+            OUI
+          </h5>
+        </div>
+        <div
+          [class.rs-for-me-option]="selectedOption === false"
+          class="content rounded-s"
+          (click)="selectOption(false); toggleCollapse()"
+          style="
+            height: 30px;
+            width: 58px;
+            padding-top: 5px;
+            border-radius: 7px;
+          "
+        >
+          <h5
+            class="mb-n2 font-14 font-700 mb-0 text-center"
+            style="margin-left: -3px"
+          >
+            NON
+          </h5>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

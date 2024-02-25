@@ -7526,7 +7526,7 @@ header.sticky-header.sticky-active.header-two .header-info .item .title {
 /*=======  Copy Right  =======*/
 
 footer .footer-subscibe-area {
-  background-color: #fff;
+  /* background-color: #fff; */
 }
 
 footer .footer-subscibe-area .subscribe-text .subscribe-form {
@@ -7537,7 +7537,7 @@ footer .footer-subscibe-area .subscribe-text .subscribe-form input {
   width: 100%;
   border: none;
   height: 90px;
-  background-color: #f8f8f8;
+  /* background-color: #f8f8f8; */
   padding-left: 50px;
   padding-right: 230px;
   font-size: 16px;
@@ -7607,7 +7607,8 @@ footer .footer-widget-area::after {
   top: 0;
   width: 100%;
   height: 100%;
-  background-image: url(../img/icon/pattern-01.png);
+  /* background-image: url(../img/icon/pattern-01.png); */
+  background-image: url(https://preprod.sherylux.com/assets-web-services/imgs/template/bg-footer.png);
   content: "";
   background-size: cover;
   background-repeat: repeat;
@@ -7726,7 +7727,7 @@ footer .footer-widget-area .widget.nav-widget ul li a::before {
   position: absolute;
   left: 0;
   top: 0;
-  content: "+";
+  /* content: "+"; */
 }
 
 footer .footer-widget-area .widget.nav-widget ul li:last-child {

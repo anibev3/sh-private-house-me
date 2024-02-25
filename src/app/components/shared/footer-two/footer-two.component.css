@@ -1,0 +1,10 @@
+@media (min-width: 1200px) {
+  .container {
+    max-width: 1318px !important;
+  }
+}
+
+footer .footer-widget-area .widget.nav-widget ul li {
+  /* margin-bottom: 35px; */
+  width: 100% !important;
+}

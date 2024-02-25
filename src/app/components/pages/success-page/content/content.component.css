@@ -130,3 +130,15 @@ textarea {
   padding: 10px;
   font-family: "Old Standard TT", serif;
 }
+
+.custom-class-if-payment-ok {
+  background-color: #e7fde9;
+  color: #006607;
+  border: 1px solid #97e59c;
+}
+
+.custom-class-if-payment-not-ok {
+  background-color: #fff1f1;
+  border: 1px solid rgb(249, 154, 154);
+  color: rgb(248, 0, 0);
+}

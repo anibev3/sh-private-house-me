@@ -37,6 +37,8 @@ import { DialogModule } from 'primeng/dialog';
 import { MakeCommentComponent } from './make-comment/make-comment.component';
 import { HistoryComponent } from './history/history.component';
 import { NgxPaginationModule } from 'ngx-pagination';
+import { CheckinTimeComponent } from './checkin-time/checkin-time.component';
+import { deleteReservationComponent } from './delete-reservation/delete-reservation.component';
 // import { HistoryComponent } from './history/history.component';
 // import {MatSelectModule} from '@angular/material/select';
 // import { CascadeSelectModule } from 'primeng/cascadeselect';
@@ -68,6 +70,8 @@ import { NgxPaginationModule } from 'ngx-pagination';
     ReviewsComponent,
     MakeCommentComponent,
     HistoryComponent,
+    CheckinTimeComponent,
+    deleteReservationComponent,
   ],
   imports: [
     CommonModule,
@@ -112,6 +116,8 @@ import { NgxPaginationModule } from 'ngx-pagination';
     ReviewsComponent,
     MakeCommentComponent,
     HistoryComponent,
+    CheckinTimeComponent,
+    deleteReservationComponent,
   ],
 })
 export class SharedModule {}

@@ -1,20 +1,44 @@
-import { AfterContentInit, Component, OnInit } from '@angular/core';
-import { RoomHelperService } from '../../../services/room-helper.service';
-import { ApiService } from 'src/app/components/services/api/api.service';
-import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
-import { NgbCalendar, NgbDate } from '@ng-bootstrap/ng-bootstrap';
-import { ActivatedRoute, Router } from '@angular/router';
-import { CryptoService } from 'src/app/components/services/crypto/crypto.service';
-import { Constants } from 'src/app/components/constants.ts/constants';
-import { User } from 'src/app/components/models/user.model';
+import { Component, Input, OnInit } from '@angular/core';
+import { ApiService } from '../../services/api/api.service';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
+
+import { CryptoService } from '../../services/crypto/crypto.service';
+import { Constants } from '../../constants.ts/constants';
+import { Endpoint } from '../../constants.ts/enpoint';
+import { City } from '../../models/city';
+import { Functions } from '../../services/api/function';
+import { Subscription } from 'rxjs';
+import { Review } from '../../models/review-interface-customer.model';
 
 @Component({
-  selector: 'app-content',
-  templateUrl: './content.component.html',
-  styleUrls: ['./content.component.css'],
+  selector: 'app-checkin-time',
+  templateUrl: './checkin-time.component.html',
+  styleUrls: ['./checkin-time.component.css'],
 })
-export class ContentComponent implements OnInit {
-  //  -------------------------------------------
+export class CheckinTimeComponent implements OnInit {
+  // @Input() displayBottom!: boolean;
+  // @Input() displayTop!: boolean;
+  // @Input() review!: Review;
+  // @Input() comment: Comment | null = null;
+  // @Input() mark!: any;
+  // val2: number = 3;
+  // displayMaximizable: boolean = false;
+
+  // constructor() // private apiService: ApiService, // private fb: FormBuilder,
+  // private router: Router,
+  // private cryptoService: CryptoService,
+  // private functions: Functions
+  // {}
+
+  // ngOnInit() {
+  // console.log('REVIEWS', this.review);
+  // console.log('COMMENTS', this.comment);
+  // }
+
+  // showMaximizableDialog() {
+  //   this.displayMaximizable = true;
+  // }
 
   public userReservationInfo: any;
 
@@ -44,7 +68,6 @@ export class ContentComponent implements OnInit {
   public isUserConnected: boolean = false;
 
   infoRs: any = [];
-  userInfo_: User | undefined | any;
   submittingForm: boolean = false;
   isCollapseVisible: boolean | null = false;
   selectedOption: boolean | null = false;
@@ -62,7 +85,6 @@ export class ContentComponent implements OnInit {
   public infoToSend: any;
   public userPreference: any;
   public discountAmount: any;
-  public isPayment: boolean = false;
   public coupon: any;
   private strp_id: string = 'session_id';
   public isCouponLoading: boolean = false;
@@ -79,16 +101,13 @@ export class ContentComponent implements OnInit {
 
   constructor(
     public fb: FormBuilder,
-    public route: ActivatedRoute,
     private apiService: ApiService,
     public router: Router,
-    public cryptoService: CryptoService,
-    public calendar: NgbCalendar
+    public cryptoService: CryptoService
   ) {}
 
   public ngOnInit() {
     if (this.cryptoService.getDecryptedItem(Constants.USER)) {
-      this.userInfo_ = this.cryptoService.getDecryptedItem(Constants.USER);
     }
 
     if (this.cryptoService.getDecryptedItem(Constants.SELECTED_ROOM)) {
@@ -101,92 +120,8 @@ export class ContentComponent implements OnInit {
     this.getQueryParams();
     this.getArrivalDateFromLocalStorage();
     this.userStatus();
-    this.calculate_amounts(this.route.snapshot.params.id);
-    this.initialiseFacturationInfo();
-    this.setRoom(this.route.snapshot.params.id);
-
-    const sessionId = this.route.snapshot.queryParams[this.strp_id];
     const reservervation_payment_id = localStorage.getItem(
       'reservervation_payment_id'
-    );
-
-    if (sessionId) {
-      this.isReservation = true;
-      console.log('We are là');
-
-      if (sessionId === reservervation_payment_id) {
-        this.paymentIsOK = true;
-        // this.makeUserReservation();
-        // console.log("ATTAQUE DE L'API DE TEL OK PAIEMENT");
-        // return;
-        this.tellPaymantIsOk();
-      } else {
-        this.router.navigate(['/success-reservation'], {
-          replaceUrl: true,
-        });
-      }
-    }
-  }
-
-  tellPaymantIsOk() {
-    // console.log('TEL PAYEMENT OK METHOD CALL');
-
-    if (this.cryptoService.getDecryptedItem(Constants.SELECTED_ROOM)) {
-      this.paymentRoom = this.cryptoService.getDecryptedItem(
-        Constants.SELECTED_ROOM
-      );
-    }
-
-    const reservationData: any = this.cryptoService.getDecryptedItem(
-      Constants.SUCCESS_RESERVATION_DATA
-    );
-
-    const formData: any = {
-      booking_id: reservationData?.booking?.id,
-      // amount: 100.0,
-      payment_method: 'card',
-      payment_date: new Date(),
-    };
-
-    this.apiService.createItem(Constants.PAYMENT, formData).subscribe(
-      (response) => {
-        this.cryptoService.setEncryptedItem(
-          Constants.PAYMENT_STATUS,
-          response.data
-        );
-        if (localStorage.getItem('reservervation_payment_id')) {
-          localStorage.removeItem('reservervation_payment_id');
-        }
-        if (this.cryptoService.getDecryptedItem(Constants.COUPON)) {
-          localStorage.removeItem(Constants.COUPON);
-        }
-        if (this.cryptoService.getDecryptedItem(Constants.LE_DJAI)) {
-          localStorage.removeItem(Constants.LE_DJAI);
-        }
-
-        // this.cryptoService.setEncryptedItem(
-        //   Constants.SUCCESS_RESERVATION_DATA,
-        //   response.reservation
-        // );
-
-        this.isReservation = false;
-
-        // if (this.paymentRoom.is_payment_before == 1) {
-        //   this.processToPaiement();
-        // }
-        // return;
-        return this.router.navigate(['/success-reservation'], {
-          replaceUrl: true,
-        });
-      },
-      (error) => {
-        this.displayResponsive = true;
-        this.errorMessage = `Une erreur innattendu s'est produite, veuillez contacter SHERYLUX RESIDENCE PRIVEE AU +225 27 22 29 94 64 \n ${error}`;
-        this.isReservation = false;
-        return this.router.navigate(['/success-reservation'], {
-          replaceUrl: true,
-        });
-      }
     );
   }
 
@@ -282,8 +217,7 @@ export class ContentComponent implements OnInit {
     }
   }
 
-  makeUserReservation(wantPayNow: boolean): void {
-    this.isReservation = true;
+  makeUserReservation(): void {
     if (this.cryptoService.getDecryptedItem(Constants.BOOKING_USER_INFOS)) {
       this.info_bk_user = this.cryptoService.getDecryptedItem(
         Constants.BOOKING_USER_INFOS
@@ -311,7 +245,6 @@ export class ContentComponent implements OnInit {
 
     const formData: any = {
       room_id: this.paymentRoom?.id,
-      customer_id: this.userInfo_?.id,
       coupon_code: this.coupon?.code,
       number_of_guests: parseInt(this.query_params?.nbr_people),
       arrival_time: this.info_bk_user?.arrival_time,
@@ -331,30 +264,23 @@ export class ContentComponent implements OnInit {
 
     this.apiService.createItem('bookings', formData).subscribe(
       (response) => {
+        if (localStorage.getItem('reservervation_payment_id')) {
+          localStorage.removeItem('reservervation_payment_id');
+        }
+        if (this.cryptoService.getDecryptedItem(Constants.COUPON)) {
+          localStorage.removeItem(Constants.COUPON);
+        }
+        localStorage.removeItem(Constants.LE_DJAI);
+
         this.cryptoService.setEncryptedItem(
           Constants.SUCCESS_RESERVATION_DATA,
           response.reservation
         );
 
         this.isReservation = false;
-
-        // if (this.paymentRoom.is_payment_before == 1) {
-        if (wantPayNow) {
-          console.log('IS PAYMENT BEFORE');
-
-          this.processToPaiement();
-        } else {
-          if (localStorage.getItem('reservervation_payment_id')) {
-            localStorage.removeItem('reservervation_payment_id');
-          }
-          if (this.cryptoService.getDecryptedItem(Constants.COUPON)) {
-            localStorage.removeItem(Constants.COUPON);
-          }
-          localStorage.removeItem(Constants.LE_DJAI);
-          this.router.navigate(['/success-reservation'], {
-            replaceUrl: true,
-          });
-        }
+        return this.router.navigate(['/success-reservation'], {
+          replaceUrl: true,
+        });
       },
       (error) => {
         this.displayResponsive = true;
@@ -410,10 +336,9 @@ export class ContentComponent implements OnInit {
   // -------------------------------------
   async processToPaiement(): Promise<void> {
     try {
-      this.isPayment = true;
       const amount: any = await this.loadAmount();
       let finalAmount: number;
-      // return;
+
       if (typeof amount === 'object' && amount.amount !== undefined) {
         finalAmount = parseInt(amount.amount, 10);
       } else {
@@ -425,8 +350,6 @@ export class ContentComponent implements OnInit {
       // Vérifier si 'amount' est valide avant de continuer
       if (finalAmount == null || isNaN(+finalAmount)) {
         console.error("Le montant n'est pas valide.");
-        this.isPayment = false;
-
         return;
       }
 
@@ -439,35 +362,6 @@ export class ContentComponent implements OnInit {
       ];
 
       // console.log(JSON.stringify(cart), cart[0].price);
-
-      this.apiService.initiatePayment(cart, this.userInfo_.email).subscribe(
-        (paymentResponse) => {
-          if (paymentResponse.success) {
-            localStorage.setItem(
-              'reservervation_payment_id',
-              paymentResponse.data.session_id
-            );
-            // this.isPayment = false;
-            // console.log('IS PAYMENT BEFORE 1', paymentResponse);
-            // return;
-            return (window.location.href = paymentResponse.data.session_url);
-          } else {
-            // Afficher le dialogue en cas d'échec du paiement
-            this.displayResponsive = true;
-            this.errorMessage =
-              'Échec du paiement. Veuillez réessayer plus tard.';
-            this.isPayment = false;
-          }
-        },
-        (error) => {
-          // Afficher le dialogue en cas d'erreur
-          this.displayResponsive = true;
-          this.isPayment = false;
-
-          this.errorMessage =
-            'Erreur lors de la communication avec le serveur.';
-        }
-      );
     } catch (error) {
       console.error('Erreur lors du chargement du montant :', error);
     }
@@ -601,30 +495,21 @@ export class ContentComponent implements OnInit {
       this.infoRs = this.facturationForm.value;
 
       localStorage.setItem('facturationInfo', JSON.stringify(this.infoRs));
-      if (this.cryptoService.getDecryptedItem(Constants.PAYMENT_STATUS)) {
-        localStorage.removeItem(Constants.PAYMENT_STATUS);
-      }
 
-      // setTimeout(() => {
-      this.submittingForm = false;
-      if (this.paymentRoom.is_payment_before == 1) {
-        // this.processToPaiement();
-        const wantPayNow: boolean = true;
-
-        this.makeUserReservation(wantPayNow);
-      } else {
-        if (this.paymentSelectedOption) {
-          // this.processToPaiement();
-          const wantPayNow: boolean = true;
-          this.makeUserReservation(wantPayNow);
+      setTimeout(() => {
+        this.submittingForm = false;
+        if (this.paymentRoom.is_payment_before == 1) {
+          this.processToPaiement();
         } else {
-          this.isReservation = true;
-          const wantPayNow: boolean = false;
+          if (this.paymentSelectedOption) {
+            this.processToPaiement();
+          } else {
+            this.isReservation = true;
 
-          this.makeUserReservation(wantPayNow);
+            this.makeUserReservation();
+          }
         }
-      }
-      // }, 300);
+      }, 300);
     }
   }
 
@@ -709,43 +594,6 @@ export class ContentComponent implements OnInit {
             // console.log('Error calculate booking amount : \n', error);
           }
         );
-    }
-  }
-
-  public initialiseFacturationInfo() {
-    this.infoRs = localStorage.getItem('facturationInfo');
-
-    if (this.infoRs) {
-      this.infoRs = JSON.parse(this.infoRs);
-      this.selectedOption = this.infoRs.isEntreprise;
-      if (this.selectedOption) {
-        this.isCollapseVisible = true;
-      }
-      this.facturationForm = new FormGroup({
-        isEntreprise: new FormControl(this.infoRs.isEntreprise),
-        prenomFacturation: new FormControl(this.infoRs.prenomFacturation),
-        nomFacturation: new FormControl(this.infoRs.nomFacturation),
-        adresseFacturation: new FormControl(this.infoRs.adresseFacturation),
-        villeFacturation: new FormControl(this.infoRs.villeFacturation),
-        codePostalFacturation: new FormControl(
-          this.infoRs.codePostalFacturation
-        ),
-        paysFacturation: new FormControl(this.infoRs.paysFacturation),
-        nomEntrepriseFacturation: new FormControl(
-          this.infoRs.nomEntrepriseFacturation
-        ),
-      });
-    } else {
-      this.facturationForm = new FormGroup({
-        isEntreprise: new FormControl(''),
-        prenomFacturation: new FormControl(''),
-        nomFacturation: new FormControl(''),
-        adresseFacturation: new FormControl(''),
-        villeFacturation: new FormControl(''),
-        codePostalFacturation: new FormControl(''),
-        paysFacturation: new FormControl(''),
-        nomEntrepriseFacturation: new FormControl(''),
-      });
     }
   }
 }

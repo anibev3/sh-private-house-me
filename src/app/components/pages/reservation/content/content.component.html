@@ -101,7 +101,7 @@
                   class="text-center custom-cursor"
                   style="
                     border-radius: 10px;
-                    background-color: red;
+                    background-color: rgb(159, 41, 159);
                     color: white;
                     padding: 10px;
                     display: flex;
@@ -533,7 +533,7 @@
                         style="margin-right: 10px"
                       />
                       <label for="reservationForMe" class="mr10"
-                        >Je suis le client principal</label
+                        >Pour moi même</label
                       >
                     </div>
                     <div class="col-lg-6">
@@ -598,6 +598,32 @@
                     <span style="margin-left: 15px">
                       Situé à : {{ roomdetails?.city?.name }}
                     </span>
+                  </div>
+                  <br />
+                  <div>
+                    <div class="d-flex">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="32"
+                        height="32"
+                        viewBox="0 0 24 24"
+                        style="margin: 0px 10px 10px 0px; color: red"
+                      >
+                        <path
+                          fill="currentColor"
+                          d="M1 21L11.5 2.81L22 21zm19.27-1L11.5 4.81L2.73 20zM11 14v-4h1v4zm0 2h1v2h-1z"
+                        />
+                      </svg>
+                      <div>
+                        <span style="color: red; font-weight: bold">
+                          Checking: 14h00
+                        </span>
+                        <br />
+                        <span style="color: red; font-weight: bold">
+                          Checkout: 12h00
+                        </span>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -727,7 +753,7 @@
                       ></path>
                     </svg>
                     <span style="margin-left: 15px">
-                      <strong> clients: </strong> Max adultes:
+                      <strong> Clients: </strong> Max adultes:
                       <strong> {{ roomdetails?.max_adults }}</strong> - Max
                       enfants:
                       <strong> {{ roomdetails?.max_children }}</strong>
@@ -850,32 +876,6 @@
                 <!-- <br /> -->
 
                 <div style="">
-                  <br />
-                  <div>
-                    <div class="d-flex">
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="32"
-                        height="32"
-                        viewBox="0 0 24 24"
-                        style="margin: 0px 10px 10px 0px; color: red"
-                      >
-                        <path
-                          fill="currentColor"
-                          d="M1 21L11.5 2.81L22 21zm19.27-1L11.5 4.81L2.73 20zM11 14v-4h1v4zm0 2h1v2h-1z"
-                        />
-                      </svg>
-                      <div>
-                        <span style="color: red; font-weight: bold">
-                          Checking: 14h00
-                        </span>
-                        <br />
-                        <span style="color: red; font-weight: bold">
-                          Checkout: 12h00
-                        </span>
-                      </div>
-                    </div>
-                  </div>
                   <!-- <br /> -->
                   <br />
 
@@ -896,8 +896,11 @@
                         class="input-formulaire"
                         formControlName="arrival_time"
                       />
+
+                      <!-- <ngb-timepicker [(ngModel)]="time"></ngb-timepicker> -->
                     </div>
                   </div>
+                  <!-- <hr /> -->
                 </div>
               </div>
             </div>
@@ -956,27 +959,27 @@
             </div> -->
             </div>
 
-            <br /><br />
-
+            <br />
+            <div>
+              <input
+                class="mr10"
+                type="checkbox"
+                formControlName="acceptanceChecked"
+              />En allant à l'étape suivante, vous acceptez les règles de la
+              maison<span><strong class="text-danger">*</strong></span>
+            </div>
+            <br />
             <button
               class="justify-content-end"
               type="submit"
               style="padding: 7px 10px 10px 10px; border-radius: 6px"
             >
-              Prochaine étape : dernières informations
+              Prochaine étape : payment
               <i class="fas fa-angle-right" style="margin-left: 10px"></i>
             </button>
           </form>
           <br />
 
-          <div>
-            <input
-              class="mr10"
-              type="checkbox"
-              [(ngModel)]="acceptanceChecked"
-            />En allant à l'étape suivante, vous acceptez les règles de la
-            maison<span><strong class="text-danger">*</strong></span>
-          </div>
           <br />
           <br />
           <br />

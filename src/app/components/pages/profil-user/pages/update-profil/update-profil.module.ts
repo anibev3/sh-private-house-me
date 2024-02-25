@@ -8,6 +8,8 @@ import { UpdateProfilComponent } from './update-profil.component';
 import { SharedModule } from '../../../../shared/shared.module';
 import { ContentComponent } from './content/content.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { DialogModule } from 'primeng/dialog';
+import { ButtonModule } from 'primeng/button';
 
 @NgModule({
   declarations: [UpdateProfilComponent, ContentComponent],
@@ -18,6 +20,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     NgbModule,
     NgxPaginationModule,
     ReactiveFormsModule,
+    DialogModule,
+    ButtonModule,
   ],
 })
 export class UpdateProfilModule {}
